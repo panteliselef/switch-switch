@@ -1,0 +1,17 @@
+@use 'styles/design/base/breakpoints' as brk;
+@use 'styles/design/functions/convert' as c;
+
+
+.fixed_container {
+  padding: 0 c.pxToRem(23);
+  width: 100%;
+  max-width: 1540px;
+
+  @include brk.tablet {
+    padding: 0 c.pxToRem(65);
+  }
+
+  @include brk.laptop {
+    padding: 0 c.pxToRem(85);
+  }
+}

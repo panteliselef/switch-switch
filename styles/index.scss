@@ -1,4 +1,4 @@
-@use 'design/base/colors' as u;
+@use 'design/base/colors' as c;
 // @use "design/mixins/flex" as m;
 @use 'design/base/typography' as t;
 @use 'design/base/fonts' as f;
@@ -13,6 +13,7 @@ body {
     font-family: f.$primaryFont;
     font-size: 16px;
     background-color: var(--bg-color);
+    color: c.$light1;
     scroll-behavior: smooth;
 }
 
