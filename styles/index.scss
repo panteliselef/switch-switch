@@ -1,0 +1,70 @@
+@use 'design/base/colors' as u;
+// @use "design/mixins/flex" as m;
+@use 'design/base/typography' as t;
+@use 'design/base/fonts' as f;
+@forward 'design/theme.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: f.$primaryFont;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    scroll-behavior: smooth;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Flexbox classes */
+.flex {
+    display: flex;
+}
+
+.align-flex-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.center {
+    justify-content: center;
+}
+
+// .h-flex {
+//   @include m.h-flex;
+// }
+
+// .v-flex {
+//   @extend .flex;
+//   flex-direction: column;
+// }
+
+// /* END: Flexbox classes*/
+
+// .p-text-1 {
+//   @include t.p-text-1
+// }

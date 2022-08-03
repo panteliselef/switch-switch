@@ -1,20 +1,37 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@app/*": ["src/app/*"],
+            "@styles/*": ["styles/*"],
+            "@assets/*": ["src/assets/*"],
+            "@logos/*": ["src/assets/logos/*"],
+            "@icons/*": ["src/assets/icons/*"],
+            "@illustrations/*": ["src/assets/illustrations/*"],
+            "@utils/*": ["src/utils/*"],
+            "@modules/*": ["src/modules/*"],
+            "@features/*": ["src/features/*"],
+            "@components/*": ["src/common/components/*"],
+            "@design/*": ["src/common/design/*"],
+            "@hooks/*": ["src/common/hooks/*"],
+            "@layouts/*": ["src/common/layouts/*"],
+            "@contexts/*": ["src/common/contexts/*"]
+        },
+        "target": "esnext",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules"]
 }
