@@ -5,6 +5,9 @@ import { useEffect, useLayoutEffect, useRef } from 'react';
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 import GalleryCollection from '@modules/home/GalleryCollection';
+import InfiniteScrollText from '@modules/home/InfiniteScrollText';
+import Office from '@modules/home/Office';
+import Showroom from '@modules/home/Showroom';
 
 const Home: NextPage = () => {
     const divRef = useRef(null);
@@ -28,6 +31,12 @@ const Home: NextPage = () => {
             <Hero />
 
             <GalleryCollection />
+
+            <Office />
+
+            <InfiniteScrollText />
+
+            <Showroom />
 
             <section data-scroll-section>
                 <div

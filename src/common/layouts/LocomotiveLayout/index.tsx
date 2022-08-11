@@ -11,10 +11,10 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
 
     useEffect(() => {
         setTimeout(() => {
-            // if (window.locomotive) {
-            //     window.locomotive.start();
-            //     window.locomotive.update();
-            // }
+            if (window.locomotive) {
+                window.locomotive.start();
+                window.locomotive.update();
+            }
             gsap.set('.nice', {
                 y: 100,
             });
@@ -37,9 +37,12 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
     return (
         <div
             className={LOCOMOTIVE_CONTAINER_CLASS}
-            style={{
-                overflow: 'hidden',
-            }}
+            style={
+                {
+                    // overflow: 'hidden hidden',
+                    // overflowY: 'hidden !important',
+                }
+            }
             data-scroll-container=""
             ref={containerRef}
         >

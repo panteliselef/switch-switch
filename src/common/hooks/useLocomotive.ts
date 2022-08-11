@@ -31,7 +31,7 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
                 smartphone: {
                     smooth: false,
                 },
-                lerp: 0.07,
+                lerp: 0.04,
             });
 
             if (typeof locoScroll.current === 'undefined') return;
@@ -74,7 +74,9 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
             updateLoco();
         }
 
+        // if (window.innerWidth > 640) {
         dynamicImportModule().then();
+        // }
     }, [canStart, elementAsScroller, updateLoco]);
 
     useEffect(() => {

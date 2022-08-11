@@ -1,0 +1,28 @@
+@use 'styles/design/base/breakpoints' as brk;
+@use 'styles/design/base/colors' as c;
+
+.container {
+    padding: 12rem 2rem;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 130px;
+    line-height: 1.1;
+
+    text-align: right;
+    max-width: 750px;
+}
+
+.plain {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1.7;
+    color: c.$light2;
+
+    max-width: 750px;
+}

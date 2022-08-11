@@ -81,9 +81,11 @@ const GalleryCollection: React.FC = () => {
             <Stack direction={'column'} className={styles.text}>
                 <h1>Located in the historical heart of Belgrade </h1>
 
-                <p>We chose Dorcol for it’s class, the perfect mix of history and avangarde.</p>
+                <p data-scroll="" data-scroll-speed="1">
+                    We chose Dorcol for it’s class, the perfect mix of history and avangarde.
+                </p>
 
-                <p data-scroll="" data-scroll-speed="-2">
+                <p data-scroll="">
                     Right in the center, Novi Dorcol, and yet totally set back from the world, in a place that embodies
                     serenity: a former cloister. The crossing of the tree-lined courtyard marks the beginning of your
                     journey, the vast spaces of the place then welcome you for this unique journey.
@@ -91,13 +93,13 @@ const GalleryCollection: React.FC = () => {
 
                 <div
                     data-scroll=""
-                    data-scroll-speed="1.5"
+                    data-scroll-speed="-1.5"
                     style={{
                         position: 'absolute',
-                        width: 300,
-                        height: 300,
+                        width: 500,
+                        height: 500,
                         bottom: 0,
-                        right: 0,
+                        right: 'calc(0% - 250px)',
                     }}
                 >
                     <Image src={mapImage} alt={'map location'} objectFit={'cover'} layout={'responsive'} />
