@@ -1,26 +1,43 @@
-import React, { useRef } from 'react';
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
-import { useRouter } from 'next/router';
+import React, { useEffect, useRef } from 'react';
+
+import { gsap } from 'gsap/dist/gsap';
+import useLocoScroll from '@hooks/useLocomotive';
+
+export const LOCOMOTIVE_CONTAINER_CLASS = 'loco_container';
 
 const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
     const containerRef = useRef(null);
-    const { pathname } = useRouter();
-    const path = pathname.split('?')[0];
+    useLocoScroll(true, `.${LOCOMOTIVE_CONTAINER_CLASS}`);
+
+    useEffect(() => {
+        setTimeout(() => {
+            // if (window.locomotive) {
+            //     window.locomotive.start();
+            //     window.locomotive.update();
+            // }
+            gsap.set('.nice', {
+                y: 100,
+            });
+            gsap.to('.nice', {
+                opacity: 1,
+                y: -100,
+                duration: 2.5,
+                ease: 'slow(0.7, 0.7, false)',
+                scrollTrigger: {
+                    trigger: '.nice',
+                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    start: 'top 100%',
+                    end: 'bottom 0%',
+                    scrub: true,
+                },
+            });
+        }, 1000);
+    }, []);
+
     return (
-        <LocomotiveScrollProvider
-            options={{
-                smooth: true,
-            }}
-            watch={[path]}
-            location={path}
-            containerRef={containerRef}
-            onLocationChange={(scroll) => scroll.scrollTo(0, { duration: 0, disableLerp: true })} // If you want to reset the scroll position to 0 for example
-            onUpdate={() => console.log('Updated, but not on location change!')}
-        >
-            <div data-scroll-container ref={containerRef}>
-                {props.children}
-            </div>
-        </LocomotiveScrollProvider>
+        <div className={LOCOMOTIVE_CONTAINER_CLASS} data-scroll-container="" ref={containerRef}>
+            {props.children}
+        </div>
     );
 };
 

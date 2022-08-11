@@ -1,0 +1,136 @@
+@use 'styles/design/base/breakpoints' as brk;
+@use 'styles/design/base/colors' as c;
+
+.gallery {
+    overflow: hidden;
+    padding: 21.33333vw 0;
+
+    @include brk.tablet {
+        padding: 13.88889vw 0;
+    }
+}
+
+.mediaWrapper {
+    position: relative;
+    height: 89.33333vw;
+    margin: 0 0 21.33333vw;
+    transform: translateZ(0);
+
+    @include brk.tablet {
+        height: 66.25vw;
+        margin: 0 0 10.41667vw;
+    }
+
+    .media {
+        position: absolute;
+
+        &:first-child {
+            position: relative;
+            width: 35.73333vw;
+            height: 60.26667vw;
+            margin: auto;
+
+            @include brk.tablet {
+                width: 25.97222vw;
+                height: 44.375vw;
+            }
+        }
+
+        &:nth-child(2) {
+            width: 35.2vw;
+            height: 19.73333vw;
+            top: 19.2vw;
+            left: 8vw;
+
+            @include brk.tablet {
+                width: 26.31944vw;
+                height: 14.79167vw;
+                top: 13.88889vw;
+                left: 19.09722vw;
+            }
+        }
+
+        &:nth-child(3) {
+            width: 16.26667vw;
+            height: 23.2vw;
+            top: 5.33333vw;
+            left: 61.33333vw;
+
+            @include brk.tablet {
+                width: 12.08333vw;
+                height: 17.15278vw;
+                top: 4.23611vw;
+                left: 58.26389vw;
+            }
+        }
+
+        &:nth-child(4) {
+            width: 35.2vw;
+            height: 24vw;
+            top: 53.33333vw;
+            left: 8vw;
+
+            @include brk.tablet {
+                width: 26.31944vw;
+                height: 17.63889vw;
+                top: 39.93056vw;
+                left: 19.09722vw;
+            }
+        }
+
+        &:nth-child(5) {
+            width: 35.2vw;
+            height: 35.73333vw;
+            top: 53.33333vw;
+            left: 56.26667vw;
+
+            @include brk.tablet {
+                width: 26.31944vw;
+                height: 26.31944vw;
+                top: 39.93056vw;
+                left: 54.58333vw;
+            }
+        }
+    }
+}
+
+.text {
+    width: 66.66667vw;
+    text-align: center;
+    margin: 360px auto auto;
+    position: relative;
+
+    gap: 150px;
+
+    color: c.$light2;
+
+    @include brk.tablet {
+        width: 60.55556vw;
+    }
+
+    h1 {
+        text-align: left;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 70px;
+        line-height: 1.4;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 1.4;
+        text-align: center;
+
+        &:first-of-type {
+            margin: auto;
+            max-width: 350px;
+        }
+
+        &:nth-of-type(2) {
+            max-width: 650px;
+            text-align: left;
+        }
+    }
+}

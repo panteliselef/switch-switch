@@ -1,5 +1,5 @@
 @use 'design/base/colors' as c;
-// @use "design/mixins/flex" as m;
+@use 'design/base/breakpoints' as brk;
 @use 'design/base/typography' as t;
 @use 'design/base/fonts' as f;
 @forward 'design/theme.scss';
@@ -15,6 +15,47 @@ body {
     background-color: var(--bg-color);
     color: c.$light1;
     scroll-behavior: smooth;
+}
+
+footer,
+header,
+section {
+    @include brk.tablet {
+        will-change: transform;
+    }
+}
+
+section {
+    margin-top: -1px;
+}
+
+footer,
+section {
+    position: relative;
+}
+
+blockquote,
+body,
+dd,
+dl,
+figcaption,
+figure,
+h1,
+h2,
+h3,
+h4,
+input,
+li,
+ol,
+p,
+ul {
+    margin: 0;
+}
+
+ol,
+ul {
+    padding: 0;
+    list-style: none;
 }
 
 button {
