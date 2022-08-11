@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 
             <GalleryCollection />
 
-            <section data-scroll-section="">
+            <section data-scroll-section>
                 <div
                     style={{
                         width: '100%',
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
                     wowwo
                 </div>
             </section>
-            <section data-scroll-section="">
+            <section data-scroll-section>
                 <div
                     className={'nice'}
                     ref={divRef}
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
                     wowwo
                 </div>
             </section>
-            <section data-scroll-section="">
+            <section data-scroll-section>
                 <div
                     style={{
                         width: '100%',

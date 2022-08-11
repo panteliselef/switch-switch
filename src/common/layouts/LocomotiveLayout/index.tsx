@@ -35,7 +35,14 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
     }, []);
 
     return (
-        <div className={LOCOMOTIVE_CONTAINER_CLASS} data-scroll-container="" ref={containerRef}>
+        <div
+            className={LOCOMOTIVE_CONTAINER_CLASS}
+            style={{
+                overflow: 'hidden',
+            }}
+            data-scroll-container=""
+            ref={containerRef}
+        >
             {props.children}
         </div>
     );
