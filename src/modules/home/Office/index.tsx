@@ -5,7 +5,7 @@ import styles from './office.module.scss';
 
 const Office: React.FC = () => {
     return (
-        <section data-scroll-section>
+        <section>
             <Stack direction={'column'} gap={20} className={styles.container}>
                 <span className={styles.small}>Design & Architecture Office</span>
                 <p className={styles.plain}>

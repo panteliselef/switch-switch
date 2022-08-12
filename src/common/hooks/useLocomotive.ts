@@ -36,7 +36,7 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
 
             if (typeof locoScroll.current === 'undefined') return;
 
-            // locoScroll.current.stop();
+            locoScroll.current.stop();
 
             // tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
             ScrollTrigger.scrollerProxy(elementAsScroller, {

@@ -60,16 +60,11 @@
 }
 
 @mixin p-text-1 {
-    margin: 0;
     @include f.primary-font;
-    font-weight: 500;
-    font-size: 1em;
-    color: rgba(col.$dark1, 0.57);
-    line-height: 150%;
-
-    @include brk.desktop {
-        font-size: 1.25em;
-    }
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.4;
 }
 
 @mixin p-text-2 {

@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
     }, []);
 
     return (
-        <section data-scroll-section>
+        <section>
             <div className={styles.slideshow}>
                 <figure className={classNames(styles.slide, styles.slide__current)}>
                     <div className={classNames(styles.slide__img_wrap)}>

@@ -8,6 +8,8 @@ import GalleryCollection from '@modules/home/GalleryCollection';
 import InfiniteScrollText from '@modules/home/InfiniteScrollText';
 import Office from '@modules/home/Office';
 import Showroom from '@modules/home/Showroom';
+import Deserve from '@modules/home/Deserve';
+import VisitUs from '@modules/home/VisitUs';
 
 const Home: NextPage = () => {
     const divRef = useRef(null);
@@ -38,7 +40,11 @@ const Home: NextPage = () => {
 
             <Showroom />
 
-            <section data-scroll-section>
+            <Deserve />
+
+            <VisitUs />
+
+            <section>
                 <div
                     style={{
                         width: '100%',
@@ -49,7 +55,7 @@ const Home: NextPage = () => {
                     wowwo
                 </div>
             </section>
-            <section data-scroll-section>
+            <section>
                 <div
                     className={'nice'}
                     ref={divRef}
@@ -62,7 +68,7 @@ const Home: NextPage = () => {
                     wowwo
                 </div>
             </section>
-            <section data-scroll-section>
+            <section>
                 <div
                     style={{
                         width: '100%',

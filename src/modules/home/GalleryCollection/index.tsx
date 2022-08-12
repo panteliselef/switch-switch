@@ -24,11 +24,6 @@ const scrollTrigger = {
 const GalleryCollection: React.FC = () => {
     useEffect(() => {
         setTimeout(() => {
-            // if (window.locomotive) {
-            //     window.locomotive.start();
-            //     window.locomotive.update();
-            // }
-
             gsap.timeline({
                 scrollTrigger,
             })
@@ -55,7 +50,7 @@ const GalleryCollection: React.FC = () => {
     }, []);
 
     return (
-        <section data-scroll-section={true} className={styles.gallery}>
+        <section className={styles.gallery}>
             <ul className={styles.mediaWrapper}>
                 <li className={styles.media}>
                     <Image objectFit={'cover'} src={img1} alt={'image 1'} layout={'fill'} />

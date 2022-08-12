@@ -35,7 +35,7 @@ const Showroom: React.FC = () => {
                     },
                 )
                 .fromTo(
-                    `.mice`,
+                    `.defuse`,
                     {
                         opacity: 0,
                     },
@@ -49,7 +49,7 @@ const Showroom: React.FC = () => {
 
     return (
         <>
-            <section data-scroll-section={''} className={styles.container}>
+            <section className={styles.container}>
                 <Stack direction={'row'} gap={100}>
                     <div
                         data-scroll=""
@@ -82,7 +82,7 @@ const Showroom: React.FC = () => {
                 </Stack>
             </section>
 
-            <section data-scroll-section={''}>
+            <section>
                 <div
                     className={'studioPic'}
                     style={{
@@ -92,7 +92,7 @@ const Showroom: React.FC = () => {
                     }}
                 >
                     <div
-                        className={'mice'}
+                        className={'defuse'}
                         style={{
                             position: 'absolute',
                             zIndex: 2,
@@ -104,6 +104,27 @@ const Showroom: React.FC = () => {
                     />
                     <Image alt={'studio'} src={studio} layout={'fill'} objectFit={'cover'} />
                 </div>
+
+                <Stack
+                    direction={'column'}
+                    gap={80}
+                    style={{
+                        width: '60.55556vw',
+                        transform: 'translateY(-40vh)',
+                        margin: '0 auto auto auto',
+                    }}
+                >
+                    <p className={'p-text-1'} data-scroll="" data-scroll-speed="1">
+                        For a holistic <br />
+                        culture
+                    </p>
+
+                    <p className={'p-text-1'} data-scroll="" data-scroll-speed="1">
+                        Our key component is a personal designated touch. You cannot take care of someone with a single
+                        discipline. We defend the idea that every approach is generalized and illuminate the paths. Our
+                        approach is global and does we do not hesitate to adapt to stictly your needs.
+                    </p>
+                </Stack>
             </section>
         </>
     );
