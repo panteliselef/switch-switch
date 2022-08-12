@@ -10,6 +10,7 @@ import Office from '@modules/home/Office';
 import Showroom from '@modules/home/Showroom';
 import Deserve from '@modules/home/Deserve';
 import VisitUs from '@modules/home/VisitUs';
+import Coffee from '@modules/home/Coffee';
 
 const Home: NextPage = () => {
     const divRef = useRef(null);
@@ -43,6 +44,8 @@ const Home: NextPage = () => {
             <Deserve />
 
             <VisitUs />
+
+            <Coffee />
 
             <section>
                 <div
