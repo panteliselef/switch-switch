@@ -3,14 +3,14 @@ import Stack from '@layouts/Stack';
 
 const Coffee: React.FC = () => {
     return (
-        <section>
+        <section id={'before-footer'}>
             <Stack
                 direction={'column'}
                 justifyContent={'center'}
                 alignItems={'center'}
                 gap={100}
                 style={{
-                    height: '100vh',
+                    padding: '10vw 0',
                 }}
             >
                 <p

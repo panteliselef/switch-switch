@@ -47,41 +47,41 @@ const Home: NextPage = () => {
 
             <Coffee />
 
-            <section>
-                <div
-                    style={{
-                        width: '100%',
-                        height: '300px',
-                        background: 'red',
-                    }}
-                >
-                    wowwo
-                </div>
-            </section>
-            <section>
-                <div
-                    className={'nice'}
-                    ref={divRef}
-                    style={{
-                        width: '100%',
-                        height: '300px',
-                        background: 'blue',
-                    }}
-                >
-                    wowwo
-                </div>
-            </section>
-            <section>
-                <div
-                    style={{
-                        width: '100%',
-                        height: '300px',
-                        background: 'green',
-                    }}
-                >
-                    wowwo
-                </div>
-            </section>
+            {/*<section>*/}
+            {/*    <div*/}
+            {/*        style={{*/}
+            {/*            width: '100%',*/}
+            {/*            height: '300px',*/}
+            {/*            background: 'red',*/}
+            {/*        }}*/}
+            {/*    >*/}
+            {/*        wowwo*/}
+            {/*    </div>*/}
+            {/*</section>*/}
+            {/*<section>*/}
+            {/*    <div*/}
+            {/*        className={'nice'}*/}
+            {/*        ref={divRef}*/}
+            {/*        style={{*/}
+            {/*            width: '100%',*/}
+            {/*            height: '300px',*/}
+            {/*            background: 'blue',*/}
+            {/*        }}*/}
+            {/*    >*/}
+            {/*        wowwo*/}
+            {/*    </div>*/}
+            {/*</section>*/}
+            {/*<section>*/}
+            {/*    <div*/}
+            {/*        style={{*/}
+            {/*            width: '100%',*/}
+            {/*            height: '300px',*/}
+            {/*            background: 'green',*/}
+            {/*        }}*/}
+            {/*    >*/}
+            {/*        wowwo*/}
+            {/*    </div>*/}
+            {/*</section>*/}
         </>
     );
 };
