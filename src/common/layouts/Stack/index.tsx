@@ -35,6 +35,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
                     ['as_row_tablet_col']: direction === 'row',
                     [styles.asCol]: direction === 'column',
                 })}
+                {...props}
             >
                 {children}
             </div>
