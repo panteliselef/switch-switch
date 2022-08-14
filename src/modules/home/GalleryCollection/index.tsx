@@ -14,6 +14,7 @@ import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import InnerScroll from '@components/InnerScroll';
 import studio from '@assets/studio.png';
+import { useSplitText } from '@modules/home/hero';
 
 const scrollTrigger = {
     trigger: `.${styles.media}`,
@@ -51,6 +52,10 @@ const GalleryCollection: React.FC = () => {
         }, 1000);
     }, []);
 
+    useSplitText('.gallery-text', '.gallery-trigger');
+
+    useSplitText('.gallery-title', '.gallery-title-trigger');
+
     return (
         <section className={styles.gallery}>
             <Stack
@@ -59,9 +64,14 @@ const GalleryCollection: React.FC = () => {
                 style={{
                     marginBottom: '10em',
                 }}
+                className={'gallery-title-trigger'}
             >
-                <h1 className={'heading-1 text-center'}>You are here</h1>
-                <h3 className={'heading-3 text-center'}>And nowhere else.</h3>
+                <h1 className={'heading-1 text-center split-line gallery-title'}>
+                    <div>You are here</div>
+                </h1>
+                <h3 className={'heading-3 text-center split-line gallery-title'}>
+                    <div>And nowhere else.</div>
+                </h3>
             </Stack>
 
             <ul className={styles.mediaWrapper}>
@@ -94,9 +104,23 @@ const GalleryCollection: React.FC = () => {
                     }}
                     gap={'2vw'}
                 >
-                    <Stack direction={'row'} alignItems={'center'} gap={'2vw'}>
-                        <h3 data-scroll={''} className={'heading-3'}>
-                            Located
+                    <Stack direction={'row'} alignItems={'center'} gap={'2vw'} className={'gallery-trigger'}>
+                        {/*<h3*/}
+                        {/*    className={classNames('heading-3', 'split-line')}*/}
+                        {/*    style={{*/}
+                        {/*        position: 'relative',*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    <div>A secret address</div>*/}
+                        {/*</h3>*/}
+
+                        <h3
+                            className={'heading-3 split-line gallery-text'}
+                            style={{
+                                flex: '0 0 auto',
+                            }}
+                        >
+                            <div>Located</div>
                         </h3>
                         <InnerScroll
                             style={{
@@ -108,12 +132,12 @@ const GalleryCollection: React.FC = () => {
                         </InnerScroll>
                     </Stack>
 
-                    <h3 data-scroll={''} className={'heading-3'}>
-                        in the historical
+                    <h3 className={'heading-3 split-line gallery-text'}>
+                        <div>in the historical</div>
                     </h3>
 
-                    <h3 data-scroll={''} className={'heading-3'}>
-                        heart of Belgrade
+                    <h3 className={'heading-3 split-line gallery-text'}>
+                        <div>heart of Belgradeted</div>
                     </h3>
                 </Stack>
             </Stack>
