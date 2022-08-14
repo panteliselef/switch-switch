@@ -51,6 +51,17 @@ const GalleryCollection: React.FC = () => {
 
     return (
         <section className={styles.gallery}>
+            <Stack
+                data-scroll={''}
+                direction={'column'}
+                style={{
+                    marginBottom: '10em',
+                }}
+            >
+                <h1 className={'heading-1 text-center'}>You are here</h1>
+                <h3 className={'heading-3 text-center'}>And nowhere else.</h3>
+            </Stack>
+
             <ul className={styles.mediaWrapper}>
                 <li className={styles.media}>
                     <Image objectFit={'cover'} src={img1} alt={'image 1'} layout={'fill'} />
@@ -74,13 +85,13 @@ const GalleryCollection: React.FC = () => {
             </ul>
 
             <Stack direction={'column'} className={styles.text}>
-                <h1>Located in the historical heart of Belgrade </h1>
+                <h1 data-scroll={''}>Located in the historical heart of Belgrade </h1>
 
-                <p data-scroll="" data-scroll-speed="1">
+                <p className={'p-text-1'} data-scroll="" data-scroll-speed="1">
                     We chose Dorcol for it’s class, the perfect mix of history and avangarde.
                 </p>
 
-                <p data-scroll="">
+                <p className={'p-text-1'} data-scroll="">
                     Right in the center, Novi Dorcol, and yet totally set back from the world, in a place that embodies
                     serenity: a former cloister. The crossing of the tree-lined courtyard marks the beginning of your
                     journey, the vast spaces of the place then welcome you for this unique journey.

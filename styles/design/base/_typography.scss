@@ -6,39 +6,32 @@
 @mixin heading-1 {
     @include f.primary-font;
     margin: 0;
-    font-weight: 700;
-    font-size: 1.875em;
-    color: col.$dark1;
-    line-height: 120%;
+    line-height: var(--font-lh-h0);
     font-style: normal;
+    font-weight: 100;
+    font-size: var(--font-s-h0);
 
-    @include brk.mobile-xl {
-        font-size: 3.75em;
-    }
+    //@include brk.mobile-xl {
+    //    font-size: 3.75em;
+    //}
 }
 
 @mixin heading-2 {
     @include f.primary-font;
-    font-weight: 700;
-    font-size: c.pxToRem(25);
-    color: col.$dark1;
+    margin-bottom: 0;
+    line-height: var(--font-lh-h2);
     font-style: normal;
-    line-height: 120%;
-    margin: 0;
-
-    @include brk.desktop {
-        font-size: c.pxToRem(40);
-    }
+    font-weight: 400;
+    font-size: var(--font-s-h2);
 }
 
 @mixin heading-3 {
     @include f.primary-font;
-    font-weight: 700;
-    font-size: 1.5625em;
-    color: col.$dark1;
     margin-bottom: 0;
+    line-height: var(--font-lh-h3);
     font-style: normal;
-    line-height: 140%;
+    font-weight: 400;
+    font-size: var(--font-s-h3);
 }
 
 @mixin heading-4 {
@@ -63,18 +56,16 @@
     @include f.primary-font;
     font-style: normal;
     font-weight: 400;
-    font-size: 35px;
+    font-size: var(--font-s-p1);
     line-height: 1.4;
 }
 
 @mixin p-text-2 {
     @include f.primary-font;
-    font-weight: 500;
-    font-size: 1em;
-    color: rgba(col.$dark1, 0.57);
     font-style: normal;
-    line-height: 160%;
-    margin: 0;
+    font-weight: 400;
+    font-size: var(--font-s-p2);
+    line-height: 1.4;
 }
 
 @mixin button-text {

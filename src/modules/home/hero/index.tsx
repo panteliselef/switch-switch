@@ -45,18 +45,11 @@ const Hero: React.FC = () => {
                         <div className={classNames(styles.slide__img)} />
                     </div>
                     <figcaption className={classNames(styles.slide__caption)}>
-                        <h2 className={styles.slides__caption_headline}>
-                            <span className={classNames(styles.text_row)}>
-                                <span>
-                                    Far from <em>Venice</em>
-                                </span>
-                            </span>
-                            <span className={classNames(styles.text_row)}>
-                                <span>
-                                    <strong>sunset</strong> in her <em>gaze</em>
-                                </span>
-                            </span>
-                        </h2>
+                        <h3 className={classNames('heading-3')}>A secret address</h3>
+                        <h3 className={classNames('heading-3')}>yet already</h3>
+                        <h3 className={classNames('heading-3')}>
+                            <span className={'font-light'}>unavoidable.</span>
+                        </h3>
                         <a
                             className={styles.slides__caption_link}
                             onMouseEnter={onMouseEnterLink}

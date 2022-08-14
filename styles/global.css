@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk Black'), local('RocGrotesk-Black'), url('../public/RocGrotesk-Black.woff2') format('woff2'),
+        url('../public/RocGrotesk-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk Heavy'), local('RocGrotesk-Heavy'), url('../public/RocGrotesk-Heavy.woff2') format('woff2'),
+        url('../public/RocGrotesk-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk ExtraBold'), local('RocGrotesk-ExtraBold'),
+        url('../public/RocGrotesk-ExtraBold.woff2') format('woff2'),
+        url('../public/RocGrotesk-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk Medium'), local('RocGrotesk-Medium'),
+        url('../public/RocGrotesk-Medium.woff2') format('woff2'), url('../public/RocGrotesk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk Bold'), local('RocGrotesk-Bold'), url('../public/RocGrotesk-Bold.woff2') format('woff2'),
+        url('../public/RocGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk Thin'), local('RocGrotesk-Thin'), url('../public/RocGrotesk-Thin.woff2') format('woff2'),
+        url('../public/RocGrotesk-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk Light'), local('RocGrotesk-Light'), url('../public/RocGrotesk-Light.woff2') format('woff2'),
+        url('../public/RocGrotesk-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk ExtraLight'), local('RocGrotesk-ExtraLight'),
+        url('../public/RocGrotesk-ExtraLight.woff2') format('woff2'),
+        url('../public/RocGrotesk-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roc Grotesk';
+    src: local('Roc Grotesk Regular'), local('RocGrotesk-Regular'),
+        url('../public/RocGrotesk-Regular.woff2') format('woff2'),
+        url('../public/RocGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,5 +1,6 @@
 import '@styles/index.scss';
 import '@styles/locomotive.scss';
+import '@styles/global.css';
 import type { AppProps } from 'next/app';
 import LocomotiveLayout from '@layouts/LocomotiveLayout';
 import Footer from '@components/Footer';

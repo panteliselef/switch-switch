@@ -106,8 +106,8 @@ const VisitUs: React.FC = () => {
                 style={{
                     height: '100vh',
                     display: 'grid',
-                    gridTemplateColumns: '270px 1fr',
-                    maxWidth: '1280px',
+                    gridTemplateColumns: '22vw 1fr',
+                    padding: '0 6vw',
                     margin: 'auto',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -146,22 +146,28 @@ const VisitUs: React.FC = () => {
                     style={{
                         height: '100%',
                         position: 'relative',
-                        maxWidth: '800px',
+                        maxWidth: '80vw',
                     }}
                 >
                     <div className={styles.cl}>
-                        <p className={classNames('l1', styles.l)}>Vizualize your architectural project</p>
+                        <p className={classNames('l1', styles.l, 'heading-3')}>Vizualize your architectural project</p>
                     </div>
                     <div className={styles.cl}>
-                        <p className={classNames('l2', styles.l)}>Bring light into your upcoming home</p>
-                    </div>
-
-                    <div className={styles.cl}>
-                        <p className={classNames('l3', styles.l)}>Implement a smart home system.</p>
+                        <p className={classNames('l2', styles.l, 'heading-3')}>Bring light into your upcoming home</p>
                     </div>
 
                     <div className={styles.cl}>
-                        <p className={classNames('l4', styles.l)}> Purchase your dream switch</p>
+                        <p className={classNames('l3', styles.l, 'heading-3')}>
+                            Implement <br />a smart home system.
+                        </p>
+                    </div>
+
+                    <div className={styles.cl}>
+                        <p className={classNames('l4', styles.l, 'heading-3')}>
+                            Purchase <br />
+                            your dream <br />
+                            switch
+                        </p>
                     </div>
                 </Stack>
             </div>

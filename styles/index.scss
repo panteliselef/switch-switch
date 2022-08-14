@@ -151,12 +151,38 @@ a {
 
 // /* END: Flexbox classes*/
 
+.text-center {
+    text-align: center;
+}
+
+.font-light {
+    font-weight: 200;
+}
+
+.font-normal {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
 .p-text-1 {
     @include t.p-text-1;
 }
 
+.p-text-2 {
+    @include t.p-text-2;
+}
+
+.heading-1 {
+    @include t.heading-1;
+}
+
+.heading-2 {
+    @include t.heading-2;
+}
+
 .heading-3 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 100px;
+    @include t.heading-3;
 }

@@ -16,14 +16,14 @@ const Coffee: React.FC = () => {
                 <p
                     data-scroll
                     data-scroll-speed="1"
-                    className={'heading-3'}
+                    className={'heading-2'}
                     style={{
                         textAlign: 'center',
-                        maxWidth: '600px',
+                        maxWidth: '60vw',
                     }}
                 >
-                    Or just <br />
-                    <b>for a coffee.</b>
+                    <span className={'font-light'}>Or just </span> <br />
+                    <span className={'font-medium'}>for a coffee.</span>
                 </p>
 
                 <svg width="199" height="183" viewBox="0 0 199 183" fill="none" xmlns="http://www.w3.org/2000/svg">

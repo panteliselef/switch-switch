@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             style={{
                 width: '100vw',
                 overflow: 'hidden',
-                padding: '13.88889vw 0 5.55556vw',
+                padding: '13.88889vw 0 3.55556vw',
             }}
         >
             <Stack
@@ -49,21 +49,14 @@ const Footer: React.FC = () => {
                             flex: '0 0 500px',
                         }}
                     >
-                        <h1
-                            style={{
-                                fontWeight: '400',
-                                fontSize: '130px',
-                                lineHeight: 1.1,
-                            }}
-                        >
-                            Our story
-                        </h1>
-                        <p className={'p-text-1'}>
-                            The story behind switchswitch is one of the exploration, creativity and curiosity.{' '}
+                        <h3 className={'heading-3'}>Our story</h3>
+                        <p className={'p-text-2'}>
+                            The story behind switch switch is one of the exploration, creativity and curiosity.{' '}
                         </p>
                     </Stack>
 
                     <div
+                        data-scroll={''}
                         style={{
                             flex: '1 1 auto',
                             maxWidth: '600px',

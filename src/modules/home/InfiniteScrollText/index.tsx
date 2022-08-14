@@ -12,8 +12,8 @@ const InfiniteScrollText: React.FC = () => {
                 <div className={styles.infinite_scrolling_text}>
                     <div className={styles.infinite_scrolling_text__title}>
                         <div>
-                            <p>A place for creativity</p>
-                            <p>A place for creativity</p>
+                            <p className={'heading-2'}>A place for creativity</p>
+                            <p className={'heading-2'}>A place for creativity</p>
                         </div>
                     </div>
                 </div>

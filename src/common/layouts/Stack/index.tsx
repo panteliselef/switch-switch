@@ -19,7 +19,7 @@ export interface StackProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 const Stack = forwardRef<HTMLDivElement, StackProps>(
-    ({ style, justifyContent, children, direction, gap = 0, alignItems, ...props }, ref) => {
+    ({ style, className, justifyContent, children, direction, gap = 0, alignItems, ...props }, ref) => {
         return (
             <div
                 ref={ref}
@@ -30,7 +30,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
                     ...style,
                 }}
                 className={classNames({
-                    [props.className || '']: true,
+                    [className || '']: true,
                     [styles.asRow]: direction === 'row',
                     ['as_row_tablet_col']: direction === 'row',
                     [styles.asCol]: direction === 'column',

@@ -10,16 +10,14 @@
 .small {
     font-style: normal;
     font-weight: 400;
-    font-size: 0.875em;
+    font-size: calc(8px + 0.3vw);
 }
 
 .plain {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2em;
+    //font-style: normal;
+    //font-weight: 400;
+    //font-size: 2em;
     line-height: 1.7;
-    color: c.$light2;
     margin-left: 12rem;
-
-    max-width: 750px;
+    max-width: 48vw;
 }

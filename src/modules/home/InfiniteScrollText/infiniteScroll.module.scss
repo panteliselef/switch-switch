@@ -37,17 +37,17 @@
 
         & > div {
             display: flex;
-            animation: scrollText 33s infinite linear;
-            gap: 10em;
+            animation: scrollText 17s infinite linear;
+            gap: 10vw;
         }
 
         p {
-            margin: 0;
-            font-size: calc(100px + 30vw);
+            //margin: 0;
+            //font-size: calc(100px + 30vw);
             transition: all 2s ease;
-            @include brk.tablet {
-                font-size: calc(50px + 10vw);
-            }
+            //@include brk.tablet {
+            //font-size: calc(50px + 10vw);
+            //}
         }
     }
 }
