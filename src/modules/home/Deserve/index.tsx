@@ -3,7 +3,11 @@ import Stack from '@layouts/Stack';
 
 const Deserve: React.FC = () => {
     return (
-        <section>
+        <section
+            style={{
+                transform: 'translateY(-23vh)',
+            }}
+        >
             <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} gap={100}>
                 <p
                     className={'heading-2'}

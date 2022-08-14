@@ -151,12 +151,20 @@ a {
 
 // /* END: Flexbox classes*/
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 .text-center {
     text-align: center;
 }
 
-.font-light {
+.font-extra-light {
     font-weight: 200;
+}
+
+.font-light {
+    font-weight: 300;
 }
 
 .font-normal {

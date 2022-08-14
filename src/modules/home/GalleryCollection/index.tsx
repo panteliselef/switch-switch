@@ -12,6 +12,8 @@ import mapImage from '@assets/map.png';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
+import InnerScroll from '@components/InnerScroll';
+import studio from '@assets/studio.png';
 
 const scrollTrigger = {
     trigger: `.${styles.media}`,
@@ -84,9 +86,39 @@ const GalleryCollection: React.FC = () => {
                 </li>
             </ul>
 
-            <Stack direction={'column'} className={styles.text}>
-                <h1 data-scroll={''}>Located in the historical heart of Belgrade </h1>
+            <Stack direction={'row'} justifyContent={'center'}>
+                <Stack
+                    direction={'column'}
+                    style={{
+                        paddingTop: '20vw',
+                    }}
+                    gap={'2vw'}
+                >
+                    <Stack direction={'row'} alignItems={'center'} gap={'2vw'}>
+                        <h3 data-scroll={''} className={'heading-3'}>
+                            Located
+                        </h3>
+                        <InnerScroll
+                            style={{
+                                width: '100%',
+                                height: '150px',
+                            }}
+                        >
+                            <Image src={studio} layout={'fill'} objectFit={'cover'} />
+                        </InnerScroll>
+                    </Stack>
 
+                    <h3 data-scroll={''} className={'heading-3'}>
+                        in the historical
+                    </h3>
+
+                    <h3 data-scroll={''} className={'heading-3'}>
+                        heart of Belgrade
+                    </h3>
+                </Stack>
+            </Stack>
+
+            <Stack direction={'column'} className={styles.text}>
                 <p className={'p-text-1'} data-scroll="" data-scroll-speed="1">
                     We chose Dorcol for it’s class, the perfect mix of history and avangarde.
                 </p>

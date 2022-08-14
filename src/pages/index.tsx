@@ -12,6 +12,7 @@ import Deserve from '@modules/home/Deserve';
 import VisitUs from '@modules/home/VisitUs';
 import Coffee from '@modules/home/Coffee';
 import Consumers from '@modules/home/Consumers';
+import Quality from '@modules/home/Quality';
 
 const Home: NextPage = () => {
     const divRef = useRef(null);
@@ -45,6 +46,8 @@ const Home: NextPage = () => {
             <Deserve />
 
             <Consumers />
+
+            <Quality />
 
             <VisitUs />
 

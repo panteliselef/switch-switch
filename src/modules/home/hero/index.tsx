@@ -2,6 +2,9 @@ import React, { useCallback, useEffect } from 'react';
 import styles from './hero.module.scss';
 import classNames from 'classnames';
 import gsap from 'gsap';
+import Image from 'next/image';
+
+import historyHeroBg from '@assets/hero-history.png';
 
 const clipPaths = {
     initial: 'circle(55% at 70% 50%)',
@@ -42,7 +45,13 @@ const Hero: React.FC = () => {
             <div className={styles.slideshow}>
                 <figure className={classNames(styles.slide, styles.slide__current)}>
                     <div className={classNames(styles.slide__img_wrap)}>
-                        <div className={classNames(styles.slide__img)} />
+                        <Image
+                            src={historyHeroBg}
+                            alt={'office'}
+                            objectFit={'cover'}
+                            objectPosition={'bottom'}
+                            layout={'fill'}
+                        />
                     </div>
                     <figcaption className={classNames(styles.slide__caption)}>
                         <h3 className={classNames('heading-3')}>A secret address</h3>

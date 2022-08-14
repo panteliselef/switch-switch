@@ -32,7 +32,7 @@ const Showroom: React.FC = () => {
                     },
                     {
                         scale: 1,
-                        y: 0,
+                        y: '10%',
                     },
                 )
                 .fromTo(
@@ -89,7 +89,7 @@ const Showroom: React.FC = () => {
                     style={{
                         position: 'relative',
                         width: '100%',
-                        height: '100vh',
+                        height: '120vh',
                     }}
                 >
                     <div
@@ -111,7 +111,7 @@ const Showroom: React.FC = () => {
                     justifyContent={'center'}
                     alignItems={'center'}
                     style={{
-                        transform: 'translateY(-60vh)',
+                        transform: 'translateY(-80vh)',
                     }}
                 >
                     <h1 className={'heading-1'} data-scroll="" data-scroll-speed="2">
@@ -125,16 +125,16 @@ const Showroom: React.FC = () => {
                     gap={80}
                     style={{
                         width: '60.55556vw',
-                        transform: 'translateY(-40vh)',
+                        transform: 'translateY(-60vh)',
                         margin: '0 auto auto auto',
                     }}
                 >
-                    <p className={'p-text-1'} data-scroll="" data-scroll-speed="1">
+                    <p className={'p-text-1'} data-scroll="">
                         For a holistic <br />
                         culture
                     </p>
 
-                    <p className={'p-text-1'}>
+                    <p className={'p-text-1'} data-scroll="" data-scroll-speed="-1">
                         Our key component is a personal designated touch. You cannot take care of someone with a single
                         discipline. We defend the idea that every approach is generalized and illuminate the paths. Our
                         approach is global and does we do not hesitate to adapt to stictly your needs.
