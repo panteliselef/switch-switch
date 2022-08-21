@@ -1,0 +1,29 @@
+.timeline_container {
+    height: 100vh;
+    overflow: hidden;
+
+    .timeline {
+        height: 100%;
+        padding: 3vw;
+
+        .timeline_page {
+            position: relative;
+            flex: 0 0 100vw;
+            width: 100vw;
+            height: 100%;
+
+            .info {
+                max-width: 50vw;
+                padding-left: 4vw;
+                position: relative;
+            }
+        }
+    }
+}
+
+.timeline_year {
+    position: relative;
+    font-size: 32vw;
+    line-height: 1;
+    color: var(--text-color);
+}

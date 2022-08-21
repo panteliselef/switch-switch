@@ -29,7 +29,7 @@ export function useSplitText(classElements: string, classTrigger: string) {
                         scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
                         // toggleActions: "restart pause resume reverse",
                         // toggleActions: 'play none none none',
-                        start: 'top 100%',
+                        start: 'top 80%',
                     },
                 }).fromTo(
                     elements,

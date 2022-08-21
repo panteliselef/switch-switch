@@ -68,6 +68,14 @@
     line-height: 1.4;
 }
 
+@mixin p-text-3 {
+    @include f.primary-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-s-p3);
+    line-height: 1.8;
+}
+
 @mixin button-text {
     @include f.secondary-font;
     font-weight: 600;

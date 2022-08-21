@@ -1,0 +1,12 @@
+.story_hero_container {
+    position: relative;
+    //height: 175vh;
+    //height: calc(var(--vh, 1vh) * 175);
+    color: #fff;
+    //color: var(--color-white);
+    background: #0d0e13;
+    //background: var(--color-dark-grey);
+    pointer-events: none;
+    height: 100vw;
+    overflow: hidden;
+}

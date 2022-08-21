@@ -39,7 +39,7 @@ const Home: NextPage = () => {
 
             <Office />
 
-            <InfiniteScrollText />
+            <InfiniteScrollText texts={['A place for creativity', 'A place for creativity']} />
 
             <Showroom />
 

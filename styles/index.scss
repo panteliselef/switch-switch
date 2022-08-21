@@ -187,6 +187,10 @@ a {
     @include t.p-text-2;
 }
 
+.p-text-3 {
+    @include t.p-text-3;
+}
+
 .heading-1 {
     @include t.heading-1;
 }
