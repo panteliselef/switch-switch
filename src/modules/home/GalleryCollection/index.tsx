@@ -137,7 +137,7 @@ const GalleryCollection: React.FC = () => {
                     </h3>
 
                     <h3 className={'heading-3 split-line gallery-text'}>
-                        <div>heart of Belgradeted</div>
+                        <div>heart of Belgrade</div>
                     </h3>
                 </Stack>
             </Stack>

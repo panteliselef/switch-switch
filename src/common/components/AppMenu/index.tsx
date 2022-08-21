@@ -300,22 +300,32 @@ const AppMenu: React.FC = () => {
                 <nav className={styles.menu}>
                     <a className={styles.menu__item}>
                         <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>bold</span>
+                        <span className={styles.menu__item_text}>home</span>
                     </a>
 
                     <a className={styles.menu__item}>
                         <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>bold</span>
+                        <span className={styles.menu__item_text}>story</span>
                     </a>
 
                     <a className={styles.menu__item}>
                         <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>bold</span>
+                        <span className={styles.menu__item_text}>history</span>
                     </a>
 
                     <a className={styles.menu__item}>
                         <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>bold</span>
+                        <span className={styles.menu__item_text}>products</span>
+                    </a>
+
+                    <a className={styles.menu__item}>
+                        <span className={styles.menu__item_tiny}>always</span>
+                        <span className={styles.menu__item_text}>contact</span>
+                    </a>
+
+                    <a className={styles.menu__item}>
+                        <span className={styles.menu__item_tiny}>always</span>
+                        <span className={styles.menu__item_text}>schedule</span>
                     </a>
                 </nav>
             </div>

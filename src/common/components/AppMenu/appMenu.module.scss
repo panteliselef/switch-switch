@@ -33,10 +33,11 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    gap: 1vw;
 }
 
 .menu__item {
-    font-size: 9vw;
+    font-size: 7vw;
     color: #fff;
     cursor: pointer;
     line-height: 1;
@@ -52,7 +53,7 @@
     }
 
     &_tiny {
-        font-size: 1rem;
+        font-size: 0.8vw;
     }
 
     &:nth-child(odd) {

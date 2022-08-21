@@ -13,7 +13,7 @@ const VisitUs: React.FC = () => {
                     trigger: `#visit`,
                     scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
                     start: 'top top',
-                    end: '+=7000px',
+                    end: '+=3000px',
                     pin: true,
                     scrub: true,
                 },
