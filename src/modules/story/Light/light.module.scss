@@ -1,0 +1,9 @@
+.door {
+    height: 100%;
+    background: #fff;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    clip-path: inset(40vw 45vw 70vw round 20vw 20vw 0 0);
+    //clip-path: inset(4rem 0%);
+}
