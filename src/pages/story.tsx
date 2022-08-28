@@ -13,10 +13,10 @@ const Story: NextPage = () => {
     return (
         <>
             <Hero />
-            <Team />
             <Dreamers />
             <Timeline />
             <Light />
+            <Team />
         </>
     );
 };

@@ -70,59 +70,59 @@ const a = [
         pos: 2,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Alex Tselekidis',
         },
     },
     {
         pos: 5,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Dušan Nešić',
         },
     },
     {
         pos: 8,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Miloš Petrović',
         },
     },
     {
         pos: 11,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Nikola Jovanović ',
         },
     },
-    {
-        pos: 14,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-    {
-        pos: 17,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-
-    {
-        pos: 20,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-    {
-        pos: 23,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
+    // {
+    //     pos: 14,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Alex Tselekidis',
+    //     },
+    // },
+    // {
+    //     pos: 17,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Dušan Nešić',
+    //     },
+    // },
+    //
+    // {
+    //     pos: 20,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Miloš Petrović',
+    //     },
+    // },
+    // {
+    //     pos: 23,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Nikola Jovanović ',
+    //     },
+    // },
 ];
 
 const b = [
@@ -130,59 +130,59 @@ const b = [
         pos: 1,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Alex Tselekidis',
         },
     },
     {
         pos: 4,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Dušan Nešić',
         },
     },
     {
         pos: 7,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Alex Tselekidis',
         },
     },
     {
         pos: 10,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Dušan Nešić',
         },
     },
-    {
-        pos: 13,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-    {
-        pos: 16,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-
-    {
-        pos: 19,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-    {
-        pos: 22,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
+    // {
+    //     pos: 13,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Cyber Blue',
+    //     },
+    // },
+    // {
+    //     pos: 16,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Cyber Blue',
+    //     },
+    // },
+    //
+    // {
+    //     pos: 19,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Cyber Blue',
+    //     },
+    // },
+    // {
+    //     pos: 22,
+    //     caption: {
+    //         year: '2011',
+    //         text: 'Cyber Blue',
+    //     },
+    // },
 ];
 
 const c = [
@@ -190,57 +190,28 @@ const c = [
         pos: 3,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Nikola Jovanović ',
         },
     },
     {
         pos: 6,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Miloš Petrović',
         },
     },
     {
         pos: 9,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
+            text: 'Nikola Jovanović ',
         },
     },
     {
         pos: 12,
         caption: {
             year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-    {
-        pos: 15,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-    {
-        pos: 18,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-
-    {
-        pos: 21,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
-        },
-    },
-    {
-        pos: 24,
-        caption: {
-            year: '2011',
-            text: 'Cyber Blue',
+            text: 'Miloš Petrović',
         },
     },
 ];
@@ -382,13 +353,16 @@ export default function Team() {
 
     return (
         <section
+            id={'before-footer'}
             style={{
                 height: '100vh',
+                background: 'var(--text-color)',
+                marginTop: '-2px',
                 overflow: 'hidden',
             }}
         >
-            <h2 className={classNames(styles.heading, styles.heading__up)}>Jack Ruthless</h2>
-            <h2 className={classNames(styles.heading, styles.heading__down)}>Jack Ruthless</h2>
+            <h2 className={classNames(styles.heading, styles.heading__up)}>OUR TEAM</h2>
+            <h2 className={classNames(styles.heading, styles.heading__down)}>OUR TEAM</h2>
 
             <div className={styles.columns} data-scroll-container>
                 <div className={classNames(styles.column_wrap, styles.column_wrap_height)}>
@@ -397,8 +371,8 @@ export default function Team() {
                             <figure key={pos} className={styles.column__item}>
                                 <ImageWrapper pos={pos} />
                                 <figcaption className={styles.column__item_caption}>
-                                    <span>{text}</span>
-                                    <span>{year}</span>
+                                    <span className={styles.name}>{text}</span>
+                                    <span className={styles.job}>{year}</span>
                                 </figcaption>
                             </figure>
                         ))}
@@ -410,8 +384,8 @@ export default function Team() {
                             <figure key={pos} className={styles.column__item}>
                                 <ImageWrapper pos={pos} />
                                 <figcaption className={styles.column__item_caption}>
-                                    <span>{text}</span>
-                                    <span>{year}</span>
+                                    <span className={styles.name}>{text}</span>
+                                    <span className={styles.job}>{year}</span>
                                 </figcaption>
                             </figure>
                         ))}
@@ -423,8 +397,8 @@ export default function Team() {
                             <figure key={pos} className={styles.column__item}>
                                 <ImageWrapper pos={pos} />
                                 <figcaption className={styles.column__item_caption}>
-                                    <span>{text}</span>
-                                    <span>{year}</span>
+                                    <span className={styles.name}>{text}</span>
+                                    <span className={styles.job}>{year}</span>
                                 </figcaption>
                             </figure>
                         ))}

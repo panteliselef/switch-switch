@@ -3,23 +3,30 @@
 }
 
 .heading {
-    color: var(--color-heading);
+    color: rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
     left: 0;
-    margin: -5vw 0 0;
+    //margin: -5vw 0 0;
     width: 100%;
-    font-size: 12.25vw;
-    z-index: 1000;
+    font-size: 18.25vw;
     pointer-events: none;
-    font-family: meno-banner, serif;
-    font-weight: 300;
+    //font-weight: 300;
+
     text-transform: uppercase;
     line-height: 1;
     white-space: nowrap;
     text-align: center;
     will-change: transform, opacity;
     transform-origin: 50% 40%;
+}
+
+.name {
+    font-size: 2vw;
+}
+
+.job {
+    font-size: .9vw;
 }
 
 .heading__up {
@@ -30,7 +37,7 @@
     bottom: 0;
     top: auto;
     margin-top: 0;
-    margin-bottom: -6vw;
+    //margin-bottom: -6vw;
     transform-origin: 50% 60%;
 }
 
@@ -41,8 +48,10 @@
     display: flex;
     justify-content: center;
 
+    color: var(--bg-color);
+
     --ratio: 0.75;
-    --grid-item-height: 32vw;
+    --grid-item-height: 26vw;
     --grid-item-width: calc(var(--grid-item-height) * var(--ratio));
     --thumb-height: 5vw;
     --thumb-width: calc(var(--thumb-height) * var(--ratio));
@@ -98,6 +107,10 @@
 
 .column__item_caption {
     text-transform: uppercase;
-    padding: 0 3vw;
+    padding: 0 1.3vw;
     margin-top: 0.5rem;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
