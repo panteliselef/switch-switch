@@ -6,6 +6,29 @@
         height: 100%;
         padding: 3vw;
 
+        .preview {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            gap: 1.3vw;
+            align-items: flex-end;
+            z-index: 999;
+
+            .line {
+                height: 1px;
+                background: #eee;
+                width: 3vw;
+
+                transition: 0.3s all ease;
+
+                &.active {
+                    width: 5vw;
+                    background: white;
+                }
+            }
+        }
+
         .timeline_page {
             position: relative;
             flex: 0 0 100vw;

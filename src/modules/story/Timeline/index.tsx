@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './timeline.module.scss';
 import classNames from 'classnames';
 import { gsap } from 'gsap/dist/gsap';
@@ -13,6 +13,7 @@ import img2021_1 from '@assets/2021_1.png';
 import img2021_2 from '@assets/2021_2.png';
 
 const Timeline: React.FC = () => {
+    const [activeLine, setActiveLine] = useState(0);
     useEffect(() => {
         setTimeout(() => {
             // gsap.timeline({
@@ -43,7 +44,7 @@ const Timeline: React.FC = () => {
             //     )
             //     .to(`.${styles.timeline}`, { x: '-200vw', duration: 30 }, '<19');
 
-            gsap.timeline({
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: `.${styles.timeline_container}`,
                     scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
@@ -54,7 +55,27 @@ const Timeline: React.FC = () => {
                     pin: true,
                     scrub: true,
                 },
-            }).to(
+                onUpdate: () => {
+                    const process = tl.progress();
+                    if (process < 0.4) {
+                        setActiveLine(0);
+                    } else if (process < 0.6) {
+                        setActiveLine(1);
+                    } else if (process < 0.7) {
+                        setActiveLine(2);
+                    } else if (process < 0.85) {
+                        setActiveLine(3);
+                    } else if (process < 0.93) {
+                        setActiveLine(4);
+                    }
+                    else if (process < 0.97) {
+                        setActiveLine(5);
+                    }
+
+                },
+            });
+
+            tl.to(
                 `.${styles.timeline_page}`,
                 {
                     ease: 'power2.in',
@@ -71,6 +92,16 @@ const Timeline: React.FC = () => {
         <section>
             <div className={classNames(styles.timeline_container)}>
                 <Stack direction={'row'} className={styles.timeline}>
+                    <Stack direction={'column'} className={styles.preview}>
+                        {[0, 1, 2, 3, 4, 5].map((a) => (
+                            <div
+                                className={classNames({
+                                    [styles.line]: true,
+                                    [styles.active]: activeLine === a,
+                                })}
+                            />
+                        ))}
+                    </Stack>
                     <div className={styles.timeline_page}>
                         <p className={classNames(styles.timeline_year)}>2008</p>
                         <p className={classNames('p-text-2', styles.info)}>
