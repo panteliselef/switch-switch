@@ -1,0 +1,103 @@
+.alex_pic {
+    background-image: url('https://images.unsplash.com/photo-1661553141518-c89b061640e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=659&q=80');
+}
+
+.heading {
+    color: var(--color-heading);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: -5vw 0 0;
+    width: 100%;
+    font-size: 12.25vw;
+    z-index: 1000;
+    pointer-events: none;
+    font-family: meno-banner, serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+    will-change: transform, opacity;
+    transform-origin: 50% 40%;
+}
+
+.heading__up {
+    //display: none;
+}
+
+.heading__down {
+    bottom: 0;
+    top: auto;
+    margin-top: 0;
+    margin-bottom: -6vw;
+    transform-origin: 50% 60%;
+}
+
+.columns {
+    width: 100%;
+    position: relative;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: center;
+
+    --ratio: 0.75;
+    --grid-item-height: 32vw;
+    --grid-item-width: calc(var(--grid-item-height) * var(--ratio));
+    --thumb-height: 5vw;
+    --thumb-width: calc(var(--thumb-height) * var(--ratio));
+}
+
+.column_wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 0 15vh;
+}
+
+.column_wrap_height {
+    height: 100vh;
+    flex-direction: column-reverse;
+
+    .column {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+}
+
+.column {
+    position: relative;
+    display: block;
+    will-change: transform;
+}
+
+.column__item {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.column__item_imgwrap {
+    width: var(--grid-item-width);
+    height: var(--grid-item-height);
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 8vh 1vw 0;
+}
+
+.column__item_img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 20%;
+    backface-visibility: hidden;
+}
+
+.column__item_caption {
+    text-transform: uppercase;
+    padding: 0 3vw;
+    margin-top: 0.5rem;
+}

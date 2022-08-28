@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
                     start: 'top 0%',
                 },
                 ease: 'linear',
-                y: 1000,
+                yPercent: 15,
             });
 
             gsap.to('.scroll_experience_text', {

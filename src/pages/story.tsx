@@ -1,8 +1,9 @@
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 import Hero from '@modules/story/Hero';
 import Dreamers from '@modules/story/Dreamers';
 import Timeline from '@modules/story/Timeline';
-import Light from "@modules/story/Light";
+import Light from '@modules/story/Light';
+import Team from '@modules/story/Team/Team';
 // import { gsap } from 'gsap/dist/gsap';
 // import { useEffect, useLayoutEffect, useRef } from 'react';
 
@@ -11,10 +12,11 @@ import Light from "@modules/story/Light";
 const Story: NextPage = () => {
     return (
         <>
-            <Hero/>
-            <Dreamers/>
-            <Timeline/>
-            <Light/>
+            <Hero />
+            <Team />
+            <Dreamers />
+            <Timeline />
+            <Light />
         </>
     );
 };
