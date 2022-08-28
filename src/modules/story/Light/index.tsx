@@ -27,6 +27,27 @@ const Light: React.FC = () => {
                 },
                 'timeline',
             );
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: `#team`,
+                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    start: 'top 50%',
+                    // scrub: true,
+                },
+            })
+                .to('#team', {
+                    opacity: 0,
+                    y: -200,
+                })
+                .to(
+                    '#cheers',
+                    {
+                        opacity: 1,
+                        y: 0,
+                    },
+                    '<',
+                );
         }, 1000);
     }, []);
     return (
@@ -37,9 +58,13 @@ const Light: React.FC = () => {
                 }}
             >
                 <div className={styles.door}></div>
-                <Stack direction={'column'} gap={'40vw'} style={{
-                    position: 'relative'
-                }}>
+                <Stack
+                    direction={'column'}
+                    gap={'40vw'}
+                    style={{
+                        position: 'relative',
+                    }}
+                >
                     <Stack
                         direction={'column'}
                         alignItems={'center'}
@@ -87,18 +112,63 @@ const Light: React.FC = () => {
                             To the wall of your home
                         </p>
 
-                        <p
+                        <Stack
+                            direction={'column'}
                             data-scroll={''}
                             data-scroll-speed={'1'}
-                            className={'heading-3'}
                             style={{
+                                width: '60vw',
                                 mixBlendMode: 'difference',
-                                maxWidth: '50vw',
-                                paddingBottom: '10vw'
+                                paddingBottom: '10vw',
+                                position: 'relative',
                             }}
                         >
-                            This is the team of enthusiasts
-                        </p>
+                            <p
+                                id={'team'}
+                                className={'heading-3'}
+                                style={{
+                                    mixBlendMode: 'difference',
+                                    maxWidth: '50vw',
+                                }}
+                            >
+                                This is the team of
+                            </p>
+                            <p
+                                id={'cheers'}
+                                className={'heading-3'}
+                                style={{
+                                    mixBlendMode: 'difference',
+                                    position: 'absolute',
+                                    top: '0',
+                                    opacity: '0',
+                                    transform: 'translateY(200px)',
+                                }}
+                            >
+                                Cheers from the team of
+                            </p>
+                            <p
+                                className={'heading-3'}
+                                style={{
+                                    mixBlendMode: 'difference',
+                                    maxWidth: '50vw',
+                                }}
+                            >
+                                enthusiasts
+                            </p>
+                        </Stack>
+
+                        {/*<p*/}
+                        {/*    data-scroll={''}*/}
+                        {/*    data-scroll-speed={'1'}*/}
+                        {/*    className={'heading-3'}*/}
+                        {/*    style={{*/}
+                        {/*        mixBlendMode: 'difference',*/}
+                        {/*        maxWidth: '50vw',*/}
+                        {/*        paddingBottom: '10vw',*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    This is the team of enthusiasts*/}
+                        {/*</p>*/}
                     </Stack>
                 </Stack>
             </section>
