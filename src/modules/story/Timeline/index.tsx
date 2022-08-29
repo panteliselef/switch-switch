@@ -67,11 +67,9 @@ const Timeline: React.FC = () => {
                         setActiveLine(3);
                     } else if (process < 0.93) {
                         setActiveLine(4);
-                    }
-                    else if (process < 0.97) {
+                    } else if (process < 0.97) {
                         setActiveLine(5);
                     }
-
                 },
             });
 
@@ -95,6 +93,7 @@ const Timeline: React.FC = () => {
                     <Stack direction={'column'} className={styles.preview}>
                         {[0, 1, 2, 3, 4, 5].map((a) => (
                             <div
+                                key={'timeline' + a}
                                 className={classNames({
                                     [styles.line]: true,
                                     [styles.active]: activeLine === a,
