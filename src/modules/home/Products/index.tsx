@@ -17,29 +17,30 @@ const Product: React.FC<{ videoFileName: string; title: string }> = ({ videoFile
 
 function ProductCollection() {
     return (
-        <div className={styles.product_collection}>
-            <Product videoFileName={'artemide.mp4'} title={`Livolo`} />
-            <Product videoFileName={'artemide.mp4'} title={`artemide`} />
-            <Product videoFileName={'atelier.mp4'} title={`Atelier`} />
-            <Product videoFileName={'avolt.mp4'} title={`Avolt`} />
-            <Product videoFileName={'busch.mp4'} title={`Busch`} />
-            <Product videoFileName={'jung.mp4'} title={`Busch`} />
-            <Product videoFileName={'lifesmart.mp4'} title={`Busch`} />
-            <Product videoFileName={'nowosaroski.mp4'} title={`Busch`} />
-            <Product videoFileName={'pixo retro.mp4'} title={`pixo retro`} />
-            <Product videoFileName={'simon.mp4'} title={`Simon`} />
-            <Product videoFileName={'smarther.mp4'} title={`Smarther`} />
-            <Product videoFileName={'tala.mp4'} title={`tala`} />
+        <div>
+            <div className={styles.product_collection}>
+                <Product videoFileName={'artemide.mp4'} title={`Livolo`} />
+                <Product videoFileName={'artemide.mp4'} title={`artemide`} />
+                <Product videoFileName={'atelier.mp4'} title={`Atelier`} />
+            </div>
 
-            {/*<Product*/}
-            {/*    imageSrc={`https://images.unsplash.com/photo-1584589167171-541ce45f1eea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80`}*/}
-            {/*    title={`Livolo`}*/}
-            {/*/>*/}
+            <div className={styles.product_collection}>
+                <Product videoFileName={'avolt.mp4'} title={`Avolt`} />
+                <Product videoFileName={'busch.mp4'} title={`Busch`} />
+                <Product videoFileName={'jung.mp4'} title={`Busch`} />
+            </div>
 
-            {/*<Product*/}
-            {/*    imageSrc={`https://images.unsplash.com/photo-1584589167171-541ce45f1eea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80`}*/}
-            {/*    title={`Livolo`}*/}
-            {/*/>*/}
+            <div className={styles.product_collection}>
+                <Product videoFileName={'lifesmart.mp4'} title={`Busch`} />
+                <Product videoFileName={'nowosaroski.mp4'} title={`Busch`} />
+                <Product videoFileName={'pixo retro.mp4'} title={`pixo retro`} />
+            </div>
+
+            <div className={styles.product_collection}>
+                <Product videoFileName={'simon.mp4'} title={`Simon`} />
+                <Product videoFileName={'smarther.mp4'} title={`Smarther`} />
+                <Product videoFileName={'tala.mp4'} title={`tala`} />
+            </div>
         </div>
     );
 }
