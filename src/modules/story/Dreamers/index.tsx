@@ -1,11 +1,11 @@
 import Stack from '@layouts/Stack';
 import React from 'react';
-import { useSplitText } from '@modules/home/hero';
+import { useSplitText } from '@modules/history/hero';
 import Image from 'next/image';
 
 import dreamersImg from '@assets/dreamers.png';
 import classNames from 'classnames';
-import styles from '@modules/home/Showroom/showRoom.module.scss';
+import styles from '@modules/history/Showroom/showRoom.module.scss';
 
 const Dreamers = () => {
     useSplitText('.dreamer-text', '.dreamer-trigger');

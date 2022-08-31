@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 5vw;
+}
+
+.logo_container {
+}
+
+.client {
+    color: var(--bg-color);
+}
+
+.client_name {
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+.client_desc {
+    font-size: 0.7vw;
+}
