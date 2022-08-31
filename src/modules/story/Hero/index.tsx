@@ -7,7 +7,7 @@ import Image from 'next/image';
 import storyHeroBg from '@assets/story_bg.png';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
-import { useSplitText } from '@modules/home/hero';
+import { useSplitText } from '@modules/history/hero';
 
 const Hero: React.FC = () => {
     // useSplitText('.hero-text', '.hero-trigger');

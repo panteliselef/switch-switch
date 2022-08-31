@@ -14,7 +14,7 @@ import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import InnerScroll from '@components/InnerScroll';
 import studio from '@assets/studio.png';
-import { useSplitText } from '@modules/home/hero';
+import { useSplitText } from '@modules/history/hero';
 
 const scrollTrigger = {
     trigger: `.${styles.media}`,
