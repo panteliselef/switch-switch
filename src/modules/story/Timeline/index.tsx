@@ -93,7 +93,7 @@ const Timeline: React.FC = () => {
                     <Stack direction={'column'} className={styles.preview}>
                         {[0, 1, 2, 3, 4, 5].map((a) => (
                             <div
-                                key={a}
+                                key={'timeline' + a}
                                 className={classNames({
                                     [styles.line]: true,
                                     [styles.active]: activeLine === a,
