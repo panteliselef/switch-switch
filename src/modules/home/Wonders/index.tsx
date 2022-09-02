@@ -1,6 +1,7 @@
 import Stack from '@layouts/Stack';
 import styles from './wonders.module.scss';
 import classNames from 'classnames';
+import Plugs from '@modules/home/Plugs';
 
 function Wonders() {
     return (
@@ -24,18 +25,7 @@ function Wonders() {
                     The story behind our name is one of exploration, creativity and curiosity
                 </p>
             </Stack>
-            <Stack direction={'row'}>
-                <p
-                    data-scroll={''}
-                    data-scroll-speed={'1'}
-                    style={{
-                        padding: '4vw',
-                    }}
-                    className={classNames('p-text-2', styles.max_width)}
-                >
-                    The Switch Switch aesthetic aims for harmony between space and mind with a personal touch.
-                </p>
-            </Stack>
+            <Plugs />
         </section>
     );
 }
