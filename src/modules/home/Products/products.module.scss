@@ -3,6 +3,11 @@
     gap: 6vw;
     grid-template-columns: repeat(3, 1fr);
     padding: 0 13vw 50vw;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+
     //height: 100vw;
     transform: translateY(-10vw);
 
@@ -31,6 +36,7 @@
         }
 
         .product_title {
+            text-transform: capitalize;
             font-size: var(--font-s-p1);
         }
     }
