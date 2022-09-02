@@ -32,43 +32,76 @@ function Clients() {
                     name={`1102 Design Space`}
                     text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
                 />
-
                 <Client
                     imageSrc={svg}
                     name={`1102 Design Space`}
                     text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
                 />
-
                 <Client
                     imageSrc={svg}
                     name={`1102 Design Space`}
                     text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
                 />
-
                 <Client
                     imageSrc={svg}
                     name={`1102 Design Space`}
                     text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
                 />
-
                 <Client
                     imageSrc={svg}
                     name={`1102 Design Space`}
                     text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
                 />
-
                 <Client
                     imageSrc={svg}
                     name={`1102 Design Space`}
                     text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
                 />
-
                 <Client
                     imageSrc={svg}
                     name={`1102 Design Space`}
                     text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
                 />
-
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />{' '}
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />{' '}
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />{' '}
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />{' '}
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />{' '}
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />{' '}
+                <Client
+                    imageSrc={svg}
+                    name={`1102 Design Space`}
+                    text={`Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations.`}
+                />{' '}
                 <Client
                     imageSrc={svg}
                     name={`1102 Design Space`}
