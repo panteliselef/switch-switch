@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    height: 100vh;
+    padding: 1rem 3vw;
+
+    & > p {
+        font-size: 4vw;
+        width: 25vw;
+    }
+
+    .red_container {
+        .red_dot {
+            position: relative;
+            width: 20vw;
+            font-size: 2vw;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            background-color: #e1493e;
+            color: black;
+        }
+
+        .line {
+            position: absolute;
+            top: 50%;
+            width: 45vw;
+            height: 1px;
+            background-color: #979797;
+        }
+    }
+}
