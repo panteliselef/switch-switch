@@ -6,12 +6,14 @@ import Products from '@modules/home/Products';
 import SingleSwitch from '@modules/home/SingleSwitch';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
+import Red from '@modules/home/Red';
 
 const Home: NextPage = () => {
     return (
         <>
             <Wonders />
             <Features />
+            <Red />
             <Products />
             <section>
                 <Stack direction={'row'} justifyContent={'center'}>
