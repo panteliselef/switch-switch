@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useCallback, useRef } from 'react';
+import React, { MutableRefObject, useCallback, useEffect, useRef } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 
 import styles from './appMenu.module.scss';
@@ -23,13 +23,27 @@ const openMenu = (a: MutableRefObject<boolean>) => {
             attr: { d: 'M 0 100 V 100 Q 50 100 100 100 V 100 z' },
         })
         .to(
+            document.querySelectorAll(`.${styles.icon_burger}`),
+            {
+                alpha: 0,
+            },
+            '<',
+        )
+        .to(
+            document.querySelectorAll(`.${styles.icon_close}`),
+            {
+                alpha: 1,
+            },
+            '<',
+        )
+        .to(
             overlayPath,
             {
                 duration: 0.1,
                 ease: 'power4.in',
                 attr: { d: 'M 0 100 V 50 Q 50 0 100 50 V 100 z' },
             },
-            0,
+            '<',
         )
         .to(overlayPath, {
             duration: 0.8,
@@ -88,13 +102,27 @@ const closeMenu = (a: MutableRefObject<boolean>) => {
             attr: { d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z' },
         })
         .to(
+            document.querySelectorAll(`.${styles.icon_burger}`),
+            {
+                alpha: 1,
+            },
+            '<',
+        )
+        .to(
+            document.querySelectorAll(`.${styles.icon_close}`),
+            {
+                alpha: 0,
+            },
+            '<',
+        )
+        .to(
             overlayPath,
             {
                 duration: 0.8,
                 ease: 'power4.in',
                 attr: { d: 'M 0 0 V 50 Q 50 100 100 50 V 0 z' },
             },
-            0,
+            '<',
         )
         .to(overlayPath, {
             duration: 0.3,
@@ -136,6 +164,16 @@ const closeMenu = (a: MutableRefObject<boolean>) => {
 };
 
 const AppMenu: React.FC = () => {
+    // const timelime = useMemo(() => {
+    //     const tl = gsap
+    // })
+
+    useEffect(() => {
+        gsap.set(document.querySelectorAll(`.${styles.icon_close}`), {
+            alpha: 0,
+        });
+    });
+
     const isOpen = useRef(false);
 
     const isAnimating = useRef(false);
@@ -155,7 +193,65 @@ const AppMenu: React.FC = () => {
     return (
         <>
             <button className={styles.button_close} onClick={click}>
-                toggle
+                <div
+                    style={{
+                        width: '1.25vw',
+                        position: 'relative',
+                        height: '1.25vw',
+                    }}
+                >
+                    <svg
+                        viewBox="0 0 15 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={styles.icon_close}
+                    >
+                        <line
+                            x1="13.788"
+                            y1="1.28816"
+                            x2="1.06011"
+                            y2="14.0161"
+                            strokeWidth="1.2"
+                            // style="opacity: 0; stroke-dashoffset: 0.002; stroke-dasharray: 0px, 999999px;"
+                        ></line>
+                        <line
+                            x1="1.06049"
+                            y1="1.43963"
+                            x2="13.7884"
+                            y2="14.1675"
+                            strokeWidth="1.2"
+                            // style="opacity: 0; stroke-dashoffset: 0.002; stroke-dasharray: 0px, 999999px;"
+                        ></line>
+                    </svg>
+                    <svg
+                        viewBox="0 0 18 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={styles.icon_burger}
+                    >
+                        <line
+                            x1="18"
+                            y1="0.6"
+                            y2="0.6"
+                            strokeWidth="1.2"
+                            // style="opacity: 1; stroke-dashoffset: 0; stroke-dasharray: none;"
+                        ></line>
+                        <line
+                            x1="18"
+                            y1="5.7167"
+                            y2="5.7167"
+                            strokeWidth="1.2"
+                            // style="opacity: 1; stroke-dashoffset: 0; stroke-dasharray: none;"
+                        ></line>
+                        <line
+                            x1="18"
+                            y1="10.8334"
+                            y2="10.8334"
+                            strokeWidth="1.2"
+                            // style="opacity: 1; stroke-dashoffset: 0; stroke-dasharray: none;"
+                        ></line>
+                    </svg>
+                </div>
             </button>
             <div id={'nice'} className={classNames([styles.menu_wrap])}>
                 <div className={styles.tiles}>

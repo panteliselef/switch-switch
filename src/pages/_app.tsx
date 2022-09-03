@@ -8,11 +8,13 @@ import AppMenu from '@components/AppMenu';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <LocomotiveLayout>
+        <>
             <AppMenu />
-            <Component {...pageProps} />
-            <Footer />
-        </LocomotiveLayout>
+            <LocomotiveLayout>
+                <Component {...pageProps} />
+                <Footer />
+            </LocomotiveLayout>
+        </>
     );
 }
 

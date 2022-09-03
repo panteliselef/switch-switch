@@ -24,8 +24,31 @@ function Clients() {
             id={'before-footer'}
             style={{
                 background: 'var(--text-color)',
+                position: 'relative',
             }}
         >
+            <Stack
+                direction={'row'}
+                style={{
+                    position: 'absolute',
+                    width: '100%',
+                    left: 0,
+                    top: 0,
+                }}
+            >
+                <div className={styles.infinite_scrolling_text}>
+                    <div className={styles.infinite_scrolling_text__title}>
+                        <div>
+                            {['Meet the legends', 'Meet the legends'].map((t, index) => (
+                                <p key={index} className={'heading-2'}>
+                                    {t}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </Stack>
+
             <div className={styles.grid}>
                 <Client
                     imageSrc={svg}
