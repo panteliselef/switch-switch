@@ -28,7 +28,7 @@ export default function ScenePlugs(props) {
         <group ref={group} {...props} dispose={null}>
             <group>
                 <group name="camera1" position={[0, 0.01, -2.37]} rotation={[-0.01, 0, 0]} scale={6.86}>
-                    <PerspectiveCamera name="camera1_2" makeDefault={true} far={10000} fov={37.85} />
+                    <PerspectiveCamera name="camera1_2" makeDefault={true} far={10000} zoom={2} fov={37.85} />
                 </group>
                 <PerspectiveCamera
                     name="default_camera"
