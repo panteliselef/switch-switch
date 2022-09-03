@@ -20,7 +20,7 @@ function Red() {
                 .to(
                     `#look`,
                     {
-                        ease: 'power2.in',
+                        ease: 'linear',
                         y: '30vh',
                     },
                     'timeline',
@@ -28,7 +28,7 @@ function Red() {
                 .to(
                     `#for_you`,
                     {
-                        ease: 'power2.in',
+                        ease: 'linear',
                         y: '-30vh',
                     },
                     '<',

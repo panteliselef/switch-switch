@@ -7,12 +7,19 @@ import SingleSwitch from '@modules/home/SingleSwitch';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
 import Red from '@modules/home/Red';
+import Reel from '@modules/home/Reel';
 
 const Home: NextPage = () => {
     return (
         <>
             <Wonders />
             <Features />
+            <Reel />
+            <div
+                style={{
+                    height: '10vw',
+                }}
+            ></div>
             <Red />
             <Products />
             <section>
