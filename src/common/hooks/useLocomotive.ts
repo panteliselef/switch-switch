@@ -2,12 +2,19 @@ import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useCallback, useEffect, useRef } from 'react';
 import { LocomotiveScrollInterface } from '../../../types';
+import useWindowDimensions from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
+import { useDebounce } from 'usehooks-ts';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
 
 export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add') {
+    const { width } = useWindowDimensions();
+
+    const debouncedWidth = useDebounce(width, 100);
+
     const locoScroll = useRef<LocomotiveScrollInterface>();
 
     const updateLoco = useCallback(() => {
@@ -74,10 +81,10 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
             updateLoco();
         }
 
-        // if (window.innerWidth > 640) {
-        dynamicImportModule().then();
-        // }
-    }, [canStart, elementAsScroller, updateLoco]);
+        if (debouncedWidth > breakpoints.laptop) {
+            dynamicImportModule().then();
+        }
+    }, [canStart, elementAsScroller, updateLoco, debouncedWidth]);
 
     useEffect(() => {
         return () => {

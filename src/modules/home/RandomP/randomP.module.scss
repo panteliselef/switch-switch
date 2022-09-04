@@ -1,0 +1,10 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.lel {
+    width: 100%;
+    padding: 2rem 4rem;
+    @include brk.tablet {
+        width: 50vw;
+        padding: 0;
+    }
+}

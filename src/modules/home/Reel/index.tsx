@@ -2,14 +2,17 @@ import Stack from '@layouts/Stack';
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 
 function Reel() {
+    const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: `#con`,
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     start: 'top top',
                     end: '+=400vh',
                     pin: true,
@@ -50,7 +53,7 @@ function Reel() {
                     '<',
                 );
         }, 1000);
-    }, []);
+    }, [w]);
 
     return (
         <section

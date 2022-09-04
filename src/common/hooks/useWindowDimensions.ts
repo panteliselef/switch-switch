@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useDebounce } from 'usehooks-ts';
 
 export const isBrowser = typeof window !== 'undefined';
 
@@ -13,6 +14,12 @@ function getWindowDimensions() {
         width,
         height,
     };
+}
+
+export function useDebouncedWidth() {
+    const { width } = useWindowDimensions();
+
+    return useDebounce(width, 100);
 }
 
 export default function useWindowDimensions(): { width: number; height: number } {

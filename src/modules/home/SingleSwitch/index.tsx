@@ -17,7 +17,6 @@ const SingleSwitch: React.FC = () => {
             ref={ref}
             style={{
                 height: '100vh',
-                // transform: 'translateY(-38vh)',
                 position: 'relative',
             }}
         >

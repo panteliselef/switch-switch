@@ -193,25 +193,11 @@ const AppMenu: React.FC = () => {
 
     return (
         <>
-            <div
-                style={{
-                    position: 'absolute',
-                    margin: '2vw',
-                    width: '6vw',
-                    top: 0,
-                    left: 0,
-                }}
-            >
+            <div className={styles.logo_cont}>
                 <SwitchLogo />
             </div>
             <button className={styles.button_close} onClick={click}>
-                <div
-                    style={{
-                        width: '1.25vw',
-                        position: 'relative',
-                        height: '1.25vw',
-                    }}
-                >
+                <div className={styles.icon_cont}>
                     <svg
                         viewBox="0 0 15 15"
                         fill="none"

@@ -7,6 +7,8 @@ import classNames from 'classnames';
 import styles from '@modules/home/Wonders/wonders.module.scss';
 import { useInView } from 'react-intersection-observer';
 
+import plugStyles from './plugs.module.scss';
+
 const Plugs: React.FC = () => {
     const { ref, inView } = useInView({
         /* Optional options */
@@ -15,14 +17,7 @@ const Plugs: React.FC = () => {
     });
 
     return (
-        <section
-            ref={ref}
-            style={{
-                height: '100vh',
-                transform: 'translateY(-38vh)',
-                position: 'relative',
-            }}
-        >
+        <section ref={ref} className={plugStyles.glb_container}>
             <Stack
                 direction={'row'}
                 style={{
@@ -33,10 +28,7 @@ const Plugs: React.FC = () => {
                 <p
                     data-scroll={''}
                     data-scroll-speed={'1'}
-                    style={{
-                        padding: '4vw',
-                    }}
-                    className={classNames('p-text-2', styles.max_width)}
+                    className={classNames('p-text-2', styles.max_width, plugStyles.desc)}
                 >
                     The Switch Switch aesthetic aims for harmony between space and mind with a personal touch.
                 </p>

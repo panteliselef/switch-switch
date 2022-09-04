@@ -1,3 +1,5 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .overlay {
     position: fixed;
     z-index: 1000;
@@ -138,10 +140,26 @@
     stroke: var(--color-button-close-hover);
 }
 
+.icon_cont {
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+
+    @include brk.tablet {
+        width: 1.25vw;
+        height: 1.25vw;
+    }
+}
+
 .icon_burger {
     position: absolute;
-    width: 1.25vw;
-    height: 0.83333vw;
+    width: 2rem;
+    height: 3.5rem;
+
+    @include brk.tablet {
+        width: 1.25vw;
+        height: 0.83333vw;
+    }
 
     line {
         stroke: white;
@@ -150,10 +168,29 @@
 
 .icon_close {
     position: absolute;
-    width: 1.04167vw;
-    height: 1.04167vw;
 
     line {
         stroke: white;
+    }
+
+    width: 2rem;
+    height: 3.5rem;
+
+    @include brk.tablet {
+        width: 1.04167vw;
+        height: 1.04167vw;
+    }
+}
+
+.logo_cont {
+    position: absolute;
+    margin: 2rem 1rem;
+    width: 4rem;
+    top: 0;
+    left: 0;
+
+    @include brk.tablet {
+        margin: 2vw;
+        width: 6vw;
     }
 }

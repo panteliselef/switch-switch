@@ -1,9 +1,23 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .wonders_text {
-  color: rgba(55, 55, 55, 1);
-  font-size: 18vw;
-  line-height: 1;
+    color: var(--text-color);
+    line-height: 1.1;
+    font-size: 4rem;
+    text-align: left;
+    padding: 1rem;
+    @include brk.tablet {
+        line-height: 1;
+        color: rgba(55, 55, 55, 1);
+        text-align: center;
+        font-size: 18vw;
+    }
 }
 
 .max_width {
-  max-width: 40vw;
+    max-width: 20rem;
+
+    @include brk.tablet {
+        max-width: 40vw;
+    }
 }
