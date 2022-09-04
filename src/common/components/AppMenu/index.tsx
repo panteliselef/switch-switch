@@ -23,27 +23,27 @@ const openMenu = (a: MutableRefObject<boolean>) => {
             attr: { d: 'M 0 100 V 100 Q 50 100 100 100 V 100 z' },
         })
         .to(
+            overlayPath,
+            {
+                duration: 0.8,
+                ease: 'power4.in',
+                attr: { d: 'M 0 100 V 50 Q 50 0 100 50 V 100 z' },
+            },
+            0,
+        )
+        .to(
             document.querySelectorAll(`.${styles.icon_burger}`),
             {
                 alpha: 0,
             },
-            '<',
+            0,
         )
         .to(
             document.querySelectorAll(`.${styles.icon_close}`),
             {
                 alpha: 1,
             },
-            '<',
-        )
-        .to(
-            overlayPath,
-            {
-                duration: 0.1,
-                ease: 'power4.in',
-                attr: { d: 'M 0 100 V 50 Q 50 0 100 50 V 100 z' },
-            },
-            '<',
+            0,
         )
         .to(overlayPath, {
             duration: 0.8,

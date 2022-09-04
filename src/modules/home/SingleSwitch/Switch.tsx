@@ -26,8 +26,8 @@ export default function Switch(props) {
         <group ref={group} {...props} dispose={null}>
             <group>
                 <group name="group1" position={[-0.01, -0.53, 3.23]}>
-                    <group name="camera1_1" position={[0, 0.01, -2.37]} rotation={[-0.01, 0, 0]} scale={6.86}>
-                        <PerspectiveCamera name="camera1_2" makeDefault={true} far={10000} fov={37.85} zoom={1} />
+                    <group name="camera1_1" position={[0.125, 0.01, -2.37]} rotation={[-0.01, 0, 0]} scale={6.86}>
+                        <PerspectiveCamera name="camera1_2" makeDefault={true} far={10000} fov={37.85} zoom={4} />
                     </group>
                     <mesh
                         name="pasted__pUT_ULT_003_UV1_P6"
