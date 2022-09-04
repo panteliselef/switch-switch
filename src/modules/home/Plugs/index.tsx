@@ -5,10 +5,18 @@ import ScenePlugs from '@modules/home/Plugs/ScenePlugs';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
 import styles from '@modules/home/Wonders/wonders.module.scss';
+import { useInView } from 'react-intersection-observer';
 
 const Plugs: React.FC = () => {
+    const { ref, inView } = useInView({
+        /* Optional options */
+        rootMargin: '-25% 0px 0px 0px',
+        threshold: 0,
+    });
+
     return (
         <section
+            ref={ref}
             style={{
                 height: '100vh',
                 transform: 'translateY(-38vh)',
@@ -37,7 +45,7 @@ const Plugs: React.FC = () => {
                 {/* <OrbitControls /> */}
                 {/* <Test2 /> */}
                 {/* <Anim /> */}
-                <ScenePlugs />
+                <ScenePlugs shouldPlay={inView} />
                 {/* <Model scale={20} position={[-0.5, -0.6, 0]} /> */}
 
                 {/* <Porsche position={[-0.5, -0.18, 0]} rotation={[0, Math.PI / 5, 0]} /> */}
