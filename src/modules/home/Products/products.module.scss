@@ -1,8 +1,16 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .product_collection {
     display: grid;
-    gap: 6vw;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 13vw 50vw;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem 15rem;
+
+    @include brk.tablet {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6vw;
+        padding: 0 13vw 50vw;
+    }
 
     &:last-of-type {
         padding-bottom: 0;
@@ -12,6 +20,7 @@
     transform: translateY(-10vw);
 
     .product {
+        flex: 0 0 auto;
         gap: 0.8vw;
 
         &:nth-of-type(2n) {
@@ -36,6 +45,7 @@
         }
 
         .product_title {
+            word-break: break-word;
             text-transform: capitalize;
             font-size: var(--font-s-p1);
         }

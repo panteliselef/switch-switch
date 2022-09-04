@@ -9,17 +9,7 @@ const Feature: React.FC<{ speed?: number; number: string; title: string; text: s
     text,
 }) => {
     return (
-        <div
-            data-scroll={''}
-            data-scroll-speed={speed || '1'}
-            className={styles.feature}
-            style={{
-                display: 'grid',
-                gridTemplateColumns: '2vw auto',
-                gap: '2em',
-                maxWidth: '25vw',
-            }}
-        >
+        <div data-scroll={''} data-scroll-speed={speed || '1'} className={styles.feature}>
             <p className={styles.number}>{number}</p>
             <p className={styles.title}>{title}</p>
             <p className={styles.text}>{text}</p>

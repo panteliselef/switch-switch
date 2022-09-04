@@ -3,14 +3,17 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import styles from './red.module.scss';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 
 function Red() {
+    const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: `#ele`,
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     start: 'top top',
                     end: '+=400vh',
                     pin: true,
@@ -34,7 +37,7 @@ function Red() {
                     '<',
                 );
         }, 1000);
-    }, []);
+    }, [w]);
     return (
         <section
             style={{
