@@ -3,6 +3,7 @@ import { gsap } from 'gsap/dist/gsap';
 
 import styles from './appMenu.module.scss';
 import classNames from 'classnames';
+import SwitchLogo from '@components/AppMenu/SwitchLogo';
 
 const overlayPath = '.overlay__path';
 
@@ -192,6 +193,17 @@ const AppMenu: React.FC = () => {
 
     return (
         <>
+            <div
+                style={{
+                    position: 'absolute',
+                    margin: '2vw',
+                    width: '6vw',
+                    top: 0,
+                    left: 0,
+                }}
+            >
+                <SwitchLogo />
+            </div>
             <button className={styles.button_close} onClick={click}>
                 <div
                     style={{
