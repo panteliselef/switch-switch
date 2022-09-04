@@ -2,8 +2,6 @@ import '@styles/index.scss';
 import '@styles/locomotive.scss';
 import '@styles/global.css';
 import type { AppProps } from 'next/app';
-import LocomotiveLayout from '@layouts/LocomotiveLayout';
-import Footer from '@components/Footer';
 import AppMenu from '@components/AppMenu';
 import Loader from '@modules/loader';
 
@@ -12,10 +10,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <Loader />
             <AppMenu />
-            <LocomotiveLayout>
-                <Component {...pageProps} />
-                <Footer />
-            </LocomotiveLayout>
+            {/*<LocomotiveLayout>*/}
+            <Component {...pageProps} />
+            {/*<Footer />*/}
+            {/*</LocomotiveLayout>*/}
         </>
     );
 }

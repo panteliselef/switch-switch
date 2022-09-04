@@ -1,11 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 import useLocoScroll from '@hooks/useLocomotive';
-
 export const LOCOMOTIVE_CONTAINER_CLASS = 'loco_container';
 
 const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
-    const containerRef = useRef(null);
     useLocoScroll(true, `.${LOCOMOTIVE_CONTAINER_CLASS}`);
 
     useEffect(() => {
@@ -34,7 +32,7 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
     }, []);
 
     return (
-        <div className={LOCOMOTIVE_CONTAINER_CLASS} data-scroll-container="" ref={containerRef}>
+        <div className={LOCOMOTIVE_CONTAINER_CLASS} data-scroll-container="">
             {props.children}
         </div>
     );

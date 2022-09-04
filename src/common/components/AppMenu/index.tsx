@@ -4,6 +4,7 @@ import { gsap } from 'gsap/dist/gsap';
 import styles from './appMenu.module.scss';
 import classNames from 'classnames';
 import SwitchLogo from '@components/AppMenu/SwitchLogo';
+import Link from 'next/link';
 
 const overlayPath = '.overlay__path';
 
@@ -14,7 +15,7 @@ const openMenu = (a: MutableRefObject<boolean>) => {
 
     gsap.timeline({
         onStart() {
-            window.locomotive.stop();
+            if (window.locomotive) window.locomotive.stop();
         },
         onComplete() {
             a.current = false;
@@ -95,7 +96,7 @@ const closeMenu = (a: MutableRefObject<boolean>) => {
 
     gsap.timeline({
         onComplete() {
-            window.locomotive.start();
+            if (window.locomotive) window.locomotive.start();
             a.current = false;
         },
     })
@@ -392,30 +393,38 @@ const AppMenu: React.FC = () => {
                     </div>
                 </div>
                 <nav className={styles.menu}>
-                    <a className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>home</span>
-                    </a>
+                    <Link href={'/'}>
+                        <a className={styles.menu__item} onClick={click}>
+                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_text}>home</span>
+                        </a>
+                    </Link>
 
-                    <a className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>story</span>
-                    </a>
+                    <Link href={'/story'}>
+                        <a className={styles.menu__item} onClick={click}>
+                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_text}>story</span>
+                        </a>
+                    </Link>
 
-                    <a className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>history</span>
-                    </a>
+                    <Link href={'/history'}>
+                        <a className={styles.menu__item} onClick={click}>
+                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_text}>history</span>
+                        </a>
+                    </Link>
 
                     <a className={styles.menu__item}>
                         <span className={styles.menu__item_tiny}>always</span>
                         <span className={styles.menu__item_text}>products</span>
                     </a>
 
-                    <a className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>always</span>
-                        <span className={styles.menu__item_text}>contact</span>
-                    </a>
+                    <Link href={'/contact'}>
+                        <a className={styles.menu__item} onClick={click}>
+                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_text}>contact</span>
+                        </a>
+                    </Link>
 
                     <a className={styles.menu__item}>
                         <span className={styles.menu__item_tiny}>always</span>

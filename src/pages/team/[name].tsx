@@ -1,5 +1,7 @@
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
 import TeamMember from '@modules/team';
+import LocomotiveLayout from '@layouts/LocomotiveLayout';
+import Footer from '@components/Footer';
 
 export type TeamMemberType = {
     urlPath: string;
@@ -52,8 +54,8 @@ export async function getStaticPaths() {
     };
 }
 
-// `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context: GetStaticPropsContext) {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const teamMember = team.find((t) => t.urlPath === context.params?.name)!;
 
     return {
@@ -64,9 +66,10 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 
 const TeamPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ teamMember }) => {
     return (
-        <>
+        <LocomotiveLayout>
             <TeamMember {...teamMember} />
-        </>
+            <Footer />
+        </LocomotiveLayout>
     );
 };
 

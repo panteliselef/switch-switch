@@ -1,10 +1,15 @@
 import { NextPage } from 'next';
 import Contact from '@modules/contact';
+import Footer from '@components/Footer';
+import LocomotiveLayout from '@layouts/LocomotiveLayout';
 
 const ContactPage: NextPage = () => {
     return (
         <>
-            <Contact />
+            <LocomotiveLayout>
+                <Contact />
+                <Footer />
+            </LocomotiveLayout>
         </>
     );
 };
