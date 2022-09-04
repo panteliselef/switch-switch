@@ -1,0 +1,16 @@
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    height: 100%;
+    gap: 2vw;
+    padding: 4vw;
+    z-index: 2;
+}
+
+.image_cont {
+    position: relative;
+    width: 30vw;
+    aspect-ratio: 11/16;
+    flex: 0 0 auto;
+}
