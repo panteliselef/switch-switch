@@ -21,18 +21,20 @@ body {
     overflow-y: hidden !important;
 }
 
-[data-scroll].is-inview {
-    opacity: 1;
-}
+.has-scroll-init {
+    [data-scroll].is-inview {
+        opacity: 1;
+    }
 
-[data-scroll] {
-    opacity: 1;
-    -webkit-transition: opacity 0.5s linear;
-    -o-transition: opacity 0.5s linear;
-    transition: opacity 0.5s linear;
+    [data-scroll] {
+        opacity: 1;
+        -webkit-transition: opacity 0.5s linear;
+        -o-transition: opacity 0.5s linear;
+        transition: opacity 0.5s linear;
 
-    @include brk.tablet {
-        opacity: 0;
+        @include brk.tablet {
+            opacity: 0;
+        }
     }
 }
 

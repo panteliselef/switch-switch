@@ -13,9 +13,7 @@ function Wonders() {
                     <p className={classNames('p-text-1', 'text-center', styles.max_width)}>Home</p>
                 </Stack>
 
-                <p className={classNames(styles.wonders_text, 'text-center')}>
-                    Wonders of light began with one single touch
-                </p>
+                <p className={classNames(styles.wonders_text)}>Wonders of light began with one single touch</p>
 
                 <p
                     data-scroll={''}

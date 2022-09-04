@@ -1,0 +1,19 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.glb_container {
+    height: 100vh;
+    position: relative;
+    transform: translateY(0);
+    @include brk.tablet {
+        transform: translateY(-38vh);
+    }
+
+    .desc {
+        padding: 1rem 1rem 4rem;
+        transform: translateY(-50%);
+        @include brk.tablet {
+            transform: translateY(0);
+            padding: 4vw;
+        }
+    }
+}

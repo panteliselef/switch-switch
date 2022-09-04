@@ -3,9 +3,14 @@
 
 .grid {
     display: grid;
-    gap: 3vw;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 8vw 5vw;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4rem 1.5rem;
+
+    @include brk.tablet {
+        gap: 3vw;
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .logo_container {
@@ -16,12 +21,20 @@
 }
 
 .client_name {
-    font-size: 1.1vw;
+    font-size: 0.9rem;
     font-weight: bold;
+
+    @include brk.tablet {
+        font-size: 1.1vw;
+    }
 }
 
 .client_desc {
-    font-size: 0.7vw;
+    font-size: 0.7rem;
+
+    @include brk.tablet {
+        font-size: 0.7vw;
+    }
 }
 
 @keyframes scrollText {
@@ -38,14 +51,15 @@
     display: flex;
     position: relative;
     width: 100%;
-    height: calc(100px + 30vw);
+    height: calc(100px);
     overflow: hidden;
     z-index: 1;
-    transform: translateY(-57%);
+    transform: translateY(-54%);
     mix-blend-mode: difference;
 
     @include brk.tablet {
         height: calc(50px + 8vw);
+        transform: translateY(-57%);
     }
 
     &__title {
