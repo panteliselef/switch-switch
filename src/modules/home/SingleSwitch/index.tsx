@@ -2,10 +2,19 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { BakeShadows, ContactShadows, Environment, Float, Lightformer } from '@react-three/drei';
 import Switch from '@modules/home/SingleSwitch/Switch';
+import { useInView } from 'react-intersection-observer';
 
 const SingleSwitch: React.FC = () => {
+    const { ref, inView } = useInView({
+        /* Optional options */
+
+        rootMargin: '-25% 0px 0px 0px',
+        threshold: 0,
+    });
+
     return (
         <section
+            ref={ref}
             style={{
                 height: '100vh',
                 // transform: 'translateY(-38vh)',
@@ -16,7 +25,7 @@ const SingleSwitch: React.FC = () => {
                 {/* <OrbitControls /> */}
                 {/* <Test2 /> */}
                 {/* <Anim /> */}
-                <Switch />
+                <Switch shouldPlay={inView} />
                 {/* <Model scale={20} position={[-0.5, -0.6, 0]} /> */}
 
                 {/* <Porsche position={[-0.5, -0.18, 0]} rotation={[0, Math.PI / 5, 0]} /> */}
