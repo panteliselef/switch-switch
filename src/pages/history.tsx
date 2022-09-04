@@ -9,10 +9,12 @@ import VisitUs from '@modules/history/VisitUs';
 import Coffee from '@modules/history/Coffee';
 import Consumers from '@modules/history/Consumers';
 import Quality from '@modules/history/Quality';
+import Footer from '@components/Footer';
+import LocomotiveLayout from '@layouts/LocomotiveLayout';
 
 const History: NextPage = () => {
     return (
-        <>
+        <LocomotiveLayout>
             <Hero />
 
             <GalleryCollection />
@@ -32,7 +34,8 @@ const History: NextPage = () => {
             <VisitUs />
 
             <Coffee />
-        </>
+            <Footer />
+        </LocomotiveLayout>
     );
 };
 

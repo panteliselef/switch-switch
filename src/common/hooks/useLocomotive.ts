@@ -81,7 +81,7 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
             updateLoco();
         }
 
-        if (debouncedWidth > breakpoints.laptop) {
+        if (debouncedWidth > breakpoints.laptop && !locoScroll.current) {
             dynamicImportModule().then();
         }
     }, [canStart, elementAsScroller, updateLoco, debouncedWidth]);

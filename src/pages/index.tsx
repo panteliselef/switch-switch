@@ -7,23 +7,28 @@ import SingleSwitch from '@modules/home/SingleSwitch';
 import Red from '@modules/home/Red';
 import Reel from '@modules/home/Reel';
 import RandomP from '@modules/home/RandomP';
+import LocomotiveLayout from '@layouts/LocomotiveLayout';
+import Footer from '@components/Footer';
 
 const Home: NextPage = () => {
     return (
         <>
-            <Wonders />
-            <Features />
-            <Reel />
-            <div
-                style={{
-                    height: '10vw',
-                }}
-            ></div>
-            <Red />
-            <Products />
-            <RandomP />
-            <SingleSwitch />
-            <Clients />
+            <LocomotiveLayout>
+                <Wonders />
+                <Features />
+                <Reel />
+                <div
+                    style={{
+                        height: '10vw',
+                    }}
+                ></div>
+                <Red />
+                <Products />
+                <RandomP />
+                <SingleSwitch />
+                <Clients />
+                <Footer />
+            </LocomotiveLayout>
         </>
     );
 };
