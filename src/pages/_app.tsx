@@ -5,10 +5,12 @@ import type { AppProps } from 'next/app';
 import LocomotiveLayout from '@layouts/LocomotiveLayout';
 import Footer from '@components/Footer';
 import AppMenu from '@components/AppMenu';
+import Loader from '@modules/loader';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
+            <Loader />
             <AppMenu />
             <LocomotiveLayout>
                 <Component {...pageProps} />
