@@ -22,7 +22,8 @@
         "react-locomotive-scroll": "^0.2.2",
         "sass": "^1.54.1",
         "sharp": "^0.30.7",
-        "three": "^0.144.0"
+        "three": "^0.144.0",
+        "usehooks-ts": "^2.6.0"
     },
     "devDependencies": {
         "@types/node": "18.6.3",
