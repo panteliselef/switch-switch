@@ -13,6 +13,9 @@
 
     --font-s-h3: 3.3rem;
     --font-lh-h3: 3.3rem;
+
+    --font-s-p: 0.75rem;
+    --font-lh-p: 1rem;
     @include brk.tablet {
         --font-s-p1: 2.777vw;
         --font-s-p2: 2vw;
@@ -22,14 +25,15 @@
 
         --font-s-h3: 8.5vw;
         --font-lh-h3: 8.5vw;
+
+        --font-s-p: 1.11111vw;
+        --font-lh-p: 2.08333vw;
     }
 
     --font-s-h0: 15.36111vw;
     --font-lh-h0: 15.69444vw;
 
     --font-lh-h2: 10vw;
-
-    --font-s-p: 1.11111vw;
 
     //--font-s-h1: 17.36111vw;
     //--font-lh-h1: 15.69444vw;

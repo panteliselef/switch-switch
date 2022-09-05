@@ -4,8 +4,13 @@ import Image from 'next/image';
 import img from '@assets/switch1.png';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
+
+import styles from './footer.module.scss';
 
 const Footer: React.FC = () => {
+    const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
             const id = '#footer';
@@ -17,53 +22,27 @@ const Footer: React.FC = () => {
                 yPercent: 0,
                 ease: 'none',
                 scrollTrigger: {
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     trigger: '#before-footer',
                     start: 'bottom bottom',
                     scrub: true,
                 },
             });
         }, 1000);
-    }, []);
+    }, [w]);
 
     return (
-        <footer
-            style={{
-                width: '100%',
-                overflow: 'hidden',
-                padding: '13.88889vw 0 3.55556vw',
-            }}
-        >
-            <Stack
-                id={'footer'}
-                direction={'column'}
-                style={{
-                    padding: '0 7vw 0',
-                }}
-            >
-                <Stack direction={'row'} justifyContent={'space-between'}>
-                    <Stack
-                        direction={'column'}
-                        gap={'1.80556vw'}
-                        style={{
-                            flex: '0 0 500px',
-                        }}
-                    >
+        <footer className={styles.footer_outer}>
+            <Stack className={styles.footer} id={'footer'} direction={'column'}>
+                <Stack direction={'row'} className={styles.row_col}>
+                    <Stack className={styles.headers_cont} direction={'column'} gap={'1.80556vw'}>
                         <h3 className={'heading-3'}>Our story</h3>
                         <p className={'p-text-2'}>
                             The story behind switch switch is one of the exploration, creativity and curiosity.{' '}
                         </p>
                     </Stack>
 
-                    <div
-                        data-scroll={''}
-                        style={{
-                            flex: '1 1 auto',
-                            maxWidth: '600px',
-                            aspectRatio: '3/2',
-                            position: 'relative',
-                        }}
-                    >
+                    <div data-scroll={''} className={styles.img_cont}>
                         <Image src={img} objectFit={'cover'} layout={'fill'} />
                     </div>
                 </Stack>
@@ -76,22 +55,25 @@ const Footer: React.FC = () => {
                     }}
                 ></div>
 
-                <Stack direction={'row'} justifyContent={'space-between'}>
+                <Stack
+                    gap={'2rem'}
+                    direction={'row'}
+                    justifyContent={'space-between'}
+                    style={{
+                        flexWrap: 'wrap',
+                    }}
+                >
                     <Stack
                         direction={'row'}
                         justifyContent={'space-between'}
                         style={{
                             maxWidth: '700px',
                             flex: '1 1 auto',
+                            fontSize: 'var(--font-s-p)',
+                            lineHeight: 'var(--font-lh-p)',
                         }}
                     >
-                        <Stack
-                            direction={'column'}
-                            style={{
-                                lineHeight: '2.08333vw',
-                                fontSize: 'var(--font-s-p)',
-                            }}
-                        >
+                        <Stack direction={'column'}>
                             {/*TODO: Use external link component*/}
                             <a>
                                 Venizelosova 29G/4 <br /> Belgrade, 11000 <br /> Dorcol
@@ -100,26 +82,14 @@ const Footer: React.FC = () => {
                             <a>hello@switchswitch.rs</a>
                         </Stack>
 
-                        <Stack
-                            direction={'column'}
-                            style={{
-                                lineHeight: '2.08333vw',
-                                fontSize: 'var(--font-s-p)',
-                            }}
-                        >
+                        <Stack direction={'column'}>
                             <a>Work</a>
                             <a>Products</a>
                             <a>Our Story</a>
                             <a>Schedule</a>
                         </Stack>
 
-                        <Stack
-                            direction={'column'}
-                            style={{
-                                lineHeight: '2.08333vw',
-                                fontSize: 'var(--font-s-p)',
-                            }}
-                        >
+                        <Stack direction={'column'}>
                             <a>Instagram</a>
                             <a>Facebook</a>
                             <a>Linkedin</a>

@@ -6,20 +6,16 @@ import Light from '@modules/story/Light';
 import Team from '@modules/story/Team/Team';
 import LocomotiveLayout from '@layouts/LocomotiveLayout';
 import Footer from '@components/Footer';
-// import { gsap } from 'gsap/dist/gsap';
-// import { useEffect, useLayoutEffect, useRef } from 'react';
-
-// const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 const Story: NextPage = () => {
     return (
         <LocomotiveLayout>
             <Hero />
-            {/*<Dreamers />*/}
-            {/*<Timeline />*/}
-            {/*<Light />*/}
-            {/*<Team />*/}
-            {/*<Footer />*/}
+            <Dreamers />
+            <Timeline />
+            <Light />
+            <Team />
+            <Footer />
         </LocomotiveLayout>
     );
 };

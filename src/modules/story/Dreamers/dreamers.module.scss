@@ -1,0 +1,19 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.image_cont {
+    position: relative;
+    width: 150px;
+
+    @include brk.tablet {
+        width: 400px;
+    }
+}
+
+.stack_cont {
+    width: 100%;
+
+    @include brk.tablet {
+        width: 30vw;
+        margin-bottom: 8vw;
+    }
+}

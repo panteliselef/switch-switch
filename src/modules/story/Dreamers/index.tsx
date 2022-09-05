@@ -5,7 +5,8 @@ import Image from 'next/image';
 
 import dreamersImg from '@assets/dreamers.png';
 import classNames from 'classnames';
-import styles from '@modules/history/Showroom/showRoom.module.scss';
+import showRoomStyles from '@modules/history/Showroom/showRoom.module.scss';
+import styles from './dreamers.module.scss';
 
 const Dreamers = () => {
     useSplitText('.dreamer-text', '.dreamer-trigger');
@@ -44,8 +45,8 @@ const Dreamers = () => {
                         Dreamers
                     </p>
                 </div>
-                <div data-scroll={''} data-scroll-speed={'1'}>
-                    <Image alt={'dreamers'} src={dreamersImg} layout={'fixed'} objectFit={'contain'} width={400} />
+                <div data-scroll={''} data-scroll-speed={'1'} className={styles.image_cont}>
+                    <Image alt={'dreamers'} src={dreamersImg} layout={'responsive'} objectFit={'cover'} />
                 </div>
             </Stack>
 
@@ -63,38 +64,33 @@ const Dreamers = () => {
             <section
                 style={{
                     width: '100%',
+                    padding: '1rem',
                     paddingTop: '5vw',
                     maxWidth: '1140px',
                     margin: 'auto',
                 }}
             >
-                <Stack
-                    direction={'column'}
-                    gap={50}
-                    style={{
-                        maxWidth: '30vw',
-                        marginBottom: '8vw',
-                    }}
-                >
-                    <p className={classNames(styles.plain, 'p-text-2')} data-scroll={''}>
-                        We decided to change the way that we see the light.
-                    </p>
-                    <p className={classNames(styles.plain, 'p-text-2')} data-scroll={''}>
-                        Light is the key part of our lives, from the moment we wake up to the moment we go to sleep.
-                    </p>
-                </Stack>
-                <Stack direction={'column'} gap={50} alignItems={'flex-end'} justifyContent={'flex-end'}>
-                    <p
-                        className={classNames(styles.plain, 'p-text-2')}
-                        style={{
-                            textAlign: 'right',
-                            maxWidth: '30vw',
-                        }}
-                        data-scroll={''}
-                        data-scroll-speed={'1'}
-                    >
-                        {`That's why we decided to redefine the way you see and feel it.`}
-                    </p>
+                <Stack direction={'column'} gap={50}>
+                    <Stack direction={'column'} gap={50} className={styles.stack_cont}>
+                        <p className={classNames(showRoomStyles.plain, 'p-text-2')} data-scroll={''}>
+                            We decided to change the way that we see the light.
+                        </p>
+                        <p className={classNames(showRoomStyles.plain, 'p-text-2')} data-scroll={''}>
+                            Light is the key part of our lives, from the moment we wake up to the moment we go to sleep.
+                        </p>
+                    </Stack>
+                    <Stack direction={'column'} gap={50} alignItems={'flex-end'} justifyContent={'flex-end'}>
+                        <p
+                            className={classNames(showRoomStyles.plain, 'p-text-2', styles.stack_cont)}
+                            data-scroll={''}
+                            data-scroll-speed={'1'}
+                            style={{
+                                textAlign: 'right',
+                            }}
+                        >
+                            {`That's why we decided to redefine the way you see and feel it.`}
+                        </p>
+                    </Stack>
                 </Stack>
             </section>
         </Stack>

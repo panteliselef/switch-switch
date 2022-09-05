@@ -3,17 +3,20 @@ import styles from './light.module.scss';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 
 const Light: React.FC = () => {
+    const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: `.${styles.door}`,
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     anticipatePin: 1,
                     toggleActions: 'restart pause resume reverse',
-                    start: 'top -30%',
+                    start: w > breakpoints.laptop ? 'top -30%' : 'top 0',
                     end: '+=400vh',
                     // pin: true,
                     scrub: true,
@@ -31,9 +34,8 @@ const Light: React.FC = () => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: `#team`,
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
-                    start: 'top 50%',
-                    // scrub: true,
+                    scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
+                    start: w > breakpoints.laptop ? 'top 50%' : 'top 50%',
                 },
             })
                 .to('#team', {
@@ -49,7 +51,7 @@ const Light: React.FC = () => {
                     '<',
                 );
         }, 1000);
-    }, []);
+    }, [w]);
     return (
         <>
             <section
@@ -156,19 +158,6 @@ const Light: React.FC = () => {
                                 enthusiasts
                             </p>
                         </Stack>
-
-                        {/*<p*/}
-                        {/*    data-scroll={''}*/}
-                        {/*    data-scroll-speed={'1'}*/}
-                        {/*    className={'heading-3'}*/}
-                        {/*    style={{*/}
-                        {/*        mixBlendMode: 'difference',*/}
-                        {/*        maxWidth: '50vw',*/}
-                        {/*        paddingBottom: '10vw',*/}
-                        {/*    }}*/}
-                        {/*>*/}
-                        {/*    This is the team of enthusiasts*/}
-                        {/*</p>*/}
                     </Stack>
                 </Stack>
             </section>

@@ -16,5 +16,9 @@
     font-style: normal;
     line-height: 1.7;
 
-    max-width: 50vw;
+    width: 100%;
+
+    @include brk.tablet {
+        max-width: 50vw;
+    }
 }
