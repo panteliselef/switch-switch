@@ -22,12 +22,7 @@ const Loader = () => {
                 [styles.loading_modal__hidden]: isReady,
             })}
         >
-            <div
-                className={styles.logo}
-                style={{
-                    width: '6vw',
-                }}
-            >
+            <div className={styles.logo}>
                 <SwitchLogo />
             </div>
         </div>

@@ -15,11 +15,11 @@ const Story: NextPage = () => {
     return (
         <LocomotiveLayout>
             <Hero />
-            <Dreamers />
-            <Timeline />
-            <Light />
-            <Team />
-            <Footer />
+            {/*<Dreamers />*/}
+            {/*<Timeline />*/}
+            {/*<Light />*/}
+            {/*<Team />*/}
+            {/*<Footer />*/}
         </LocomotiveLayout>
     );
 };

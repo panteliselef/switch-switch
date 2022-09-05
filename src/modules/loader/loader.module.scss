@@ -1,3 +1,5 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .loading_modal {
     position: fixed;
     top: 0;
@@ -26,6 +28,11 @@
         animation-name: bounce-logo;
         animation-play-state: running;
         animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+
+        width: 7rem;
+        @include brk.tablet {
+            width: 6vw;
+        }
     }
 }
 
