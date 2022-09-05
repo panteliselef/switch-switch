@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
     return (
         <footer
             style={{
-                width: '100vw',
+                width: '100%',
                 overflow: 'hidden',
                 padding: '13.88889vw 0 3.55556vw',
             }}
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                 id={'footer'}
                 direction={'column'}
                 style={{
-                    padding: '0 8.33333vw 0',
+                    padding: '0 7vw 0',
                 }}
             >
                 <Stack direction={'row'} justifyContent={'space-between'}>
