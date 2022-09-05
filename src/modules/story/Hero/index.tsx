@@ -8,6 +8,41 @@ import storyHeroBg from '@assets/story_bg.png';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import { useSplitText } from '@modules/history/hero';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
+
+const ScrollToExperience = () => {
+    const width = useDebouncedWidth();
+    useEffect(() => {
+        setTimeout(() => {
+            gsap.to('.scroll_experience_text', {
+                scrollTrigger: {
+                    trigger: '.scroll_experience_text',
+                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    scrub: 1,
+                    start: 'top 80%',
+                },
+                y: 100,
+                opacity: 0,
+            });
+        }, 1200);
+    }, []);
+
+    if (width <= breakpoints.laptop) return null;
+
+    return (
+        <Stack direction={'row'} justifyContent={'flex-end'} gap={'2vw'}>
+            <p
+                style={{
+                    paddingTop: '6vw',
+                }}
+                className={classNames('p-text-3', 'scroll_experience_text')}
+            >
+                Scroll to experience
+            </p>
+        </Stack>
+    );
+};
 
 const Hero: React.FC = () => {
     // useSplitText('.hero-text', '.hero-trigger');
@@ -23,39 +58,10 @@ const Hero: React.FC = () => {
                 ease: 'linear',
                 yPercent: 15,
             });
-
-            gsap.to('.scroll_experience_text', {
-                scrollTrigger: {
-                    trigger: '.scroll_experience_text',
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
-                    scrub: 1,
-                    start: 'top 80%',
-                },
-                y: 100,
-                opacity: 0,
-            });
         }, 1200);
     }, []);
 
-    useSplitText('.gallery-text', '.gallery-trigger');
-
-    // const onMouseEnterLink = useCallback(() => {
-    //     gsap.killTweensOf(`.${styles.slide__img_wrap}`);
-    //     gsap.to(`.${styles.slide__img_wrap}`, {
-    //         duration: 1,
-    //         ease: 'expo',
-    //         clipPath: clipPaths.hover,
-    //     });
-    // }, []);
-    //
-    // const onMouseLeaveLink = useCallback(() => {
-    //     gsap.killTweensOf(`.${styles.slide__img_wrap}`);
-    //     gsap.to(`.${styles.slide__img_wrap}`, {
-    //         duration: 1,
-    //         ease: 'expo',
-    //         clipPath: clipPaths.initial,
-    //     });
-    // }, []);
+    useSplitText('.gallery-text', `#trigger`);
 
     return (
         <section>
@@ -71,22 +77,8 @@ const Hero: React.FC = () => {
                     <Image alt={'story bg'} src={storyHeroBg} layout={'fill'} objectFit={'cover'} />
                 </div>
 
-                <Stack
-                    direction={'column'}
-                    style={{
-                        position: 'relative',
-                        margin: '0 8.33333vw',
-                    }}
-                >
-                    {/*<p className={classNames('heading-2')}>Bulding Immersful Experiences</p>*/}
-                    <Stack
-                        direction={'column'}
-                        style={{
-                            paddingTop: '14vw',
-                        }}
-                        className={'gallery-trigger'}
-                        gap={'2vw'}
-                    >
+                <Stack className={styles.stack_cont} direction={'column'}>
+                    <Stack direction={'column'} id={'trigger'} className={styles.gallery_trigger} gap={'2vw'}>
                         <h3 className={'heading-3 split-line gallery-text'}>
                             <div>Bulding</div>
                         </h3>
@@ -100,27 +92,12 @@ const Hero: React.FC = () => {
                         </h3>
                     </Stack>
 
-                    <Stack direction={'row'} justifyContent={'flex-end'} gap={'2vw'}>
-                        <p
-                            style={{
-                                paddingTop: '6vw',
-                            }}
-                            className={classNames('p-text-3', 'scroll_experience_text')}
-                        >
-                            Scroll to experience
-                        </p>
-                    </Stack>
+                    <ScrollToExperience />
 
-                    <div
-                        style={{
-                            width: '40vw',
-                            marginLeft: 'auto',
-                        }}
-                    >
+                    <div className={styles.text_cont}>
                         <Stack
                             direction={'column'}
                             style={{
-                                paddingTop: '14vw',
                                 right: 0,
                             }}
                             gap={'2vw'}

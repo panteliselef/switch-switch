@@ -11,43 +11,18 @@ import img2015 from '@assets/2015.png';
 import img2018_1 from '@assets/2018_1.png';
 import img2021_1 from '@assets/2021_1.png';
 import img2021_2 from '@assets/2021_2.png';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 
 const Timeline: React.FC = () => {
     const [activeLine, setActiveLine] = useState(0);
+    const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
-            // gsap.timeline({
-            //     scrollTrigger: {
-            //         trigger: `.${styles.timeline_container}`,
-            //         scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
-            //         anticipatePin: 1,
-            //         toggleActions: 'restart pause resume reverse',
-            //         start: 'top 0%',
-            //         end: '+=1000vh',
-            //         pin: true,
-            //         scrub: true,
-            //     },
-            // })
-            //     .fromTo(
-            //         `.${styles.timeline_year}`,
-            //         {
-            //             fontSize: '38vw',
-            //             stagger: 20,
-            //             duration: 10,
-            //         },
-            //         {
-            //             fontSize: '32vw',
-            //             stagger: 20,
-            //             duration: 10,
-            //         },
-            //         'timeline',
-            //     )
-            //     .to(`.${styles.timeline}`, { x: '-200vw', duration: 30 }, '<19');
-
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: `.${styles.timeline_container}`,
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     anticipatePin: 1,
                     toggleActions: 'restart pause resume reverse',
                     start: 'top 0%',
@@ -84,7 +59,7 @@ const Timeline: React.FC = () => {
                 'timeline',
             );
         }, 1000);
-    }, []);
+    }, [w]);
 
     return (
         <section>

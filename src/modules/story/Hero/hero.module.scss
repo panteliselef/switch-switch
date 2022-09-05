@@ -1,3 +1,5 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .story_hero_container {
     position: relative;
     //height: 175vh;
@@ -7,6 +9,36 @@
     background: #0d0e13;
     //background: var(--color-dark-grey);
     pointer-events: none;
-    height: 100vw;
+    height: auto;
     overflow: hidden;
+
+    @include brk.tablet {
+        height: 100vw;
+    }
+}
+
+.stack_cont {
+    position: relative;
+    margin: 0 1rem;
+    @include brk.tablet {
+        margin: 0 8.3333vw;
+    }
+}
+
+.text_cont {
+    width: 100%;
+    padding: 2rem 0;
+    @include brk.tablet {
+        width: 40vw;
+        padding-top: 14vw;
+        margin-left: auto;
+    }
+}
+
+.gallery_trigger {
+    padding-top: 10rem;
+
+    @include brk.tablet {
+        padding-top: 14vw;
+    }
 }

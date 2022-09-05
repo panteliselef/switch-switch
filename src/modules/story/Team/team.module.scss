@@ -1,10 +1,12 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .alex_pic {
     background-image: url('https://images.unsplash.com/photo-1661553141518-c89b061640e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=659&q=80');
 }
 
 .heading {
     color: rgba(0, 0, 0, 0.3);
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     //margin: -5vw 0 0;
@@ -19,6 +21,10 @@
     text-align: center;
     will-change: transform, opacity;
     transform-origin: 50% 40%;
+
+    @include brk.tablet {
+        position: fixed;
+    }
 }
 
 .name {
@@ -26,7 +32,7 @@
 }
 
 .job {
-    font-size: .9vw;
+    font-size: 0.9vw;
 }
 
 .heading__up {
@@ -44,17 +50,20 @@
 .columns {
     width: 100%;
     position: relative;
-    padding: 0 3rem;
     display: flex;
     justify-content: center;
-
     color: var(--bg-color);
 
     --ratio: 0.75;
-    --grid-item-height: 26vw;
+    --grid-item-height: 36vw;
     --grid-item-width: calc(var(--grid-item-height) * var(--ratio));
     --thumb-height: 5vw;
     --thumb-width: calc(var(--thumb-height) * var(--ratio));
+
+    @include brk.tablet {
+        padding: 0 3rem;
+        --grid-item-height: 26vw;
+    }
 }
 
 .column_wrap {
@@ -94,7 +103,11 @@
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
-    margin: 8vh 1vw 0;
+    margin: 8vh 2vw 0;
+
+    @include brk.tablet {
+        margin: 8vh 1vw 0;
+    }
 }
 
 .column__item_img {

@@ -1,0 +1,51 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.footer_outer {
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    padding: 13.88889vw 0 3.55556vw;
+
+    @include brk.tablet {
+        padding: 13.88889vw 0 3.55556vw;
+        height: auto;
+    }
+
+    .footer {
+        height: 100%;
+        padding: 1rem;
+        margin-top: 10vh;
+        //justify-content: space-between;
+        @include brk.tablet {
+            padding: 0 7vw 0;
+        }
+    }
+}
+
+.row_col {
+    flex-direction: column;
+    @include brk.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.headers_cont {
+    flex: 1 1 auto;
+
+    @include brk.tablet {
+        flex: 0 0 500px;
+    }
+}
+
+.img_cont {
+    flex: 1 1 100%;
+    aspect-ratio: 3/2;
+    position: relative;
+
+    @include brk.tablet {
+        flex: 1 1 600px;
+        aspect-ratio: 3/2;
+        max-width: 600px;
+    }
+}

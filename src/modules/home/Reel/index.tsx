@@ -107,7 +107,7 @@ function Reel() {
                 id={'video'}
                 style={{
                     height: 'calc(var(--vh,1vh)*100)',
-                    width: '100vw',
+                    width: '100%',
                     opacity: '0.3',
                     objectFit: 'cover',
                 }}
