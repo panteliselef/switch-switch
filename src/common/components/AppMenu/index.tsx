@@ -198,6 +198,14 @@ const AppMenu: React.FC = () => {
                 <SwitchLogo />
             </div>
             <button className={styles.button_close} onClick={click}>
+                <span
+                    style={{
+                        lineHeight: '1',
+                        color: 'white',
+                    }}
+                >
+                    menu
+                </span>
                 <div className={styles.icon_cont}>
                     <svg
                         viewBox="0 0 15 15"
