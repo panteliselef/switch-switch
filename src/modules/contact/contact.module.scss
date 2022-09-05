@@ -1,16 +1,36 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
     height: 100%;
+    grid-template-columns: 1fr;
     gap: 2vw;
     padding: 4vw;
     z-index: 2;
+
+    @include brk.tablet {
+        grid-template-columns: 1.5fr 1fr 1.5fr;
+    }
 }
 
 .image_cont {
     position: relative;
-    width: 30vw;
-    aspect-ratio: 11/16;
+    width: 100%;
+    aspect-ratio: 16/9;
     flex: 0 0 auto;
+    margin-top: 7rem;
+
+    @include brk.tablet {
+        aspect-ratio: 11/16;
+        width: 30vw;
+        margin-top: 0;
+    }
+}
+
+.cont {
+    width: 100%;
+    @include brk.tablet {
+        width: 20vw;
+    }
 }

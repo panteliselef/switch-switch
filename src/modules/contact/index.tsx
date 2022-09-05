@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import meeting from '@assets/2018_1.png';
 import ExternalLink from '../../common/helpers/ExternalLink';
+import classNames from 'classnames';
 
 const Contact: React.FC = () => {
     return (
@@ -55,13 +56,7 @@ const Contact: React.FC = () => {
             </Stack>
             <div className={styles.grid}>
                 <Stack direction={'column'} justifyContent={'flex-end'} gap={'10vw'}>
-                    <p
-                        className={'p-text-3'}
-                        style={{
-                            width: '20vw',
-                            marginLeft: '1vw',
-                        }}
-                    >
+                    <p className={classNames('p-text-3', styles.cont)}>
                         Ready for lights-off? Ping, tweet, message or poke — and we will get back as soon as possible.
                     </p>
 
@@ -125,13 +120,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <Stack direction={'column'} justifyContent={'flex-end'} gap={'4vw'} alignItems={'center'}>
-                    <p
-                        className={'p-text-3'}
-                        style={{
-                            width: '20vw',
-                            marginLeft: '1vw',
-                        }}
-                    >
+                    <p className={classNames('p-text-3', styles.cont)}>
                         Venizelosova 29G/4 <br />
                         11000 Belgrade, Dorcol <br />
                         Serbia
@@ -151,7 +140,7 @@ const Contact: React.FC = () => {
                                 textDecoration: 'underline',
                             }}
                         >
-                            <Stack direction={'row'} alignItems={'center'} gap={'0.5vw'}>
+                            <Stack direction={'row'} alignItems={'center'} gap={'0.9vw'}>
                                 <svg
                                     width="26"
                                     height="26"
