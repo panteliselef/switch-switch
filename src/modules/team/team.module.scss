@@ -5,28 +5,60 @@
 .img_cont {
     position: relative;
     margin-top: 2vw;
-    width: 40vw;
+    width: 90%;
     flex: 0 0 auto;
-    height: calc(100% - 2vw);
+    aspect-ratio: 16/9;
+
+    @include brk.tablet {
+        width: 40vw;
+        height: calc(100% - 2vw);
+    }
 }
 
 .back_cont {
     position: relative;
     width: 30vw;
-    height: 100%;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
+    font-size: 1.4rem;
+    @include brk.tablet {
+        font-size: 1.5vw;
+        flex: 1 1 auto;
+        height: 100%;
+    }
+}
+
+.front {
+    flex-direction: column;
+    @include brk.tablet {
+        flex-direction: row;
+    }
+}
+
+.bio {
+    width: 90%;
+    padding-top: 5vw;
+    flex: 0 0 auto;
+
+    @include brk.tablet {
+        width: 25vw;
+    }
 }
 
 .title_cont {
     @include t.heading-3;
     position: absolute;
     width: 100%;
-    padding: 2vw 1rem;
     z-index: 1;
+    padding: 6rem 2rem;
 
     p {
         line-height: 1;
-        font-size: 3.67vw;
+        font-size: 2rem;
+
+        @include brk.tablet {
+            padding: 2vw 1rem;
+            font-size: 3.67vw;
+        }
     }
 }
 
