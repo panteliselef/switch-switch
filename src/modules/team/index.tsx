@@ -6,6 +6,7 @@ import styles from './team.module.scss';
 import team from '@assets/2018_1.png';
 import Link from 'next/link';
 import type { TeamMemberType } from '../../pages/team/[name]';
+import classNames from 'classnames';
 
 const TeamMember: React.FC<TeamMemberType> = ({ bio, name, role }) => {
     return (
@@ -47,6 +48,7 @@ const TeamMember: React.FC<TeamMemberType> = ({ bio, name, role }) => {
                 <p className={'p-text-3'}>{role}</p>
             </Stack>
             <Stack
+                className={styles.front}
                 direction={'row'}
                 justifyContent={'center'}
                 gap={'3vw'}
@@ -63,7 +65,6 @@ const TeamMember: React.FC<TeamMemberType> = ({ bio, name, role }) => {
                         <a
                             style={{
                                 textDecoration: 'underline',
-                                fontSize: '1.5vw',
                             }}
                         >
                             Go Back
@@ -75,16 +76,7 @@ const TeamMember: React.FC<TeamMemberType> = ({ bio, name, role }) => {
                     <Image src={team} objectFit={'cover'} layout={'fill'} />
                 </div>
 
-                <p
-                    className={'p-text-3'}
-                    style={{
-                        width: '25vw',
-                        paddingTop: '5vw',
-                        flex: '0 0 auto',
-                    }}
-                >
-                    {bio}
-                </p>
+                <p className={classNames('p-text-3', styles.bio)}>{bio}</p>
             </Stack>
         </section>
     );
