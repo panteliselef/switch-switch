@@ -204,3 +204,11 @@ a {
 .heading-3 {
     @include t.heading-3;
 }
+
+.row_col {
+    flex-direction: column;
+    @include brk.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

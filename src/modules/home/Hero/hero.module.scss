@@ -1,0 +1,48 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.outer_cont {
+    padding: 6rem 1rem;
+    text-transform: uppercase;
+
+    @include brk.tablet {
+        padding: 9vw 2vw;
+    }
+
+    h3 {
+        font-weight: bold;
+        @include brk.tablet {
+            line-height: 0.9;
+            font-size: 11vw;
+        }
+    }
+}
+
+.row_col {
+    flex-direction: column;
+    @include brk.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.small_text {
+    display: none;
+    font-size: 0.9vw;
+    width: 20vw;
+
+    &:first-of-type {
+        padding-top: 0.3vw;
+    }
+}
+
+.image_cont {
+    position: relative;
+    flex: 1 1 100px;
+    width: 40vw;
+    align-self: center;
+    @include brk.tablet {
+        width: auto;
+        align-self: flex-end;
+        flex: 1 1 10vw;
+    }
+}
