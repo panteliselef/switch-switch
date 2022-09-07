@@ -52,7 +52,7 @@ const Timeline: React.FC = () => {
                 `.${styles.timeline_page}`,
                 {
                     ease: 'power2.in',
-                    x: '-500vw',
+                    x: w > breakpoints.laptop ? `-500vw` : '-500%',
                     duration: 5,
                     stagger: 0.05,
                 },
@@ -76,26 +76,16 @@ const Timeline: React.FC = () => {
                             />
                         ))}
                     </Stack>
-                    <div className={styles.timeline_page}>
+                    <Stack direction={'column'} className={styles.timeline_page}>
                         <p className={classNames(styles.timeline_year)}>2008</p>
                         <p className={classNames('p-text-2', styles.info)}>
                             We had a grand vision that we really want to come to life. So we started making it a
                             reality. Transforming our garage into a space where we could work and express our ideas.{' '}
                         </p>
-                    </div>
+                    </Stack>
 
-                    <div className={styles.timeline_page}>
-                        <div
-                            style={{
-                                width: '70vw',
-                                height: '100%',
-                                top: 0,
-                                left: '20vw',
-                                position: 'absolute',
-                                borderRadius: '20px',
-                                overflow: 'hidden',
-                            }}
-                        >
+                    <Stack direction={'column'} className={styles.timeline_page}>
+                        <div className={classNames(styles.image_cont, styles.image_cont_70)}>
                             <Image src={img2015} layout={'fill'} objectFit={'cover'} />
                         </div>
                         <p className={classNames(styles.timeline_year)}>2015</p>
@@ -103,20 +93,10 @@ const Timeline: React.FC = () => {
                             We had a grand vision that we really want to come to life. So we started making it a
                             reality. Transforming our garage into a space where we could work and express our ideas.{' '}
                         </p>
-                    </div>
+                    </Stack>
 
-                    <div className={styles.timeline_page}>
-                        <div
-                            style={{
-                                width: '70vw',
-                                height: '100%',
-                                top: 0,
-                                left: '20vw',
-                                position: 'absolute',
-                                borderRadius: '20px',
-                                overflow: 'hidden',
-                            }}
-                        >
+                    <Stack direction={'column'} className={styles.timeline_page}>
+                        <div className={classNames(styles.image_cont, styles.image_cont_70)}>
                             <Image src={img2018_1} layout={'fill'} objectFit={'cover'} />
                         </div>
                         <p className={classNames(styles.timeline_year)}>2018</p>
@@ -124,9 +104,9 @@ const Timeline: React.FC = () => {
                             We had a grand vision that we really want to come to life. So we started making it a
                             reality. Transforming our garage into a space where we could work and express our ideas.{' '}
                         </p>
-                    </div>
+                    </Stack>
 
-                    <div className={styles.timeline_page}>
+                    <Stack direction={'column'} className={styles.timeline_page}>
                         <div
                             style={{
                                 width: 'calc(100% - 3vw)',
@@ -139,20 +119,10 @@ const Timeline: React.FC = () => {
                         >
                             <Image src={img2018_1} layout={'fill'} objectFit={'cover'} />
                         </div>
-                    </div>
+                    </Stack>
 
-                    <div className={styles.timeline_page}>
-                        <div
-                            style={{
-                                width: '70vw',
-                                height: '100%',
-                                top: 0,
-                                left: '20vw',
-                                position: 'absolute',
-                                borderRadius: '20px',
-                                overflow: 'hidden',
-                            }}
-                        >
+                    <Stack direction={'column'} className={styles.timeline_page}>
+                        <div className={classNames(styles.image_cont, styles.image_cont_70)}>
                             <Image src={img2021_1} layout={'fill'} objectFit={'cover'} />
                         </div>
                         <p className={classNames(styles.timeline_year)}>2021</p>
@@ -160,8 +130,8 @@ const Timeline: React.FC = () => {
                             We had a grand vision that we really want to come to life. So we started making it a
                             reality. Transforming our garage into a space where we could work and express our ideas.{' '}
                         </p>
-                    </div>
-                    <div className={styles.timeline_page}>
+                    </Stack>
+                    <Stack direction={'column'} className={styles.timeline_page}>
                         <div
                             style={{
                                 width: 'calc(100% - 6vw)',
@@ -174,7 +144,7 @@ const Timeline: React.FC = () => {
                         >
                             <Image src={img2021_2} layout={'fill'} objectFit={'cover'} />
                         </div>
-                    </div>
+                    </Stack>
                 </Stack>
             </div>
         </section>

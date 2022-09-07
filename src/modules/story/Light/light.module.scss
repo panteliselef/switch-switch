@@ -13,13 +13,11 @@
     width: 100%;
     position: absolute;
     top: 0;
-    clip-path: inset(150px 150px 450px round 200px 200px 0 0);
+    clip-path: inset(150px 150px 370px round 200px 200px 0 0);
 
     @include brk.tablet {
         clip-path: inset(40vw 45vw 70vw round 20vw 20vw 0 0);
     }
-
-    //clip-path: inset(4rem 0%);
 }
 
 .p {

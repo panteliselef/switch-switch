@@ -1,3 +1,5 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .timeline_container {
     height: 100vh;
     overflow: hidden;
@@ -31,14 +33,52 @@
 
         .timeline_page {
             position: relative;
-            flex: 0 0 100vw;
-            width: 100vw;
+            flex: 0 0 100%;
+            width: 100%;
             height: 100%;
+            padding: 1rem;
+            justify-content: center;
+
+            @include brk.tablet {
+                flex: 0 0 100vw;
+                width: 100vw;
+                justify-content: unset;
+            }
+
+            .image_cont {
+                height: 100%;
+                top: 0;
+                position: absolute;
+
+                border-radius: 20px;
+                overflow: hidden;
+
+                &_70 {
+                    width: 100%;
+                    left: 0;
+                    @include brk.tablet {
+                        width: 70vw;
+                        left: 20vw;
+                    }
+                }
+
+                &_100 {
+                    width: 100%;
+                    left: 0;
+                    @include brk.tablet {
+                        width: calc(100% - 6vw);
+                    }
+                }
+            }
 
             .info {
-                max-width: 50vw;
-                padding-left: 4vw;
+                width: 90%;
                 position: relative;
+                @include brk.tablet {
+                    width: calc(100% - 6vw);
+                    max-width: 50vw;
+                    padding-left: 4vw;
+                }
             }
         }
     }
