@@ -7,6 +7,7 @@ import Image from 'next/image';
 import meeting from '@assets/2018_1.png';
 import ExternalLink from '../../common/helpers/ExternalLink';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 const Contact: React.FC = () => {
     return (
@@ -120,6 +121,25 @@ const Contact: React.FC = () => {
                 </div>
 
                 <Stack direction={'column'} justifyContent={'flex-end'} gap={'4vw'} alignItems={'center'}>
+                    <Link href={'/contact/form'}>
+                        <a>
+                            <Stack
+                                direction={'row'}
+                                justifyContent={'center'}
+                                alignItems={'center'}
+                                style={{
+                                    borderRadius: '50%',
+                                    aspectRatio: '1/1',
+                                    width: '10vw',
+                                    color: 'var(--text-color)',
+                                    background: 'var(--bg-color)',
+                                }}
+                            >
+                                Send a request
+                            </Stack>
+                        </a>
+                    </Link>
+
                     <p className={classNames('p-text-3', styles.cont)}>
                         Venizelosova 29G/4 <br />
                         11000 Belgrade, Dorcol <br />

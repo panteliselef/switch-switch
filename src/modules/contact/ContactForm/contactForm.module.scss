@@ -1,0 +1,93 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.contact_form_heading {
+    width: 100%;
+    @include brk.tablet {
+        width: 50vw;
+    }
+}
+
+.cont {
+    background: #edece7;
+    position: relative;
+    padding: 5rem 1rem;
+    color: var(--bg-color);
+    height: 100vh;
+    @include brk.tablet {
+        padding: 4vw;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    padding-top: 4rem;
+
+    @include brk.tablet {
+        width: 50vw;
+        gap: 2vw;
+        padding-top: 5vw;
+    }
+}
+
+.field_box {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    align-self: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+
+    @include brk.tablet {
+        gap: 0.5vw;
+    }
+
+    &:focus-within {
+        border-bottom: 2px solid var(--bg-color);
+    }
+
+    .label {
+        width: auto;
+        text-transform: capitalize;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .input {
+        appearance: none;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 1rem;
+        font-family: inherit;
+        max-height: 100px;
+    }
+
+    transition: border 0.2s ease;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.submit {
+    font-family: inherit;
+    font-size: 20px;
+    appearance: none;
+    padding: 0.5vw;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--bg-color);
+    @include brk.tablet {
+        align-self: flex-end;
+    }
+    transition: transform 0.2s ease;
+
+    @include brk.tablet {
+        font-size: 1.5vw;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
