@@ -13,6 +13,7 @@
             "@features/*": ["src/features/*"],
             "@components/*": ["src/common/components/*"],
             "@design/*": ["src/common/design/*"],
+            "@helpers/*": ["src/common/helpers/*"],
             "@hooks/*": ["src/common/hooks/*"],
             "@layouts/*": ["src/common/layouts/*"],
             "@contexts/*": ["src/common/contexts/*"]
