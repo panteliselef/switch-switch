@@ -66,9 +66,24 @@ const Hero = () => {
                     </h3>
                 </Stack>
 
-                <div data-scroll={''} data-scroll-speed={'-3'} className={styles.image_cont}>
-                    <Image src={homeHero} layout={'responsive'} />
-                </div>
+                <Stack
+                    direction={'column'}
+                    alignItems={'center'}
+                    data-scroll={''}
+                    data-scroll-speed={'-3'}
+                    className={styles.switch_cont}
+                >
+                    <div className={styles.image_cont}>
+                        <Image src={homeHero} layout={'responsive'} />
+                    </div>
+
+                    <div className={styles.switch}>
+                        <div className={styles.red_cont}>
+
+                            <div data-scroll={''} data-scroll-speed={'-3'} className={styles.red}></div>
+                        </div>
+                    </div>
+                </Stack>
             </Stack>
         </section>
     );
