@@ -34,6 +34,18 @@ const Light: React.FC = () => {
                     // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
                 },
                 'timeline',
+            ).to(
+                `.${styles.door_knob}`,
+                {
+                    ease: 'power2.in',
+                    clipPath:
+                        w > breakpoints.laptop
+                            ? 'circle(0px at 52vw 70vw)'
+                            : 'circle(0px at 220px 280px)',
+                    // clipPath: 'inset(4rem 20% round 50%)',
+                    // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
+                },
+                'timeline',
             );
 
             gsap.timeline({
@@ -65,6 +77,7 @@ const Light: React.FC = () => {
                 }}
             >
                 <div className={styles.door}></div>
+                <div className={styles.door_knob}></div>
                 <Stack
                     direction={'column'}
                     className={styles.cont}
