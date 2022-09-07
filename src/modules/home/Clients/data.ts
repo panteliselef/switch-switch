@@ -1,3 +1,15 @@
+import al from '@assets/clients/Aleksandar Vujnovic.png';
+import Ana from '@assets/clients/Ana Tanasković-min.png';
+import Archit from '@assets/clients/Archit Studio.png';
+import Baal from '@assets/clients/BAAL Logo .png';
+import Bojan from '@assets/clients/Bojan Pavlović.png';
+import Branko from '@assets/clients/Branko Burmaz.png';
+import Cattaro from '@assets/clients/Cattaro Home.png';
+import Concept from '@assets/clients/No Concept.png';
+import Revolution from '@assets/clients/Revolution Architekts.png';
+import Savremena from '@assets/clients/Savremena Arhitektura-min.png';
+import VLDMR from '@assets/clients/VLDMR.png';
+
 export const clients = [
     {
         logo: '',
@@ -6,21 +18,21 @@ export const clients = [
         url: 'http://1102designspace.com/?i=1',
     },
     {
-        logo: '',
+        logo: al,
         name: 'Aleksandar Vujinović',
         text: '',
         url: 'https://www.instagram.com/aleksandar.vujnovic/?hl=en',
     },
 
     {
-        logo: '',
+        logo: Ana,
         name: 'Ana Nenadović',
         text: '',
         url: 'https://ananenadovic.com/sr/',
     },
 
     {
-        logo: '',
+        logo: Archit,
         name: 'Archit Studio',
         text: `Archit studio is Belgrade based architectural studio founded by Jelena Stepanovic as the result of an obsession with storytelling through architecture and design.
 
@@ -35,28 +47,28 @@ We are minimalists with a touch of luxurious spirit.
     },
 
     {
-        logo: '',
+        logo: Baal,
         name: 'Baal',
         text: 'At BAAL Design we pride ourselves on providing unique innovative designs and professional advice. Our attention to detail is uncompromising and we strive in mixing elements of modern, contemporary and traditional to create high-end spaces with great emphasis on design that portrays a strong sense of identity.',
         url: 'https://baal.design/',
     },
 
     {
-        logo: '',
+        logo: Bojan,
         name: 'Bojan Pavlović',
         text: ``,
         url: 'https://www.instagram.com/bolebole_arh/?hl=en',
     },
 
     {
-        logo: '',
+        logo: Branko,
         name: 'Branko Burmaz',
         text: ``,
         url: 'https://www.instagram.com/burmaz.arch/?hl=en',
     },
 
     {
-        logo: '',
+        logo: Cattaro,
         name: 'Cattaro Home',
         text: `We are company of architect and designers, based in Montenegro and Serbia.
 We work on planning, interior design and furnishing projects.
@@ -125,7 +137,7 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     },
 
     {
-        logo: '',
+        logo: Concept,
         name: 'No Concept',
         text: `A Belgrade-based studio. | Design, architecture lab & hub| Gallery |Interior design NEW concept researching CENTER| Art & Education | WE LIVE TO CREATE|`,
         url: 'https://noconcept.rs/',
@@ -135,7 +147,7 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
         logo: '',
         name: 'No Mad Design',
         text: ``,
-        url: 'http://www.nomad-design.rs/'
+        url: 'http://www.nomad-design.rs/',
     },
 
     {
@@ -146,14 +158,14 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     },
 
     {
-        logo: '',
+        logo: Revolution,
         name: 'Revolution Architekts',
         text: `We are equally committed to designing small-scale projects all the way to large-scale complexes. For the purpose of precise and accurate technical documentation, we use the best BIM software for concept design, detail design, and technical design.`,
         url: 'https://revolutionarchitects.rs/en/',
     },
 
     {
-        logo: '',
+        logo: Savremena,
         name: 'Savremena Arhitektura',
         text: `Савремена архитектура je naziv za sabrana pozitivna iskustva teorije i prakse u proteklih dve stotine godina, promišljena i sjedinjena sa najaktuelnijim dostignućima arhitekture danas.`,
         url: 'https://www.savremenaarhitektura.com/',
@@ -179,7 +191,7 @@ Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačn
         logo: '',
         name: 'Tijana Lalović',
         text: ``,
-        url: 'https://www.instagram.com/tijana.lalovic.dizajn/?hl=en'
+        url: 'https://www.instagram.com/tijana.lalovic.dizajn/?hl=en',
     },
 
     {
@@ -190,7 +202,7 @@ Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačn
     },
 
     {
-        logo: '',
+        logo: VLDMR,
         name: 'VLDMR',
         text: 'VLDMR Design Studio by Vladimir and Dina Golubović was founded in 2012 in Belgrade, Serbia. The work in the studio consists of permeating architectural and related science branches: urbanism, architecture, design, and technology, aiming to better our approach to work and problem-solving.',
         url: `https://vldmrdesign.com/`,

@@ -1,12 +1,12 @@
 import styles from './clients.module.scss';
 import Stack from '@layouts/Stack';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
 import { clients } from '@modules/home/Clients/data';
 import ExternalLink from '@helpers/ExternalLink';
 
-const Client: React.FC<{ url: string; imageSrc: string; name: string; text: string }> = ({
+const Client: React.FC<{ url: string; imageSrc: string | StaticImageData; name: string; text: string }> = ({
     url,
     imageSrc,
     name,
@@ -15,9 +15,11 @@ const Client: React.FC<{ url: string; imageSrc: string; name: string; text: stri
     return (
         <ExternalLink to={url}>
             <Stack className={styles.client} direction={'column'}>
-                <div className={styles.logo_container}>
-                    <Image alt={name} src={imageSrc} />
-                </div>
+                {imageSrc && (
+                    <div className={styles.logo_container}>
+                        <Image layout={'fill'} objectFit={'contain'} alt={name} src={imageSrc} />
+                    </div>
+                )}
 
                 <p className={styles.client_name}>{name}</p>
                 <p className={styles.client_desc}>{text}</p>
