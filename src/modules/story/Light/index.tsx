@@ -5,6 +5,7 @@ import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import classNames from 'classnames';
 
 const Light: React.FC = () => {
     const w = useDebouncedWidth();
@@ -16,7 +17,7 @@ const Light: React.FC = () => {
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     anticipatePin: 1,
                     toggleActions: 'restart pause resume reverse',
-                    start: w > breakpoints.laptop ? 'top -30%' : 'top 0',
+                    start: w > breakpoints.laptop ? 'top -30%' : 'top 50%',
                     end: '+=400vh',
                     // pin: true,
                     scrub: true,
@@ -25,8 +26,12 @@ const Light: React.FC = () => {
                 `.${styles.door}`,
                 {
                     ease: 'power2.in',
+                    clipPath:
+                        w > breakpoints.laptop
+                            ? 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)'
+                            : 'inset(0px 0px 0px round 0px 0px 0 0)',
                     // clipPath: 'inset(4rem 20% round 50%)',
-                    clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
+                    // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
                 },
                 'timeline',
             );
@@ -62,7 +67,7 @@ const Light: React.FC = () => {
                 <div className={styles.door}></div>
                 <Stack
                     direction={'column'}
-                    gap={'40vw'}
+                    className={styles.cont}
                     style={{
                         position: 'relative',
                     }}
@@ -79,17 +84,22 @@ const Light: React.FC = () => {
                         }}
                     >
                         <p
-                            className={'p-text-1'}
+                            className={classNames('p-text-1 text-center', styles.p)}
                             style={{
-                                textAlign: 'center',
-                                maxWidth: '20vw',
                                 mixBlendMode: 'difference',
                             }}
                         >
                             In order for us to bing
                         </p>
 
-                        <p className={'heading-3'}>Light</p>
+                        <p
+                            className={'heading-3'}
+                            style={{
+                                mixBlendMode: 'difference',
+                            }}
+                        >
+                            Light
+                        </p>
                     </Stack>
                     <Stack
                         direction={'column'}
@@ -104,10 +114,8 @@ const Light: React.FC = () => {
                         <p
                             data-scroll={''}
                             data-scroll-speed={'2'}
-                            className={'p-text-1'}
+                            className={classNames('p-text-1 text-center', styles.p)}
                             style={{
-                                textAlign: 'center',
-                                maxWidth: '20vw',
                                 color: 'black',
                             }}
                         >
@@ -118,8 +126,8 @@ const Light: React.FC = () => {
                             direction={'column'}
                             data-scroll={''}
                             data-scroll-speed={'1'}
+                            className={styles.cont_1}
                             style={{
-                                width: '60vw',
                                 mixBlendMode: 'difference',
                                 paddingBottom: '10vw',
                                 position: 'relative',
@@ -127,10 +135,9 @@ const Light: React.FC = () => {
                         >
                             <p
                                 id={'team'}
-                                className={'heading-3'}
+                                className={classNames('heading-3', styles.cont_2)}
                                 style={{
                                     mixBlendMode: 'difference',
-                                    maxWidth: '50vw',
                                 }}
                             >
                                 This is the team of
@@ -149,10 +156,9 @@ const Light: React.FC = () => {
                                 Cheers from the team of
                             </p>
                             <p
-                                className={'heading-3'}
+                                className={classNames('heading-3', styles.cont_2)}
                                 style={{
                                     mixBlendMode: 'difference',
-                                    maxWidth: '50vw',
                                 }}
                             >
                                 enthusiasts
