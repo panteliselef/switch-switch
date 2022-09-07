@@ -5,7 +5,7 @@
     gap: 3rem;
     grid-template-columns: repeat(2, 1fr);
     padding: 0 2rem 15rem;
-
+    transform: translateY(-10vw);
     @include brk.tablet {
         grid-template-columns: repeat(3, 1fr);
         gap: 6vw;
@@ -15,40 +15,49 @@
     &:last-of-type {
         padding-bottom: 0;
     }
+}
 
-    //height: 100vw;
-    transform: translateY(-10vw);
+.single_product {
+    width: 90%;
 
-    .product {
-        flex: 0 0 auto;
-        gap: 0.8vw;
+    .product_image {
+        height: 25vw !important;
+    }
 
-        &:nth-of-type(2n) {
-            transform: translateY(100%);
-        }
+    @include brk.tablet {
+        width: 50vw;
+    }
+}
 
-        &:nth-of-type(3n) {
-            transform: translateY(50%);
-        }
+.product {
+    flex: 0 0 auto;
+    gap: 0.8vw;
 
-        .product_image {
+    &:nth-of-type(2n) {
+        transform: translateY(100%);
+    }
+
+    &:nth-of-type(3n) {
+        transform: translateY(50%);
+    }
+
+    .product_image {
+        position: relative;
+        height: 35vw;
+
+        video {
             position: relative;
-            height: 35vw;
-
-            video {
-                position: relative;
-                object-fit: cover;
-                object-position: 50% 50%;
-                width: 100%;
-                height: 100%;
-            }
+            object-fit: cover;
+            object-position: 50% 50%;
+            width: 100%;
+            height: 100%;
         }
+    }
 
-        .product_title {
-            word-break: break-word;
-            text-transform: capitalize;
-            font-size: var(--font-s-p1);
-        }
+    .product_title {
+        word-break: break-word;
+        text-transform: capitalize;
+        font-size: var(--font-s-p1);
     }
 }
 

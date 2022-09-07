@@ -53,7 +53,6 @@ function ProductCollection() {
     );
 }
 
-// <Product videoFileName={'avolt.mp4'} title={`Avolt`} />
 function Lighting() {
     return (
         <div
@@ -81,6 +80,18 @@ function Products() {
                 <p className={styles.bg_title}>PRODUCTS</p>
             </Stack>
             <ProductCollection />
+
+            <Stack
+                direction={'row'}
+                style={{
+                    width: '100%',
+                }}
+                justifyContent={'center'}
+            >
+                <div className={styles.single_product}>
+                    <Product videoFileName={'avolt.mp4'} title={`Avolt`} />
+                </div>
+            </Stack>
             <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
                 <p className={styles.bg_title}>LIGHTING</p>
             </Stack>
