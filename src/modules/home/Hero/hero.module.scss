@@ -37,12 +37,50 @@
 
 .image_cont {
     position: relative;
+    width: 100%;
+}
+
+.switch_cont {
+    position: relative;
     flex: 1 1 100px;
     width: 40vw;
     align-self: center;
+
     @include brk.tablet {
         width: auto;
         align-self: flex-end;
         flex: 1 1 10vw;
+    }
+}
+
+.switch {
+    height: 100px;
+    position: relative;
+    width: 30px;
+    background: #0e0e0e;
+
+    @include brk.tablet {
+        height: 12vw;
+        width: 4vw;
+    }
+
+    .red_cont {
+        position: absolute;
+        top: 0;
+        transform: translateX(-7px);
+        @include brk.tablet {
+            transform: translateX(-0.5vw);
+        }
+
+        .red {
+            aspect-ratio: 1/1;
+            width: 45px;
+            border-radius: 50%;
+            background: #e1493e;
+
+            @include brk.tablet {
+                width: 5vw;
+            }
+        }
     }
 }
