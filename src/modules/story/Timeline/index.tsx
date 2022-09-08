@@ -32,9 +32,10 @@ const Timeline: React.FC = () => {
                 },
                 onUpdate: () => {
                     const process = tl.progress();
-                    if (process < 0.4) {
+
+                    if (process < 0.1) {
                         setActiveLine(0);
-                    } else if (process < 0.6) {
+                    } else if (process < 0.2) {
                         setActiveLine(1);
                     } else if (process < 0.7) {
                         setActiveLine(2);
@@ -51,12 +52,24 @@ const Timeline: React.FC = () => {
             tl.to(
                 `.${styles.timeline_page}`,
                 {
-                    ease: 'power2.in',
+                    ease: 'linear',
                     x: w > breakpoints.laptop ? `-500vw` : '-500%',
                     duration: 5,
-                    stagger: 0.05,
+                    stagger: 0.01,
                 },
                 'timeline',
+            ).fromTo(
+                '#lel2',
+                {
+                    duration: 1,
+                    ease: 'linear',
+                    scale: 0.5,
+                },
+                {
+                    duration: 1,
+                    ease: 'linear',
+                    scale: 1,
+                },
             );
         }, 1000);
     }, [w]);
@@ -113,7 +126,6 @@ const Timeline: React.FC = () => {
                                 height: '100%',
                                 top: 0,
                                 position: 'absolute',
-                                borderRadius: '20px',
                                 overflow: 'hidden',
                             }}
                         >
@@ -131,14 +143,13 @@ const Timeline: React.FC = () => {
                             reality. Transforming our garage into a space where we could work and express our ideas.{' '}
                         </p>
                     </Stack>
-                    <Stack direction={'column'} className={styles.timeline_page}>
+                    <Stack direction={'column'} className={styles.timeline_page} id={'lel2'}>
                         <div
                             style={{
-                                width: 'calc(100% - 6vw)',
+                                width: 'calc(100% - 9vw)',
                                 height: '100%',
                                 top: 0,
                                 position: 'absolute',
-                                borderRadius: '20px',
                                 overflow: 'hidden',
                             }}
                         >
