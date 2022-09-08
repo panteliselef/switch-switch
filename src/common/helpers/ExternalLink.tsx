@@ -21,7 +21,7 @@ const makeHrefFromType = (type: ExternalLinkType, to: string) => {
 const ExternalLink = ({ target = `_blank`, to = '/', type, ...props }: ExternalLinkProps) => {
     const hrefWithType = type ? makeHrefFromType(type, to) : to;
     return (
-        <a {...props} className={props.className || ''} href={hrefWithType} target={target} rel="noreferrer noopener">
+        <a {...props} href={hrefWithType} target={target} rel="noreferrer noopener">
             {props.children}
         </a>
     );

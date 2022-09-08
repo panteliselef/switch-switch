@@ -1,14 +1,15 @@
 @use 'styles/design/base/breakpoints' as brk;
 
 .wonders_text {
-    color: var(--text-color);
+    color: rgba(55, 55, 55, 1);
+    //color: var(--text-color);
     line-height: 1.1;
     font-size: 4rem;
     text-align: left;
-    padding: 1rem;
+    //padding: 1rem;
+    //transition: color 0.3s ease-in-out;
     @include brk.tablet {
         line-height: 1;
-        color: rgba(55, 55, 55, 1);
         text-align: center;
         font-size: 18vw;
     }

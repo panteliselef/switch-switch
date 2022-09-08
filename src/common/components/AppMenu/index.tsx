@@ -403,39 +403,39 @@ const AppMenu: React.FC = () => {
                 <nav className={styles.menu}>
                     <Link href={'/'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>home</span>
                         </a>
                     </Link>
 
                     <Link href={'/story'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>story</span>
                         </a>
                     </Link>
 
                     <Link href={'/history'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>history</span>
                         </a>
                     </Link>
 
                     <a className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>always</span>
+                        <span className={styles.menu__item_tiny}>switch to</span>
                         <span className={styles.menu__item_text}>products</span>
                     </a>
 
                     <Link href={'/contact'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>always</span>
+                            <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>contact</span>
                         </a>
                     </Link>
 
                     <a className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>always</span>
+                        <span className={styles.menu__item_tiny}>switch to</span>
                         <span className={styles.menu__item_text}>schedule</span>
                     </a>
                 </nav>

@@ -51,12 +51,15 @@
     z-index: 1;
     padding: 6rem 2rem;
 
+    @include brk.tablet {
+        padding: 4vw 1rem;
+    }
+
     p {
         line-height: 1;
         font-size: 2rem;
 
         @include brk.tablet {
-            padding: 2vw 1rem;
             font-size: 3.67vw;
         }
     }

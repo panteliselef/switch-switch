@@ -1,18 +1,21 @@
-import al from '@assets/clients/Aleksandar Vujnovic.png';
-import Ana from '@assets/clients/Ana Tanasković-min.png';
-import Archit from '@assets/clients/Archit Studio.png';
-import Baal from '@assets/clients/BAAL Logo .png';
+import Design_11012 from '@assets/clients/1102.png';
+import al from '@assets/clients/Aleksandar Vujinović.svg';
+import Ana2 from '@assets/clients/Ana Nenadovic.svg';
+import Archit from '@assets/clients/Archit Studio.svg';
+import Baal from '@assets/clients/BAAL Design.png';
 import Bojan from '@assets/clients/Bojan Pavlović.png';
-import Branko from '@assets/clients/Branko Burmaz.png';
+import Branko from '@assets/clients/Burmaz Architects.svg';
+import ENT from '@assets/clients/ENT Miller.png';
 import Cattaro from '@assets/clients/Cattaro Home.png';
 import Concept from '@assets/clients/No Concept.png';
 import Revolution from '@assets/clients/Revolution Architekts.png';
 import Savremena from '@assets/clients/Savremena Arhitektura-min.png';
+import Dizajn from '@assets/clients/Studio Dizajn.svg';
 import VLDMR from '@assets/clients/VLDMR.png';
 
 export const clients = [
     {
-        logo: '',
+        logo: Design_11012,
         name: '1102 Design Space',
         text: '',
         url: 'http://1102designspace.com/?i=1',
@@ -25,8 +28,15 @@ export const clients = [
     },
 
     {
-        logo: Ana,
+        logo: Ana2,
         name: 'Ana Nenadović',
+        text: '',
+        url: 'https://ananenadovic.com/sr/',
+    },
+
+    {
+        logo: Dizajn,
+        name: 'Ana Tanasković',
         text: '',
         url: 'https://ananenadovic.com/sr/',
     },
@@ -77,7 +87,7 @@ What make us special is passion for high aesthetic values.`,
     },
 
     {
-        logo: '',
+        logo: ENT,
         name: 'Ent Miller',
         text: `ENT MILLER je međunarodna građevinska i konsalting kompanija koja sa višegodišnjim iskustvom uspešno rukovodi projektima, razvojem, izvođenjem i savetovanjem, fokusirajući se na enterijer i završne radove u građevinarstvu.
 
@@ -137,13 +147,6 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     },
 
     {
-        logo: Concept,
-        name: 'No Concept',
-        text: `A Belgrade-based studio. | Design, architecture lab & hub| Gallery |Interior design NEW concept researching CENTER| Art & Education | WE LIVE TO CREATE|`,
-        url: 'https://noconcept.rs/',
-    },
-
-    {
         logo: '',
         name: 'No Mad Design',
         text: ``,
@@ -155,6 +158,15 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
         name: 'Parapet Studio',
         text: `Stvaramo jedinstveni prostor koje inspiriše, maksimalno koristeći potencijal enterijera.`,
         url: 'https://www.instagram.com/parapet.studio/?hl=en',
+    },
+
+    {
+        logo: '',
+        name: 'Studio Loft',
+        text: `Dobar dizajn neće spasiti svet, ali sasvim sigurno će ga učiniti lepšim!
+
+Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačne ideje u zajedničku viziju I transformišući prostore prema Vašim ličnim potrebama, prožetim iskustvom naših stručnjaka.`,
+        url: 'https://studioloft.rs',
     },
 
     {
@@ -172,12 +184,17 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     },
 
     {
-        logo: '',
-        name: 'Studio Loft',
-        text: `Dobar dizajn neće spasiti svet, ali sasvim sigurno će ga učiniti lepšim!
+        logo: Concept,
+        name: 'No Concept',
+        text: `A Belgrade-based studio. | Design, architecture lab & hub| Gallery |Interior design NEW concept researching CENTER| Art & Education | WE LIVE TO CREATE|`,
+        url: 'https://noconcept.rs/',
+    },
 
-Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačne ideje u zajedničku viziju I transformišući prostore prema Vašim ličnim potrebama, prožetim iskustvom naših stručnjaka.`,
-        url: 'https://studioloft.rs',
+    {
+        logo: VLDMR,
+        name: 'VLDMR',
+        text: 'VLDMR Design Studio by Vladimir and Dina Golubović was founded in 2012 in Belgrade, Serbia. The work in the studio consists of permeating architectural and related science branches: urbanism, architecture, design, and technology, aiming to better our approach to work and problem-solving.',
+        url: `https://vldmrdesign.com/`,
     },
 
     {
@@ -199,12 +216,5 @@ Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačn
         name: 'TMRGR',
         text: ``,
         url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
-    },
-
-    {
-        logo: VLDMR,
-        name: 'VLDMR',
-        text: 'VLDMR Design Studio by Vladimir and Dina Golubović was founded in 2012 in Belgrade, Serbia. The work in the studio consists of permeating architectural and related science branches: urbanism, architecture, design, and technology, aiming to better our approach to work and problem-solving.',
-        url: `https://vldmrdesign.com/`,
     },
 ];

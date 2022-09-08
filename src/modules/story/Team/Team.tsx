@@ -209,19 +209,21 @@ export default function Team() {
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
-                    trigger: `.${styles.columns}`,
+                    trigger: `#before-footer`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     scrub: 1,
-                    start: 'top 100%',
+                    pin: true,
+                    start: 'top 0%',
+                    end: '+=200vh',
                 },
             })
                 .to(oddColumns, {
-                    yPercent: w > breakpoints.laptop ? 100 : 15,
+                    yPercent: w > breakpoints.laptop ? 50 : 15,
                 })
                 .to(
                     evenColumns,
                     {
-                        yPercent: w > breakpoints.laptop ? -100 : -10,
+                        yPercent: w > breakpoints.laptop ? -60 : -10,
                     },
                     '<',
                 );
