@@ -422,10 +422,12 @@ const AppMenu: React.FC = () => {
                         </a>
                     </Link>
 
-                    <a className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>switch to</span>
-                        <span className={styles.menu__item_text}>products</span>
-                    </a>
+                    <Link href={'/#products'}>
+                        <a className={styles.menu__item} onClick={click}>
+                            <span className={styles.menu__item_tiny}>switch to</span>
+                            <span className={styles.menu__item_text}>products</span>
+                        </a>
+                    </Link>
 
                     <Link href={'/contact'}>
                         <a className={styles.menu__item} onClick={click}>
