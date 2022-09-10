@@ -6,6 +6,7 @@ import whatWeDo from '@assets/what_we_do.svg';
 
 import styles from './consumers.module.scss';
 import Image from 'next/image';
+import classNames from 'classnames';
 
 const links = [
     {
@@ -27,16 +28,7 @@ const links = [
 const Consumers: React.FC = () => {
     return (
         <section>
-            <Stack
-                direction={'row'}
-                style={{
-                    overflow: 'hidden',
-                    height: '50vw',
-                    borderTop: '1px solid var(--text-color)',
-                    borderBottom: '1px solid var(--text-color)',
-                    background: 'var(--bg-color)',
-                }}
-            >
+            <Stack className={styles.consumers_outer_cont}>
                 {links.map((d) => (
                     <div
                         key={d.text}
@@ -45,7 +37,7 @@ const Consumers: React.FC = () => {
                         }}
                     >
                         <Link href={d.link}>
-                            <a className={styles.link}>
+                            <a className={classNames(styles.link, styles.item)}>
                                 <Stack
                                     style={{
                                         width: '100%',
@@ -84,9 +76,9 @@ const Consumers: React.FC = () => {
 
                 <Stack
                     direction={'row'}
+                    className={classNames(styles.item)}
                     style={{
-                        position: 'relative',
-                        width: '25vw',
+                        padding: '2rem 0',
                     }}
                     justifyContent={'center'}
                     alignItems={'center'}

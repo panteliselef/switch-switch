@@ -1,0 +1,16 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.deserve_cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    @include brk.tablet {
+        width: 60vw;
+        padding: 0;
+    }
+
+    span {
+        text-align: center;
+    }
+}

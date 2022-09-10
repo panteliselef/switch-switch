@@ -1,5 +1,7 @@
 import React from 'react';
 import Stack from '@layouts/Stack';
+import styles from '@modules/history/Deserve/deserve.module.scss';
+import classNames from 'classnames';
 
 const Coffee: React.FC = () => {
     return (
@@ -16,13 +18,12 @@ const Coffee: React.FC = () => {
                 <p
                     data-scroll
                     data-scroll-speed="1"
-                    className={'heading-2'}
+                    className={classNames('heading-2', styles.deserve_cont)}
                     style={{
                         textAlign: 'center',
-                        maxWidth: '60vw',
                     }}
                 >
-                    <span className={'font-light'}>Or just </span> <br />
+                    <span className={'font-light'}>Or just </span>
                     <span className={'font-medium'}>for a coffee.</span>
                 </p>
 

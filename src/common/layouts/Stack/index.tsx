@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './stack.module.scss';
 
 export interface StackProps extends React.HTMLProps<HTMLDivElement> {
-    direction: 'row' | 'column';
+    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
     alignItems?: 'flex-start' | 'flex-end' | 'start' | 'end' | 'center' | 'stretch';
     justifyContent?:
         | 'flex-start'
@@ -28,12 +28,13 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
                     alignItems,
                     justifyContent,
                     ...style,
+                    display: 'flex',
                 }}
                 className={classNames({
                     [className || '']: true,
                     [styles.asRow]: direction === 'row',
-                    ['as_row_tablet_col']: direction === 'row',
                     [styles.asCol]: direction === 'column',
+                    [styles.asColR]: direction === 'column-reverse',
                 })}
                 {...props}
             >

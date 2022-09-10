@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
                             <div>yet already</div>
                         </h3>
                         <h3 className={classNames('heading-3', 'split-line', 'hero-text')}>
-                            <div className={'font-light'}>unavoidable.</div>
+                            <div className={'font-light'}>unavoidable</div>
                         </h3>
                         <a
                             className={styles.slides__caption_link}

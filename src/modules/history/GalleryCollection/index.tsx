@@ -15,17 +15,19 @@ import Stack from '@layouts/Stack';
 import InnerScroll from '@components/InnerScroll';
 import studio from '@assets/studio.png';
 import { useSplitText } from '@modules/history/hero';
-
-const scrollTrigger = {
-    trigger: `.${styles.media}`,
-    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
-    start: 'top 100%',
-    end: '150%',
-    scrub: true,
-};
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 
 const GalleryCollection: React.FC = () => {
+    const w = useDebouncedWidth();
     useEffect(() => {
+        const scrollTrigger = {
+            trigger: `.${styles.media}`,
+            scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
+            start: 'top 100%',
+            end: '150%',
+            scrub: true,
+        };
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger,
@@ -50,9 +52,9 @@ const GalleryCollection: React.FC = () => {
                     scrollTrigger,
                 });
         }, 1000);
-    }, []);
+    }, [w]);
 
-    useSplitText('.gallery-text', '.gallery-trigger');
+    useSplitText('.gallery-text', '#gallery-trigger');
 
     useSplitText('.gallery-title', '.gallery-title-trigger');
 
@@ -100,20 +102,11 @@ const GalleryCollection: React.FC = () => {
                 <Stack
                     direction={'column'}
                     style={{
-                        paddingTop: '20vw',
+                        padding: '20vw 1em 1em',
                     }}
                     gap={'2vw'}
                 >
-                    <Stack direction={'row'} alignItems={'center'} gap={'2vw'} className={'gallery-trigger'}>
-                        {/*<h3*/}
-                        {/*    className={classNames('heading-3', 'split-line')}*/}
-                        {/*    style={{*/}
-                        {/*        position: 'relative',*/}
-                        {/*    }}*/}
-                        {/*>*/}
-                        {/*    <div>A secret address</div>*/}
-                        {/*</h3>*/}
-
+                    <Stack id={'gallery-trigger'} className={styles.location_cont}>
                         <h3
                             className={'heading-3 split-line gallery-text'}
                             style={{
@@ -153,17 +146,7 @@ const GalleryCollection: React.FC = () => {
                     journey, the vast spaces of the place then welcome you for this unique journey.
                 </p>
 
-                <div
-                    data-scroll=""
-                    data-scroll-speed="-1.5"
-                    style={{
-                        position: 'absolute',
-                        width: 500,
-                        height: 500,
-                        bottom: 0,
-                        right: 'calc(0% - 250px)',
-                    }}
-                >
+                <div data-scroll="" data-scroll-speed="-1.5" className={styles.map_cont}>
                     <Image src={mapImage} alt={'map location'} objectFit={'cover'} layout={'responsive'} />
                 </div>
             </Stack>

@@ -1,5 +1,7 @@
 import React from 'react';
 import Stack from '@layouts/Stack';
+import classNames from 'classnames';
+import styles from './deserve.module.scss';
 
 const Deserve: React.FC = () => {
     return (
@@ -9,14 +11,9 @@ const Deserve: React.FC = () => {
             }}
         >
             <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} gap={100}>
-                <p
-                    className={'heading-2'}
-                    style={{
-                        textAlign: 'center',
-                        maxWidth: '60vw',
-                    }}
-                >
-                    <span className={'font-light'}>Be where</span> <span className={'font-normal'}>you deserve</span>{' '}
+                <p className={classNames('heading-2', styles.deserve_cont)}>
+                    <span className={'font-light'}>Be where</span>
+                    <span className={'font-normal'}>you deserve</span>
                     <span className={'font-medium'}>to be.</span>
                 </p>
 

@@ -1,0 +1,32 @@
+{
+  "metaTitleHome": "Dr Brkić | Početna",
+  "metaTitleBlog": "Dr Brkić | Blog",
+  "metaTitleServices": "Dr Brkic | Usluge",
+  "metaTitleSpecialOffers": "Dr Brkic | Akcije",
+  "keywords": "zubar, pregled, zubarska, popravke, ordinacija, zakazivanje, zubari, zdravlje, zub, zuba",
+  "metaDescription": "Pregled i popravka zuba najsavremenijim metodama u prijatnom okruženju, kako bi Vaši zubi izgledali besprekorno",
+  "pageHeader": {
+    "home": "Početna",
+    "gallery": "Galerija",
+    "blog": "Blog",
+    "pricing": "Cenovnik",
+    "services": "Usluge",
+    "specialOffers": "Akcije"
+  },
+  "pageFooter": {
+    "address": "Narodnog fronta 73, Liman 4, Novi Sad",
+    "openingHoursText": "Radno vreme",
+    "openingHoursBusinessDays1": "Ponedeljak – Sreda – Četvrtak: 14:00 – 19:00",
+    "openingHoursBusinessDays2": "Utorak – Petak: 09:00 – 14:00",
+    "openingHoursWeekend": "Vikend (hitne intervencije)",
+    "general": "Početna",
+    "services": "Usluge",
+    "dentalTourism": "Dentalni turizam",
+    "location": "Lokacija",
+    "meetDoctor": "Upoznajte Vašeg dokotra",
+    "recentArticles": "Nedavni članci",
+    "more": "Više",
+    "gallery": "Galerija",
+    "contact": "Kontakt"
+  }
+}

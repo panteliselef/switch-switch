@@ -2,9 +2,12 @@
 @use 'styles/design/base/colors' as c;
 
 .container {
-    padding: 12rem 2rem;
+    padding: 2rem;
     max-width: 1440px;
     margin: auto;
+    @include brk.tablet {
+        padding: 12rem 2rem;
+    }
 }
 
 .small {
@@ -18,6 +21,9 @@
     //font-weight: 400;
     //font-size: 2em;
     line-height: 1.7;
-    margin-left: 12rem;
-    max-width: 48vw;
+    width: 100%;
+    @include brk.tablet {
+        width: 48vw;
+        margin-left: 12rem;
+    }
 }
