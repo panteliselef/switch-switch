@@ -1,7 +1,7 @@
 import React from 'react';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
-import styles from './Deserve.module.scss';
+import styles from './deserve.module.scss';
 
 const Deserve: React.FC = () => {
     return (
