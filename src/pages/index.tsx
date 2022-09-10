@@ -10,6 +10,7 @@ import RandomP from '@modules/home/RandomP';
 import LocomotiveLayout from '@layouts/LocomotiveLayout';
 import Footer from '@components/Footer';
 import Hero from '@modules/home/Hero';
+import Carousel from '@modules/home/Carousel';
 
 const Home: NextPage = () => {
     return (
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
                 ></div>
                 <Red />
                 <Products />
+                <Carousel />
                 <RandomP />
                 <SingleSwitch />
                 <Clients />

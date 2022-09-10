@@ -61,10 +61,10 @@ function Clients() {
 
             <div className={styles.grid}>
                 {clients
-                    .sort((a) => {
-                        if (a.text) return -1;
-                        return 1;
-                    })
+                    // .sort((a) => {
+                    //     if (a.text) return -1;
+                    //     return 1;
+                    // })
                     .map(({ name, text, url, logo }) => (
                         <Client key={name} imageSrc={logo} url={url} name={name} text={text} />
                     ))}
