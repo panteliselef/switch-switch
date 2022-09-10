@@ -1,14 +1,41 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.consumers_outer_cont {
+    height: auto;
+    //overflow: hidden;
+    border-top: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    background: var(--bg-color);
+
+    flex-direction: column;
+
+    @include brk.tablet {
+        height: 50vw;
+        flex-direction: row;
+    }
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include brk.tablet {
+        width: 25vw;
+    }
+}
+
 .link {
     cursor: pointer;
     display: flex;
-    width: 25vw;
-    height: 100%;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid var(--text-color);
-    position: relative;
+    border-bottom: 1px solid var(--text-color);
+    padding: 2rem;
 
-    padding: 0 32px;
+    @include brk.tablet {
+        padding: 0 32px;
+        border-right: 1px solid var(--text-color);
+    }
 
     svg {
         margin-top: 0.4em;
@@ -62,8 +89,13 @@
 
 .rounderSvg {
     animation: rotate 30s linear infinite;
-    width: 12vw;
-    height: 12vw;
+    width: 30%;
+    aspect-ratio: 1/1;
+
+    @include brk.tablet {
+        width: 12vw;
+        height: 12vw;
+    }
 }
 
 .dot {

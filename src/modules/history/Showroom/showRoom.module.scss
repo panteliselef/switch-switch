@@ -2,14 +2,32 @@
 @use 'styles/design/base/colors' as c;
 
 .container {
-    padding: 12rem 2rem;
-    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 5rem;
+    width: 100%;
+    gap: 3rem;
     margin: auto;
+    @include brk.tablet {
+        gap: 0;
+        width: 85vw;
+        padding: 12rem 2rem;
+    }
+}
+
+.our_showroom {
+    gap: 2rem;
+    @include brk.tablet {
+        gap: 50px;
+    }
 }
 
 .h1 {
     text-align: right;
-    max-width: 50vw;
+    width: 100%;
+    @include brk.tablet {
+        width: 50vw;
+    }
 }
 
 .plain {
@@ -20,5 +38,38 @@
 
     @include brk.tablet {
         max-width: 50vw;
+    }
+}
+
+.p1_cont {
+    gap: 2rem;
+    flex-direction: column;
+    @include brk.tablet {
+        gap: 100px;
+        flex-direction: row;
+    }
+
+    .img_cont {
+        width: 100%;
+        aspect-ratio: 16/13;
+        position: relative;
+
+        @include brk.tablet {
+            width: 400px;
+            height: 600px;
+        }
+    }
+}
+
+.culture_cont {
+    gap: 3rem;
+    width: 100%;
+    padding: 2rem;
+    transform: translateY(-60vh);
+    @include brk.tablet {
+        gap: 80px;
+        width: 60.55556vw;
+        transform: translateY(-60vh);
+        margin: 0 auto auto auto;
     }
 }
