@@ -1,8 +1,26 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .cl {
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.grid {
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 6vw;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    @include brk.tablet {
+        height: 100vh;
+        grid-template-columns: 22vw 1fr;
+    }
 }
 
 .l {
