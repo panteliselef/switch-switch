@@ -16,13 +16,9 @@ const History: NextPage = () => {
     return (
         <LocomotiveLayout>
             <Hero />
-
             <GalleryCollection />
-
             <Office />
-
             <InfiniteScrollText texts={['A place for creativity', 'A place for creativity']} />
-
             <Showroom />
 
             <Deserve />

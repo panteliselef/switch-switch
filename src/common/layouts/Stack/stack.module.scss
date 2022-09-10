@@ -1,10 +1,14 @@
 @use 'styles/design/mixins/flex' as f;
 
-
 .asRow {
-  @include f.h-flex;
+    @include f.h-flex;
 }
 
 .asCol {
-  @include f.v-flex;
+    @include f.v-flex;
+}
+
+.asColR {
+    @include f.v-flex;
+    flex-direction: column-reverse;
 }
