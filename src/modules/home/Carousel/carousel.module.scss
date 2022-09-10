@@ -1,0 +1,33 @@
+.t {
+    margin: 0;
+    position: absolute;
+    top: 47%;
+
+    //&:nth-child(1) {
+    //    transform: rotateX(0) translateZ(24vw);
+    //}
+
+    @for $i from 1 through 2000 {
+        &:nth-child(#{$i}) {
+            //transform: rotateX(-10deg * ($i - 1)) translateZ(150px);
+
+            transform: rotateX(-10deg * ($i - 1)) translateZ(24vw);
+        }
+    }
+}
+
+.green {
+    color: #4c5229;
+}
+
+.red {
+    color: #e1493e;
+}
+
+.blue {
+    color: #428b86;
+}
+
+.yellow {
+    color: #e49f5a;
+}
