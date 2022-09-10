@@ -1,0 +1,32 @@
+{
+  "metaTitleHome": "Dr Brkic | Homepage",
+  "metaTitleBlog": "Dr Brkic | Blog",
+  "metaTitleServices": "Dr Brkic | Services",
+  "metaTitleSpecialOffers": "Dr Brkic | Special offers",
+  "keywords": "dentist, treatment, dentists, treatments, clinic, appointment, book, dental, health, teeth",
+  "metaDescription": "Dental treatment and repairs with the most modern methods, for making your teeth look beautiful, in a pleasant environment",
+  "pageHeader": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "services": "Services",
+    "specialOffers": "Special offers"
+  },
+  "pageFooter": {
+    "address": "Narodnog fronta 73, Liman 4, Novi Sad",
+    "openingHoursText": "Opening Hours",
+    "openingHoursBusinessDays1": "Mon – Wed - Thu: 14:00 – 19:00",
+    "openingHoursBusinessDays2": "Tue – Fri: 09:00 – 14:00",
+    "openingHoursWeekend": "Weekend (emergency cases)",
+    "general": "General",
+    "services": "Services",
+    "dentalTourism": "Dental tourism",
+    "location": "Location",
+    "meetDoctor": "Meet your doctor",
+    "recentArticles": "Recent Articles",
+    "more": "More",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  }
+}

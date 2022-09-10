@@ -1,5 +1,5 @@
 import { gsap } from 'gsap/dist/gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'; // adds ~22kb to your bundle
 import { useCallback, useEffect, useRef } from 'react';
 import { LocomotiveScrollInterface } from '../../../types';
 import useWindowDimensions from '@hooks/useWindowDimensions';
