@@ -4,14 +4,17 @@ import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
 import styles from './visit.module.scss';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 
 const VisitUs: React.FC = () => {
+    const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: `#visit`,
-                    scroller: `.${LOCOMOTIVE_CONTAINER_CLASS}`,
+                    scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     start: 'top top',
                     end: '+=3000px',
                     pin: true,
@@ -98,22 +101,10 @@ const VisitUs: React.FC = () => {
                     '>',
                 );
         }, 1000);
-    }, []);
+    }, [w]);
     return (
         <section>
-            <div
-                id={'visit'}
-                style={{
-                    height: '100vh',
-                    display: 'grid',
-                    gridTemplateColumns: '22vw 1fr',
-                    padding: '0 6vw',
-                    margin: 'auto',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: 50,
-                }}
-            >
+            <div id={'visit'} className={styles.grid}>
                 <Stack
                     direction={'column'}
                     style={{

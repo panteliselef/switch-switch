@@ -2,26 +2,19 @@ import React from 'react';
 import Stack from '@layouts/Stack';
 import InnerScroll from '@components/InnerScroll';
 import Image from 'next/image';
-
+import styles from './quality.module.scss';
 import sw from '@assets/switch1.png';
 import st from '@assets/studio.png';
+import classNames from 'classnames';
 
 const Quality: React.FC = () => {
     return (
-        <Stack
-            direction={'column'}
-            style={{
-                padding: '10vw 5vw',
-                paddingBottom: '0',
-            }}
-            gap={'1.4vw'}
-            className={'uppercase'}
-        >
+        <Stack direction={'column'} gap={'1.4vw'} className={classNames('uppercase', styles.quality_cont)}>
             <h3 className={'heading-3'}>
                 <span className={'font-extra-light'}>WE VALUE QUALITY</span>
             </h3>
 
-            <Stack direction={'row'} alignItems={'center'} gap={'3vw'}>
+            <Stack className={styles.image_cont1} gap={'3vw'}>
                 <h3
                     style={{
                         flex: '0 0 auto',
@@ -41,7 +34,7 @@ const Quality: React.FC = () => {
                 </InnerScroll>
             </Stack>
 
-            <Stack direction={'row'} alignItems={'center'} gap={'3vw'}>
+            <Stack className={styles.image_cont1} gap={'3vw'}>
                 <InnerScroll
                     style={{
                         width: '100%',
