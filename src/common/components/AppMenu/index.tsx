@@ -194,9 +194,11 @@ const AppMenu: React.FC = () => {
 
     return (
         <>
-            <div className={styles.logo_cont}>
-                <AnimatedLogo />
-            </div>
+            <Link href={'/'}>
+                <a className={styles.logo_cont}>
+                    <AnimatedLogo />
+                </a>
+            </Link>
             <button className={styles.button_close} onClick={click}>
                 <span
                     style={{

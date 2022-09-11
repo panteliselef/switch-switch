@@ -19,7 +19,7 @@ const Hero = () => {
             },
             {
                 delay: 3,
-                duration: 2,
+                duration: 4,
                 width: '15vw',
                 ease: 'steps(2)',
                 repeat: -1,
@@ -33,7 +33,8 @@ const Hero = () => {
             {
                 'border-right-color': 'rgba(255,255,255,0)',
                 repeat: -1,
-                ease: 'steps(20)',
+                duration: 0.7,
+                ease: 'linear',
             },
             0,
         );
