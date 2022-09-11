@@ -1,7 +1,8 @@
 import styles from './products.module.scss';
-import React from 'react';
+import React, { useRef } from 'react';
 import Stack from '@layouts/Stack';
 import ExternalLink from '@helpers/ExternalLink';
+import gsap from 'gsap/dist/gsap';
 
 const Product: React.FC<{ url?: string; videoFileName: string; title: string; speed?: number }> = ({
     speed,
@@ -9,12 +10,57 @@ const Product: React.FC<{ url?: string; videoFileName: string; title: string; sp
     videoFileName,
     title,
 }) => {
+    const outer = useRef<HTMLDivElement>(null);
+    const inner = useRef<HTMLVideoElement>(null);
+
+    const onComplete = () => {
+        if (outer.current && inner.current) {
+            gsap.set([outer.current, inner.current], { willChange: '' });
+        }
+    };
+
+    const onMouseEnter = () => {
+        gsap.killTweensOf([outer.current, inner.current]);
+        gsap.timeline({
+            defaults: { duration: 1.4, ease: 'expo' },
+            onComplete,
+        })
+            .addLabel('start', 0)
+            .set([outer.current, inner.current], { willChange: 'transform' }, 'start')
+            .to(outer.current, { scaleY: 0.95, scaleX: 0.88 }, 'start')
+            .to(inner.current, { ease: 'power4', scaleY: 1.2, scaleX: 1.7 }, 'start');
+    };
+
+    const onMouseLeave = () => {
+        gsap.killTweensOf([outer.current, inner.current]);
+        gsap.timeline({
+            defaults: { duration: 1.4, ease: 'expo' },
+            onComplete,
+        })
+            .addLabel('start', 0)
+            .set([outer.current, inner.current], { willChange: 'transform' }, 'start')
+            .to([outer.current, inner.current], { scale: 1 }, 0);
+    };
+
     return (
         <Stack direction={'column'} className={styles.product}>
             <ExternalLink to={url || ''}>
-                <Stack gap={'0.8.vw'} direction={'column'} data-scroll={true} data-scroll-speed={speed || 1}>
-                    <div className={styles.product_image}>
-                        <video loop={true} autoPlay={true} muted={true}>
+                <Stack
+                    gap={'0.8.vw'}
+                    direction={'column'}
+                    style={{
+                        overflow: 'hidden',
+                    }}
+                    data-scroll={true}
+                    data-scroll-speed={speed || 1}
+                >
+                    <div
+                        className={styles.product_image}
+                        ref={outer}
+                        onMouseLeave={onMouseLeave}
+                        onMouseEnter={onMouseEnter}
+                    >
+                        <video loop={true} autoPlay={true} muted={true} ref={inner}>
                             <source src={`/videos/${videoFileName}`} type="video/mp4" />
                         </video>
                     </div>
