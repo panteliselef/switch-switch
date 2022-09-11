@@ -6,7 +6,7 @@ import img1 from '@assets/bw1.png';
 import img2 from '@assets/bw2.png';
 import img3 from '@assets/bw3.png';
 import img4 from '@assets/bw4.png';
-import img5 from '@assets/bw4.png';
+import img5 from '@assets/bw5.png';
 
 import mapImage from '@assets/map.png';
 import { gsap } from 'gsap/dist/gsap';
@@ -17,6 +17,7 @@ import studio from '@assets/studio.png';
 import { useSplitText } from '@modules/history/hero';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import ExternalLink from '@helpers/ExternalLink';
 
 const GalleryCollection: React.FC = () => {
     const w = useDebouncedWidth();
@@ -121,7 +122,7 @@ const GalleryCollection: React.FC = () => {
                                 height: '150px',
                             }}
                         >
-                            <Image src={studio} layout={'fill'} objectFit={'cover'} />
+                            <Image alt={'photo from the studio'} src={studio} layout={'fill'} objectFit={'cover'} />
                         </InnerScroll>
                     </Stack>
 
@@ -146,9 +147,15 @@ const GalleryCollection: React.FC = () => {
                     journey, the vast spaces of the place then welcome you for this unique journey.
                 </p>
 
-                <div data-scroll="" data-scroll-speed="-1.5" className={styles.map_cont}>
-                    <Image src={mapImage} alt={'map location'} objectFit={'cover'} layout={'responsive'} />
-                </div>
+                <ExternalLink
+                    to={
+                        'https://www.google.com/maps/place/Switch+Switch/@44.8198326,20.4716844,17z/data=!3m1!4b1!4m5!3m4!1s0x475a7be9da66d6e3:0x85883af2149b288c!8m2!3d44.8198326!4d20.4738731'
+                    }
+                >
+                    <div data-scroll="" data-scroll-speed="-1.5" className={styles.map_cont}>
+                        <Image src={mapImage} alt={'map location'} objectFit={'cover'} layout={'responsive'} />
+                    </div>
+                </ExternalLink>
             </Stack>
         </section>
     );

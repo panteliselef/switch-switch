@@ -3,8 +3,8 @@ import Stack from '@layouts/Stack';
 import InnerScroll from '@components/InnerScroll';
 import Image from 'next/image';
 import styles from './quality.module.scss';
-import sw from '@assets/switch1.png';
-import st from '@assets/studio.png';
+import q1 from '@assets/q_1.png';
+import q2 from '@assets/q_2.png';
 import classNames from 'classnames';
 
 const Quality: React.FC = () => {
@@ -30,7 +30,7 @@ const Quality: React.FC = () => {
                         height: '120px',
                     }}
                 >
-                    <Image src={sw} layout={'fill'} objectFit={'cover'} />
+                    <Image src={q1} layout={'fill'} objectFit={'cover'} />
                 </InnerScroll>
             </Stack>
 
@@ -41,7 +41,7 @@ const Quality: React.FC = () => {
                         height: '120px',
                     }}
                 >
-                    <Image src={st} layout={'fill'} objectFit={'cover'} />
+                    <Image src={q2} layout={'fill'} objectFit={'cover'} />
                 </InnerScroll>
                 <h3
                     style={{
