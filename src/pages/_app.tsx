@@ -7,6 +7,7 @@ import Loader from '@modules/loader';
 import { useEffect } from 'react';
 import { Router, useRouter } from 'next/router';
 import { isBrowser } from '@hooks/useWindowDimensions';
+import CustomCursor from '@components/CustomCursor';
 
 /**
  * We first need to wait for framer motion to complete the page transition animation
@@ -57,6 +58,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, [pathname, push]);
     return (
         <>
+            <CustomCursor />
             <Loader />
             <AppMenu />
             {/*<LocomotiveLayout>*/}

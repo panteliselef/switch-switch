@@ -19,7 +19,61 @@ const Feature: React.FC<{ speed?: number; number: string; title: string; text: s
 
 function Features() {
     return (
-        <Stack direction={'row'} justifyContent={'center'}>
+        <Stack
+            direction={'row'}
+            justifyContent={'center'}
+            style={{
+                position: 'relative',
+            }}
+        >
+            <p
+                className={'p-text-2'}
+                style={{
+                    position: 'absolute',
+                    color: 'black',
+                    top: '-5vw',
+                    left: '20vw',
+                }}
+            >
+                Reveal the messages with light
+            </p>
+
+            <p
+                className={'p-text-2'}
+                style={{
+                    position: 'absolute',
+                    color: 'black',
+                    top: '10vw',
+                    left: '50vw',
+                }}
+            >
+                Feel the light
+            </p>
+
+            <p
+                className={'p-text-2'}
+                style={{
+                    position: 'absolute',
+                    color: 'black',
+                    top: '30vw',
+                    left: '10vw',
+                }}
+            >
+                Our products will light to your life
+            </p>
+
+            <p
+                className={'p-text-2'}
+                style={{
+                    position: 'absolute',
+                    color: 'black',
+                    top: '50vw',
+                    right: '10vw',
+                }}
+            >
+                Come to our store
+            </p>
+
             <Stack className={styles.container} direction={'column'}>
                 <Feature
                     number={'01'}

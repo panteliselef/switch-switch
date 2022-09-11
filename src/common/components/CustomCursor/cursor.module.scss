@@ -1,0 +1,35 @@
+.dot {
+    position: fixed;
+    z-index: 999;
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #232323;
+    border-radius: 20px;
+
+    pointer-events: none;
+}
+
+.cursor {
+    position: fixed;
+    left: -7.5vw;
+    top: -7.5vw;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    display: block;
+    overflow: visible;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 49%;
+
+    -webkit-filter: blur(70px);
+    filter: blur(70px);
+    color: transparent;
+
+    pointer-events: none;
+    transition: transform 0.3s ease-out;
+
+    background-color: #efc070;
+}
