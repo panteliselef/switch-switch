@@ -80,7 +80,7 @@ function ProductCollection() {
             }}
         >
             <div className={styles.product_collection} id={'products'}>
-                <Product videoFileName={'livolo.mp4'} title={`Livolo`} />
+                <Product url={'https://vook.rs/'} videoFileName={'livolo.mp4'} title={`Livolo`} />
                 <Product
                     url={'https://www.simonelectric.com/intl/simon-100'}
                     speed={2}
