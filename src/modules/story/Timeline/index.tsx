@@ -9,8 +9,12 @@ import Image from 'next/image';
 
 import img2015 from '@assets/2015.png';
 import img2018_1 from '@assets/2018_1.png';
+import img2018_2 from '@assets/2018_2.png';
+import img2018_3 from '@assets/2018_3.png';
+import img2018_4 from '@assets/2018_4.png';
+import img2018_5 from '@assets/2018_5.png';
+
 import img2021_1 from '@assets/2021_1.png';
-import img2021_2 from '@assets/2021_2.png';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
@@ -53,7 +57,7 @@ const Timeline: React.FC = () => {
                 `.${styles.timeline_page}`,
                 {
                     ease: 'linear',
-                    x: w > breakpoints.laptop ? `-500vw` : '-500%',
+                    x: w > breakpoints.laptop ? `-800vw` : '-800%',
                     duration: 5,
                     stagger: 0.01,
                 },
@@ -130,7 +134,49 @@ const Timeline: React.FC = () => {
                                 overflow: 'hidden',
                             }}
                         >
-                            <Image src={img2018_1} layout={'fill'} objectFit={'cover'} />
+                            <Image src={img2018_2} layout={'fill'} objectFit={'cover'} />
+                        </div>
+                    </Stack>
+
+                    <Stack direction={'column'} className={styles.timeline_page}>
+                        <div
+                            style={{
+                                width: 'calc(100% - 3vw)',
+                                height: '100%',
+                                top: 0,
+                                position: 'absolute',
+                                overflow: 'hidden',
+                            }}
+                        >
+                            <Image src={img2018_3} layout={'fill'} objectFit={'cover'} />
+                        </div>
+                    </Stack>
+
+                    <Stack direction={'column'} className={styles.timeline_page}>
+                        <div
+                            style={{
+                                width: 'calc(100% - 3vw)',
+                                height: '100%',
+                                top: 0,
+                                position: 'absolute',
+                                overflow: 'hidden',
+                            }}
+                        >
+                            <Image src={img2018_4} layout={'fill'} objectFit={'cover'} />
+                        </div>
+                    </Stack>
+
+                    <Stack direction={'column'} className={styles.timeline_page}>
+                        <div
+                            style={{
+                                width: 'calc(100% - 3vw)',
+                                height: '100%',
+                                top: 0,
+                                position: 'absolute',
+                                overflow: 'hidden',
+                            }}
+                        >
+                            <Image src={img2018_5} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 
@@ -154,7 +200,28 @@ const Timeline: React.FC = () => {
                                 overflow: 'hidden',
                             }}
                         >
-                            <Image src={img2021_2} layout={'fill'} objectFit={'cover'} />
+                            <div
+                                style={{
+                                    position: 'relative',
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                            >
+                                <video
+                                    style={{
+                                        position: 'relative',
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        objectPosition: '50% 50%',
+                                    }}
+                                    loop={true}
+                                    autoPlay={true}
+                                    muted={true}
+                                >
+                                    <source src={`/videos/2021_2.mp4`} type="video/mp4" />
+                                </video>
+                            </div>
                         </div>
                     </Stack>
                 </Stack>
