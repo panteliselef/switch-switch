@@ -8,11 +8,42 @@ import gsap from 'gsap/dist/gsap';
 
 const Hero = () => {
     useEffect(() => {
-        gsap.fromTo(
-            document.querySelectorAll('.r'),
-            { opacity: 0, x: -100, y: 40, rotate: -45, color: '#fff' },
-            { delay: 3, opacity: 1, x: 0, y: 0, rotate: 0, stagger: 0.5, color: '#e1493e' },
+        // gsap.fromTo(
+        //     document.querySelectorAll('.r'),
+        //     { opacity: 0, x: -100, y: 40, rotate: -45, color: '#fff' },
+        //     { delay: 3, opacity: 1, x: 0, y: 0, rotate: 0, stagger: 0.5, color: '#e1493e' },
+        // );
+        const tl = gsap.timeline({
+            paused: true,
+        });
+
+        tl.fromTo(
+            '.anim-typewriter',
+            {
+                width: '0',
+            },
+            {
+                delay: 3,
+                duration: 2,
+                width: '15vw' /* same as CSS .line-1 width */,
+                ease: 'steps(2)',
+                repeat: -1,
+            },
+            0,
+        ).fromTo(
+            '.anim-typewriter',
+            {
+                'border-right-color': 'rgba(255,255,255,0.75)',
+            },
+            {
+                'border-right-color': 'rgba(255,255,255,0)',
+                repeat: -1,
+                ease: 'steps(20)',
+            },
+            0,
         );
+
+        tl.play();
     }, []);
     return (
         <section className={styles.outer_cont}>
@@ -67,10 +98,16 @@ const Hero = () => {
 
                     <Stack direction={'row'}>
                         <h3 className={'heading-3'}>be power</h3>
-
-                        <h3 className={'heading-3 r'}>r</h3>
-
-                        <h3 className={'heading-3 r'}>r</h3>
+                        <h3
+                            className={'heading-3 r anim-typewriter'}
+                            style={{
+                                borderRight: '2px solid rgba(255,255,255,.75)',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                            }}
+                        >
+                            rr
+                        </h3>
                     </Stack>
                 </Stack>
 
