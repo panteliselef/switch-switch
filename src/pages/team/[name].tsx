@@ -1,4 +1,4 @@
-import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
+import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
 import TeamMember from '@modules/team';
 import LocomotiveLayout from '@layouts/LocomotiveLayout';
 import Footer from '@components/Footer';
@@ -43,7 +43,23 @@ const team: TeamMemberType[] = [
     },
 ];
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+    if (locales) {
+        return {
+            paths: locales
+                .map((locale) => {
+                    return team.map((a) => ({
+                        params: {
+                            name: a.urlPath,
+                        },
+                        locale,
+                    }));
+                })
+                .flat(),
+            fallback: false, // can also be true or 'blocking'
+        };
+    }
+
     return {
         paths: team.map((a) => ({
             params: {
@@ -52,7 +68,7 @@ export async function getStaticPaths() {
         })),
         fallback: false, // can also be true or 'blocking'
     };
-}
+};
 
 export async function getStaticProps(context: GetStaticPropsContext) {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

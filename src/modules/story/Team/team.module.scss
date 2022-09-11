@@ -1,7 +1,7 @@
 @use 'styles/design/base/breakpoints' as brk;
 
 .alex_pic {
-    background-image: url('https://images.unsplash.com/photo-1661553141518-c89b061640e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=659&q=80');
+    //background-image: url('https://images.unsplash.com/photo-1661553141518-c89b061640e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=659&q=80');
 }
 
 .heading {
@@ -116,6 +116,7 @@
     background-size: cover;
     background-position: 50% 20%;
     backface-visibility: hidden;
+    position: relative;
 }
 
 .column__item_caption {
