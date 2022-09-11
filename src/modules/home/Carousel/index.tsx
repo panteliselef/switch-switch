@@ -57,16 +57,15 @@ const Carousel = () => {
         <section>
             <div
                 id={'made'}
+                className={styles.grid}
                 style={{
                     perspective: '2000px',
                     height: '100vh',
                     display: 'grid',
                     gridTemplateColumns: '22vw 1fr',
-                    padding: '0 6vw',
                     margin: 'auto',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    gap: 50,
                 }}
             >
                 <Stack
