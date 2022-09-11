@@ -1,5 +1,20 @@
 @use 'styles/design/base/breakpoints' as brk;
 
+.mask1 {
+    //-webkit-mask-image: url('https://images.unsplash.com/photo-1662839514622-caba33719585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+    //mask-image: url('');
+    //-webkit-mask-repeat: no-repeat;
+    //mask-repeat: no-repeat;
+
+    //background: url('https://images.unsplash.com/photo-1662839514622-caba33719585?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')
+    //    0 0 / cover no-repeat;
+
+    background: url('/bw1.png') 0 0 / cover no-repeat;
+    color: #de466c;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .timeline_container {
     height: 100vh;
     overflow: hidden;
