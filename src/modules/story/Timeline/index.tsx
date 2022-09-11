@@ -90,7 +90,8 @@ const Timeline: React.FC = () => {
                         ))}
                     </Stack>
                     <Stack direction={'column'} className={styles.timeline_page}>
-                        <p className={classNames(styles.timeline_year)}>2008</p>
+                        <p className={classNames(styles.timeline_year, styles.mask1)}>2008</p>
+
                         <p className={classNames('p-text-2', styles.info)}>
                             We had a grand vision that we really want to come to life. So we started making it a
                             reality. Transforming our garage into a space where we could work and express our ideas.{' '}
