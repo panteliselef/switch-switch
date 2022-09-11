@@ -8,11 +8,6 @@ import gsap from 'gsap/dist/gsap';
 
 const Hero = () => {
     useEffect(() => {
-        // gsap.fromTo(
-        //     document.querySelectorAll('.r'),
-        //     { opacity: 0, x: -100, y: 40, rotate: -45, color: '#fff' },
-        //     { delay: 3, opacity: 1, x: 0, y: 0, rotate: 0, stagger: 0.5, color: '#e1493e' },
-        // );
         const tl = gsap.timeline({
             paused: true,
         });
@@ -25,7 +20,7 @@ const Hero = () => {
             {
                 delay: 3,
                 duration: 2,
-                width: '15vw' /* same as CSS .line-1 width */,
+                width: '15vw',
                 ease: 'steps(2)',
                 repeat: -1,
             },
@@ -119,7 +114,7 @@ const Hero = () => {
                     className={styles.switch_cont}
                 >
                     <div className={styles.image_cont}>
-                        <Image src={homeHero} layout={'responsive'} />
+                        <Image alt={'the ceo in the studio'} src={homeHero} layout={'responsive'} />
                     </div>
 
                     <div className={styles.switch}>

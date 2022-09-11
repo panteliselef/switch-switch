@@ -8,6 +8,7 @@ export type TeamMemberType = {
     name: string;
     bio: string;
     role: string;
+    next: string;
 };
 
 const team: TeamMemberType[] = [
@@ -18,11 +19,13 @@ const team: TeamMemberType[] = [
             'Alex is an experienced Art Director, filmmaker, UI/UX designer with over 750 commercials, short films, feature films and music videos, passionate about the digital presence of his clients. He supports Switch Switch in all the aspects of  brand, working on implementing superior marketing strategies, and inventing new approaches when it\n' +
             'comes to social media, tech and marketing platforms. He’s worked as an Art director for several renowned startups in San Francisco, California.',
         role: 'ART DIRECTOR',
+        next: 'nikola',
     },
     {
         urlPath: 'dusan',
         name: 'Dušan Nešić',
         role: 'CEO & FOUNDER',
+        next: 'milos',
         bio: 'During the birth of our company our key moto was for you to experience the unseen. There comes our co-founder Dusan, that brings light into the darkness. Bringing immense energy and fire that brings pure drive to our brand resulting in an extremely personal approach, since this is one of the finest touches of your home, Dusan wants you to expereince every single touch that will bring back memories of the unseen. One touch is one experience. This is your home. This is SwitchSwtich.',
     },
 
@@ -30,6 +33,7 @@ const team: TeamMemberType[] = [
         urlPath: 'milos',
         name: 'Miloš Petrović',
         role: 'CEO & FOUNDER',
+        next: 'alex',
         bio: 'Creating a company requires vision and hope. The culmination of two energies have brought us to this day. Let us introduce you to our co-founder Milos. Since Milos was a child he was always fascinated by electricity and innovation resulting in extreme perfectionism that leads the ideology of our brand.',
     },
 
@@ -37,6 +41,7 @@ const team: TeamMemberType[] = [
         urlPath: 'nikola',
         name: 'Nikola Jovanović',
         role: 'SALES & TECH SUPPORT',
+        next: 'dusan',
         bio:
             'Nikola comes from a familly in which hard work, perfectionism, production, resourcefulness, entrepreneurship is the key mentorship from his familly. In the field of electrical engineering\n' +
             'he sucks energy and transmits it to you. He doesn’t sell advice, emotions and feelings, he gifts them to you.',
