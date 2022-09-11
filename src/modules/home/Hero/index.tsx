@@ -3,8 +3,17 @@ import styles from './hero.module.scss';
 import Image from 'next/image';
 
 import homeHero from '@assets/homeHero.png';
+import { useEffect } from 'react';
+import gsap from 'gsap/dist/gsap';
 
 const Hero = () => {
+    useEffect(() => {
+        gsap.fromTo(
+            document.querySelectorAll('.r'),
+            { opacity: 0, x: -100, y: 40, rotate: -45, color: '#fff' },
+            { delay: 3, opacity: 1, x: 0, y: 0, rotate: 0, stagger: 0.5, color: '#e1493e' },
+        );
+    }, []);
     return (
         <section className={styles.outer_cont}>
             <Stack
@@ -56,14 +65,13 @@ const Hero = () => {
                         </Stack>
                     </Stack>
 
-                    <h3
-                        className={'heading-3'}
-                        style={{
-                            width: '100%',
-                        }}
-                    >
-                        be powerrr
-                    </h3>
+                    <Stack direction={'row'}>
+                        <h3 className={'heading-3'}>be power</h3>
+
+                        <h3 className={'heading-3 r'}>r</h3>
+
+                        <h3 className={'heading-3 r'}>r</h3>
+                    </Stack>
                 </Stack>
 
                 <Stack
