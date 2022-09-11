@@ -1,17 +1,26 @@
+@use 'styles/design/base/breakpoints' as brk;
+
+.grid {
+    padding: 0 1rem;
+    gap: 0;
+    @include brk.tablet {
+        gap: 50px;
+        padding: 0 6vw;
+    }
+}
+
 .t {
     margin: 0;
     position: absolute;
     top: 47%;
 
-    //&:nth-child(1) {
-    //    transform: rotateX(0) translateZ(24vw);
-    //}
-
     @for $i from 1 through 2000 {
         &:nth-child(#{$i}) {
             //transform: rotateX(-10deg * ($i - 1)) translateZ(150px);
-
-            transform: rotateX(-10deg * ($i - 1)) translateZ(24vw);
+            transform: rotateX(-10deg * ($i - 1)) translateZ(20rem);
+            @include brk.tablet {
+                transform: rotateX(-10deg * ($i - 1)) translateZ(24vw);
+            }
         }
     }
 }
