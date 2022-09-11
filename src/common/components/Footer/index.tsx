@@ -8,6 +8,8 @@ import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
 import styles from './footer.module.scss';
+import ExternalLink from '@helpers/ExternalLink';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
     const w = useDebouncedWidth();
@@ -74,31 +76,42 @@ const Footer: React.FC = () => {
                         }}
                     >
                         <Stack direction={'column'}>
-                            {/*TODO: Use external link component*/}
-                            <a>
+                            <ExternalLink
+                                to={
+                                    'https://www.google.com/maps/place/Switch+Switch/@44.8198326,20.4716844,17z/data=!3m1!4b1!4m5!3m4!1s0x475a7be9da66d6e3:0x85883af2149b288c!8m2!3d44.8198326!4d20.4738731'
+                                }
+                            >
                                 Venizelosova 29G/4 <br /> Belgrade, 11000 <br /> Dorcol
-                            </a>
+                            </ExternalLink>
 
-                            <a>hello@switchswitch.rs</a>
+                            <ExternalLink to={'hello@switchswitch.rs'} type={'email'}>
+                                hello@switchswitch.rs
+                            </ExternalLink>
                         </Stack>
 
                         <Stack direction={'column'}>
-                            <a>Work</a>
-                            <a>Products</a>
-                            <a>Our Story</a>
+                            <Link href={'/history'}>
+                                <a>History</a>
+                            </Link>
+                            <Link href={'/#products'}>
+                                <a>Products</a>
+                            </Link>
+                            <Link href={'/story'}>
+                                <a>Our Story</a>
+                            </Link>
                             <a>Schedule</a>
                         </Stack>
 
                         <Stack direction={'column'}>
-                            <a>Instagram</a>
-                            <a>Facebook</a>
-                            <a>Linkedin</a>
-                            <a>Twitter</a>
+                            <ExternalLink to={'https://www.instagram.com/switchswitch.rs/'}>Instagram</ExternalLink>
+                            <ExternalLink to={'https://www.facebook.com/switchswitch.rs'}>Facebook</ExternalLink>
                         </Stack>
                     </Stack>
 
                     <Stack direction={'row'} alignItems={'flex-end'}>
-                        <p className={'p-text-1'}>Go home</p>
+                        <Link href={'/'}>
+                            <a className={'p-text-1'}>Go home</a>
+                        </Link>
                     </Stack>
                 </Stack>
             </Stack>
