@@ -14,15 +14,6 @@ import Link from 'next/link';
 
 const a = [
     {
-        pos: 2,
-        url: '/team/alex',
-        caption: {
-            year: '2011',
-            text: 'Alex Tselekidis',
-        },
-        img: alexPic,
-    },
-    {
         pos: 5,
         url: '/team/dusan',
         caption: {
@@ -41,6 +32,15 @@ const a = [
         img: milos,
     },
     {
+        pos: 2,
+        url: '/team/alex',
+        caption: {
+            year: '2011',
+            text: 'Alex Tselekidis',
+        },
+        img: alexPic,
+    },
+    {
         pos: 11,
         url: '/team/nikola',
         caption: {
@@ -54,12 +54,12 @@ const a = [
 const b = [
     {
         pos: 1,
-        url: '/team/alex',
+        url: '/team/milos',
         caption: {
             year: '2011',
-            text: 'Alex Tselekidis',
+            text: 'Miloš Petrović',
         },
-        img: alexPic,
+        img: milos,
     },
     {
         pos: 4,
@@ -72,12 +72,12 @@ const b = [
     },
     {
         pos: 7,
-        url: '/team/alex',
+        url: '/team/milos',
         caption: {
             year: '2011',
-            text: 'Alex Tselekidis',
+            text: 'Miloš Petrović',
         },
-        img: alexPic,
+        img: milos,
     },
     {
         pos: 10,

@@ -17,7 +17,7 @@ const a = {
     nikola,
 };
 
-const TeamMember: React.FC<TeamMemberType> = ({ urlPath, bio, name, role }) => {
+const TeamMember: React.FC<TeamMemberType> = ({ next, urlPath, bio, name, role }) => {
     return (
         <section
             id={'before-footer'}
@@ -70,13 +70,13 @@ const TeamMember: React.FC<TeamMemberType> = ({ urlPath, bio, name, role }) => {
                 }}
             >
                 <Stack direction={'row'} className={styles.back_cont} alignItems={'flex-end'}>
-                    <Link href={'/story'}>
+                    <Link href={`/team/${next}`}>
                         <a
                             style={{
                                 textDecoration: 'underline',
                             }}
                         >
-                            Go Back
+                            Go Next
                         </a>
                     </Link>
                 </Stack>
