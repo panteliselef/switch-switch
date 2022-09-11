@@ -1,14 +1,15 @@
 import styles from './products.module.scss';
 import React from 'react';
-import Stack from '@layouts/Stack';
+import Stack, { StackProps } from '@layouts/Stack';
 
-const Product: React.FC<{ videoFileName: string; title: string; speed?: number }> = ({
+const Product: React.FC<StackProps & { videoFileName: string; title: string; speed?: number }> = ({
     speed,
     videoFileName,
     title,
+    id,
 }) => {
     return (
-        <Stack direction={'column'} className={styles.product}>
+        <Stack id={id} direction={'column'} className={styles.product}>
             <Stack gap={'0.8.vw'} direction={'column'} data-scroll={true} data-scroll-speed={speed || 1}>
                 <div className={styles.product_image}>
                     <video loop={true} autoPlay={true} muted={true}>
@@ -28,7 +29,7 @@ function ProductCollection() {
                 position: 'relative',
             }}
         >
-            <div className={styles.product_collection}>
+            <div className={styles.product_collection} id={'products'}>
                 <Product videoFileName={'livolo.mp4'} title={`Livolo`} />
                 <Product speed={2} videoFileName={'simon.mp4'} title={`Simon`} />
                 <Product videoFileName={'jung.mp4'} title={`Jung`} />
@@ -76,11 +77,10 @@ function Lighting() {
 function Products() {
     return (
         <section>
-            <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
-                <p className={styles.bg_title}>PRODUCTS</p>
+            <Stack id={'products'} direction={'row'} justifyContent={'center'} alignItems={'center'}>
+                <p className={styles.bg_title}>SWITCHES</p>
             </Stack>
             <ProductCollection />
-
             <Stack
                 direction={'row'}
                 style={{
