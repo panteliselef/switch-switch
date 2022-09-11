@@ -3,7 +3,7 @@ import { gsap } from 'gsap/dist/gsap';
 
 import styles from './appMenu.module.scss';
 import classNames from 'classnames';
-import SwitchLogo from '@components/AppMenu/SwitchLogo';
+import { AnimatedLogo } from '@components/AppMenu/SwitchLogo';
 import Link from 'next/link';
 
 const overlayPath = '.overlay__path';
@@ -195,7 +195,7 @@ const AppMenu: React.FC = () => {
     return (
         <>
             <div className={styles.logo_cont}>
-                <SwitchLogo />
+                <AnimatedLogo />
             </div>
             <button className={styles.button_close} onClick={click}>
                 <span
