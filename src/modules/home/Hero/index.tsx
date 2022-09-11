@@ -79,7 +79,6 @@ const Hero = () => {
 
                     <div className={styles.switch}>
                         <div className={styles.red_cont}>
-
                             <div data-scroll={''} data-scroll-speed={'-3'} className={styles.red}></div>
                         </div>
                     </div>
