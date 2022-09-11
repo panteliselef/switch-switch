@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Stack from '@layouts/Stack';
 import Image from 'next/image';
-import img from '@assets/switch1.png';
+import img from '@assets/footer.png';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
@@ -45,7 +45,13 @@ const Footer: React.FC = () => {
                     </Stack>
 
                     <div data-scroll={''} className={styles.img_cont}>
-                        <Image src={img} objectFit={'cover'} layout={'fill'} />
+                        <Image
+                            quality={90}
+                            alt={'employee with client'}
+                            src={img}
+                            objectFit={'cover'}
+                            layout={'fill'}
+                        />
                     </div>
                 </Stack>
 
