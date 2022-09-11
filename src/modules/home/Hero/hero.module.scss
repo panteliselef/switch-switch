@@ -30,6 +30,10 @@
     font-size: 0.9vw;
     width: 20vw;
 
+    @include brk.tablet {
+        display: flex;
+    }
+
     &:first-of-type {
         padding-top: 0.3vw;
     }
