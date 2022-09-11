@@ -2,13 +2,22 @@ import React from 'react';
 import Stack from '@layouts/Stack';
 import Image from 'next/image';
 import styles from './team.module.scss';
-
-import team from '@assets/2018_1.png';
 import Link from 'next/link';
 import type { TeamMemberType } from '../../pages/team/[name]';
 import classNames from 'classnames';
+import alexPic from '@assets/team/alex.png';
+import dusan from '@assets/team/dusan.png';
+import milos from '@assets/team/milos.png';
+import nikola from '@assets/team/nikola.png';
 
-const TeamMember: React.FC<TeamMemberType> = ({ bio, name, role }) => {
+const a = {
+    alex: alexPic,
+    dusan,
+    milos,
+    nikola,
+};
+
+const TeamMember: React.FC<TeamMemberType> = ({ urlPath, bio, name, role }) => {
     return (
         <section
             id={'before-footer'}
@@ -73,7 +82,14 @@ const TeamMember: React.FC<TeamMemberType> = ({ bio, name, role }) => {
                 </Stack>
 
                 <div className={styles.img_cont}>
-                    <Image src={team} objectFit={'cover'} layout={'fill'} />
+                    <Image
+                        objectPosition={'top center'}
+                        src={a[urlPath]}
+                        quality={100}
+                        alt={`team member ${name}`}
+                        objectFit={'cover'}
+                        layout={'fill'}
+                    />
                 </div>
 
                 <p className={classNames('p-text-3', styles.bio)}>{bio}</p>
