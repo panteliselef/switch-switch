@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
+import { gsap } from 'gsap/dist/gsap';
 import styles from './cursor.module.scss';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
