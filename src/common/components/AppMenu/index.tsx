@@ -6,6 +6,12 @@ import classNames from 'classnames';
 import { AnimatedLogo } from '@components/AppMenu/SwitchLogo';
 import Link from 'next/link';
 
+import bg1L from '@assets/switch-78.jpeg';
+import bg2L from '@assets/switch-61.jpeg';
+import bg1S from '@assets/switch-63.jpeg';
+import bg2S from '@assets/switch-82.jpeg';
+import Image from 'next/image';
+
 const overlayPath = '.overlay__path';
 
 const openMenu = (a: MutableRefObject<boolean>) => {
@@ -215,22 +221,8 @@ const AppMenu: React.FC = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         className={styles.icon_close}
                     >
-                        <line
-                            x1="13.788"
-                            y1="1.28816"
-                            x2="1.06011"
-                            y2="14.0161"
-                            strokeWidth="1.2"
-                            // style="opacity: 0; stroke-dashoffset: 0.002; stroke-dasharray: 0px, 999999px;"
-                        ></line>
-                        <line
-                            x1="1.06049"
-                            y1="1.43963"
-                            x2="13.7884"
-                            y2="14.1675"
-                            strokeWidth="1.2"
-                            // style="opacity: 0; stroke-dashoffset: 0.002; stroke-dasharray: 0px, 999999px;"
-                        ></line>
+                        <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" strokeWidth="1.2"></line>
+                        <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675" strokeWidth="1.2"></line>
                     </svg>
                     <svg
                         viewBox="0 0 18 12"
@@ -238,27 +230,9 @@ const AppMenu: React.FC = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         className={styles.icon_burger}
                     >
-                        <line
-                            x1="18"
-                            y1="0.6"
-                            y2="0.6"
-                            strokeWidth="1.2"
-                            // style="opacity: 1; stroke-dashoffset: 0; stroke-dasharray: none;"
-                        ></line>
-                        <line
-                            x1="18"
-                            y1="5.7167"
-                            y2="5.7167"
-                            strokeWidth="1.2"
-                            // style="opacity: 1; stroke-dashoffset: 0; stroke-dasharray: none;"
-                        ></line>
-                        <line
-                            x1="18"
-                            y1="10.8334"
-                            y2="10.8334"
-                            strokeWidth="1.2"
-                            // style="opacity: 1; stroke-dashoffset: 0; stroke-dasharray: none;"
-                        ></line>
+                        <line x1="18" y1="0.6" y2="0.6" strokeWidth="1.2"></line>
+                        <line x1="18" y1="5.7167" y2="5.7167" strokeWidth="1.2"></line>
+                        <line x1="18" y1="10.8334" y2="10.8334" strokeWidth="1.2"></line>
                     </svg>
                 </div>
             </button>
@@ -271,28 +245,36 @@ const AppMenu: React.FC = () => {
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1L} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={classNames([styles.tiles__line_img, styles.tiles__line_img__large])}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1L} layout={'fill'} objectFit={'cover'} />
+                        </div>
 
                         <div
                             className={styles.tiles__line_img}
@@ -300,14 +282,18 @@ const AppMenu: React.FC = () => {
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                     </div>
 
                     <div className={styles.tiles__line}>
@@ -317,28 +303,36 @@ const AppMenu: React.FC = () => {
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2L} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={classNames([styles.tiles__line_img, styles.tiles__line_img__large])}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2L} layout={'fill'} objectFit={'cover'} />
+                        </div>
 
                         <div
                             className={styles.tiles__line_img}
@@ -346,14 +340,18 @@ const AppMenu: React.FC = () => {
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                     </div>
 
                     <div className={styles.tiles__line}>
@@ -363,28 +361,36 @@ const AppMenu: React.FC = () => {
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1L} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={classNames([styles.tiles__line_img, styles.tiles__line_img__large])}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1L} layout={'fill'} objectFit={'cover'} />
+                        </div>
 
                         <div
                             className={styles.tiles__line_img}
@@ -392,14 +398,18 @@ const AppMenu: React.FC = () => {
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg1S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                         <div
                             className={styles.tiles__line_img}
                             style={{
                                 backgroundImage:
                                     'url(https://images.unsplash.com/photo-1660331036382-bf5a59e28d52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2428&q=80)',
                             }}
-                        ></div>
+                        >
+                            <Image src={bg2S} layout={'fill'} objectFit={'cover'} />
+                        </div>
                     </div>
                 </div>
                 <nav className={styles.menu}>

@@ -2,7 +2,7 @@ import Stack from '@layouts/Stack';
 import styles from './hero.module.scss';
 import Image from 'next/image';
 
-import homeHero from '@assets/homeHero.png';
+import homeHero from '@assets/homeHero.jpeg';
 import { useEffect } from 'react';
 import gsap from 'gsap/dist/gsap';
 
@@ -114,8 +114,23 @@ const Hero = () => {
                     data-scroll-speed={'-3'}
                     className={styles.switch_cont}
                 >
+                    <p
+                        className={'p-text-3'}
+                        style={{
+                            paddingBottom: '.5rem',
+                            fontSize: 'calc(0.5vh + 0.5vw)',
+                        }}
+                    >
+                        our story
+                    </p>
                     <div className={styles.image_cont}>
-                        <Image alt={'the ceo in the studio'} src={homeHero} layout={'responsive'} />
+                        <Image
+                            priority={true}
+                            quality={100}
+                            alt={'the ceo in the studio'}
+                            src={homeHero}
+                            layout={'responsive'}
+                        />
                     </div>
 
                     <div className={styles.switch}>

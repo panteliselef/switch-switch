@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import Stack from '@layouts/Stack';
 import styles from './showRoom.module.scss';
 
-import switch1 from '@assets/switch1.png';
-import studio from '@assets/studio.png';
+import switch1 from '@assets/switch1.jpeg';
+import studio from '@assets/studio.jpeg';
 
 import Image from 'next/image';
 import { gsap } from 'gsap/dist/gsap';

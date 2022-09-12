@@ -42,6 +42,8 @@
 .image_cont {
     position: relative;
     width: 100%;
+    overflow: hidden;
+    border-radius: 3vw;
 }
 
 .switch_cont {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Stack from '@layouts/Stack';
 import Image from 'next/image';
-import img from '@assets/footer.png';
+import img from '@assets/footer.jpeg';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
