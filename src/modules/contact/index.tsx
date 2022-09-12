@@ -4,8 +4,8 @@ import teamStyles from '@modules/team/team.module.scss';
 import styles from './contact.module.scss';
 import Image from 'next/image';
 
-import meeting from '@assets/2018_1.png';
-import ExternalLink from '../../common/helpers/ExternalLink';
+import contact from '@assets/contact.jpeg';
+import ExternalLink from '@helpers/ExternalLink';
 import classNames from 'classnames';
 import Link from 'next/link';
 
@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
                     <Stack direction={'column'}>
                         <ExternalLink
                             className={'p-text-3'}
-                            to={'hello@switchswitch.rs'}
+                            to={'office@switchswitch.rs'}
                             type={'email'}
                             style={{
                                 textDecoration: 'underline',
@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
                                     />
                                 </svg>
 
-                                <p>hello@switchswitch.rs</p>
+                                <p>office@switchswitch.rs</p>
                             </Stack>
                         </ExternalLink>
 
@@ -117,7 +117,14 @@ const Contact: React.FC = () => {
                 </Stack>
 
                 <div className={styles.image_cont}>
-                    <Image layout={'fill'} src={meeting} objectFit={'cover'} />
+                    <Image
+                        quality={90}
+                        alt={'team organizing'}
+                        priority={true}
+                        layout={'fill'}
+                        src={contact}
+                        objectFit={'cover'}
+                    />
                 </div>
 
                 <Stack direction={'column'} justifyContent={'flex-end'} gap={'4vw'} alignItems={'center'}>
@@ -127,6 +134,7 @@ const Contact: React.FC = () => {
                                 direction={'row'}
                                 justifyContent={'center'}
                                 alignItems={'center'}
+                                className={'text-center'}
                                 style={{
                                     borderRadius: '50%',
                                     aspectRatio: '1/1',

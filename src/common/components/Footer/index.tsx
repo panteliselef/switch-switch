@@ -90,8 +90,8 @@ const Footer: React.FC = () => {
                                 Venizelosova 29G/4 <br /> Belgrade, 11000 <br /> Dorcol
                             </ExternalLink>
 
-                            <ExternalLink to={'hello@switchswitch.rs'} type={'email'}>
-                                hello@switchswitch.rs
+                            <ExternalLink to={'office@switchswitch.rs'} type={'email'}>
+                                office@switchswitch.rs
                             </ExternalLink>
                         </Stack>
 

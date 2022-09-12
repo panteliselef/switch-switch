@@ -12,7 +12,7 @@
     position: relative;
     padding: 5rem 1rem;
     color: var(--bg-color);
-    height: 100vh;
+    min-height: 100vh;
     @include brk.tablet {
         padding: 4vw;
     }

@@ -12,12 +12,13 @@ import Revolution from '@assets/clients/Revolution Architekts.png';
 import Savremena from '@assets/clients/Savremena Arhitektura-min.png';
 import Dizajn from '@assets/clients/Studio Dizajn.svg';
 import VLDMR from '@assets/clients/VLDMR.png';
+import nk from '@assets/clients/NK arch.png';
 
 export const clients = [
     {
         logo: Design_11012,
         name: '1102 Design Space',
-        text: '',
+        text: '1102 Design Space is a Belgrade-based architectural and interior design visualisation studio founded by architects Kristina Milanović and Branko Milanović, with backgrounds in the architectural and interior design, which helps us greatly while producing visualisations. The philosophy is simple: Create beautiful, detailed and effective architectural visualisations. We are experienced in producing still images, VR tours and animations for architects, interior designers, developers, photographers and private home-owners. The studio can take on projects of all sizes and types, from small interiors to large scale architecture projects.',
         url: 'http://1102designspace.com/?i=1',
     },
     {
@@ -30,7 +31,7 @@ export const clients = [
     {
         logo: Ana2,
         name: 'Ana Nenadović',
-        text: '',
+        text: 'Naša misija je transformacija prostora u fuziju umetnosti i funkcionalnosti prema meri svakog korisnika. Uz entuzijazam i posvećenost, bez strahova i predrasuda, pratimo Vaše želje i pretačemo ih u realnost bilo da se radi o stambenim ili komercijalnim ambijentima. Studio se nalazi u Beogradu. Osnovan je 2013.godine sa željom da ostavi pečat kako u svetu umetnosti tako i u srcima ljudi.',
         url: 'https://ananenadovic.com/sr/',
     },
 
@@ -73,7 +74,7 @@ We are minimalists with a touch of luxurious spirit.
     {
         logo: Branko,
         name: 'Branko Burmaz',
-        text: ``,
+        text: `Arhitektonski biro orjentisan pretežno ka objektima za stanovanje, odmor i ugostiteljstvo. Sa velikim iskustvom i obimnim radom u dizajnu enterijera.`,
         url: 'https://www.instagram.com/burmaz.arch/?hl=en',
     },
 
@@ -140,9 +141,9 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     },
 
     {
-        logo: '',
+        logo: nk,
         name: 'NK Arch Design',
-        text: ``,
+        text: `NK ARCHITECTS design is grounded in a simple philosophy, but one that has infinate power: "To bring the imagination to life"`,
         url: 'https://www.instagram.com/nk_arch_design/?hl=en',
     },
 
