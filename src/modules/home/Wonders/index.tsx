@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { breakpoints } from '@utils/breakpoints';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { gsap } from 'gsap/dist/gsap';
-// import SwitchAnimation from "@modules/home/SwitchAnimation";
+import SwitchAnimation from "@modules/home/SwitchAnimation";
 
 function Wonders() {
     const w = useDebouncedWidth();
@@ -58,7 +58,7 @@ function Wonders() {
                     The story behind our name is one of exploration, creativity and curiosity
                 </p>
             </Stack>
-            {/*<SwitchAnimation />*/}
+            <SwitchAnimation />
             {/*<Plugs />*/}
         </section>
     );
