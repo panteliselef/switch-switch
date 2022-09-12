@@ -1,12 +1,13 @@
 import Stack from '@layouts/Stack';
 import styles from './wonders.module.scss';
 import classNames from 'classnames';
-import Plugs from '@modules/home/Plugs';
+// import Plugs from '@modules/home/Plugs';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { useEffect } from 'react';
 import { breakpoints } from '@utils/breakpoints';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { gsap } from 'gsap/dist/gsap';
+// import SwitchAnimation from "@modules/home/SwitchAnimation";
 
 function Wonders() {
     const w = useDebouncedWidth();
@@ -57,7 +58,8 @@ function Wonders() {
                     The story behind our name is one of exploration, creativity and curiosity
                 </p>
             </Stack>
-            <Plugs />
+            {/*<SwitchAnimation />*/}
+            {/*<Plugs />*/}
         </section>
     );
 }
