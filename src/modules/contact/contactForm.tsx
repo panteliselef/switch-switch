@@ -14,6 +14,8 @@ const ContactForm = () => {
                 style={{
                     minWidth: '320px',
                     height: '650px',
+                    maxWidth: '1000px',
+                    margin: '0 auto',
                 }}
             ></div>
 

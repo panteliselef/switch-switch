@@ -1,15 +1,16 @@
-import ScenePlugs from '@modules/home/Plugs/ScenePlugs';
 import { BakeShadows, ContactShadows, Environment, Float, Lightformer } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React from 'react';
+import ScenePlugs2 from '@modules/home/Plugs/Scene2';
 
 const PlugsCanvas: React.FC<{ shouldPlay: boolean }> = ({ shouldPlay }) => {
     return (
         <Canvas shadows dpr={[1, 2]}>
-            {/* <OrbitControls /> */}
+            {/*<OrbitControls />*/}
             {/* <Test2 /> */}
             {/* <Anim /> */}
-            <ScenePlugs shouldPlay={shouldPlay} />
+            {/*<ScenePlugs shouldPlay={shouldPlay} />*/}
+            <ScenePlugs2 shouldPlay={shouldPlay} />
             {/* <Model scale={20} position={[-0.5, -0.6, 0]} /> */}
 
             {/* <Porsche position={[-0.5, -0.18, 0]} rotation={[0, Math.PI / 5, 0]} /> */}
