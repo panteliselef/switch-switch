@@ -10,7 +10,7 @@ const ContactForm = () => {
 
             <div
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/swsw?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=000000&text_color=ffffff"
+                data-url="https://calendly.com/swsw?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=e5e5e5&text_color=000000"
                 style={{
                     minWidth: '320px',
                     height: '650px',

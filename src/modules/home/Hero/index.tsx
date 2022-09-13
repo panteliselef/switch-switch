@@ -18,8 +18,8 @@ const Hero = () => {
                 width: '0',
             },
             {
-                delay: 3,
-                duration: 4,
+                delay: 2,
+                duration: 2,
                 width: '15vw',
                 ease: 'steps(2)',
                 repeat: -1,
@@ -127,9 +127,10 @@ const Hero = () => {
                         <Image
                             priority={true}
                             quality={100}
+                            objectFit={'cover'}
                             alt={'the ceo in the studio'}
                             src={homeHero}
-                            layout={'responsive'}
+                            layout={'fill'}
                         />
                     </div>
 

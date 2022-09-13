@@ -49,11 +49,13 @@ function Clients() {
                 <div className={styles.infinite_scrolling_text}>
                     <div className={styles.infinite_scrolling_text__title}>
                         <div>
-                            {['Meet the legends', 'Meet the legends'].map((t, index) => (
-                                <p key={index} className={'heading-2'}>
-                                    {t}
-                                </p>
-                            ))}
+                            {Array(4)
+                                .fill('Meet the legends')
+                                .map((t, index) => (
+                                    <p key={index} className={'heading-2'}>
+                                        {t}
+                                    </p>
+                                ))}
                         </div>
                     </div>
                 </div>

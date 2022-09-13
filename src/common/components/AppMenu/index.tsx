@@ -11,6 +11,7 @@ import bg2L from '@assets/switch-61.jpeg';
 import bg1S from '@assets/switch-63.jpeg';
 import bg2S from '@assets/switch-82.jpeg';
 import Image from 'next/image';
+import ExternalLink from '@helpers/ExternalLink';
 
 const overlayPath = '.overlay__path';
 
@@ -447,11 +448,10 @@ const AppMenu: React.FC = () => {
                             <span className={styles.menu__item_text}>contact</span>
                         </a>
                     </Link>
-
-                    <a className={styles.menu__item}>
+                    <ExternalLink to={'https://calendly.com/swsw'} className={styles.menu__item}>
                         <span className={styles.menu__item_tiny}>switch to</span>
                         <span className={styles.menu__item_text}>schedule</span>
-                    </a>
+                    </ExternalLink>
                 </nav>
             </div>
 
