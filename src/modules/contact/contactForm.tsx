@@ -2,11 +2,13 @@ import React from 'react';
 import styles from './ContactForm/contactForm.module.scss';
 import classNames from 'classnames';
 import Script from 'next/script';
+import useTranslation from 'next-translate/useTranslation';
 
 const ContactForm = () => {
+    const { t } = useTranslation('contact');
     return (
         <section id={'before-footer'} className={classNames(styles.cont)}>
-            <h3 className={classNames('heading-3', styles.contact_form_heading)}>{`Let's have a chat`}</h3>
+            <h3 className={classNames('heading-3', styles.contact_form_heading)}>{t('contactFormTitle')}</h3>
 
             <div
                 className="calendly-inline-widget"

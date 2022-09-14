@@ -4,5 +4,7 @@ module.exports = {
     pages: {
         '*': ['common', 'menu', 'footer'],
         '/': ['homepage'],
+        'rgx:/contact': ['contact'],
+        'rgx:/team': ['team-member'],
     },
 };
