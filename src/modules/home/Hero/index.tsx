@@ -5,8 +5,11 @@ import Image from 'next/image';
 import homeHero from '@assets/homeHero.jpeg';
 import { useEffect } from 'react';
 import gsap from 'gsap/dist/gsap';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 
 const Hero = () => {
+    const w = useDebouncedWidth();
     useEffect(() => {
         const tl = gsap.timeline({
             paused: true,
@@ -20,7 +23,7 @@ const Hero = () => {
             {
                 delay: 2,
                 duration: 2,
-                width: '15vw',
+                width: w > breakpoints.laptop ? '15vw' : '4.6rem',
                 ease: 'steps(2)',
                 repeat: -1,
             },
@@ -40,7 +43,7 @@ const Hero = () => {
         );
 
         tl.play();
-    }, []);
+    }, [w]);
     return (
         <section className={styles.outer_cont}>
             <Stack
