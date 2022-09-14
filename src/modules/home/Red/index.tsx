@@ -5,8 +5,10 @@ import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import styles from './red.module.scss';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import useTranslation from 'next-translate/useTranslation';
 
 function Red() {
+    const { t } = useTranslation('homepage');
     const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
@@ -46,7 +48,7 @@ function Red() {
             id={'ele'}
         >
             <Stack direction={'column'} justifyContent={'space-between'} className={styles.container}>
-                <p id={'look'}>Take a look at what</p>
+                <p id={'look'}>{t('redDotAnimationLeft')}</p>
 
                 <Stack direction={'row'} className={styles.red_container} justifyContent={'center'}>
                     <div className={styles.line} />
@@ -58,7 +60,7 @@ function Red() {
                                 width: '10vw',
                             }}
                         >
-                            Our Products
+                            {t('redDotAnimationText')}
                         </p>
                     </Stack>
                 </Stack>
@@ -69,7 +71,7 @@ function Red() {
                         textAlign: 'right',
                     }}
                 >
-                    we can do for you
+                    {t('redDotAnimationRight')}
                 </p>
             </Stack>
         </section>

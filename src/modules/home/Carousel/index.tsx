@@ -6,8 +6,10 @@ import React, { useEffect } from 'react';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import useTranslation from 'next-translate/useTranslation';
 
 const Carousel = () => {
+    const { t } = useTranslation('homepage');
     const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
@@ -31,26 +33,6 @@ const Carousel = () => {
                     rotateX: 40,
                 },
             );
-            // .fromTo(
-            //     document.querySelectorAll(`.${styles.t}`)[0],
-            //     {
-            //         opacity: 1,
-            //     },
-            //     {
-            //         opacity: 0.8,
-            //     },
-            //     '<',
-            // )
-            // .fromTo(
-            //     document.querySelectorAll(`.${styles.t}`)[1],
-            //     {
-            //         rotateX: '45deg',
-            //     },
-            //     {
-            //         rotateX: '-45deg',
-            //     },
-            //     '<',
-            // );
         }, 1000);
     }, [w]);
     return (
@@ -74,7 +56,7 @@ const Carousel = () => {
                         width: 'auto',
                     }}
                 >
-                    <p className={'p-text-1'}>Made for</p>
+                    <p className={'p-text-1'}>{t('carouselPinnedLabel')}</p>
                 </Stack>
 
                 <Stack
@@ -88,23 +70,15 @@ const Carousel = () => {
                         maxWidth: '80vw',
                     }}
                 >
-                    {/*<p*/}
-                    {/*    className={'p-text-1'}*/}
-                    {/*    style={{*/}
-                    {/*        opacity: 0,*/}
-                    {/*    }}*/}
-                    {/*>*/}
-                    {/*    Designers*/}
-                    {/*</p>*/}
-                    <p className={classNames('p-text-1', styles.green, styles.t)}>Construction</p>
-                    <p className={classNames('p-text-1', styles.blue, styles.t)}>Architects</p>
-                    <p className={classNames('p-text-1', styles.red, styles.t)}>Designers</p>
-                    <p className={classNames('p-text-1', styles.yellow, styles.t)}>Interior Designers</p>
-                    <p className={classNames('p-text-1', styles.red, styles.t)}>You.</p>
-                    <p className={classNames('p-text-1', styles.green, styles.t)}>Electricians</p>
-                    <p className={classNames('p-text-1', styles.blue, styles.t)}>Consumers</p>
-                    <p className={classNames('p-text-1', styles.yellow, styles.t)}>Business</p>
-                    <p className={classNames('p-text-1', styles.red, styles.t)}>Artists</p>
+                    <p className={classNames('p-text-1', styles.green, styles.t)}>{t('carouselItem1')}</p>
+                    <p className={classNames('p-text-1', styles.blue, styles.t)}>{t('carouselItem2')}</p>
+                    <p className={classNames('p-text-1', styles.red, styles.t)}>{t('carouselItem3')}</p>
+                    <p className={classNames('p-text-1', styles.yellow, styles.t)}>{t('carouselItem4')}</p>
+                    <p className={classNames('p-text-1', styles.red, styles.t)}>{t('carouselItem5')}</p>
+                    <p className={classNames('p-text-1', styles.green, styles.t)}>{t('carouselItem6')}</p>
+                    <p className={classNames('p-text-1', styles.blue, styles.t)}>{t('carouselItem7')}</p>
+                    <p className={classNames('p-text-1', styles.yellow, styles.t)}>{t('carouselItem8')}</p>
+                    <p className={classNames('p-text-1', styles.red, styles.t)}>{t('carouselItem9')}</p>
                 </Stack>
             </div>
         </section>

@@ -10,8 +10,10 @@ import { breakpoints } from '@utils/breakpoints';
 import styles from './footer.module.scss';
 import ExternalLink from '@helpers/ExternalLink';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const Footer: React.FC = () => {
+    const { t } = useTranslation('footer');
     const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
@@ -38,10 +40,8 @@ const Footer: React.FC = () => {
             <Stack className={styles.footer} id={'footer'} direction={'column'}>
                 <Stack direction={'row'} className={styles.row_col}>
                     <Stack className={styles.headers_cont} direction={'column'} gap={'1.80556vw'}>
-                        <h3 className={'heading-3'}>Our story</h3>
-                        <p className={'p-text-2'}>
-                            The story behind switch switch is one of the exploration, creativity and curiosity.{' '}
-                        </p>
+                        <h3 className={'heading-3'}>{t('footerTitle')}</h3>
+                        <p className={'p-text-2'}>{t('footerSubtitle')}</p>
                     </Stack>
 
                     <div data-scroll={''} className={styles.img_cont}>
@@ -97,15 +97,15 @@ const Footer: React.FC = () => {
 
                         <Stack direction={'column'}>
                             <Link href={'/history'}>
-                                <a>History</a>
+                                <a>{t('footerMenuItem1')}</a>
                             </Link>
                             <Link href={'/#products'}>
-                                <a>Products</a>
+                                <a>{t('footerMenuItem2')}</a>
                             </Link>
                             <Link href={'/story'}>
-                                <a>Our Story</a>
+                                <a>{t('footerMenuItem3')}</a>
                             </Link>
-                            <a>Schedule</a>
+                            <ExternalLink to={'https://calendly.com/swsw'}>{t('footerMenuItem4')}</ExternalLink>
                         </Stack>
 
                         <Stack direction={'column'}>

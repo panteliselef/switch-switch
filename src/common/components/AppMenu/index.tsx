@@ -12,6 +12,7 @@ import bg1S from '@assets/switch-63.jpeg';
 import bg2S from '@assets/switch-82.jpeg';
 import Image from 'next/image';
 import ExternalLink from '@helpers/ExternalLink';
+import useTranslation from 'next-translate/useTranslation';
 
 const overlayPath = '.overlay__path';
 
@@ -173,10 +174,7 @@ const closeMenu = (a: MutableRefObject<boolean>) => {
 };
 
 const AppMenu: React.FC = () => {
-    // const timelime = useMemo(() => {
-    //     const tl = gsap
-    // })
-
+    const { t } = useTranslation('menu');
     useEffect(() => {
         gsap.set(document.querySelectorAll(`.${styles.icon_close}`), {
             alpha: 0,
@@ -213,7 +211,7 @@ const AppMenu: React.FC = () => {
                         color: 'white',
                     }}
                 >
-                    menu
+                    {t('burgerLabel')}
                 </span>
                 <div className={styles.icon_cont}>
                     <svg
@@ -416,41 +414,41 @@ const AppMenu: React.FC = () => {
                 <nav className={styles.menu}>
                     <Link href={'/'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>switch to</span>
-                            <span className={styles.menu__item_text}>home</span>
+                            <span className={styles.menu__item_tiny}>{t('prefix')}</span>
+                            <span className={styles.menu__item_text}>{t('homeLinkLabel')}</span>
                         </a>
                     </Link>
 
                     <Link href={'/story'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>switch to</span>
-                            <span className={styles.menu__item_text}>story</span>
+                            <span className={styles.menu__item_tiny}>{t('prefix')}</span>
+                            <span className={styles.menu__item_text}>{t('storyLinkLabel')}</span>
                         </a>
                     </Link>
 
                     <Link href={'/history'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>switch to</span>
-                            <span className={styles.menu__item_text}>history</span>
+                            <span className={styles.menu__item_tiny}>{t('prefix')}</span>
+                            <span className={styles.menu__item_text}>{t('historyLinkLabel')}</span>
                         </a>
                     </Link>
 
                     <Link href={'/#products'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>switch to</span>
-                            <span className={styles.menu__item_text}>products</span>
+                            <span className={styles.menu__item_tiny}>{t('prefix')}</span>
+                            <span className={styles.menu__item_text}>{t('productsLinkLabel')}</span>
                         </a>
                     </Link>
 
                     <Link href={'/contact'}>
                         <a className={styles.menu__item} onClick={click}>
-                            <span className={styles.menu__item_tiny}>switch to</span>
-                            <span className={styles.menu__item_text}>contact</span>
+                            <span className={styles.menu__item_tiny}>{t('prefix')}</span>
+                            <span className={styles.menu__item_text}>{t('contactLinkLabel')}</span>
                         </a>
                     </Link>
                     <ExternalLink to={'https://calendly.com/swsw'} className={styles.menu__item}>
-                        <span className={styles.menu__item_tiny}>switch to</span>
-                        <span className={styles.menu__item_text}>schedule</span>
+                        <span className={styles.menu__item_tiny}>{t('prefix')}</span>
+                        <span className={styles.menu__item_text}>{t('scheduleLinkLabel')}</span>
                     </ExternalLink>
                 </nav>
             </div>

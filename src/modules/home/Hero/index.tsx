@@ -5,8 +5,10 @@ import Image from 'next/image';
 import homeHero from '@assets/homeHero.jpeg';
 import { useEffect } from 'react';
 import gsap from 'gsap/dist/gsap';
+import useTranslation from 'next-translate/useTranslation';
 
 const Hero = () => {
+    const { t } = useTranslation('homepage');
     useEffect(() => {
         const tl = gsap.timeline({
             paused: true,
@@ -62,7 +64,7 @@ const Hero = () => {
                             width: '100%',
                         }}
                     >
-                        Endless
+                        {t('heroTitle1')}
                     </h3>
 
                     <h3
@@ -71,7 +73,7 @@ const Hero = () => {
                             width: '100%',
                         }}
                     >
-                        exploration
+                        {t('heroTitle2')}
                     </h3>
 
                     <Stack direction={'row'} gap={'1vw'}>
@@ -81,19 +83,16 @@ const Hero = () => {
                                 width: 'fit-content',
                             }}
                         >
-                            Let there
+                            {t('heroTitle3')}
                         </h3>
                         <Stack direction={'column'} gap={'1rem'}>
-                            <p className={styles.small_text}>
-                                at switchswitch we create future-inspired SWITCHES for people and businesses desiring
-                                luxury and style.
-                            </p>
-                            <p className={styles.small_text}>Based in BELGRADE, serbia known worldwide.</p>
+                            <p className={styles.small_text}>{t('heroSmallText1')}</p>
+                            <p className={styles.small_text}>{t('heroSmallText2')}</p>
                         </Stack>
                     </Stack>
 
                     <Stack direction={'row'}>
-                        <h3 className={'heading-3'}>be power</h3>
+                        <h3 className={'heading-3'}>{t('heroTitle4')}</h3>
                         <h3
                             className={'heading-3 r anim-typewriter'}
                             style={{
@@ -102,7 +101,7 @@ const Hero = () => {
                                 overflow: 'hidden',
                             }}
                         >
-                            rr
+                            {t('heroTitle4Extension')}
                         </h3>
                     </Stack>
                 </Stack>
@@ -121,7 +120,7 @@ const Hero = () => {
                             fontSize: 'calc(0.5vh + 0.5vw)',
                         }}
                     >
-                        our story
+                        {t('heroImageLabel')}
                     </p>
                     <div className={styles.image_cont}>
                         <Image

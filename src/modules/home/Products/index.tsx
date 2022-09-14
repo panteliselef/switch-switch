@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Stack from '@layouts/Stack';
 import ExternalLink from '@helpers/ExternalLink';
 import gsap from 'gsap/dist/gsap';
+import useTranslation from 'next-translate/useTranslation';
 
 const Product: React.FC<{ url?: string; videoFileName: string; title: string; speed?: number }> = ({
     speed,
@@ -140,10 +141,11 @@ function Lighting() {
 }
 
 function Products() {
+    const { t } = useTranslation('homepage');
     return (
         <section>
             <Stack id={'products'} direction={'row'} justifyContent={'center'} alignItems={'center'}>
-                <p className={styles.bg_title}>SWITCHES</p>
+                <p className={styles.bg_title}>{t('productsBgTitle1')}</p>
             </Stack>
             <ProductCollection />
             <Stack
@@ -158,7 +160,7 @@ function Products() {
                 </div>
             </Stack>
             <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
-                <p className={styles.bg_title}>LIGHTING</p>
+                <p className={styles.bg_title}>{t('productsBgTitle2')}</p>
             </Stack>
             <Lighting />
         </section>

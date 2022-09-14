@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 import plugStyles from './plugs.module.scss';
 import dynamic from 'next/dynamic';
+import useTranslation from 'next-translate/useTranslation';
 
 const PlugsCanvas = dynamic(() => import('@modules/home/Plugs/PlugsCanvas'), {
     ssr: false,
@@ -13,6 +14,7 @@ const PlugsCanvas = dynamic(() => import('@modules/home/Plugs/PlugsCanvas'), {
 });
 
 const PlugsInner: FC = () => {
+    const { t } = useTranslation('homepage');
     const { ref, inView } = useInView({
         /* Optional options */
         rootMargin: '-25% 0px 0px 0px',
@@ -33,7 +35,7 @@ const PlugsInner: FC = () => {
                     data-scroll-speed={'1'}
                     className={classNames('p-text-2', styles.max_width, plugStyles.desc)}
                 >
-                    The Switch Switch aesthetic aims for harmony between space and mind with a personal touch.
+                    {t('leftParagraph')}
                 </p>
             </Stack>
 
