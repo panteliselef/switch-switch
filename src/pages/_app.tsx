@@ -3,7 +3,6 @@ import '@styles/locomotive.scss';
 import '@styles/global.css';
 import type { AppProps } from 'next/app';
 import AppMenu from '@components/AppMenu';
-import Loader from '@modules/loader';
 import { useEffect } from 'react';
 import { Router, useRouter } from 'next/router';
 import { isBrowser } from '@hooks/useWindowDimensions';
@@ -59,7 +58,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <CustomCursor />
-            <Loader />
             <AppMenu />
             {/*<LocomotiveLayout>*/}
             <Component {...pageProps} />

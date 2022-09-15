@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './galleryCollection.module.scss';
 import Image from 'next/image';
 
@@ -10,7 +10,7 @@ import img5 from '@assets/bw5.png';
 
 import mapImage from '@assets/map.png';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import InnerScroll from '@components/InnerScroll';
 import studio from '@assets/studio.png';
@@ -20,6 +20,7 @@ import { breakpoints } from '@utils/breakpoints';
 import ExternalLink from '@helpers/ExternalLink';
 
 const GalleryCollection: React.FC = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
         const scrollTrigger = {
@@ -29,6 +30,8 @@ const GalleryCollection: React.FC = () => {
             end: '150%',
             scrub: true,
         };
+
+        if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger,
@@ -53,7 +56,7 @@ const GalleryCollection: React.FC = () => {
                     scrollTrigger,
                 });
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
 
     useSplitText('.gallery-text', '#gallery-trigger');
 
@@ -79,23 +82,23 @@ const GalleryCollection: React.FC = () => {
 
             <ul className={styles.mediaWrapper}>
                 <li className={styles.media}>
-                    <Image objectFit={'cover'} src={img1} alt={'image 1'} layout={'fill'} />
+                    <Image placeholder={'blur'} objectFit={'cover'} src={img1} alt={'image 1'} layout={'fill'} />
                 </li>
 
                 <li className={styles.media}>
-                    <Image objectFit={'cover'} src={img2} alt={'image 1'} layout={'fill'} />
+                    <Image placeholder={'blur'} objectFit={'cover'} src={img2} alt={'image 1'} layout={'fill'} />
                 </li>
 
                 <li className={styles.media}>
-                    <Image objectFit={'cover'} src={img3} alt={'image 1'} layout={'fill'} />
+                    <Image placeholder={'blur'} objectFit={'cover'} src={img3} alt={'image 1'} layout={'fill'} />
                 </li>
 
                 <li className={styles.media}>
-                    <Image objectFit={'cover'} src={img4} alt={'image 1'} layout={'fill'} />
+                    <Image placeholder={'blur'} objectFit={'cover'} src={img4} alt={'image 1'} layout={'fill'} />
                 </li>
 
                 <li className={styles.media}>
-                    <Image objectFit={'cover'} src={img5} alt={'image 1'} layout={'fill'} />
+                    <Image placeholder={'blur'} objectFit={'cover'} src={img5} alt={'image 1'} layout={'fill'} />
                 </li>
             </ul>
 

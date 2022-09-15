@@ -2,14 +2,16 @@ import Stack from '@layouts/Stack';
 import styles from './carousel.module.scss';
 import classNames from 'classnames';
 import { gsap } from 'gsap/dist/gsap';
-import React, { useEffect } from 'react';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import React, { useContext, useEffect } from 'react';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 
 const Carousel = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -52,7 +54,7 @@ const Carousel = () => {
             //     '<',
             // );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
     return (
         <section>
             <div

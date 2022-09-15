@@ -1,8 +1,8 @@
 import styles from './team.module.scss';
 import classNames from 'classnames';
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import alexPic from '@assets/team/alex.png';
@@ -171,7 +171,13 @@ const ImageWrapper: React.FC<{ pos: number; img: StaticImageData }> = ({ pos, im
             onMouseEnter={onMouseEnter}
         >
             <div className={classNames(styles.column__item_img, styles.alex_pic)} ref={inner}>
-                <Image alt={'team member profile picture'} src={img} layout={'fill'} objectFit={'cover'} />
+                <Image
+                    placeholder={'blur'}
+                    alt={'team member profile picture'}
+                    src={img}
+                    layout={'fill'}
+                    objectFit={'cover'}
+                />
             </div>
         </div>
     );
@@ -179,6 +185,7 @@ const ImageWrapper: React.FC<{ pos: number; img: StaticImageData }> = ({ pos, im
 
 export default function Team() {
     const w = useDebouncedWidth();
+    const { isReady } = useContext(SmoothScrollContext);
     useEffect(() => {
         const oddColumns = [...document.querySelectorAll(`.${styles.column}`)].filter((_, index) => index != 1);
         const evenColumns = [...document.querySelectorAll(`.${styles.column}`)].filter((_, index) => index === 1);
@@ -186,6 +193,7 @@ export default function Team() {
         // const gridItems = [...document.querySelectorAll(`.${styles.column__item}`)];
         // console.log(evenColumns);
 
+        if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
@@ -208,7 +216,7 @@ export default function Team() {
                     '<',
                 );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
 
     return (
         <section

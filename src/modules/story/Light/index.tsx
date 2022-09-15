@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './light.module.scss';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import classNames from 'classnames';
 
 const Light: React.FC = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
@@ -22,31 +24,30 @@ const Light: React.FC = () => {
                     // pin: true,
                     scrub: true,
                 },
-            }).to(
-                `.${styles.door}`,
-                {
-                    ease: 'power2.in',
-                    clipPath:
-                        w > breakpoints.laptop
-                            ? 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)'
-                            : 'inset(0px 0px 0px round 0px 0px 0 0)',
-                    // clipPath: 'inset(4rem 20% round 50%)',
-                    // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
-                },
-                'timeline',
-            ).to(
-                `.${styles.door_knob}`,
-                {
-                    ease: 'power2.in',
-                    clipPath:
-                        w > breakpoints.laptop
-                            ? 'circle(0px at 52vw 70vw)'
-                            : 'circle(0px at 220px 280px)',
-                    // clipPath: 'inset(4rem 20% round 50%)',
-                    // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
-                },
-                'timeline',
-            );
+            })
+                .to(
+                    `.${styles.door}`,
+                    {
+                        ease: 'power2.in',
+                        clipPath:
+                            w > breakpoints.laptop
+                                ? 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)'
+                                : 'inset(0px 0px 0px round 0px 0px 0 0)',
+                        // clipPath: 'inset(4rem 20% round 50%)',
+                        // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
+                    },
+                    'timeline',
+                )
+                .to(
+                    `.${styles.door_knob}`,
+                    {
+                        ease: 'power2.in',
+                        clipPath: w > breakpoints.laptop ? 'circle(0px at 52vw 70vw)' : 'circle(0px at 220px 280px)',
+                        // clipPath: 'inset(4rem 20% round 50%)',
+                        // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
+                    },
+                    'timeline',
+                );
 
             gsap.timeline({
                 scrollTrigger: {
@@ -68,7 +69,7 @@ const Light: React.FC = () => {
                     '<',
                 );
         }, 1000);
-    }, [w]);
+    }, [isReady, w]);
     return (
         <>
             <section
