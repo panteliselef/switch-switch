@@ -128,7 +128,7 @@ const Hero = () => {
                     </p>
                     <div className={styles.image_cont}>
                         <Image
-                            priority={true}
+                            loading={'eager'}
                             quality={100}
                             objectFit={'cover'}
                             alt={'the ceo in the studio'}
