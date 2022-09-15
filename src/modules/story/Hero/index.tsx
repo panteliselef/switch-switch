@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './hero.module.scss';
 import classNames from 'classnames';
 import { gsap } from 'gsap/dist/gsap';
 import Image from 'next/image';
 
 import storyHeroBg from '@assets/story_bg.png';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import { useSplitText } from '@modules/history/hero';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
 const ScrollToExperience = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const width = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             gsap.to('.scroll_experience_text', {
                 scrollTrigger: {
@@ -26,7 +28,7 @@ const ScrollToExperience = () => {
                 opacity: 0,
             });
         }, 1200);
-    }, []);
+    }, [isReady]);
 
     if (width <= breakpoints.laptop) return null;
 
@@ -46,7 +48,9 @@ const ScrollToExperience = () => {
 
 const Hero: React.FC = () => {
     // useSplitText('.hero-text', '.hero-trigger');
+    const { isReady } = useContext(SmoothScrollContext);
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             gsap.to('.story_bg', {
                 scrollTrigger: {
@@ -59,7 +63,7 @@ const Hero: React.FC = () => {
                 yPercent: 15,
             });
         }, 1200);
-    }, []);
+    }, [isReady]);
 
     useSplitText('.gallery-text', `#trigger`);
 
@@ -74,7 +78,7 @@ const Hero: React.FC = () => {
                         height: '100%',
                     }}
                 >
-                    <Image alt={'story bg'} src={storyHeroBg} layout={'fill'} objectFit={'cover'} />
+                    <Image priority={true} alt={'story bg'} src={storyHeroBg} layout={'fill'} objectFit={'cover'} />
                 </div>
 
                 <Stack className={styles.stack_cont} direction={'column'}>

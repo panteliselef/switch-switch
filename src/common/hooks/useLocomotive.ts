@@ -1,6 +1,6 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'; // adds ~22kb to your bundle
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { LocomotiveScrollInterface } from '../../../types';
 import useWindowDimensions from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
@@ -10,8 +10,9 @@ if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add') {
+export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add'): [boolean, () => void] {
     const { width } = useWindowDimensions();
+    const [isReady, setIsReady] = useState(false);
 
     const debouncedWidth = useDebounce(width, 100);
 
@@ -82,7 +83,9 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
         }
 
         if (debouncedWidth > breakpoints.laptop && !locoScroll.current) {
-            dynamicImportModule().then();
+            dynamicImportModule().then(() => setIsReady(true));
+        } else {
+            setIsReady(true);
         }
     }, [canStart, elementAsScroller, updateLoco, debouncedWidth]);
 
@@ -98,6 +101,7 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
     }, [updateLoco]);
 
     return [
+        isReady,
         () => {
             ScrollTrigger.removeEventListener('refresh', updateLoco);
         },

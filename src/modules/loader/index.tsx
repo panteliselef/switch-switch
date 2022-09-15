@@ -1,19 +1,21 @@
 import SwitchLogo from '@components/AppMenu/SwitchLogo';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import styles from './loader.module.scss';
 
-const Loader = () => {
+const Loader: React.FC<{ isScrollReady: boolean }> = ({ isScrollReady }) => {
     const [isReady, setReady] = useState(false);
+
+    console.log(isReady, isScrollReady);
     useEffect(() => {
         const t = setTimeout(() => {
-            setReady(true);
+            if (isScrollReady) setReady(true);
         }, 1000);
 
         return () => {
             clearTimeout(t);
         };
-    }, []);
+    }, [isScrollReady]);
 
     return (
         <div

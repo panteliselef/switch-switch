@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
 import styles from './visit.module.scss';
@@ -8,8 +8,10 @@ import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
 const VisitUs: React.FC = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -101,7 +103,7 @@ const VisitUs: React.FC = () => {
                     '>',
                 );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
     return (
         <section>
             <div id={'visit'} className={styles.grid}>

@@ -1,13 +1,15 @@
 import Stack from '@layouts/Stack';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
 function Reel() {
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
@@ -53,7 +55,7 @@ function Reel() {
                     '<',
                 );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
 
     return (
         <section

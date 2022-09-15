@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './hero.module.scss';
 import classNames from 'classnames';
 import { gsap } from 'gsap/dist/gsap';
 import Image from 'next/image';
 
 import historyHeroBg from '@assets/hero-history.png';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 
@@ -16,7 +16,9 @@ const clipPaths = {
 };
 
 export function useSplitText(classElements: string, classTrigger: string) {
+    const { isReady } = useContext(SmoothScrollContext);
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             const elements = Array.from(document.querySelectorAll(classElements)).map((a) => a.children[0]);
 
@@ -51,11 +53,12 @@ export function useSplitText(classElements: string, classTrigger: string) {
                 );
             });
         }, 1000);
-    }, [classElements, classTrigger]);
+    }, [isReady, classElements, classTrigger]);
 }
 
 const Hero: React.FC = () => {
     // useSplitText('.hero-text', '.hero-trigger');
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
         gsap.killTweensOf(`.${styles.slide__img_wrap}`);
@@ -64,6 +67,8 @@ const Hero: React.FC = () => {
             ease: 'expo',
             clipPath: clipPaths.initial,
         });
+
+        if (!isReady) return;
 
         setTimeout(() => {
             gsap.timeline({
@@ -79,7 +84,7 @@ const Hero: React.FC = () => {
                 clipPath: clipPaths.hover,
             });
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
 
     // const onMouseEnterLink = useCallback(() => {
     //     gsap.killTweensOf(`.${styles.slide__img_wrap}`);

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './timeline.module.scss';
 import classNames from 'classnames';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import Stack from '@layouts/Stack';
 
 import Image from 'next/image';
@@ -20,8 +20,10 @@ import { breakpoints } from '@utils/breakpoints';
 
 const Timeline: React.FC = () => {
     const [activeLine, setActiveLine] = useState(0);
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -76,7 +78,7 @@ const Timeline: React.FC = () => {
                 },
             );
         }, 1000);
-    }, [w]);
+    }, [isReady, w]);
 
     return (
         <section>
@@ -104,7 +106,7 @@ const Timeline: React.FC = () => {
 
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <div className={classNames(styles.image_cont, styles.image_cont_70)}>
-                            <Image src={img2015} layout={'fill'} objectFit={'cover'} />
+                            <Image placeholder={'blur'} src={img2015} layout={'fill'} objectFit={'cover'} />
                         </div>
                         <p className={classNames(styles.timeline_year)}>2015</p>
                         <p className={classNames('p-text-2', styles.info)}>
@@ -115,7 +117,7 @@ const Timeline: React.FC = () => {
 
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <div className={classNames(styles.image_cont, styles.image_cont_70)}>
-                            <Image src={img2018_1} layout={'fill'} objectFit={'cover'} />
+                            <Image placeholder={'blur'} src={img2018_1} layout={'fill'} objectFit={'cover'} />
                         </div>
                         <p className={classNames(styles.timeline_year)}>2018</p>
                         <p className={classNames('p-text-2', styles.info)}>
@@ -134,7 +136,7 @@ const Timeline: React.FC = () => {
                                 overflow: 'hidden',
                             }}
                         >
-                            <Image src={img2018_2} layout={'fill'} objectFit={'cover'} />
+                            <Image placeholder={'blur'} src={img2018_2} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 
@@ -148,7 +150,7 @@ const Timeline: React.FC = () => {
                                 overflow: 'hidden',
                             }}
                         >
-                            <Image src={img2018_3} layout={'fill'} objectFit={'cover'} />
+                            <Image placeholder={'blur'} src={img2018_3} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 
@@ -176,13 +178,13 @@ const Timeline: React.FC = () => {
                                 overflow: 'hidden',
                             }}
                         >
-                            <Image src={img2018_5} layout={'fill'} objectFit={'cover'} />
+                            <Image placeholder={'blur'} src={img2018_5} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <div className={classNames(styles.image_cont, styles.image_cont_70)}>
-                            <Image src={img2021_1} layout={'fill'} objectFit={'cover'} />
+                            <Image placeholder={'blur'} src={img2021_1} layout={'fill'} objectFit={'cover'} />
                         </div>
                         <p className={classNames(styles.timeline_year)}>2021</p>
                         <p className={classNames('p-text-2', styles.info)}>

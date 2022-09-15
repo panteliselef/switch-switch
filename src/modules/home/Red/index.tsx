@@ -1,14 +1,16 @@
 import Stack from '@layouts/Stack';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
 import styles from './red.module.scss';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
 function Red() {
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
@@ -37,7 +39,7 @@ function Red() {
                     '<',
                 );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
     return (
         <section
             style={{
