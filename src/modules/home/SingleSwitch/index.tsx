@@ -1,11 +1,11 @@
-import React, { FC, Suspense } from 'react';
+import React, { FC } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 import dynamic from 'next/dynamic';
 
 const SingleSwitchCanvas = dynamic(() => import('@modules/home/SingleSwitch/SingleSwitchCanvas'), {
     ssr: false,
-    suspense: true,
+    suspense: false,
 });
 
 const SingleSwitchInner: React.FC = () => {
@@ -31,18 +31,18 @@ const SingleSwitchInner: React.FC = () => {
 
 const SingleSwitch: FC = () => {
     return (
-        <Suspense
-            fallback={
-                <section
-                    style={{
-                        height: '100vh',
-                        position: 'relative',
-                    }}
-                />
-            }
-        >
-            <SingleSwitchInner />
-        </Suspense>
+        // <Suspense
+        //     fallback={
+        //         <section
+        //             style={{
+        //                 height: '100vh',
+        //                 position: 'relative',
+        //             }}
+        //         />
+        //     }
+        // >
+        <SingleSwitchInner />
+        // </Suspense>
     );
 };
 

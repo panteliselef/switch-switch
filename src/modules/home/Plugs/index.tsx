@@ -1,4 +1,4 @@
-import { Suspense, FC } from 'react';
+import { FC } from 'react';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
 import styles from '@modules/home/Wonders/wonders.module.scss';
@@ -10,7 +10,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 const PlugsCanvas = dynamic(() => import('@modules/home/Plugs/PlugsCanvas'), {
     ssr: false,
-    suspense: true,
+    suspense: false,
 });
 
 const PlugsInner: FC = () => {
@@ -46,9 +46,9 @@ const PlugsInner: FC = () => {
 
 const Plugs: FC = () => {
     return (
-        <Suspense fallback={<section className={plugStyles.glb_container}></section>}>
-            <PlugsInner />
-        </Suspense>
+        // <Suspense fallback={<section className={plugStyles.glb_container}></section>}>
+        <PlugsInner />
+        // </Suspense>
     );
 };
 

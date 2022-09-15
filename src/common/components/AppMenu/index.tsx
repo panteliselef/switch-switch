@@ -412,35 +412,35 @@ const AppMenu: React.FC = () => {
                     </div>
                 </div>
                 <nav className={styles.menu}>
-                    <Link href={'/'}>
+                    <Link href={'/'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>{t('prefix')}</span>
                             <span className={styles.menu__item_text}>{t('homeLinkLabel')}</span>
                         </a>
                     </Link>
 
-                    <Link href={'/story'}>
+                    <Link href={'/story'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>{t('prefix')}</span>
                             <span className={styles.menu__item_text}>{t('storyLinkLabel')}</span>
                         </a>
                     </Link>
 
-                    <Link href={'/history'}>
+                    <Link href={'/history'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>{t('prefix')}</span>
                             <span className={styles.menu__item_text}>{t('historyLinkLabel')}</span>
                         </a>
                     </Link>
 
-                    <Link href={'/#products'}>
+                    <Link href={'/#products'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>{t('prefix')}</span>
                             <span className={styles.menu__item_text}>{t('productsLinkLabel')}</span>
                         </a>
                     </Link>
 
-                    <Link href={'/contact'}>
+                    <Link href={'/contact'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>{t('prefix')}</span>
                             <span className={styles.menu__item_text}>{t('contactLinkLabel')}</span>

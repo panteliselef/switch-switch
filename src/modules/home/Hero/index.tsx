@@ -5,9 +5,12 @@ import Image from 'next/image';
 import homeHero from '@assets/homeHero.jpeg';
 import { useEffect } from 'react';
 import gsap from 'gsap/dist/gsap';
+import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import { breakpoints } from '@utils/breakpoints';
 import useTranslation from 'next-translate/useTranslation';
 
 const Hero = () => {
+    const w = useDebouncedWidth();
     const { t } = useTranslation('homepage');
     useEffect(() => {
         const tl = gsap.timeline({
@@ -22,7 +25,7 @@ const Hero = () => {
             {
                 delay: 2,
                 duration: 2,
-                width: '15vw',
+                width: w > breakpoints.laptop ? '15vw' : '4.6rem',
                 ease: 'steps(2)',
                 repeat: -1,
             },
@@ -42,7 +45,7 @@ const Hero = () => {
         );
 
         tl.play();
-    }, []);
+    }, [w]);
     return (
         <section className={styles.outer_cont}>
             <Stack
@@ -124,7 +127,7 @@ const Hero = () => {
                     </p>
                     <div className={styles.image_cont}>
                         <Image
-                            priority={true}
+                            loading={'eager'}
                             quality={100}
                             objectFit={'cover'}
                             alt={'the ceo in the studio'}
