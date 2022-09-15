@@ -414,35 +414,35 @@ const AppMenu: React.FC = () => {
                     </div>
                 </div>
                 <nav className={styles.menu}>
-                    <Link href={'/'}>
+                    <Link href={'/'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>home</span>
                         </a>
                     </Link>
 
-                    <Link href={'/story'}>
+                    <Link href={'/story'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>story</span>
                         </a>
                     </Link>
 
-                    <Link href={'/history'}>
+                    <Link href={'/history'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>history</span>
                         </a>
                     </Link>
 
-                    <Link href={'/#products'}>
+                    <Link href={'/#products'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>products</span>
                         </a>
                     </Link>
 
-                    <Link href={'/contact'}>
+                    <Link href={'/contact'} prefetch={false}>
                         <a className={styles.menu__item} onClick={click}>
                             <span className={styles.menu__item_tiny}>switch to</span>
                             <span className={styles.menu__item_text}>contact</span>
