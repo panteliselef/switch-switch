@@ -16,28 +16,28 @@ export default function Document() {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
 
                 <link
-                    rel="preload"
+                    rel="prefetch"
                     href="RocGrotesk-Medium.woff2"
                     as="font"
                     type="font/woff2"
                     crossOrigin={'anonymous'}
                 />
                 <link
-                    rel="preload"
+                    rel="prefetch"
                     href="RocGrotesk-Bold.woff2"
                     as="font"
                     type="font/woff2"
                     crossOrigin={'anonymous'}
                 />
                 <link
-                    rel="preload"
+                    rel="prefetch"
                     href="RocGrotesk-Thin.woff2"
                     as="font"
                     type="font/woff2"
                     crossOrigin={'anonymous'}
                 />
                 <link
-                    rel="preload"
+                    rel="prefetch"
                     href="RocGrotesk-Light.woff2"
                     as="font"
                     type="font/woff2"
@@ -45,7 +45,7 @@ export default function Document() {
                 />
 
                 <link
-                    rel="preload"
+                    rel="prefetch"
                     href="RocGrotesk-Regular.woff2"
                     as="font"
                     type="font/woff2"
