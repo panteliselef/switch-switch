@@ -11,6 +11,7 @@ import milos from '@assets/team/milos.png';
 import nikola from '@assets/team/nikola.png';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const a = [
     {
@@ -178,6 +179,7 @@ const ImageWrapper: React.FC<{ pos: number; img: StaticImageData }> = ({ pos, im
 };
 
 export default function Team() {
+    const { t } = useTranslation('story');
     const w = useDebouncedWidth();
     useEffect(() => {
         const oddColumns = [...document.querySelectorAll(`.${styles.column}`)].filter((_, index) => index != 1);
@@ -220,8 +222,8 @@ export default function Team() {
                 overflow: 'hidden',
             }}
         >
-            <h2 className={classNames(styles.heading, styles.heading__up)}>OUR TEAM</h2>
-            <h2 className={classNames(styles.heading, styles.heading__down)}>OUR TEAM</h2>
+            <h2 className={classNames(styles.heading, styles.heading__up)}>{t('teamHeadingTop')}</h2>
+            <h2 className={classNames(styles.heading, styles.heading__down)}>{t('teamHeadingBottom')}</h2>
 
             <div className={styles.columns} data-scroll-container>
                 <div className={classNames(styles.column_wrap, styles.column_wrap_height)}>

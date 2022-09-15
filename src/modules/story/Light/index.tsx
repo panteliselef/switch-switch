@@ -6,8 +6,10 @@ import Stack from '@layouts/Stack';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import classNames from 'classnames';
+import useTranslation from 'next-translate/useTranslation';
 
 const Light: React.FC = () => {
+    const { t } = useTranslation('story');
     const w = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
@@ -22,31 +24,30 @@ const Light: React.FC = () => {
                     // pin: true,
                     scrub: true,
                 },
-            }).to(
-                `.${styles.door}`,
-                {
-                    ease: 'power2.in',
-                    clipPath:
-                        w > breakpoints.laptop
-                            ? 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)'
-                            : 'inset(0px 0px 0px round 0px 0px 0 0)',
-                    // clipPath: 'inset(4rem 20% round 50%)',
-                    // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
-                },
-                'timeline',
-            ).to(
-                `.${styles.door_knob}`,
-                {
-                    ease: 'power2.in',
-                    clipPath:
-                        w > breakpoints.laptop
-                            ? 'circle(0px at 52vw 70vw)'
-                            : 'circle(0px at 220px 280px)',
-                    // clipPath: 'inset(4rem 20% round 50%)',
-                    // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
-                },
-                'timeline',
-            );
+            })
+                .to(
+                    `.${styles.door}`,
+                    {
+                        ease: 'power2.in',
+                        clipPath:
+                            w > breakpoints.laptop
+                                ? 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)'
+                                : 'inset(0px 0px 0px round 0px 0px 0 0)',
+                        // clipPath: 'inset(4rem 20% round 50%)',
+                        // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
+                    },
+                    'timeline',
+                )
+                .to(
+                    `.${styles.door_knob}`,
+                    {
+                        ease: 'power2.in',
+                        clipPath: w > breakpoints.laptop ? 'circle(0px at 52vw 70vw)' : 'circle(0px at 220px 280px)',
+                        // clipPath: 'inset(4rem 20% round 50%)',
+                        // clipPath: 'inset(15vw 0vw 0vw round 0vw 0vw 0 0)',
+                    },
+                    'timeline',
+                );
 
             gsap.timeline({
                 scrollTrigger: {
@@ -102,7 +103,7 @@ const Light: React.FC = () => {
                                 mixBlendMode: 'difference',
                             }}
                         >
-                            In order for us to bing
+                            {t('In order for us to bing')}
                         </p>
 
                         <p
@@ -111,7 +112,7 @@ const Light: React.FC = () => {
                                 mixBlendMode: 'difference',
                             }}
                         >
-                            Light
+                            {t('Light')}
                         </p>
                     </Stack>
                     <Stack
@@ -132,7 +133,7 @@ const Light: React.FC = () => {
                                 color: 'black',
                             }}
                         >
-                            To the wall of your home
+                            {t('hiddenBlackText')}
                         </p>
 
                         <Stack
@@ -153,7 +154,7 @@ const Light: React.FC = () => {
                                     mixBlendMode: 'difference',
                                 }}
                             >
-                                This is the team of
+                                {t('enthusiastsPart1')}
                             </p>
                             <p
                                 id={'cheers'}
@@ -166,7 +167,7 @@ const Light: React.FC = () => {
                                     transform: 'translateY(200px)',
                                 }}
                             >
-                                Cheers from the team of
+                                {t('enthusiastsPart2')}
                             </p>
                             <p
                                 className={classNames('heading-3', styles.cont_2)}
@@ -174,7 +175,7 @@ const Light: React.FC = () => {
                                     mixBlendMode: 'difference',
                                 }}
                             >
-                                enthusiasts
+                                {t('enthusiastsPart3')}
                             </p>
                         </Stack>
                     </Stack>

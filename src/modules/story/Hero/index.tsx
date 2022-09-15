@@ -10,8 +10,10 @@ import Stack from '@layouts/Stack';
 import { useSplitText } from '@modules/history/hero';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import useTranslation from 'next-translate/useTranslation';
 
 const ScrollToExperience = () => {
+    const { t } = useTranslation('story');
     const width = useDebouncedWidth();
     useEffect(() => {
         setTimeout(() => {
@@ -38,7 +40,7 @@ const ScrollToExperience = () => {
                 }}
                 className={classNames('p-text-3', 'scroll_experience_text')}
             >
-                Scroll to experience
+                {t('scrollDown')}
             </p>
         </Stack>
     );
@@ -63,6 +65,8 @@ const Hero: React.FC = () => {
 
     useSplitText('.gallery-text', `#trigger`);
 
+    const { t } = useTranslation('story');
+
     return (
         <section>
             <div className={styles.story_hero_container}>
@@ -80,15 +84,15 @@ const Hero: React.FC = () => {
                 <Stack className={styles.stack_cont} direction={'column'}>
                     <Stack direction={'column'} id={'trigger'} className={styles.gallery_trigger} gap={'2vw'}>
                         <h3 className={'heading-3 split-line gallery-text'}>
-                            <div>Bulding</div>
+                            <div>{t('heroTitleLine1')}</div>
                         </h3>
 
                         <h3 className={'heading-3 split-line gallery-text'}>
-                            <div>Immersful</div>
+                            <div>{t('heroTitleLine2')}</div>
                         </h3>
 
                         <h3 className={'heading-3 split-line gallery-text'}>
-                            <div>Experiences</div>
+                            <div>{t('heroTitleLine3')}</div>
                         </h3>
                     </Stack>
 
@@ -102,20 +106,12 @@ const Hero: React.FC = () => {
                             }}
                             gap={'2vw'}
                         >
-                            <p className={classNames('p-text-3')}>Design & Architecture Office</p>
-                            <p className={classNames('p-text-3')}>
-                                We dreamed of an architectural house, with its well-designed furniture and its spaces
-                                that mark the spirit. We made it a reality, which celebrates inspiration and
-                                independence of choice.
-                            </p>
+                            <p className={classNames('p-text-3')}>{t('heroParagraph1')}</p>
+                            <p className={classNames('p-text-3')}>{t('heroParagraph2')}</p>
 
-                            <p className={classNames('p-text-3')}>
-                                Designed as an immersive experience and eye opening, our showroom promotes a meeting
-                                with oneself in the comfort of a poetic and artistic space, which inspires and enriches
-                                ideas.
-                            </p>
+                            <p className={classNames('p-text-3')}>{t('heroParagraph3')}</p>
 
-                            <p className={classNames('p-text-3')}>Meet the founders</p>
+                            <p className={classNames('p-text-3')}>{t('heroParagraph4')}</p>
                         </Stack>
                     </div>
                 </Stack>
