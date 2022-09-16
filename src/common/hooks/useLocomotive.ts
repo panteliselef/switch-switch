@@ -86,11 +86,19 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
             updateLoco();
         }
 
-        if (debouncedWidth > breakpoints.laptop && !locoScroll.current) {
-            dynamicImportModule().then(() => {
+        const t = setTimeout(() => {
+            if (debouncedWidth > breakpoints.laptop && !locoScroll.current) {
+                dynamicImportModule().then(() => {
+                    setIsReady(true);
+                });
+            } else {
                 setIsReady(true);
-            });
-        }
+            }
+        }, 500);
+
+        return () => {
+            clearTimeout(t);
+        };
     }, [canStart, elementAsScroller, updateLoco, debouncedWidth, setIsReady]);
 
     useEffect(() => {
