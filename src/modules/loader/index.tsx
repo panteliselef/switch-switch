@@ -14,6 +14,7 @@ const Loader: React.FC<{ isScrollReady: boolean }> = ({ isScrollReady }) => {
                 },
             }).to('#loader', {
                 alpha: 0,
+                delay: 1,
             });
         }
     }, [isScrollReady]);

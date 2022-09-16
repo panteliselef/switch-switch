@@ -46,7 +46,14 @@ const Dreamers = () => {
                     </p>
                 </div>
                 <div data-scroll={''} data-scroll-speed={'1'} className={styles.image_cont}>
-                    <Image placeholder={'blur'} alt={'dreamers'} src={dreamersImg} layout={'responsive'} objectFit={'cover'} />
+                    <Image
+                        placeholder={'blur'}
+                        alt={'dreamers'}
+                        src={dreamersImg}
+                        sizes={'300px'}
+                        layout={'responsive'}
+                        objectFit={'cover'}
+                    />
                 </div>
             </Stack>
 

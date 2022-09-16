@@ -9,8 +9,12 @@
     min-height: 100vh;
     background-color: black;
     z-index: 999;
-    display: grid;
     place-items: center;
+    display: none;
+
+    @include brk.tablet {
+        display: grid;
+    }
 
     &__hidden {
         -webkit-animation: 1s ease 0s normal forwards 1 fadeout;

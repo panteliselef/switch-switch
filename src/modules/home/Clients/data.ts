@@ -13,6 +13,7 @@ import Savremena from '@assets/clients/Savremena Arhitektura-min.png';
 import Dizajn from '@assets/clients/Studio Dizajn.svg';
 import VLDMR from '@assets/clients/VLDMR.png';
 import nk from '@assets/clients/NK arch.png';
+import izba from '@assets/clients/IZBA Logo Black.png';
 
 export const clients = [
     {
@@ -119,13 +120,13 @@ Svojim klijentima obezbeđujemo pre svega profesionalan i kvalitetan pristup u i
         logo: Dizajn,
         name: 'Ana Tanasković',
         text: '',
-        url: 'https://ananenadovic.com/sr/',
+        url: 'https://www.instagram.com/studiodizajnat/',
     },
 
     {
         logo: Bojan,
         name: 'Bojan Pavlović',
-        text: ``,
+        text: `Bina is Kragujevac based architectural and design studio founded in 2018 by Bojan Pavlović MSc Arch and Nataša Matović MSc Arc. Nowadays in addition to internal employees, the Studio consists of externally engaged experts from various fields, depending on the specific project requests The studio is primarily focused on architecture, interior design, 3D modeling and visualization for its own and other bureaus needs. Our team is engaged in projects from different categories ( hospitality, commercial and offices) in the country and abroad`,
         url: 'https://www.instagram.com/bolebole_arh/?hl=en',
     },
     {
@@ -154,9 +155,7 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     {
         logo: '',
         name: 'Studio Loft',
-        text: `Dobar dizajn neće spasiti svet, ali sasvim sigurno će ga učiniti lepšim!
-
-Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačne ideje u zajedničku viziju I transformišući prostore prema Vašim ličnim potrebama, prožetim iskustvom naših stručnjaka.`,
+        text: `Dobar dizajn neće spasiti svet, ali sasvim sigurno će ga učiniti lepšim! Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačne ideje u zajedničku viziju I transformišući prostore prema Vašim ličnim potrebama, prožetim iskustvom naših stručnjaka.`,
         url: 'https://studioloft.rs',
     },
 
@@ -211,7 +210,14 @@ Naš inkluzivni pristup čini Vas partnerom u procesu, pretvarajući pojedinačn
     {
         logo: '',
         name: 'TMRGR',
-        text: ``,
+        text: `Studio koji iyradjuje vrhunska enterijerska rešenja za svaki tip prostora. Svaki naš projekat odlikuje se primarnom funkcionalnošću, ali i jedinstvenim i prepoznatljivim identitetom.`,
+        url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
+    },
+
+    {
+        logo: izba,
+        name: 'IZBA',
+        text: `IZBA is a comprehensive interior design studio synonymous with the creation of multipurpose, luxury and elegant interiors. In evolving the new, IZBA is dedicated to design that combines past and future, stimulates the sense, are beautiful yet usable. Our practice is driven by a philosophical approach that makes no distinction between the project of a chair and that of a house, in the sense that dedication to each of the assignments is the same, as is the working process behind them, including sketches, models, prototypes, development and detail drawings, and close follow-up of execution works. We believe excellence in design results from combined skills and efforts. Founder of Izba studio, Jelena Jakovljevic, will tell you more about her passion for aesthetics and philosophy of living.`,
         url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
     },
 ];

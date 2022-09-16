@@ -8,14 +8,15 @@ export const LOCOMOTIVE_CONTAINER_CLASS = 'loco_container';
 
 const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
     const { isReady } = useContext(SmoothScrollContext);
-    useLocoScroll(true, `.${LOCOMOTIVE_CONTAINER_CLASS}`);
+    const [loco] = useLocoScroll(true, `.${LOCOMOTIVE_CONTAINER_CLASS}`);
 
     useEffect(() => {
+        console.log(window.locomotive, isReady, loco);
+        if (window.locomotive && isReady) {
+            window.locomotive.update();
+            window.locomotive.start();
+        }
         const t = setTimeout(() => {
-            if (window.locomotive && isReady) {
-                window.locomotive.update();
-                window.locomotive.start();
-            }
             // gsap.set('.nice', {
             //     y: 100,
             // });
@@ -32,7 +33,7 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
             //         scrub: true,
             //     },
             // });
-        }, 1200);
+        }, 1000);
         return () => clearTimeout(t);
     }, [isReady]);
 
