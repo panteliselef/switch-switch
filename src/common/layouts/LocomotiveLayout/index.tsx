@@ -12,9 +12,13 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
 
     useEffect(() => {
         console.log(window.locomotive, isReady, loco);
-        if (window.locomotive && isReady) {
-            window.locomotive.update();
-            window.locomotive.start();
+        if (loco && isReady) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            loco.update();
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            loco.start();
         }
         const t = setTimeout(() => {
             // gsap.set('.nice', {
@@ -35,7 +39,7 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
             // });
         }, 1000);
         return () => clearTimeout(t);
-    }, [isReady]);
+    }, [isReady, loco]);
 
     return (
         <>
