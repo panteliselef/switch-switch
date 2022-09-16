@@ -5,6 +5,7 @@ import React from 'react';
 
 import { clients } from '@modules/home/Clients/data';
 import ExternalLink from '@helpers/ExternalLink';
+import useTranslation from 'next-translate/useTranslation';
 
 const Client: React.FC<{ url: string; imageSrc: string | StaticImageData; name: string; text: string }> = ({
     url,
@@ -29,6 +30,7 @@ const Client: React.FC<{ url: string; imageSrc: string | StaticImageData; name: 
 };
 
 function Clients() {
+    const { t } = useTranslation('homepage');
     return (
         <section
             id={'before-footer'}
@@ -50,7 +52,7 @@ function Clients() {
                     <div className={styles.infinite_scrolling_text__title}>
                         <div>
                             {Array(4)
-                                .fill('Meet the legends')
+                                .fill(t('legendsTitle'))
                                 .map((t, index) => (
                                     <p key={index} className={'heading-2'}>
                                         {t}

@@ -7,8 +7,10 @@ import dreamersImg from '@assets/dreamers.png';
 import classNames from 'classnames';
 import showRoomStyles from '@modules/history/Showroom/showRoom.module.scss';
 import styles from './dreamers.module.scss';
+import useTranslation from 'next-translate/useTranslation';
 
 const Dreamers = () => {
+    const { t } = useTranslation('story');
     useSplitText('.dreamer-text', '.dreamer-trigger');
     return (
         <Stack direction={'column'} justifyContent={'center'}>
@@ -22,11 +24,11 @@ const Dreamers = () => {
                 gap={'2vw'}
             >
                 <h3 className={'heading-3 split-line dreamer-text'}>
-                    <div>The story</div>
+                    <div>{t('dreamersTitleLine1')}</div>
                 </h3>
 
                 <h3 className={'heading-3 split-line dreamer-text'}>
-                    <div>of dreamers</div>
+                    <div>{t('dreamersTitleLine2')}</div>
                 </h3>
             </Stack>
 
@@ -42,7 +44,7 @@ const Dreamers = () => {
                             opacity: '.2',
                         }}
                     >
-                        Dreamers
+                        {t('dreamersBgText')}
                     </p>
                 </div>
                 <div data-scroll={''} data-scroll-speed={'1'} className={styles.image_cont}>
@@ -61,10 +63,11 @@ const Dreamers = () => {
                 <p
                     className={classNames('p-text-1', 'text-center')}
                     style={{
+                        width: '35vw',
                         paddingTop: '7vw',
                     }}
                 >
-                    Switch Swtich was born <br /> from a grand vision
+                    {t('dreamersCenterParagraph')}
                 </p>
             </Stack>
 
@@ -80,10 +83,10 @@ const Dreamers = () => {
                 <Stack direction={'column'} gap={50}>
                     <Stack direction={'column'} gap={50} className={styles.stack_cont}>
                         <p className={classNames(showRoomStyles.plain, 'p-text-2')} data-scroll={''}>
-                            We decided to change the way that we see the light.
+                            {t('dreamersLeftParagraph1')}
                         </p>
                         <p className={classNames(showRoomStyles.plain, 'p-text-2')} data-scroll={''}>
-                            Light is the key part of our lives, from the moment we wake up to the moment we go to sleep.
+                            {t('dreamersLeftParagraph2')}
                         </p>
                     </Stack>
                     <Stack direction={'column'} gap={50} alignItems={'flex-end'} justifyContent={'flex-end'}>
@@ -95,7 +98,7 @@ const Dreamers = () => {
                                 textAlign: 'right',
                             }}
                         >
-                            {`That's why we decided to redefine the way you see and feel it.`}
+                            {t('dreamersRightParagraph')}
                         </p>
                     </Stack>
                 </Stack>
