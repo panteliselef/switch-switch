@@ -5,8 +5,10 @@ import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import useTranslation from 'next-translate/useTranslation';
 
 function Reel() {
+    const { t } = useTranslation('homepage');
     const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
@@ -79,10 +81,10 @@ function Reel() {
             >
                 <Stack direction={'row'}>
                     <h2 id={'play'} className={'heading-2'}>
-                        Play
+                        {t('videoAnimationLeft')}
                     </h2>
                     <h2 id={'reel'} className={'heading-2'}>
-                        Reel
+                        {t('videoAnimationRight')}
                     </h2>
                 </Stack>
 
@@ -101,8 +103,7 @@ function Reel() {
                             width: '45vw',
                         }}
                     >
-                        Designed as an immersive experience and eye opening, our showroom promotes a meeting with
-                        oneself in the comfort of a poetic and artistic space, which inspires and enriches ideas.
+                        {t('videoAnimationText')}
                     </p>
                 </Stack>
             </Stack>

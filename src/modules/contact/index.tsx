@@ -8,8 +8,10 @@ import contact from '@assets/contact.jpeg';
 import ExternalLink from '@helpers/ExternalLink';
 import classNames from 'classnames';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const Contact: React.FC = () => {
+    const { t } = useTranslation('contact');
     return (
         <section
             id={'before-footer'}
@@ -40,7 +42,7 @@ const Contact: React.FC = () => {
                 >
                     <div className={teamStyles.infinite_scrolling_text__title}>
                         <div>
-                            {['Get in touch · 保持联系 · Ponerse en contacto · Neem contact op ·'].map((t, index) => (
+                            {[t('bgText')].map((t, index) => (
                                 <p
                                     key={index}
                                     className={'heading-2'}
@@ -57,9 +59,7 @@ const Contact: React.FC = () => {
             </Stack>
             <div className={styles.grid}>
                 <Stack direction={'column'} justifyContent={'flex-end'} gap={'10vw'}>
-                    <p className={classNames('p-text-3', styles.cont)}>
-                        Ready for lights-off? Ping, tweet, message or poke — and we will get back as soon as possible.
-                    </p>
+                    <p className={classNames('p-text-3', styles.cont)}>{t('leftParagraph')}</p>
 
                     <Stack direction={'column'}>
                         <ExternalLink
@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
                                     background: 'var(--bg-color)',
                                 }}
                             >
-                                Send a request
+                                {t('requestCircle')}
                             </Stack>
                         </a>
                     </Link>
@@ -190,7 +190,7 @@ const Contact: React.FC = () => {
                                     </defs>
                                 </svg>
 
-                                <p>View on maps</p>
+                                <p>{t('mapsLabel')}</p>
                             </Stack>
                         </ExternalLink>
                     </Stack>

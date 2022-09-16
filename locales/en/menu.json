@@ -1,0 +1,10 @@
+{
+  "burgerLabel": "menu",
+  "prefix": "switch to",
+  "homeLinkLabel": "home",
+  "storyLinkLabel": "story",
+  "historyLinkLabel": "history",
+  "productsLinkLabel": "products",
+  "contactLinkLabel": "contact",
+  "scheduleLinkLabel": "schedule"
+}

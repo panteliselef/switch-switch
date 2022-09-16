@@ -8,7 +8,6 @@ import Stack from '@layouts/Stack';
 
 import Image from 'next/image';
 
-import img2015 from '@assets/2015.png';
 import img2018_1 from '@assets/2018_1.png';
 import img2018_2 from '@assets/2018_2.png';
 import img2018_3 from '@assets/2018_3.png';
@@ -18,6 +17,7 @@ import img2018_5 from '@assets/2018_5.png';
 import img2021_1 from '@assets/2021_1.png';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import useTranslation from 'next-translate/useTranslation';
 import { useLazyVideo } from '@hooks/useLazyVideo';
 
 const Timeline: React.FC = () => {
@@ -32,6 +32,7 @@ const Timeline: React.FC = () => {
     const [activeLine, setActiveLine] = useState(0);
     const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
+    const { t } = useTranslation('story');
     useEffect(() => {
         if (!isReady) return;
         setTimeout(() => {
@@ -69,7 +70,7 @@ const Timeline: React.FC = () => {
                 `.${styles.timeline_page}`,
                 {
                     ease: 'linear',
-                    x: w > breakpoints.laptop ? `-800vw` : '-800%',
+                    x: w > breakpoints.laptop ? `-700vw` : '-700%',
                     duration: 5,
                     stagger: 0.01,
                 },
@@ -106,34 +107,24 @@ const Timeline: React.FC = () => {
                         ))}
                     </Stack>
                     <Stack direction={'column'} className={styles.timeline_page}>
-                        <p className={classNames(styles.timeline_year, styles.mask1)}>2008</p>
-
-                        <p className={classNames('p-text-2', styles.info)}>
-                            We had a grand vision that we really want to come to life. So we started making it a
-                            reality. Transforming our garage into a space where we could work and express our ideas.{' '}
-                        </p>
+                        <p className={classNames(styles.timeline_year, styles.mask1)}>{t('timelinePage1Title')}</p>
+                        <p className={classNames('p-text-2', styles.info)}>{t('timelinePage1Info')}</p>
                     </Stack>
 
-                    <Stack direction={'column'} className={styles.timeline_page}>
-                        <div className={classNames(styles.image_cont, styles.image_cont_70)}>
-                            <Image placeholder={'blur'} src={img2015} layout={'fill'} objectFit={'cover'} />
-                        </div>
-                        <p className={classNames(styles.timeline_year)}>2015</p>
-                        <p className={classNames('p-text-2', styles.info)}>
-                            We had a grand vision that we really want to come to life. So we started making it a
-                            reality. Transforming our garage into a space where we could work and express our ideas.{' '}
-                        </p>
-                    </Stack>
+                    {/*<Stack direction={'column'} className={styles.timeline_page}>*/}
+                    {/*    <div className={classNames(styles.image_cont, styles.image_cont_70)}>*/}
+                    {/*        <Image placeholder={'blur'} src={img2015} layout={'fill'} objectFit={'cover'} />*/}
+                    {/*    </div>*/}
+                    {/*    <p className={classNames(styles.timeline_year)}>{t('timelinePage2Title')}</p>*/}
+                    {/*    <p className={classNames('p-text-2', styles.info)}>{t('timelinePage2Info')}</p>*/}
+                    {/*</Stack>*/}
 
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <div className={classNames(styles.image_cont, styles.image_cont_70)}>
                             <Image placeholder={'blur'} src={img2018_1} layout={'fill'} objectFit={'cover'} />
                         </div>
-                        <p className={classNames(styles.timeline_year)}>2018</p>
-                        <p className={classNames('p-text-2', styles.info)}>
-                            We had a grand vision that we really want to come to life. So we started making it a
-                            reality. Transforming our garage into a space where we could work and express our ideas.{' '}
-                        </p>
+                        <p className={classNames(styles.timeline_year)}>{t('timelinePage3Title')}</p>
+                        <p className={classNames('p-text-2', styles.info)}>{t('timelinePage3Info')}</p>
                     </Stack>
 
                     <Stack direction={'column'} className={styles.timeline_page}>
@@ -196,11 +187,8 @@ const Timeline: React.FC = () => {
                         <div className={classNames(styles.image_cont, styles.image_cont_70)}>
                             <Image placeholder={'blur'} src={img2021_1} layout={'fill'} objectFit={'cover'} />
                         </div>
-                        <p className={classNames(styles.timeline_year)}>2021</p>
-                        <p className={classNames('p-text-2', styles.info)}>
-                            We had a grand vision that we really want to come to life. So we started making it a
-                            reality. Transforming our garage into a space where we could work and express our ideas.{' '}
-                        </p>
+                        <p className={classNames(styles.timeline_year)}>{t('timelinePage4Title')}</p>
+                        <p className={classNames('p-text-2', styles.info)}>{t('timelinePage4Info')}</p>
                     </Stack>
                     <Stack direction={'column'} className={styles.timeline_page} id={'lel2'}>
                         <div

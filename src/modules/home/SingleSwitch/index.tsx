@@ -12,7 +12,7 @@ const SingleSwitchInner: React.FC = () => {
     const { ref, inView } = useInView({
         /* Optional options */
 
-        rootMargin: '-25% 0px 0px 0px',
+        rootMargin: '-50% 0px 0px 0px',
         threshold: 0,
     });
 

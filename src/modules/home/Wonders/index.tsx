@@ -8,9 +8,11 @@ import { breakpoints } from '@utils/breakpoints';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { gsap } from 'gsap/dist/gsap';
+import useTranslation from 'next-translate/useTranslation';
 
 function Wonders() {
     const { isReady } = useContext(SmoothScrollContext);
+    const { t } = useTranslation('homepage');
     const w = useDebouncedWidth();
     useEffect(() => {
         if (!isReady) return;
@@ -38,18 +40,17 @@ function Wonders() {
         <section>
             <Stack direction={'column'} alignItems={'center'} gap={'10vw'}>
                 <Stack direction={'column'} data-scroll={''} data-scroll-speed={'-1'}>
-                    <p className={classNames('p-text-1', 'text-center', styles.max_width)}>Welcome</p>
-
-                    <p className={classNames('p-text-1', 'text-center', styles.max_width)}>Home</p>
+                    <p className={classNames('p-text-1', 'text-center', styles.max_width)}>{t('welcome')}</p>
+                    <p className={classNames('p-text-1', 'text-center', styles.max_width)}>{t('home')}</p>
                 </Stack>
 
                 {/*<p className={classNames(styles.wonders_text)}>Wonders of light began with one single touch</p>*/}
                 <Stack direction={'column'} id={'w'}>
-                    <p className={classNames(styles.wonders_text)}>Wonders</p>
-                    <p className={classNames(styles.wonders_text)}>of light</p>
-                    <p className={classNames(styles.wonders_text)}>began with</p>
-                    <p className={classNames(styles.wonders_text)}>one single</p>
-                    <p className={classNames(styles.wonders_text)}>touch</p>
+                    <p className={classNames(styles.wonders_text)}>{t('wondersLine1')}</p>
+                    <p className={classNames(styles.wonders_text)}>{t('wondersLine2')}</p>
+                    <p className={classNames(styles.wonders_text)}>{t('wondersLine3')}</p>
+                    <p className={classNames(styles.wonders_text)}>{t('wondersLine4')}</p>
+                    <p className={classNames(styles.wonders_text)}>{t('wondersLine5')}</p>
                 </Stack>
 
                 <p
@@ -57,7 +58,7 @@ function Wonders() {
                     data-scroll-speed={'1'}
                     className={classNames('p-text-2', 'text-center', styles.max_width)}
                 >
-                    The story behind our name is one of exploration, creativity and curiosity
+                    {t('centerParagraph')}
                 </p>
             </Stack>
             <Plugs />

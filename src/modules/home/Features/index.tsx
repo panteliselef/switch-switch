@@ -1,6 +1,7 @@
 import Stack from '@layouts/Stack';
 import React from 'react';
 import styles from './features.module.scss';
+import useTranslation from 'next-translate/useTranslation';
 
 const Feature: React.FC<{ speed?: number; number: string; title: string; text: string }> = ({
     speed,
@@ -18,6 +19,7 @@ const Feature: React.FC<{ speed?: number; number: string; title: string; text: s
 };
 
 function Features() {
+    const { t } = useTranslation('homepage');
     return (
         <Stack
             direction={'row'}
@@ -35,7 +37,7 @@ function Features() {
                     left: '20vw',
                 }}
             >
-                Reveal the messages with light
+                {t('hiddenText1')}
             </p>
 
             <p
@@ -47,7 +49,7 @@ function Features() {
                     left: '50vw',
                 }}
             >
-                Feel the light
+                {t('hiddenText2')}
             </p>
 
             <p
@@ -59,7 +61,7 @@ function Features() {
                     left: '10vw',
                 }}
             >
-                Our products will light to your life
+                {t('hiddenText3')}
             </p>
 
             <p
@@ -71,38 +73,17 @@ function Features() {
                     right: '10vw',
                 }}
             >
-                Come to our store
+                {t('hiddenText4')}
             </p>
 
             <Stack className={styles.container} direction={'column'}>
-                <Feature
-                    number={'01'}
-                    title={'Design for Emotions'}
-                    text={`We're passionate about doing the best digital innovation we can and pushing new technology to its limits. And we achieve results we're proud of.`}
-                />
+                <Feature number={'01'} title={t('feature1Title')} text={t('feature1Desc')} />
 
-                <Feature
-                    speed={2}
-                    number={'02'}
-                    title={'Practical Design'}
-                    text={`Having a beautiful home is an extraordinary achievement in your lifetime, but having a beautiful and practical home is the key to a balanced life. At Switch Switch we provide the perfect balance between design and practicality.`}
-                />
+                <Feature speed={2} number={'02'} title={t('feature2Title')} text={t('feature2Desc')} />
 
-                <Feature
-                    number={'03'}
-                    title={'Elevate your Senses'}
-                    text={`Choosing a swith is not easy, but the right choice is one that proves itself to be just that every day. That’s why with us, you’ll only find switches that excel time and time again in design, details, performance and technology. We offer the best in every category, our product range gets the space it needs and we’ll take ample time for a good conversation.`}
-                />
+                <Feature number={'03'} title={t('feature3Title')} text={t('feature3Desc')} />
 
-                <Feature
-                    speed={2}
-                    number={'04'}
-                    title={'For a holistic culture'}
-                    text={`Our key component is a personal designated touch. You cannot take care of someone with a single discipline. 
-We defend the idea that every approach is generalized and illuminate the paths.
- Our approach is global and does we do not hesitate to adapt to stictly your needs. 
-We want you to be where you deserve to be. Home.`}
-                />
+                <Feature speed={2} number={'04'} title={t('feature4Title')} text={t('feature4Desc')} />
             </Stack>
         </Stack>
     );
