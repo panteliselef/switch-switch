@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Stack from '@layouts/Stack';
 import ExternalLink from '@helpers/ExternalLink';
 import gsap from 'gsap/dist/gsap';
+import {useLazyVideo} from "@hooks/useLazyVideo";
 import useTranslation from 'next-translate/useTranslation';
 
 const Product: React.FC<{ url?: string; videoFileName: string; title: string; speed?: number }> = ({
@@ -11,6 +12,15 @@ const Product: React.FC<{ url?: string; videoFileName: string; title: string; sp
     videoFileName,
     title,
 }) => {
+    const { inView, ref, videoProps, videoSources } = useLazyVideo({
+        sources: [
+            {
+                path: `/videos/${videoFileName}`,
+                type: 'video/mp4',
+            },
+        ],
+    });
+
     const outer = useRef<HTMLDivElement>(null);
     const inner = useRef<HTMLVideoElement>(null);
 
@@ -44,7 +54,7 @@ const Product: React.FC<{ url?: string; videoFileName: string; title: string; sp
     };
 
     return (
-        <Stack direction={'column'} className={styles.product}>
+        <Stack ref={ref} direction={'column'} className={styles.product}>
             <ExternalLink to={url || ''}>
                 <Stack
                     gap={'0.8.vw'}
@@ -61,9 +71,11 @@ const Product: React.FC<{ url?: string; videoFileName: string; title: string; sp
                         onMouseLeave={onMouseLeave}
                         onMouseEnter={onMouseEnter}
                     >
-                        <video loop={true} autoPlay={true} muted={true} ref={inner}>
-                            <source src={`/videos/${videoFileName}`} type="video/mp4" />
-                        </video>
+                        {inView && (
+                            <video {...videoProps} ref={inner}>
+                                {videoSources}
+                            </video>
+                        )}
                     </div>
                     <p className={styles.product_title}>{title}</p>
                 </Stack>
@@ -88,7 +100,7 @@ function ProductCollection() {
                     videoFileName={'simon.mp4'}
                     title={`Simon`}
                 />
-                <Product videoFileName={'smarther.mp4'} title={`Ovde treba da pise Bticino`} />
+                <Product videoFileName={'bticino.mp4'} title={`Ovde treba da pise Bticino`} />
             </div>
 
             <div className={styles.product_collection}>
@@ -100,7 +112,7 @@ function ProductCollection() {
                 <Product
                     url={'https://www.busch-jaeger.de/produkte/schalterdesign/busch-dynasty'}
                     speed={2}
-                    videoFileName={'busch.mp4'}
+                    videoFileName={'busch jaeger.mp4'}
                     title={`Ovde Bush Jaeger`}
                 />
                 <Product url={'https://www.jung.de/en/'} videoFileName={'jung.mp4'} title={`Jung`} />
@@ -108,7 +120,7 @@ function ProductCollection() {
 
             <div className={styles.product_collection}>
                 <Product videoFileName={'lifesmart.mp4'} title={`lifesmart`} />
-                <Product url={'https://www.tem.si/'} speed={2} videoFileName={'tem.mp4'} title={`Tem`} />
+                <Product url={'https://www.tem.si/'} speed={2} videoFileName={'modul.mp4'} title={`Modul`} />
                 <Product
                     url={'https://www.simonelectric.com/intl/simon-100'}
                     videoFileName={'simon.mp4'}
@@ -131,7 +143,7 @@ function Lighting() {
                 <Product
                     url={'https://www.nowodvorski.com/'}
                     speed={2}
-                    videoFileName={'nowosaroski.mp4'}
+                    videoFileName={'nowodvorski.mp4'}
                     title={`Nowodvorski`}
                 />
                 <Product url={'https://www.tala.co.uk/'} videoFileName={'tala.mp4'} title={`tala`} />

@@ -19,7 +19,12 @@ const Footer: React.FC = () => {
     const w = useDebouncedWidth();
     useEffect(() => {
         if (!isReady) return;
-        setTimeout(() => {
+
+        const t = setTimeout(() => {
+            if (window.locomotive && isReady) {
+                window.locomotive.update();
+                window.locomotive.start();
+            }
             const id = '#footer';
             gsap.set(id, { yPercent: -50 });
 
@@ -35,7 +40,11 @@ const Footer: React.FC = () => {
                     scrub: true,
                 },
             });
-        }, 1000);
+        }, 1300);
+
+        return () => {
+            clearTimeout(t);
+        };
     }, [w, isReady]);
 
     return (

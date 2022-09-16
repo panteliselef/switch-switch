@@ -18,8 +18,17 @@ import img2021_1 from '@assets/2021_1.png';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import useTranslation from 'next-translate/useTranslation';
+import { useLazyVideo } from '@hooks/useLazyVideo';
 
 const Timeline: React.FC = () => {
+    const { inView, ref, videoProps, videoSources } = useLazyVideo({
+        sources: [
+            {
+                path: '/videos/2021_2.mp4',
+                type: 'video/mp4',
+            },
+        ],
+    });
     const [activeLine, setActiveLine] = useState(0);
     const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
@@ -83,7 +92,7 @@ const Timeline: React.FC = () => {
     }, [isReady, w]);
 
     return (
-        <section>
+        <section ref={ref}>
             <div className={classNames(styles.timeline_container)}>
                 <Stack direction={'row'} className={styles.timeline}>
                     <Stack direction={'column'} className={styles.preview}>
@@ -198,20 +207,20 @@ const Timeline: React.FC = () => {
                                     height: '100%',
                                 }}
                             >
-                                <video
-                                    style={{
-                                        position: 'relative',
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        objectPosition: '50% 50%',
-                                    }}
-                                    loop={true}
-                                    autoPlay={true}
-                                    muted={true}
-                                >
-                                    <source src={`/videos/2021_2.mp4`} type="video/mp4" />
-                                </video>
+                                {inView && (
+                                    <video
+                                        style={{
+                                            position: 'relative',
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            objectPosition: '50% 50%',
+                                        }}
+                                        {...videoProps}
+                                    >
+                                        {videoSources}
+                                    </video>
+                                )}
                             </div>
                         </div>
                     </Stack>
