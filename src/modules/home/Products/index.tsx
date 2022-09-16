@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Stack from '@layouts/Stack';
 import ExternalLink from '@helpers/ExternalLink';
 import gsap from 'gsap/dist/gsap';
+import {useLazyVideo} from "@hooks/useLazyVideo";
 
 const Product: React.FC<{ url?: string; videoFileName: string; title: string; speed?: number }> = ({
     speed,
@@ -10,6 +11,15 @@ const Product: React.FC<{ url?: string; videoFileName: string; title: string; sp
     videoFileName,
     title,
 }) => {
+    const { inView, ref, videoProps, videoSources } = useLazyVideo({
+        sources: [
+            {
+                path: `/videos/${videoFileName}`,
+                type: 'video/mp4',
+            },
+        ],
+    });
+
     const outer = useRef<HTMLDivElement>(null);
     const inner = useRef<HTMLVideoElement>(null);
 
@@ -43,7 +53,7 @@ const Product: React.FC<{ url?: string; videoFileName: string; title: string; sp
     };
 
     return (
-        <Stack direction={'column'} className={styles.product}>
+        <Stack ref={ref} direction={'column'} className={styles.product}>
             <ExternalLink to={url || ''}>
                 <Stack
                     gap={'0.8.vw'}
@@ -60,9 +70,11 @@ const Product: React.FC<{ url?: string; videoFileName: string; title: string; sp
                         onMouseLeave={onMouseLeave}
                         onMouseEnter={onMouseEnter}
                     >
-                        <video loop={true} autoPlay={true} muted={true} ref={inner}>
-                            <source src={`/videos/${videoFileName}`} type="video/mp4" />
-                        </video>
+                        {inView && (
+                            <video {...videoProps} ref={inner}>
+                                {videoSources}
+                            </video>
+                        )}
                     </div>
                     <p className={styles.product_title}>{title}</p>
                 </Stack>
