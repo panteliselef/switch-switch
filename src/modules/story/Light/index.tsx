@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './light.module.scss';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import Stack from '@layouts/Stack';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
@@ -9,9 +10,11 @@ import classNames from 'classnames';
 import useTranslation from 'next-translate/useTranslation';
 
 const Light: React.FC = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const { t } = useTranslation('story');
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
@@ -69,7 +72,7 @@ const Light: React.FC = () => {
                     '<',
                 );
         }, 1000);
-    }, [w]);
+    }, [isReady, w]);
     return (
         <>
             <section

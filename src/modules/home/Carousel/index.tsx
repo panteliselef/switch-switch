@@ -2,16 +2,19 @@ import Stack from '@layouts/Stack';
 import styles from './carousel.module.scss';
 import classNames from 'classnames';
 import { gsap } from 'gsap/dist/gsap';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import useTranslation from 'next-translate/useTranslation';
 
 const Carousel = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const { t } = useTranslation('homepage');
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -34,7 +37,7 @@ const Carousel = () => {
                 },
             );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
     return (
         <section>
             <div

@@ -3,16 +3,19 @@ import styles from './wonders.module.scss';
 import classNames from 'classnames';
 import Plugs from '@modules/home/Plugs';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { breakpoints } from '@utils/breakpoints';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { gsap } from 'gsap/dist/gsap';
 import useTranslation from 'next-translate/useTranslation';
 
 function Wonders() {
+    const { isReady } = useContext(SmoothScrollContext);
     const { t } = useTranslation('homepage');
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
@@ -32,7 +35,7 @@ function Wonders() {
                 '<',
             );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
     return (
         <section>
             <Stack direction={'column'} alignItems={'center'} gap={'10vw'}>

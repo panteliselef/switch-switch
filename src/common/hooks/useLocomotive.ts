@@ -1,21 +1,24 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'; // adds ~22kb to your bundle
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { LocomotiveScrollInterface } from '../../../types';
 import useWindowDimensions from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebounce } from 'usehooks-ts';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add') {
+export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add'): [unknown, () => void] {
     const { width } = useWindowDimensions();
-
+    const { setIsReady } = useContext(SmoothScrollContext);
     const debouncedWidth = useDebounce(width, 100);
 
     const locoScroll = useRef<LocomotiveScrollInterface>();
+
+    const [loco, setLoco] = useState<unknown>(null);
 
     const updateLoco = useCallback(() => {
         if (locoScroll.current) {
@@ -40,6 +43,8 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
                 },
                 lerp: 0.04,
             });
+
+            setLoco(locoScroll.current);
 
             if (typeof locoScroll.current === 'undefined') return;
 
@@ -81,10 +86,20 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
             updateLoco();
         }
 
-        if (debouncedWidth > breakpoints.laptop && !locoScroll.current) {
-            dynamicImportModule().then();
-        }
-    }, [canStart, elementAsScroller, updateLoco, debouncedWidth]);
+        const t = setTimeout(() => {
+            if (debouncedWidth > breakpoints.laptop && !locoScroll.current) {
+                dynamicImportModule().then(() => {
+                    setIsReady(true);
+                });
+            } else {
+                setIsReady(true);
+            }
+        }, 500);
+
+        return () => {
+            clearTimeout(t);
+        };
+    }, [canStart, elementAsScroller, updateLoco, debouncedWidth, setIsReady]);
 
     useEffect(() => {
         return () => {
@@ -98,6 +113,7 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
     }, [updateLoco]);
 
     return [
+        loco,
         () => {
             ScrollTrigger.removeEventListener('refresh', updateLoco);
         },

@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Stack from '@layouts/Stack';
 import Image from 'next/image';
 import img from '@assets/footer.jpeg';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
@@ -14,8 +15,10 @@ import useTranslation from 'next-translate/useTranslation';
 
 const Footer: React.FC = () => {
     const { t } = useTranslation('footer');
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
+        if (!isReady) return;
         setTimeout(() => {
             const id = '#footer';
             gsap.set(id, { yPercent: -50 });
@@ -33,7 +36,7 @@ const Footer: React.FC = () => {
                 },
             });
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
 
     return (
         <footer className={styles.footer_outer}>
@@ -46,6 +49,7 @@ const Footer: React.FC = () => {
 
                     <div data-scroll={''} className={styles.img_cont}>
                         <Image
+                            placeholder={'blur'}
                             quality={90}
                             alt={'employee with client'}
                             src={img}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Stack from '@layouts/Stack';
 import styles from './showRoom.module.scss';
 
@@ -8,11 +8,13 @@ import studio from '@assets/studio.jpeg';
 import Image from 'next/image';
 import { gsap } from 'gsap/dist/gsap';
 import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import classNames from 'classnames';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 
 const Showroom: React.FC = () => {
+    const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
         const scrollTrigger = {
@@ -22,6 +24,8 @@ const Showroom: React.FC = () => {
             end: `50%`,
             scrub: 1,
         };
+
+        if (!isReady) return;
 
         setTimeout(() => {
             gsap.timeline({
@@ -49,14 +53,14 @@ const Showroom: React.FC = () => {
                     '<',
                 );
         }, 1000);
-    }, [w]);
+    }, [w, isReady]);
 
     return (
         <>
             <section className={styles.container}>
                 <Stack className={styles.p1_cont}>
                     <div data-scroll="" data-scroll-speed="1.5" className={styles.img_cont}>
-                        <Image src={switch1} layout={'fill'} objectFit={'cover'} />
+                        <Image placeholder={'blur'} src={switch1} layout={'fill'} objectFit={'cover'} />
                     </div>
 
                     <p className={classNames(styles.plain, 'p-text-2')}>
@@ -104,7 +108,7 @@ const Showroom: React.FC = () => {
                             background: 'black',
                         }}
                     />
-                    <Image alt={'studio'} src={studio} layout={'fill'} objectFit={'cover'} />
+                    <Image placeholder={'blur'} alt={'studio'} src={studio} layout={'fill'} objectFit={'cover'} />
                 </div>
 
                 <Stack
