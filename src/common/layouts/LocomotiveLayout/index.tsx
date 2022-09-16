@@ -1,15 +1,14 @@
-import React, { createContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import useLocoScroll from '@hooks/useLocomotive';
 import Loader from '@modules/loader';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 
 export const LOCOMOTIVE_CONTAINER_CLASS = 'loco_container';
-export const SmoothScrollContext = createContext({
-    isReady: false,
-});
 
 const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
-    const [isReady] = useLocoScroll(true, `.${LOCOMOTIVE_CONTAINER_CLASS}`);
+    const { isReady } = useContext(SmoothScrollContext);
+    useLocoScroll(true, `.${LOCOMOTIVE_CONTAINER_CLASS}`);
 
     useEffect(() => {
         const t = setTimeout(() => {
@@ -38,12 +37,12 @@ const LocomotiveLayout: React.FC<{ children: React.ReactNode }> = (props) => {
     }, [isReady]);
 
     return (
-        <SmoothScrollContext.Provider value={{ isReady }}>
+        <>
             <Loader isScrollReady={isReady} />
             <div className={LOCOMOTIVE_CONTAINER_CLASS} data-scroll-container="">
                 {props.children}
             </div>
-        </SmoothScrollContext.Provider>
+        </>
     );
 };
 

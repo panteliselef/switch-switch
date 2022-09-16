@@ -5,7 +5,8 @@ import { gsap } from 'gsap/dist/gsap';
 import Image from 'next/image';
 
 import historyHeroBg from '@assets/hero-history.png';
-import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 

@@ -10,7 +10,8 @@ import img5 from '@assets/bw5.png';
 
 import mapImage from '@assets/map.png';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import Stack from '@layouts/Stack';
 import InnerScroll from '@components/InnerScroll';
 import studio from '@assets/studio.png';

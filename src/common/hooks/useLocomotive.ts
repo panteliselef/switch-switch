@@ -1,19 +1,19 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'; // adds ~22kb to your bundle
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef } from 'react';
 import { LocomotiveScrollInterface } from '../../../types';
 import useWindowDimensions from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebounce } from 'usehooks-ts';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add'): [boolean, () => void] {
+export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add'): [() => void] {
     const { width } = useWindowDimensions();
-    const [isReady, setIsReady] = useState(false);
-
+    const { setIsReady } = useContext(SmoothScrollContext);
     const debouncedWidth = useDebounce(width, 100);
 
     const locoScroll = useRef<LocomotiveScrollInterface>();
@@ -87,7 +87,7 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
         } else {
             setIsReady(true);
         }
-    }, [canStart, elementAsScroller, updateLoco, debouncedWidth]);
+    }, [canStart, elementAsScroller, updateLoco, debouncedWidth, setIsReady]);
 
     useEffect(() => {
         return () => {
@@ -101,7 +101,6 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
     }, [updateLoco]);
 
     return [
-        isReady,
         () => {
             ScrollTrigger.removeEventListener('refresh', updateLoco);
         },
