@@ -14,6 +14,7 @@ import Dizajn from '@assets/clients/Studio Dizajn.svg';
 import VLDMR from '@assets/clients/VLDMR.png';
 import nk from '@assets/clients/NK arch.png';
 import izba from '@assets/clients/IZBA Logo Black.png';
+import mvs from '@assets/clients/MVS-logo.png';
 
 export const clients = [
     {
@@ -167,7 +168,7 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     },
 
     {
-        logo: '',
+        logo: mvs,
         name: 'MVS',
         text: ``,
         url: 'https://www.instagram.com/mvs.project',
