@@ -1,10 +1,10 @@
 {
-  "burgerLabel": "menu 2",
-  "prefix": "switch to",
+  "burgerLabel": "menI",
+  "prefix": "prebaci na",
   "homeLinkLabel": "home",
-  "storyLinkLabel": "story",
-  "historyLinkLabel": "history",
-  "productsLinkLabel": "products",
-  "contactLinkLabel": "contact",
-  "scheduleLinkLabel": "schedule"
+  "storyLinkLabel": "priča",
+  "historyLinkLabel": "istorija",
+  "productsLinkLabel": "proizvodi",
+  "contactLinkLabel": "kontakt",
+  "scheduleLinkLabel": "zakazivanje"
 }

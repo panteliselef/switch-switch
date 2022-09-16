@@ -8,4 +8,5 @@ module.exports = {
         'rgx:/contact': ['contact'],
         'rgx:/team': ['team-member'],
     },
+    localeDetection: false,
 };

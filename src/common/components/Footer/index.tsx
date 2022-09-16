@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
 
                     <Stack direction={'row'} alignItems={'flex-end'}>
                         <Link href={'/'}>
-                            <a className={'p-text-1'}>Go home</a>
+                            <a className={'p-text-1'}>{t('footerReturnText')}</a>
                         </Link>
                     </Stack>
                 </Stack>

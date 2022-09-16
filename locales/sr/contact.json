@@ -1,9 +1,7 @@
 {
-  "bgText": "Get in touch · 保持联系 · Ponerse en contacto · Neem contact op ·",
-  "leftParagraph": "Ready for lights-off? Ping, tweet, message or poke — and we will get back as soon as possible.",
-
-
-  "requestCircle": "Send a request",
-  "mapsLabel": "View on maps"
-
+  "bgText": "Get in touch Â· ä¿",
+  "leftParagraph": "Spremni za promenu? Pošaljite poruku, mail ili nas pozovite -- a mi ćemo u najkraćem roku odgovoriti na Vaše zahteve.",
+  "requestCircle": "Pošaljite zahtev",
+  "mapsLabel": "Pronadjite nas na mapama",
+  "contactFormTitle": "Kontaktirajte nas"
 }
