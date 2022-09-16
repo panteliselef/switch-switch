@@ -87,16 +87,20 @@ function ProductCollection() {
                     videoFileName={'simon.mp4'}
                     title={`Simon`}
                 />
-                <Product videoFileName={'smarther.mp4'} title={`Smarther`} />
+                <Product videoFileName={'smarther.mp4'} title={`Ovde treba da pise Bticino`} />
             </div>
 
             <div className={styles.product_collection}>
-                <Product url={'https://www.atelierluxus.com/'} videoFileName={'atelier.mp4'} title={`Atelier`} />
+                <Product
+                    url={'https://www.atelierluxus.com/'}
+                    videoFileName={'atelier.mp4'}
+                    title={`Ovde Atelier Luxus`}
+                />
                 <Product
                     url={'https://www.busch-jaeger.de/produkte/schalterdesign/busch-dynasty'}
                     speed={2}
                     videoFileName={'busch.mp4'}
-                    title={`Busch`}
+                    title={`Ovde Bush Jaeger`}
                 />
                 <Product url={'https://www.jung.de/en/'} videoFileName={'jung.mp4'} title={`Jung`} />
             </div>
@@ -127,13 +131,13 @@ function Lighting() {
                     url={'https://www.nowodvorski.com/'}
                     speed={2}
                     videoFileName={'nowosaroski.mp4'}
-                    title={`nowosaroski`}
+                    title={`Nowodvorski`}
                 />
                 <Product url={'https://www.tala.co.uk/'} videoFileName={'tala.mp4'} title={`tala`} />
             </div>
 
             <div className={styles.product_collection}>
-                <Product videoFileName={'pixo retro.mp4'} title={`pixo retro`} />
+                <Product videoFileName={'pixo retro.mp4'} title={`Ovde treba Nova Luce`} />
             </div>
         </div>
     );
