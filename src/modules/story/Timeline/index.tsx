@@ -8,7 +8,6 @@ import Stack from '@layouts/Stack';
 
 import Image from 'next/image';
 
-import img2015 from '@assets/2015.png';
 import img2018_1 from '@assets/2018_1.png';
 import img2018_2 from '@assets/2018_2.png';
 import img2018_3 from '@assets/2018_3.png';
@@ -62,7 +61,7 @@ const Timeline: React.FC = () => {
                 `.${styles.timeline_page}`,
                 {
                     ease: 'linear',
-                    x: w > breakpoints.laptop ? `-800vw` : '-800%',
+                    x: w > breakpoints.laptop ? `-700vw` : '-700%',
                     duration: 5,
                     stagger: 0.01,
                 },
@@ -103,13 +102,13 @@ const Timeline: React.FC = () => {
                         <p className={classNames('p-text-2', styles.info)}>{t('timelinePage1Info')}</p>
                     </Stack>
 
-                    <Stack direction={'column'} className={styles.timeline_page}>
-                        <div className={classNames(styles.image_cont, styles.image_cont_70)}>
-                            <Image placeholder={'blur'} src={img2015} layout={'fill'} objectFit={'cover'} />
-                        </div>
-                        <p className={classNames(styles.timeline_year)}>{t('timelinePage2Title')}</p>
-                        <p className={classNames('p-text-2', styles.info)}>{t('timelinePage2Info')}</p>
-                    </Stack>
+                    {/*<Stack direction={'column'} className={styles.timeline_page}>*/}
+                    {/*    <div className={classNames(styles.image_cont, styles.image_cont_70)}>*/}
+                    {/*        <Image placeholder={'blur'} src={img2015} layout={'fill'} objectFit={'cover'} />*/}
+                    {/*    </div>*/}
+                    {/*    <p className={classNames(styles.timeline_year)}>{t('timelinePage2Title')}</p>*/}
+                    {/*    <p className={classNames('p-text-2', styles.info)}>{t('timelinePage2Info')}</p>*/}
+                    {/*</Stack>*/}
 
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <div className={classNames(styles.image_cont, styles.image_cont_70)}>
