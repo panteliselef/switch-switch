@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './timeline.module.scss';
 import classNames from 'classnames';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import Stack from '@layouts/Stack';
 
 import Image from 'next/image';
@@ -164,7 +165,7 @@ const Timeline: React.FC = () => {
                                 overflow: 'hidden',
                             }}
                         >
-                            <Image src={img2018_4} layout={'fill'} objectFit={'cover'} />
+                            <Image placeholder={'blur'} src={img2018_4} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 

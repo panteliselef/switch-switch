@@ -3,7 +3,8 @@ import '@styles/locomotive.scss';
 import '@styles/global.css';
 import type { AppProps } from 'next/app';
 import AppMenu from '@components/AppMenu';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { Router, useRouter } from 'next/router';
 import { isBrowser } from '@hooks/useWindowDimensions';
 import CustomCursor from '@components/CustomCursor';
@@ -40,9 +41,10 @@ const handExitComplete = (): void => {
 
 function MyApp({ Component, pageProps }: AppProps) {
     const { push, pathname } = useRouter();
+    const [isReady, setIsReady] = useState(false);
     /**
      * We need to observer for route events and catch any changes in hashes
-     * That means user has clicked on an acnher point for a specific section in one of the pages
+     * That means user has clicked on an anchor point for a specific section in one of the pages
      */
     useEffect(() => {
         handExitComplete();
@@ -57,12 +59,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, [pathname, push]);
     return (
         <>
-            <CustomCursor />
-            <AppMenu />
-            {/*<LocomotiveLayout>*/}
-            <Component {...pageProps} />
-            {/*<Footer />*/}
-            {/*</LocomotiveLayout>*/}
+            <SmoothScrollContext.Provider value={{ isReady, setIsReady }}>
+                <CustomCursor />
+                <AppMenu />
+                {/*<LocomotiveLayout>*/}
+                <Component {...pageProps} />
+                {/*<Footer />*/}
+                {/*</LocomotiveLayout>*/}
+            </SmoothScrollContext.Provider>
         </>
     );
 }

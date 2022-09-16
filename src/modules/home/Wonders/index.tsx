@@ -5,7 +5,8 @@ import Plugs from '@modules/home/Plugs';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { useContext, useEffect } from 'react';
 import { breakpoints } from '@utils/breakpoints';
-import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { gsap } from 'gsap/dist/gsap';
 
 function Wonders() {

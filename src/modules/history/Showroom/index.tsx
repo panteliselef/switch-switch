@@ -7,7 +7,8 @@ import studio from '@assets/studio.jpeg';
 
 import Image from 'next/image';
 import { gsap } from 'gsap/dist/gsap';
-import { LOCOMOTIVE_CONTAINER_CLASS, SmoothScrollContext } from '@layouts/LocomotiveLayout';
+import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
+import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import classNames from 'classnames';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
