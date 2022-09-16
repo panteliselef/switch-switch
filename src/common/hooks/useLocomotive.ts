@@ -1,6 +1,6 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'; // adds ~22kb to your bundle
-import { useCallback, useContext, useEffect, useRef } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { LocomotiveScrollInterface } from '../../../types';
 import useWindowDimensions from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
@@ -11,12 +11,14 @@ if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add'): [() => void] {
+export default function useLocoScroll(canStart: boolean, elementAsScroller = 'element_to_add'): [unknown, () => void] {
     const { width } = useWindowDimensions();
     const { setIsReady } = useContext(SmoothScrollContext);
     const debouncedWidth = useDebounce(width, 100);
 
     const locoScroll = useRef<LocomotiveScrollInterface>();
+
+    const [loco, setLoco] = useState<unknown>(null);
 
     const updateLoco = useCallback(() => {
         if (locoScroll.current) {
@@ -41,6 +43,8 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
                 },
                 lerp: 0.04,
             });
+
+            setLoco(locoScroll.current);
 
             if (typeof locoScroll.current === 'undefined') return;
 
@@ -83,9 +87,9 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
         }
 
         if (debouncedWidth > breakpoints.laptop && !locoScroll.current) {
-            dynamicImportModule().then(() => setIsReady(true));
-        } else {
-            setIsReady(true);
+            dynamicImportModule().then(() => {
+                setIsReady(true);
+            });
         }
     }, [canStart, elementAsScroller, updateLoco, debouncedWidth, setIsReady]);
 
@@ -101,6 +105,7 @@ export default function useLocoScroll(canStart: boolean, elementAsScroller = 'el
     }, [updateLoco]);
 
     return [
+        loco,
         () => {
             ScrollTrigger.removeEventListener('refresh', updateLoco);
         },
