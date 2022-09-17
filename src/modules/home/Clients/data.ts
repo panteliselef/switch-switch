@@ -15,6 +15,7 @@ import VLDMR from '@assets/clients/VLDMR.png';
 import nk from '@assets/clients/NK arch.png';
 import izba from '@assets/clients/IZBA Logo Black.png';
 import mvs from '@assets/clients/MVS-logo.png';
+import TMRGR from '@assets/clients/TMRGR-logo.png';
 
 export const clients = [
     {
@@ -67,13 +68,12 @@ What make us special is passion for high aesthetic values.`,
         url: 'http://cattarohome.com/',
     },
     {
-        logo: ENT,
-        name: 'Ent Miller',
-        text: `ENT MILLER je međunarodna građevinska i konsalting kompanija koja sa višegodišnjim iskustvom uspešno rukovodi projektima, razvojem, izvođenjem i savetovanjem, fokusirajući se na enterijer i završne radove u građevinarstvu.
-
-Svojim klijentima obezbeđujemo pre svega profesionalan i kvalitetan pristup u izvođenju projekata, svesni odgovornosti koju za nas svaki projekat nosi. Našim poslovnim poduhvatima pristupamo ozbiljno, temeljno i agilno, svesni da je naša misija, kao nekoga ko ostavlja trag i pečat u urbanom prostoru, veoma zahtevna i značajna.`,
-        url: 'https://mmccap.com/entmiller.com/index.html\n',
+        logo: TMRGR,
+        name: 'TMRGR',
+        text: `Studio koji iyradjuje vrhunska enterijerska rešenja za svaki tip prostora. Svaki naš projekat odlikuje se primarnom funkcionalnošću, ali i jedinstvenim i prepoznatljivim identitetom.`,
+        url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
     },
+
 
     {
         logo: Revolution,
@@ -111,17 +111,19 @@ Svojim klijentima obezbeđujemo pre svega profesionalan i kvalitetan pristup u i
     },
 
     {
-        logo: al,
-        name: 'Aleksandar Vujinović',
-        text: '',
-        url: 'https://www.instagram.com/aleksandar.vujnovic/?hl=en',
+        logo: ENT,
+        name: 'Ent Miller',
+        text: `ENT MILLER je međunarodna građevinska i konsalting kompanija koja sa višegodišnjim iskustvom uspešno rukovodi projektima, razvojem, izvođenjem i savetovanjem, fokusirajući se na enterijer i završne radove u građevinarstvu.
+
+Svojim klijentima obezbeđujemo pre svega profesionalan i kvalitetan pristup u izvođenju projekata, svesni odgovornosti koju za nas svaki projekat nosi. Našim poslovnim poduhvatima pristupamo ozbiljno, temeljno i agilno, svesni da je naša misija, kao nekoga ko ostavlja trag i pečat u urbanom prostoru, veoma zahtevna i značajna.`,
+        url: 'https://mmccap.com/entmiller.com/index.html\n',
     },
 
     {
-        logo: Dizajn,
-        name: 'Ana Tanasković',
-        text: '',
-        url: 'https://www.instagram.com/studiodizajnat/',
+        logo: izba,
+        name: 'IZBA',
+        text: `IZBA is a comprehensive interior design studio synonymous with the creation of multipurpose, luxury and elegant interiors. In evolving the new, IZBA is dedicated to design that combines past and future, stimulates the sense, are beautiful yet usable. Our practice is driven by a philosophical approach that makes no distinction between the project of a chair and that of a house, in the sense that dedication to each of the assignments is the same, as is the working process behind them, including sketches, models, prototypes, development and detail drawings, and close follow-up of execution works. We believe excellence in design results from combined skills and efforts. Founder of Izba studio, Jelena Jakovljevic, will tell you more about her passion for aesthetics and philosophy of living.`,
+        url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
     },
 
     {
@@ -131,10 +133,17 @@ Svojim klijentima obezbeđujemo pre svega profesionalan i kvalitetan pristup u i
         url: 'https://www.instagram.com/bolebole_arh/?hl=en',
     },
     {
+        logo: al,
+        name: 'Aleksandar Vujinović',
+        text: '',
+        url: 'https://www.instagram.com/aleksandar.vujnovic/?hl=en',
+    },
+
+    {
         logo: '',
-        name: 'Parapet Studio',
-        text: `Stvaramo jedinstveni prostor koje inspiriše, maksimalno koristeći potencijal enterijera.`,
-        url: 'https://www.instagram.com/parapet.studio/?hl=en',
+        name: 'Studio Nacrt',
+        text: `STUDIO NACRT is a group of highly educated interior and furniture designers with rich experience, who specialize in 3d modeling, 3d visualization and designing of interiors and furniture. While designing, we specially emphasize the role of details and carefully selected materials. We believe in the power of materials like stone, concrete, wood and glass, whose unique character defines the entire space that defies stereotypes.`,
+        url: 'https://studionacrt.com/?lang=en',
     },
 
     {
@@ -160,11 +169,18 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
         url: 'https://studioloft.rs',
     },
 
+
     {
         logo: '',
-        name: 'Studio Nacrt',
-        text: `STUDIO NACRT is a group of highly educated interior and furniture designers with rich experience, who specialize in 3d modeling, 3d visualization and designing of interiors and furniture. While designing, we specially emphasize the role of details and carefully selected materials. We believe in the power of materials like stone, concrete, wood and glass, whose unique character defines the entire space that defies stereotypes.`,
-        url: 'https://studionacrt.com/?lang=en',
+        name: 'Parapet Studio',
+        text: `Stvaramo jedinstveni prostor koje inspiriše, maksimalno koristeći potencijal enterijera.`,
+        url: 'https://www.instagram.com/parapet.studio/?hl=en',
+    },
+    {
+        logo: Dizajn,
+        name: 'Ana Tanasković',
+        text: '',
+        url: 'https://www.instagram.com/studiodizajnat/',
     },
 
     {
@@ -206,19 +222,5 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
         name: 'Tijana Lalović',
         text: ``,
         url: 'https://www.instagram.com/tijana.lalovic.dizajn/?hl=en',
-    },
-
-    {
-        logo: '',
-        name: 'TMRGR',
-        text: `Studio koji iyradjuje vrhunska enterijerska rešenja za svaki tip prostora. Svaki naš projekat odlikuje se primarnom funkcionalnošću, ali i jedinstvenim i prepoznatljivim identitetom.`,
-        url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
-    },
-
-    {
-        logo: izba,
-        name: 'IZBA',
-        text: `IZBA is a comprehensive interior design studio synonymous with the creation of multipurpose, luxury and elegant interiors. In evolving the new, IZBA is dedicated to design that combines past and future, stimulates the sense, are beautiful yet usable. Our practice is driven by a philosophical approach that makes no distinction between the project of a chair and that of a house, in the sense that dedication to each of the assignments is the same, as is the working process behind them, including sketches, models, prototypes, development and detail drawings, and close follow-up of execution works. We believe excellence in design results from combined skills and efforts. Founder of Izba studio, Jelena Jakovljevic, will tell you more about her passion for aesthetics and philosophy of living.`,
-        url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
     },
 ];
