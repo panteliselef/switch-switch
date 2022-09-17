@@ -2,8 +2,10 @@ import React from 'react';
 import Stack from '@layouts/Stack';
 import styles from '@modules/history/Deserve/deserve.module.scss';
 import classNames from 'classnames';
+import useTranslation from 'next-translate/useTranslation';
 
 const Coffee: React.FC = () => {
+    const { t } = useTranslation('history');
     return (
         <section id={'before-footer'}>
             <Stack
@@ -23,8 +25,8 @@ const Coffee: React.FC = () => {
                         textAlign: 'center',
                     }}
                 >
-                    <span className={'font-light'}>Or just </span>
-                    <span className={'font-medium'}>for a coffee.</span>
+                    <span className={'font-light'}>{t('coffeeLine1')}</span>
+                    <span className={'font-medium'}>{t('coffeeLine2')}</span>
                 </p>
 
                 <svg width="199" height="183" viewBox="0 0 199 183" fill="none" xmlns="http://www.w3.org/2000/svg">

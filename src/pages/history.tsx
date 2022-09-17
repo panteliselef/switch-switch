@@ -18,7 +18,7 @@ const History: NextPage = () => {
             <Hero />
             <GalleryCollection />
             <Office />
-            <InfiniteScrollText texts={['A place for creativity', 'A place for creativity']} />
+            <InfiniteScrollText />
             <Showroom />
 
             <Deserve />

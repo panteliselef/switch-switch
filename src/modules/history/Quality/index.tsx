@@ -6,12 +6,14 @@ import styles from './quality.module.scss';
 import q1 from '@assets/q_1.png';
 import q2 from '@assets/q_2.png';
 import classNames from 'classnames';
+import useTranslation from 'next-translate/useTranslation';
 
 const Quality: React.FC = () => {
+    const { t } = useTranslation('history');
     return (
         <Stack direction={'column'} gap={'1.4vw'} className={classNames('uppercase', styles.quality_cont)}>
             <h3 className={'heading-3'}>
-                <span className={'font-extra-light'}>WE VALUE QUALITY</span>
+                <span className={'font-extra-light'}>{t('qualityLine1')}</span>
             </h3>
 
             <Stack className={styles.image_cont1} gap={'3vw'}>
@@ -21,7 +23,7 @@ const Quality: React.FC = () => {
                     }}
                     className={'heading-3'}
                 >
-                    <span className={'font-light'}>AND DESIGN</span>
+                    <span className={'font-light'}>{t('qualityLine2')}</span>
                 </h3>
 
                 <InnerScroll
@@ -49,12 +51,12 @@ const Quality: React.FC = () => {
                     }}
                     className={'heading-3'}
                 >
-                    MAKING YOUR
+                    {t('qualityLine3')}
                 </h3>
             </Stack>
 
             <h3 className={'heading-3'}>
-                <span className={'font-light'}>HOME SHINE</span>
+                <span className={'font-light'}>{t('qualityLine4')}</span>
             </h3>
         </Stack>
     );

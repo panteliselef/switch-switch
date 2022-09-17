@@ -3,8 +3,11 @@ import Stack from '@layouts/Stack';
 import InfinityIcon from '@design/icons/InfinityIcon';
 
 import styles from './infiniteScroll.module.scss';
+import useTranslation from "next-translate/useTranslation";
 
-const InfiniteScrollText: React.FC<{ texts: string[] }> = ({ texts }) => {
+const InfiniteScrollText: React.FC = () => {
+
+    const {t} = useTranslation('history');
     return (
         <section>
             <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} gap={50}>
@@ -12,7 +15,7 @@ const InfiniteScrollText: React.FC<{ texts: string[] }> = ({ texts }) => {
                 <div className={styles.infinite_scrolling_text}>
                     <div className={styles.infinite_scrolling_text__title}>
                         <div>
-                            {texts.map((t, index) => (
+                            {Array(3).fill(t('verticalScrollText')).map((t, index) => (
                                 <p key={index} className={'heading-2'}>
                                     {t}
                                 </p>

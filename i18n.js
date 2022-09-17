@@ -5,6 +5,7 @@ module.exports = {
         '*': ['common', 'menu', 'footer'],
         '/': ['homepage'],
         '/story': ['story'],
+        '/history': ['history'],
         'rgx:/contact': ['contact'],
         'rgx:/team': ['team-member'],
     },

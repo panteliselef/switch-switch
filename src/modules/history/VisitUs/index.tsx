@@ -7,8 +7,10 @@ import classNames from 'classnames';
 import styles from './visit.module.scss';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import useTranslation from 'next-translate/useTranslation';
 
 const VisitUs: React.FC = () => {
+    const { t } = useTranslation('history');
     const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
@@ -144,24 +146,18 @@ const VisitUs: React.FC = () => {
                     }}
                 >
                     <div className={styles.cl}>
-                        <p className={classNames('l1', styles.l, 'heading-3')}>Vizualize your architectural project</p>
+                        <p className={classNames('l1', styles.l, 'heading-3')}>{t('visitUsText1')}</p>
                     </div>
                     <div className={styles.cl}>
-                        <p className={classNames('l2', styles.l, 'heading-3')}>Bring light into your upcoming home</p>
-                    </div>
-
-                    <div className={styles.cl}>
-                        <p className={classNames('l3', styles.l, 'heading-3')}>
-                            Implement <br />a smart home system.
-                        </p>
+                        <p className={classNames('l2', styles.l, 'heading-3')}>{t('visitUsText2')}</p>
                     </div>
 
                     <div className={styles.cl}>
-                        <p className={classNames('l4', styles.l, 'heading-3')}>
-                            Purchase <br />
-                            your dream <br />
-                            switch
-                        </p>
+                        <p className={classNames('l3', styles.l, 'heading-3')}>{t('visitUsText3')}</p>
+                    </div>
+
+                    <div className={styles.cl}>
+                        <p className={classNames('l4', styles.l, 'heading-3')}>{t('visitUsText4')}</p>
                     </div>
                 </Stack>
             </div>

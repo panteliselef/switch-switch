@@ -19,6 +19,7 @@ import { useSplitText } from '@modules/history/hero';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import ExternalLink from '@helpers/ExternalLink';
+import useTranslation from 'next-translate/useTranslation';
 
 const GalleryCollection: React.FC = () => {
     const { isReady } = useContext(SmoothScrollContext);
@@ -63,6 +64,8 @@ const GalleryCollection: React.FC = () => {
 
     useSplitText('.gallery-title', '.gallery-title-trigger');
 
+    const { t } = useTranslation('history');
+
     return (
         <section className={styles.gallery}>
             <Stack
@@ -74,10 +77,10 @@ const GalleryCollection: React.FC = () => {
                 className={'gallery-title-trigger'}
             >
                 <h1 className={'heading-1 text-center split-line gallery-title'}>
-                    <div>You are here</div>
+                    <div>{t('imgCollectionLine1')}</div>
                 </h1>
                 <h3 className={'heading-3 text-center split-line gallery-title'}>
-                    <div>And nowhere else.</div>
+                    <div>{t('imgCollectionLine2')}</div>
                 </h3>
             </Stack>
 
@@ -118,7 +121,7 @@ const GalleryCollection: React.FC = () => {
                                 flex: '0 0 auto',
                             }}
                         >
-                            <div>Located</div>
+                            <div>{t('locationLine1')}</div>
                         </h3>
                         <InnerScroll
                             style={{
@@ -131,24 +134,22 @@ const GalleryCollection: React.FC = () => {
                     </Stack>
 
                     <h3 className={'heading-3 split-line gallery-text'}>
-                        <div>in the historical</div>
+                        <div>{t('locationLine2')}</div>
                     </h3>
 
                     <h3 className={'heading-3 split-line gallery-text'}>
-                        <div>heart of Belgrade</div>
+                        <div>{t('locationLine3')}</div>
                     </h3>
                 </Stack>
             </Stack>
 
             <Stack direction={'column'} className={styles.text}>
                 <p className={'p-text-1'} data-scroll="" data-scroll-speed="1">
-                    We chose Dorcol for it’s class, the perfect mix of history and avangarde.
+                    {t('locationParagraph1')}
                 </p>
 
                 <p className={'p-text-1'} data-scroll="">
-                    Right in the center, Novi Dorcol, and yet totally set back from the world, in a place that embodies
-                    serenity: a former cloister. The crossing of the tree-lined courtyard marks the beginning of your
-                    journey, the vast spaces of the place then welcome you for this unique journey.
+                    {t('locationParagraph2')}
                 </p>
 
                 <ExternalLink

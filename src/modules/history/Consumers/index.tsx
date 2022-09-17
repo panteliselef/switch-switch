@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Stack from '@layouts/Stack';
 import Link from 'next/link';
 
@@ -7,25 +7,30 @@ import whatWeDo from '@assets/what_we_do.svg';
 import styles from './consumers.module.scss';
 import Image from 'next/image';
 import classNames from 'classnames';
-
-const links = [
-    {
-        text: 'Consumers',
-        link: '/',
-    },
-
-    {
-        text: 'Architects',
-        link: '/',
-    },
-
-    {
-        text: 'Investors',
-        link: '/',
-    },
-];
+import useTranslation from 'next-translate/useTranslation';
 
 const Consumers: React.FC = () => {
+    const { t } = useTranslation('history');
+    const links = useMemo(
+        () => [
+            {
+                text: t('whatWeDoItem1'),
+                link: '/',
+            },
+
+            {
+                text: t('whatWeDoItem2'),
+                link: '/',
+            },
+
+            {
+                text: t('whatWeDoItem3'),
+                link: '/',
+            },
+        ],
+        [t],
+    );
+
     return (
         <section>
             <Stack className={styles.consumers_outer_cont}>

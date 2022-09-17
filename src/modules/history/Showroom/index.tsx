@@ -12,8 +12,10 @@ import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import classNames from 'classnames';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
+import useTranslation from 'next-translate/useTranslation';
 
 const Showroom: React.FC = () => {
+    const { t } = useTranslation('history');
     const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
@@ -63,11 +65,7 @@ const Showroom: React.FC = () => {
                         <Image placeholder={'blur'} src={switch1} layout={'fill'} objectFit={'cover'} />
                     </div>
 
-                    <p className={classNames(styles.plain, 'p-text-2')}>
-                        Switch Switch wishes to share with you its taste for art. Resonate with masterful works, kinetic
-                        installations or high‑tech creations. We offer you to take a step into another dimension,
-                        impalpable.
-                    </p>
+                    <p className={classNames(styles.plain, 'p-text-2')}>{t('paragraphWithImage')}</p>
                 </Stack>
                 <Stack
                     direction={'column'}
@@ -75,15 +73,14 @@ const Showroom: React.FC = () => {
                     alignItems={'flex-end'}
                     justifyContent={'flex-end'}
                 >
-                    <h3 className={classNames([styles.h1, 'heading-3'])}>Our showroom</h3>
+                    <h3 className={classNames([styles.h1, 'heading-3'])}> {t('showRoomHeading')}</h3>
                     <p
                         className={classNames(styles.plain, 'p-text-2')}
                         style={{
                             textAlign: 'right',
                         }}
                     >
-                        Designed as an immersive experience and eye opening, our showroom promotes a meeting with
-                        oneself in the comfort of a poetic and artistic space, which inspires and enriches ideas.
+                        {t('showRoomParagraph')}
                     </p>
                 </Stack>
             </section>
@@ -120,21 +117,18 @@ const Showroom: React.FC = () => {
                     }}
                 >
                     <h1 className={'heading-1'} data-scroll="" data-scroll-speed="2">
-                        Quite simply
+                        {t('animatedVideoHeading1')}
                     </h1>
-                    <h3 className={'heading-3'}>Breathtaking</h3>
+                    <h3 className={'heading-3'}> {t('animatedVideoHeading2')}</h3>
                 </Stack>
 
                 <Stack direction={'column'} className={styles.culture_cont}>
                     <p className={'p-text-1'} data-scroll="">
-                        For a holistic <br />
-                        culture
+                        {t('animatedVideoParagraph1')}
                     </p>
 
                     <p className={'p-text-1'} data-scroll="" data-scroll-speed="-1">
-                        Our key component is a personal designated touch. You cannot take care of someone with a single
-                        discipline. We defend the idea that every approach is generalized and illuminate the paths. Our
-                        approach is global and does we do not hesitate to adapt to stictly your needs.
+                        {t('animatedVideoParagraph2')}
                     </p>
                 </Stack>
             </section>

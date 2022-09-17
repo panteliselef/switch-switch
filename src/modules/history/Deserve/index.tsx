@@ -2,8 +2,10 @@ import React from 'react';
 import Stack from '@layouts/Stack';
 import classNames from 'classnames';
 import styles from './deserve.module.scss';
+import useTranslation from 'next-translate/useTranslation';
 
 const Deserve: React.FC = () => {
+    const { t } = useTranslation('history');
     return (
         <section
             style={{
@@ -12,9 +14,9 @@ const Deserve: React.FC = () => {
         >
             <Stack direction={'column'} justifyContent={'center'} alignItems={'center'} gap={100}>
                 <p className={classNames('heading-2', styles.deserve_cont)}>
-                    <span className={'font-light'}>Be where</span>
-                    <span className={'font-normal'}>you deserve</span>
-                    <span className={'font-medium'}>to be.</span>
+                    <span className={'font-light'}>{t('deserveHeadingLine1')}</span>
+                    <span className={'font-normal'}>{t('deserveHeadingLine2')}</span>
+                    <span className={'font-medium'}>{t('deserveHeadingLine3')}</span>
                 </p>
 
                 <p
@@ -24,10 +26,10 @@ const Deserve: React.FC = () => {
                     style={{
                         textAlign: 'center',
                         margin: 'auto',
-                        maxWidth: '350px',
+                        maxWidth: '35vw',
                     }}
                 >
-                    We have crafted our company with the main focus to embrace
+                    {t('deserveParagraph')}
                 </p>
             </Stack>
         </section>

@@ -9,6 +9,7 @@ import { LOCOMOTIVE_CONTAINER_CLASS } from '@layouts/LocomotiveLayout';
 import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { breakpoints } from '@utils/breakpoints';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
+import useTranslation from 'next-translate/useTranslation';
 
 const clipPaths = {
     initial: 'circle(55% at 70% 50%)',
@@ -58,7 +59,7 @@ export function useSplitText(classElements: string, classTrigger: string) {
 }
 
 const Hero: React.FC = () => {
-    // useSplitText('.hero-text', '.hero-trigger');
+    const { t } = useTranslation('history');
     const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
     useEffect(() => {
@@ -111,8 +112,10 @@ const Hero: React.FC = () => {
                 <figure className={classNames(styles.slide, styles.slide__current)}>
                     <div className={classNames(styles.slide__img_wrap)}>
                         <Image
+                            loading={'eager'}
                             src={historyHeroBg}
                             alt={'office'}
+                            placeholder={'blur'}
                             objectFit={'cover'}
                             objectPosition={'bottom'}
                             layout={'fill'}
@@ -125,20 +128,20 @@ const Hero: React.FC = () => {
                                 position: 'relative',
                             }}
                         >
-                            <div>A secret address</div>
+                            <div>{t('heroTitleLine1')}</div>
                         </h3>
                         <h3 className={classNames('heading-3', 'split-line', 'hero-text')}>
-                            <div>yet already</div>
+                            <div>{t('heroTitleLine2')}</div>
                         </h3>
                         <h3 className={classNames('heading-3', 'split-line', 'hero-text')}>
-                            <div className={'font-light'}>unavoidable</div>
+                            <div className={'font-light'}>{t('heroTitleLine3')}</div>
                         </h3>
                         <a
                             className={styles.slides__caption_link}
                             // onMouseEnter={onMouseEnterLink}
                             // onMouseLeave={onMouseLeaveLink}
                         >
-                            <span>Explore</span>
+                            <span>{t('heroSubtitle')}</span>
                         </a>
                     </figcaption>
                 </figure>
