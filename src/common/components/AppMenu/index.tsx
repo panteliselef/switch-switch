@@ -13,6 +13,8 @@ import bg2S from '@assets/switch-82.jpeg';
 import Image from 'next/image';
 import ExternalLink from '@helpers/ExternalLink';
 import useTranslation from 'next-translate/useTranslation';
+import Stack from '@layouts/Stack';
+import { useRouter } from 'next/router';
 
 const overlayPath = '.overlay__path';
 
@@ -197,6 +199,8 @@ const AppMenu: React.FC = () => {
         }
     }, []);
 
+    const { asPath, locale } = useRouter();
+
     return (
         <>
             <Link href={'/'}>
@@ -204,37 +208,43 @@ const AppMenu: React.FC = () => {
                     <AnimatedLogo />
                 </a>
             </Link>
-            <button className={styles.button_close} onClick={click}>
-                <span
-                    style={{
-                        lineHeight: '1',
-                        color: 'white',
-                    }}
-                >
-                    {t('burgerLabel')}
-                </span>
-                <div className={styles.icon_cont}>
-                    <svg
-                        viewBox="0 0 15 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={styles.icon_close}
+            <Stack direction={'row'} gap={'2vw'} className={styles.menu_cont}>
+                <Link href={asPath} locale={locale === 'en' ? 'sr' : 'en'}>
+                    {locale === 'en' ? <a>Srbski</a> : <a>English</a>}
+                </Link>
+                <button className={styles.button_close} onClick={click}>
+                    <span
+                        style={{
+                            lineHeight: '1',
+                            color: 'white',
+                        }}
                     >
-                        <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" strokeWidth="1.2"></line>
-                        <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675" strokeWidth="1.2"></line>
-                    </svg>
-                    <svg
-                        viewBox="0 0 18 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={styles.icon_burger}
-                    >
-                        <line x1="18" y1="0.6" y2="0.6" strokeWidth="1.2"></line>
-                        <line x1="18" y1="5.7167" y2="5.7167" strokeWidth="1.2"></line>
-                        <line x1="18" y1="10.8334" y2="10.8334" strokeWidth="1.2"></line>
-                    </svg>
-                </div>
-            </button>
+                        {t('burgerLabel')}
+                    </span>
+                    <div className={styles.icon_cont}>
+                        <svg
+                            viewBox="0 0 15 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={styles.icon_close}
+                        >
+                            <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" strokeWidth="1.2"></line>
+                            <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675" strokeWidth="1.2"></line>
+                        </svg>
+                        <svg
+                            viewBox="0 0 18 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={styles.icon_burger}
+                        >
+                            <line x1="18" y1="0.6" y2="0.6" strokeWidth="1.2"></line>
+                            <line x1="18" y1="5.7167" y2="5.7167" strokeWidth="1.2"></line>
+                            <line x1="18" y1="10.8334" y2="10.8334" strokeWidth="1.2"></line>
+                        </svg>
+                    </div>
+                </button>
+            </Stack>
+
             <div id={'nice'} className={classNames([styles.menu_wrap])}>
                 <div className={styles.tiles}>
                     <div className={styles.tiles__line}>
@@ -452,7 +462,6 @@ const AppMenu: React.FC = () => {
                     </ExternalLink>
                 </nav>
             </div>
-
             <svg className={styles.overlay} width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path
                     className="overlay__path"
