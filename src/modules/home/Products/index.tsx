@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import Stack from '@layouts/Stack';
 import ExternalLink from '@helpers/ExternalLink';
 import gsap from 'gsap/dist/gsap';
-import {useLazyVideo} from "@hooks/useLazyVideo";
+import { useLazyVideo } from '@hooks/useLazyVideo';
 import useTranslation from 'next-translate/useTranslation';
 
 const Product: React.FC<{ url?: string; videoFileName: string; title: string; speed?: number }> = ({
@@ -100,20 +100,16 @@ function ProductCollection() {
                     videoFileName={'simon.mp4'}
                     title={`Simon`}
                 />
-                <Product videoFileName={'bticino.mp4'} title={`Ovde treba da pise Bticino`} />
+                <Product videoFileName={'bticino.mp4'} title={`Pise Bticino`} />
             </div>
 
             <div className={styles.product_collection}>
-                <Product
-                    url={'https://www.atelierluxus.com/'}
-                    videoFileName={'atelier.mp4'}
-                    title={`Ovde Atelier Luxus`}
-                />
+                <Product url={'https://www.atelierluxus.com/'} videoFileName={'atelier.mp4'} title={`Atelier Luxus`} />
                 <Product
                     url={'https://www.busch-jaeger.de/produkte/schalterdesign/busch-dynasty'}
                     speed={2}
                     videoFileName={'busch jaeger.mp4'}
-                    title={`Ovde Bush Jaeger`}
+                    title={`Bush Jaeger`}
                 />
                 <Product url={'https://www.jung.de/en/'} videoFileName={'jung.mp4'} title={`Jung`} />
             </div>
@@ -150,7 +146,7 @@ function Lighting() {
             </div>
 
             <div className={styles.product_collection}>
-                <Product videoFileName={'pixo retro.mp4'} title={`Ovde treba Nova Luce`} />
+                <Product videoFileName={'pixo retro.mp4'} title={`Nova Luce`} />
             </div>
         </div>
     );

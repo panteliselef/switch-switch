@@ -208,9 +208,9 @@ const AppMenu: React.FC = () => {
                     <AnimatedLogo />
                 </a>
             </Link>
-            <Stack direction={'row'} gap={'2vw'} className={styles.menu_cont}>
+            <Stack direction={'row'} gap={'2vw'} alignItems={'center'} className={styles.menu_cont}>
                 <Link href={asPath} locale={locale === 'en' ? 'sr' : 'en'}>
-                    {locale === 'en' ? <a>Srbski</a> : <a>English</a>}
+                    {locale === 'en' ? <a>SRB</a> : <a>EN</a>}
                 </Link>
                 <button className={styles.button_close} onClick={click}>
                     <span

@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
 
                         <ExternalLink
                             className={'p-text-3'}
-                            to={'+381 62 456 234'}
+                            to={'069/666-446'}
                             type={'phone'}
                             style={{
                                 textDecoration: 'underline',
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
                                     />
                                 </svg>
 
-                                <p>+381 62 456 234</p>
+                                <p>069/666-446</p>
                             </Stack>
                         </ExternalLink>
                     </Stack>
@@ -162,8 +162,9 @@ const Contact: React.FC = () => {
                     >
                         <ExternalLink
                             className={'p-text-3'}
-                            to={'+381 62 456 234'}
-                            type={'phone'}
+                            to={
+                                'https://www.google.com/maps/place/Switch+Switch/@44.8198326,20.4716844,17z/data=!4m13!1m7!3m6!1s0x475a7ab83979d9e1:0x84293e09f16e9a44!2sVenizelosova+29g,+Beograd+11000!3b1!8m2!3d44.8198326!4d20.4738731!3m4!1s0x475a7be9da66d6e3:0x85883af2149b288c!8m2!3d44.8198326!4d20.4738731'
+                            }
                             style={{
                                 textDecoration: 'underline',
                             }}
