@@ -42,7 +42,7 @@
 }
 
 .menu__item {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: #fff;
     cursor: pointer;
     line-height: 1;
@@ -62,7 +62,7 @@
     }
 
     &_tiny {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
 
         @include brk.tablet {
             font-size: 0.8vw;

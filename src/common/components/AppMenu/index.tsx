@@ -210,7 +210,13 @@ const AppMenu: React.FC = () => {
             </Link>
             <Stack direction={'row'} gap={'2vw'} alignItems={'center'} className={styles.menu_cont}>
                 <Link href={asPath} locale={locale === 'en' ? 'sr' : 'en'}>
-                    {locale === 'en' ? <a>SRB</a> : <a>EN</a>}
+                    <a
+                        style={{
+                            lineHeight: '1',
+                        }}
+                    >
+                        {locale === 'en' ? 'SRB' : 'EN'}
+                    </a>
                 </Link>
                 <button className={styles.button_close} onClick={click}>
                     <span
