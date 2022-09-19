@@ -106,7 +106,7 @@ const Light: React.FC = () => {
                                 mixBlendMode: 'difference',
                             }}
                         >
-                            {t('In order for us to bing')}
+                            {t('doorSubtitle')}
                         </p>
 
                         <p
@@ -115,7 +115,7 @@ const Light: React.FC = () => {
                                 mixBlendMode: 'difference',
                             }}
                         >
-                            {t('Light')}
+                            {t('doorTitle')}
                         </p>
                     </Stack>
                     <Stack

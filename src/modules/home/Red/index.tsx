@@ -60,7 +60,7 @@ function Red() {
                         <p
                             className={'text-center'}
                             style={{
-                                width: '10vw',
+                                width: '11vw',
                             }}
                         >
                             {t('redDotAnimationText')}

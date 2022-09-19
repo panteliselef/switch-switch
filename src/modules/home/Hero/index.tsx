@@ -8,8 +8,10 @@ import gsap from 'gsap/dist/gsap';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/router';
 
 const Hero = () => {
+    const { locale } = useRouter();
     const w = useDebouncedWidth();
     const { t } = useTranslation('homepage');
     useEffect(() => {
@@ -25,7 +27,14 @@ const Hero = () => {
             {
                 delay: 2,
                 duration: 2,
-                width: w > breakpoints.laptop ? '15vw' : '4.6rem',
+                width:
+                    w > breakpoints.laptop
+                        ? locale === 'en'
+                            ? '15vw'
+                            : '13vw'
+                        : locale === 'en'
+                        ? '4.6rem'
+                        : '4.1rem',
                 ease: 'steps(2)',
                 repeat: -1,
             },
@@ -43,9 +52,11 @@ const Hero = () => {
             },
             0,
         );
-
         tl.play();
-    }, [w]);
+        return () => {
+            tl.kill();
+        };
+    }, [locale, w]);
     return (
         <section className={styles.outer_cont}>
             <Stack
