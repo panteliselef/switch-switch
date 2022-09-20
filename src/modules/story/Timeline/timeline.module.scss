@@ -57,10 +57,9 @@
     .timeline {
         height: 100%;
         padding: 3vw;
-
         gap: 2rem;
-
         flex-direction: column;
+
         @include brk.tablet {
             flex-direction: row;
             gap: 0;
@@ -74,6 +73,12 @@
             gap: 1.3vw;
             align-items: flex-end;
             z-index: 999;
+            display: none;
+
+            @include brk.tablet {
+                display: flex;
+                flex-direction: column;
+            }
 
             .line {
                 height: 1px;

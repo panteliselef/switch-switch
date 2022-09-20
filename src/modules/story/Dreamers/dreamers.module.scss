@@ -9,6 +9,14 @@
     }
 }
 
+.center_paragraph {
+    width: 90%;
+    padding-top: 7vw;
+    @include brk.tablet {
+        width: 35vw;
+    }
+}
+
 .stack_cont {
     width: 100%;
 

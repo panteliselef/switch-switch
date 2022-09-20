@@ -96,7 +96,7 @@ const Timeline: React.FC = () => {
         <section ref={ref}>
             <div className={classNames(styles.timeline_container)}>
                 <Stack className={styles.timeline}>
-                    <Stack direction={'column'} className={styles.preview}>
+                    <div className={styles.preview}>
                         {[0, 1, 2, 3, 4, 5].map((a) => (
                             <div
                                 key={'timeline' + a}
@@ -106,7 +106,7 @@ const Timeline: React.FC = () => {
                                 })}
                             />
                         ))}
-                    </Stack>
+                    </div>
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <p className={classNames(styles.timeline_year, styles.mask1)}>{t('timelinePage1Title')}</p>
                         <p className={classNames('p-text-2', styles.info)}>{t('timelinePage1Info')}</p>

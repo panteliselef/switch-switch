@@ -75,7 +75,7 @@
 }
 
 .column_wrap_height {
-    height: 100vh;
+    height: var(--full-height);
     flex-direction: column-reverse;
 
     .column {
