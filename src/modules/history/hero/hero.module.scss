@@ -1,3 +1,5 @@
+@use 'styles/design/base/breakpoints' as brk;
+
 .slideshow {
     width: 100vw;
     height: 110vh;
@@ -51,9 +53,12 @@
 
 .slide__caption {
     position: relative;
-    padding: 0 10vw;
+    padding: 0 1rem;
     cursor: default;
     width: 100%;
+    @include brk.tablet {
+        padding: 0 10vw;
+    }
 }
 
 .slides__caption_headline {

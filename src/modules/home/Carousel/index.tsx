@@ -23,10 +23,9 @@ const Carousel = () => {
                     start: w > breakpoints.laptop ? 'top top' : 'top 50%',
                     end: '+=700vh',
                     pin: w > breakpoints.laptop,
-                    scrub: true,
+                    scrub: w > breakpoints.laptop,
                 },
             });
-
             tl.fromTo(
                 '#c',
                 {

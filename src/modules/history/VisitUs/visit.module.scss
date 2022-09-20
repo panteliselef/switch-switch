@@ -21,6 +21,20 @@
         height: 100vh;
         grid-template-columns: 22vw 1fr;
     }
+
+    p {
+        word-break: break-word;
+    }
+}
+
+.cont {
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    @include brk.tablet {
+        max-width: 80vw;
+    }
 }
 
 .l {

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     @include brk.tablet {
         width: 60vw;
         padding: 0;
@@ -12,5 +12,14 @@
 
     span {
         text-align: center;
+    }
+}
+
+.deserve_p {
+    margin: auto;
+    max-width: 90%;
+
+    @include brk.tablet {
+        max-width: 35vw;
     }
 }

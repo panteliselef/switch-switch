@@ -21,7 +21,7 @@ function Reel() {
                     start: w > breakpoints.laptop ? 'top top' : 'top 50%',
                     end: '+=400vh',
                     pin: w > breakpoints.laptop,
-                    scrub: true,
+                    scrub: w > breakpoints.laptop,
                 },
             })
                 .fromTo(
