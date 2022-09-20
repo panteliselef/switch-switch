@@ -22,6 +22,7 @@ const TeamMember: React.FC<TeamMemberType> = ({ next, urlPath, bio, name, role }
         <section
             id={'before-footer'}
             style={{
+                paddingTop: '5rem',
                 position: 'relative',
                 height: 'var(--full-height)',
             }}

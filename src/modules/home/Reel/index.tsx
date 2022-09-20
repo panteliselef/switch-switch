@@ -116,6 +116,7 @@ function Reel() {
                     opacity: '0.3',
                     objectFit: 'cover',
                 }}
+                playsInline={true}
                 loop={true}
                 autoPlay={true}
                 muted={true}
