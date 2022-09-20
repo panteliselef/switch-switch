@@ -18,9 +18,9 @@ function Reel() {
                 scrollTrigger: {
                     trigger: `#con`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
-                    start: 'top top',
+                    start: w > breakpoints.laptop ? 'top top' : 'top 50%',
                     end: '+=400vh',
-                    pin: true,
+                    pin: w > breakpoints.laptop,
                     scrub: true,
                 },
             })
@@ -64,6 +64,7 @@ function Reel() {
         <section
             id={'con'}
             style={{
+                overflow: 'hidden',
                 height: '100vh',
                 position: 'relative',
             }}

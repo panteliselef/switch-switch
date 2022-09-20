@@ -116,7 +116,7 @@ function ProductCollection() {
 
             <div className={styles.product_collection}>
                 <Product videoFileName={'lifesmart.mp4'} title={`lifesmart`} />
-                <Product url={'https://www.tem.si/'} speed={2} videoFileName={'modul.mp4'} title={`Modul`} />
+                <Product url={'https://www.tem.si/'} speed={2} videoFileName={'modul.mp4'} title={`TEM`} />
                 <Product
                     url={'https://www.simonelectric.com/intl/simon-100'}
                     videoFileName={'simon.mp4'}

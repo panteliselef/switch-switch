@@ -31,7 +31,7 @@
 
 .container {
     width: 100%;
-    padding: 1rem 1rem 6rem;
+    padding: 6rem 1rem;
     gap: 2rem;
 
     .feature {
@@ -52,5 +52,6 @@
 
     @include brk.tablet {
         width: 55vw;
+        padding: 1rem 1rem 6rem;
     }
 }

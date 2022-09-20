@@ -1,5 +1,13 @@
 @use 'styles/design/base/breakpoints' as brk;
 
+.carousel_text {
+    line-height: 1;
+    font-size: 1.3rem;
+    @include brk.tablet {
+        font-size: var(--font-s-p1);
+    }
+}
+
 .grid {
     padding: 0 1rem;
     gap: 0;
@@ -10,9 +18,11 @@
 }
 
 .t {
+    @extend .carousel_text;
     margin: 0;
     position: absolute;
     top: 47%;
+    left: 20px;
 
     @for $i from 1 through 2000 {
         &:nth-child(#{$i}) {

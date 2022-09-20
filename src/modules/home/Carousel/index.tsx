@@ -20,9 +20,9 @@ const Carousel = () => {
                 scrollTrigger: {
                     trigger: `#made`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
-                    start: 'top top',
+                    start: w > breakpoints.laptop ? 'top top' : 'top 50%',
                     end: '+=700vh',
-                    pin: true,
+                    pin: w > breakpoints.laptop,
                     scrub: true,
                 },
             });
@@ -47,7 +47,7 @@ const Carousel = () => {
                     perspective: '2000px',
                     height: '100vh',
                     display: 'grid',
-                    gridTemplateColumns: '22vw 1fr',
+                    gridTemplateColumns: '25vw 1fr',
                     margin: 'auto',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -59,7 +59,7 @@ const Carousel = () => {
                         width: 'auto',
                     }}
                 >
-                    <p className={'p-text-1'}>{t('carouselPinnedLabel')}</p>
+                    <p className={classNames('p-text-1', styles.carousel_text)}>{t('carouselPinnedLabel')}</p>
                 </Stack>
 
                 <Stack

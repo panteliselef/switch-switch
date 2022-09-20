@@ -45,7 +45,9 @@ function Wonders() {
                 </Stack>
 
                 {/*<p className={classNames(styles.wonders_text)}>Wonders of light began with one single touch</p>*/}
-                <Stack direction={'column'} id={'w'}>
+                <Stack direction={'column'} id={'w'} style={{
+                    padding: '0 2rem'
+                }}>
                     <p className={classNames(styles.wonders_text)}>{t('wondersLine1')}</p>
                     <p className={classNames(styles.wonders_text)}>{t('wondersLine2')}</p>
                     <p className={classNames(styles.wonders_text)}>{t('wondersLine3')}</p>
@@ -61,7 +63,7 @@ function Wonders() {
                     {t('centerParagraph')}
                 </p>
             </Stack>
-            <Plugs />
+            {w > breakpoints.laptop && <Plugs />}
         </section>
     );
 }

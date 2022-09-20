@@ -19,9 +19,9 @@ function Red() {
                 scrollTrigger: {
                     trigger: `#ele`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
-                    start: 'top top',
+                    start: w > breakpoints.laptop ? 'top top' : 'top 50%',
                     end: '+=400vh',
-                    pin: true,
+                    pin: w > breakpoints.laptop,
                     scrub: true,
                 },
             })
