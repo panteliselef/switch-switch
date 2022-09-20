@@ -17,6 +17,13 @@
     }
 }
 
+.line_1 {
+    text-align: left;
+    @include brk.tablet {
+        text-align: center;
+    }
+}
+
 .row_col {
     flex-direction: column;
     @include brk.tablet {
@@ -50,8 +57,16 @@
 .switch_cont {
     position: relative;
     flex: 1 1 100px;
-    width: 40vw;
+    width: 70%;
     align-self: center;
+
+    p {
+        padding-bottom: 0.5rem;
+        font-size: 0.7rem;
+        @include brk.tablet {
+            font-size: calc(0.5vh + 0.5vw);
+        }
+    }
 
     @include brk.tablet {
         width: auto;
@@ -65,8 +80,10 @@
     position: relative;
     width: 30px;
     background: #0e0e0e;
+    display: none;
 
     @include brk.tablet {
+        display: block;
         height: 12vw;
         width: 4vw;
     }

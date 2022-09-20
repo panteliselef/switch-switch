@@ -24,7 +24,7 @@ const Light: React.FC = () => {
                     // anticipatePin: 1,
                     toggleActions: 'restart pause resume reverse',
                     start: w > breakpoints.laptop ? 'top -30%' : 'top 50%',
-                    end: w > breakpoints.laptop ? '+=400vh' : '',
+                    end: w > breakpoints.laptop ? '+=400vh' : '+=500px',
                     scrub: w > breakpoints.laptop,
                 },
             })

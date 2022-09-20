@@ -88,14 +88,14 @@ const openMenu = (a: MutableRefObject<boolean>) => {
         .to(
             menuItems,
             {
-                duration: 1.1,
+                duration: 0.5,
                 ease: 'power4',
                 startAt: { y: 150 },
                 y: 0,
                 opacity: 1,
-                stagger: 0.05,
+                stagger: 0.01,
             },
-            '-=50%',
+            '<',
         );
 };
 
@@ -189,7 +189,6 @@ const AppMenu: React.FC = () => {
 
     const click = useCallback(() => {
         if (isAnimating.current) return;
-        console.log(isAnimating);
         if (!isOpen.current) {
             openMenu(isAnimating);
             isOpen.current = true;

@@ -1,7 +1,7 @@
 @use 'styles/design/base/breakpoints' as brk;
 
 .cont {
-    gap: 150px;
+    gap: 40px;
     @include brk.tablet {
         gap: 40vw;
     }
@@ -14,6 +14,7 @@
     position: absolute;
     top: 0;
     clip-path: inset(0px 0px 0px round 0px 0px 0 0);
+    //clip-path: inset(150px 150px 350px round 200px 200px 0 0);
     @include brk.tablet {
         clip-path: inset(40vw 45vw 75vw round 20vw 20vw 0 0);
     }
