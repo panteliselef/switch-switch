@@ -136,15 +136,7 @@ const VisitUs: React.FC = () => {
                     </div>
                 </Stack>
 
-                <Stack
-                    direction={'row'}
-                    alignItems={'center'}
-                    style={{
-                        height: '100%',
-                        position: 'relative',
-                        maxWidth: '80vw',
-                    }}
-                >
+                <Stack direction={'row'} alignItems={'center'} className={styles.cont}>
                     <div className={styles.cl}>
                         <p className={classNames('l1', styles.l, 'heading-3')}>{t('visitUsText1')}</p>
                     </div>

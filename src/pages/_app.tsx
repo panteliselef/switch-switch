@@ -6,7 +6,7 @@ import AppMenu from '@components/AppMenu';
 import { useEffect, useState } from 'react';
 import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { Router, useRouter } from 'next/router';
-import { isBrowser } from '@hooks/useWindowDimensions';
+import { isBrowser, useDebouncedHeight } from '@hooks/useWindowDimensions';
 import CustomCursor from '@components/CustomCursor';
 
 /**
@@ -39,7 +39,19 @@ const handExitComplete = (): void => {
     }
 };
 
+function useMobileHackVh() {
+    const height = useDebouncedHeight();
+
+    useEffect(() => {
+        // First we get the viewport height, and we multiply it by 1% to get a value for a vh unit
+        const vh = height * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }, [height]);
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
+    useMobileHackVh();
     const { push, pathname } = useRouter();
     const [isReady, setIsReady] = useState(false);
     /**

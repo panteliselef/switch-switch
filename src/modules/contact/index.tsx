@@ -58,7 +58,14 @@ const Contact: React.FC = () => {
                 </div>
             </Stack>
             <div className={styles.grid}>
-                <Stack direction={'column'} justifyContent={'flex-end'} gap={'10vw'}>
+                <Stack
+                    direction={'column'}
+                    style={{
+                        marginTop: '3rem',
+                    }}
+                    justifyContent={'flex-end'}
+                    gap={'10vw'}
+                >
                     <p className={classNames('p-text-3', styles.cont)}>{t('leftParagraph')}</p>
 
                     <Stack direction={'column'}>
@@ -138,7 +145,9 @@ const Contact: React.FC = () => {
                                 style={{
                                     borderRadius: '50%',
                                     aspectRatio: '1/1',
-                                    width: '10vw',
+                                    width: '7rem',
+                                    padding: '1rem',
+                                    wordBreak: 'break-word',
                                     color: 'var(--text-color)',
                                     background: 'var(--bg-color)',
                                 }}

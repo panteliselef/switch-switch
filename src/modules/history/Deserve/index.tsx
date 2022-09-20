@@ -22,12 +22,7 @@ const Deserve: React.FC = () => {
                 <p
                     data-scroll=""
                     data-scroll-speed="1"
-                    className={'p-text-1'}
-                    style={{
-                        textAlign: 'center',
-                        margin: 'auto',
-                        maxWidth: '35vw',
-                    }}
+                    className={classNames('p-text-1 text-center', styles.deserve_p)}
                 >
                     {t('deserveParagraph')}
                 </p>

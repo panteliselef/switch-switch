@@ -1,6 +1,6 @@
 .container {
     position: relative;
-    height: 100vh;
+    height: var(--full-height);
     padding: 1rem 3vw;
 
     & > p {
@@ -9,6 +9,8 @@
     }
 
     .red_container {
+        position: relative;
+
         .red_dot {
             position: relative;
             width: 20vw;

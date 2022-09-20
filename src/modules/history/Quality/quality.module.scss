@@ -1,16 +1,16 @@
 @use 'styles/design/base/breakpoints' as brk;
 
 .quality_cont {
-    padding: 10vw 5vw 0;
+    padding: 2rem 0.5rem;
+
+    @include brk.tablet {
+        padding: 10vw 5vw 0;
+    }
 }
 
 .inner_scroll {
     width: 100%;
     height: 120px;
-
-    @include brk.tablet {
-        //height: 100%;
-    }
 }
 
 .image_cont1 {

@@ -193,23 +193,20 @@ export default function Team() {
         const oddColumns = [...document.querySelectorAll(`.${styles.column}`)].filter((_, index) => index != 1);
         const evenColumns = [...document.querySelectorAll(`.${styles.column}`)].filter((_, index) => index === 1);
 
-        // const gridItems = [...document.querySelectorAll(`.${styles.column__item}`)];
-        // console.log(evenColumns);
-
         if (!isReady) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: `#before-footer`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
-                    scrub: 1,
-                    pin: true,
-                    start: 'top 0%',
+                    scrub: w > breakpoints.laptop,
+                    pin: w > breakpoints.laptop,
+                    start: w > breakpoints.laptop ? 'top 0%' : 'top 50%',
                     end: '+=300vh',
                 },
             })
                 .to(oddColumns, {
-                    yPercent: w > breakpoints.laptop ? 70 : 15,
+                    yPercent: w > breakpoints.laptop ? 70 : 25,
                 })
                 .to(
                     evenColumns,

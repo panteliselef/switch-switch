@@ -3,7 +3,7 @@
 .footer_outer {
     width: 100%;
     overflow: hidden;
-    height: 100vh;
+    height: var(--full-height);
     padding: 13.88889vw 0 3.55556vw;
 
     @include brk.tablet {

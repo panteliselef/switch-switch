@@ -19,9 +19,9 @@ function Reel() {
                     trigger: `#con`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     start: w > breakpoints.laptop ? 'top top' : 'top 50%',
-                    end: '+=400vh',
+                    end: w > breakpoints.laptop ? '+=400vh' : '',
                     pin: w > breakpoints.laptop,
-                    scrub: true,
+                    scrub: w > breakpoints.laptop,
                 },
             })
                 .fromTo(
@@ -65,7 +65,7 @@ function Reel() {
             id={'con'}
             style={{
                 overflow: 'hidden',
-                height: '100vh',
+                height: 'var(--full-height)',
                 position: 'relative',
             }}
         >
@@ -111,7 +111,7 @@ function Reel() {
             <video
                 id={'video'}
                 style={{
-                    height: 'calc(var(--vh,1vh)*100)',
+                    height: 'var(--full-height)',
                     width: '100%',
                     opacity: '0.3',
                     objectFit: 'cover',
