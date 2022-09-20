@@ -194,20 +194,20 @@ export default function Team() {
         const evenColumns = [...document.querySelectorAll(`.${styles.column}`)].filter((_, index) => index === 1);
 
         if (!isReady) return;
-        if (w < breakpoints.laptop) return;
-        setTimeout(() => {
+        const tm = setTimeout(() => {
+            // if (w < breakpoints.laptop) return;
             gsap.timeline({
                 scrollTrigger: {
                     trigger: `#before-footer`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     scrub: w > breakpoints.laptop,
                     pin: w > breakpoints.laptop,
-                    start: w > breakpoints.laptop ? 'top 0%' : 'top 50%',
-                    end: w > breakpoints.laptop ? '+=300vh' : '',
+                    start: w > breakpoints.laptop ? 'top 0%' : 'top 200%',
+                    end: w > breakpoints.laptop ? '+=1000vh' : '+=600px',
                 },
             })
                 .to(oddColumns, {
-                    yPercent: w > breakpoints.laptop ? 70 : 25,
+                    yPercent: w > breakpoints.laptop ? 70 : 0,
                 })
                 .to(
                     evenColumns,
@@ -217,13 +217,17 @@ export default function Team() {
                     '<',
                 );
         }, 1000);
+
+        return () => {
+            clearTimeout(tm);
+        };
     }, [w, isReady]);
 
     return (
         <section
             id={'before-footer'}
+            className={styles.cont}
             style={{
-                height: 'var(--full-height)',
                 background: 'var(--text-color)',
                 marginTop: '-2px',
                 overflow: 'hidden',

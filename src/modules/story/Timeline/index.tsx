@@ -14,7 +14,6 @@ import img2018_3 from '@assets/2018_3.png';
 import img2018_4 from '@assets/2018_4.png';
 import img2018_5 from '@assets/2018_5.png';
 
-import img2021_1 from '@assets/2021_1.png';
 import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import useTranslation from 'next-translate/useTranslation';
@@ -29,6 +28,16 @@ const Timeline: React.FC = () => {
             },
         ],
     });
+
+    const { videoProps: videoProps2, videoSources: videoSources2 } = useLazyVideo({
+        sources: [
+            {
+                path: '/videos/2021_1.mp4',
+                type: 'video/mp4',
+            },
+        ],
+    });
+
     const [activeLine, setActiveLine] = useState(0);
     const { isReady } = useContext(SmoothScrollContext);
     const w = useDebouncedWidth();
@@ -44,7 +53,7 @@ const Timeline: React.FC = () => {
                     anticipatePin: 1,
                     toggleActions: 'restart pause resume reverse',
                     start: 'top 0%',
-                    end: '+=3000vh',
+                    end: '+=4000vh',
                     pin: true,
                     scrub: true,
                 },
@@ -154,7 +163,20 @@ const Timeline: React.FC = () => {
 
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <div className={classNames(styles.image_cont, styles.image_cont_70)}>
-                            <Image placeholder={'blur'} src={img2021_1} layout={'fill'} objectFit={'cover'} />
+                            {inView && (
+                                <video
+                                    style={{
+                                        position: 'relative',
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        objectPosition: '50% 50%',
+                                    }}
+                                    {...videoProps2}
+                                >
+                                    {videoSources2}
+                                </video>
+                            )}
                         </div>
                         <p className={classNames(styles.timeline_year)}>{t('timelinePage4Title')}</p>
                         <p className={classNames('p-text-2', styles.info)}>{t('timelinePage4Info')}</p>

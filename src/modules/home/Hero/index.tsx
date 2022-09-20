@@ -9,6 +9,7 @@ import { useDebouncedWidth } from '@hooks/useWindowDimensions';
 import { breakpoints } from '@utils/breakpoints';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
+import classNames from 'classnames';
 
 const Hero = () => {
     const { locale } = useRouter();
@@ -73,7 +74,7 @@ const Hero = () => {
                     }}
                 >
                     <h3
-                        className={'heading-3 text-center'}
+                        className={classNames('heading-3', styles.line_1)}
                         style={{
                             width: '100%',
                         }}
@@ -127,15 +128,7 @@ const Hero = () => {
                     data-scroll-speed={'-3'}
                     className={styles.switch_cont}
                 >
-                    <p
-                        className={'p-text-3'}
-                        style={{
-                            paddingBottom: '.5rem',
-                            fontSize: 'calc(0.5vh + 0.5vw)',
-                        }}
-                    >
-                        {t('heroImageLabel')}
-                    </p>
+                    <p className={'p-text-3'}>{t('heroImageLabel')}</p>
                     <div className={styles.image_cont}>
                         <Image
                             loading={'eager'}

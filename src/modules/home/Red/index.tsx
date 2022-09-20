@@ -43,6 +43,11 @@ function Red() {
                 );
         }, 1000);
     }, [w, isReady]);
+
+    if (w <= breakpoints.laptop) {
+        return null;
+    }
+
     return (
         <section
             style={{

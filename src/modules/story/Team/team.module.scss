@@ -4,6 +4,13 @@
     //background-image: url('https://images.unsplash.com/photo-1661553141518-c89b061640e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=659&q=80');
 }
 
+.cont {
+    height: 700px;
+    @include brk.tablet {
+        height: var(--full-height);
+    }
+}
+
 .heading {
     color: rgba(0, 0, 0, 0.3);
     position: absolute;
@@ -75,8 +82,12 @@
 }
 
 .column_wrap_height {
-    height: var(--full-height);
+    height: 100%;
     flex-direction: column-reverse;
+
+    @include brk.tablet {
+        height: var(--full-height);
+    }
 
     .column {
         flex-direction: column-reverse;

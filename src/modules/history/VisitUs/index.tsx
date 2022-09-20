@@ -116,7 +116,7 @@ const VisitUs: React.FC = () => {
                         width: 'auto',
                     }}
                 >
-                    <p className={'p-text-1'}>Come visit us to</p>
+                    <p className={'p-text-1'}>{t('visitUsStickyText')}</p>
                     <div
                         style={{
                             width: '100%',

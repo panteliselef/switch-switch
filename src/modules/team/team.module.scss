@@ -28,8 +28,10 @@
 }
 
 .front {
+    margin-top: 3rem;
     flex-direction: column;
     @include brk.tablet {
+        margin: 0;
         flex-direction: row;
     }
 }
@@ -49,7 +51,7 @@
     position: absolute;
     width: 100%;
     z-index: 1;
-    padding: 6rem 2rem;
+    padding: 2rem 2rem;
 
     @include brk.tablet {
         padding: 4vw 1rem;
@@ -76,7 +78,7 @@
     text-orientation: mixed;
     background-color: var(--text-color);
     color: var(--bg-color);
-    padding: 1rem 0.2rem;
+    padding: 0.8rem 0.2rem;
     min-height: 30vw;
 
     @include brk.tablet {
