@@ -1,7 +1,7 @@
 @use 'styles/design/base/breakpoints' as brk;
 
 .glb_container {
-    height: 100vh;
+    height: 120vh;
     position: relative;
     transform: translateY(0);
     @include brk.tablet {
