@@ -15,17 +15,17 @@ const Light: React.FC = () => {
     const w = useDebouncedWidth();
     useEffect(() => {
         if (!isReady) return;
+        if (w <= breakpoints.laptop) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: `.${styles.door}`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
-                    anticipatePin: 1,
+                    // anticipatePin: 1,
                     toggleActions: 'restart pause resume reverse',
                     start: w > breakpoints.laptop ? 'top -30%' : 'top 50%',
-                    end: '+=400vh',
-                    // pin: true,
-                    scrub: true,
+                    end: w > breakpoints.laptop ? '+=400vh' : '',
+                    scrub: w > breakpoints.laptop,
                 },
             })
                 .to(

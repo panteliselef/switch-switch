@@ -35,6 +35,7 @@ const Timeline: React.FC = () => {
     const { t } = useTranslation('story');
     useEffect(() => {
         if (!isReady) return;
+        if (w <= breakpoints.laptop) return;
         setTimeout(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -94,8 +95,8 @@ const Timeline: React.FC = () => {
     return (
         <section ref={ref}>
             <div className={classNames(styles.timeline_container)}>
-                <Stack direction={'row'} className={styles.timeline}>
-                    <Stack direction={'column'} className={styles.preview}>
+                <Stack className={styles.timeline}>
+                    <div className={styles.preview}>
                         {[0, 1, 2, 3, 4, 5].map((a) => (
                             <div
                                 key={'timeline' + a}
@@ -105,7 +106,7 @@ const Timeline: React.FC = () => {
                                 })}
                             />
                         ))}
-                    </Stack>
+                    </div>
                     <Stack direction={'column'} className={styles.timeline_page}>
                         <p className={classNames(styles.timeline_year, styles.mask1)}>{t('timelinePage1Title')}</p>
                         <p className={classNames('p-text-2', styles.info)}>{t('timelinePage1Info')}</p>
@@ -128,57 +129,25 @@ const Timeline: React.FC = () => {
                     </Stack>
 
                     <Stack direction={'column'} className={styles.timeline_page}>
-                        <div
-                            style={{
-                                width: 'calc(100% - 3vw)',
-                                height: '100%',
-                                top: 0,
-                                position: 'absolute',
-                                overflow: 'hidden',
-                            }}
-                        >
+                        <div className={styles.page_img_cont}>
                             <Image placeholder={'blur'} src={img2018_2} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 
                     <Stack direction={'column'} className={styles.timeline_page}>
-                        <div
-                            style={{
-                                width: 'calc(100% - 3vw)',
-                                height: '100%',
-                                top: 0,
-                                position: 'absolute',
-                                overflow: 'hidden',
-                            }}
-                        >
+                        <div className={styles.page_img_cont}>
                             <Image placeholder={'blur'} src={img2018_3} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 
                     <Stack direction={'column'} className={styles.timeline_page}>
-                        <div
-                            style={{
-                                width: 'calc(100% - 3vw)',
-                                height: '100%',
-                                top: 0,
-                                position: 'absolute',
-                                overflow: 'hidden',
-                            }}
-                        >
+                        <div className={styles.page_img_cont}>
                             <Image placeholder={'blur'} src={img2018_4} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
 
                     <Stack direction={'column'} className={styles.timeline_page}>
-                        <div
-                            style={{
-                                width: 'calc(100% - 3vw)',
-                                height: '100%',
-                                top: 0,
-                                position: 'absolute',
-                                overflow: 'hidden',
-                            }}
-                        >
+                        <div className={styles.page_img_cont}>
                             <Image placeholder={'blur'} src={img2018_5} layout={'fill'} objectFit={'cover'} />
                         </div>
                     </Stack>
@@ -191,15 +160,7 @@ const Timeline: React.FC = () => {
                         <p className={classNames('p-text-2', styles.info)}>{t('timelinePage4Info')}</p>
                     </Stack>
                     <Stack direction={'column'} className={styles.timeline_page} id={'lel2'}>
-                        <div
-                            style={{
-                                width: 'calc(100% - 9vw)',
-                                height: '100%',
-                                top: 0,
-                                position: 'absolute',
-                                overflow: 'hidden',
-                            }}
-                        >
+                        <div className={styles.page_video_cont}>
                             <div
                                 style={{
                                     position: 'relative',

@@ -23,7 +23,7 @@ const TeamMember: React.FC<TeamMemberType> = ({ next, urlPath, bio, name, role }
             id={'before-footer'}
             style={{
                 position: 'relative',
-                height: '100vh',
+                height: 'var(--full-height)',
             }}
         >
             <Stack direction={'row'} className={styles.title_cont} justifyContent={'center'}>

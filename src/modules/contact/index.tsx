@@ -15,10 +15,10 @@ const Contact: React.FC = () => {
     return (
         <section
             id={'before-footer'}
+            className={classNames(styles.contact_section)}
             style={{
                 background: '#EDECE7',
                 position: 'relative',
-                height: '100vh',
                 color: 'var(--bg-color)',
             }}
         >

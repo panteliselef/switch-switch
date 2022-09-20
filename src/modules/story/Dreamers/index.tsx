@@ -60,13 +60,7 @@ const Dreamers = () => {
             </Stack>
 
             <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
-                <p
-                    className={classNames('p-text-1', 'text-center')}
-                    style={{
-                        width: '35vw',
-                        paddingTop: '7vw',
-                    }}
-                >
+                <p className={classNames('p-text-1', 'text-center', styles.center_paragraph)}>
                     {t('dreamersCenterParagraph')}
                 </p>
             </Stack>

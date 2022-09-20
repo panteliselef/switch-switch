@@ -20,11 +20,11 @@ html.has-scroll-dragging {
 }
 
 .has-scroll-smooth [data-scroll-container] {
-    min-height: 100vh;
+    min-height: var(--full-height);
 }
 
 [data-scroll-direction='horizontal'] [data-scroll-container] {
-    height: 100vh;
+    height: var(--full-height);
     display: inline-block;
     white-space: nowrap;
 }
@@ -78,12 +78,10 @@ html.has-scroll-dragging {
     width: 7px;
     border-radius: 10px;
     margin: 2px;
-    cursor: -webkit-grab;
     cursor: grab;
 }
 
 .has-scroll-dragging .c-scrollbar_thumb {
-    cursor: -webkit-grabbing;
     cursor: grabbing;
 }
 
