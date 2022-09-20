@@ -1,6 +1,6 @@
 .container {
     position: relative;
-    height: 100vh;
+    height: var(--full-height);
     padding: 1rem 3vw;
 
     & > p {

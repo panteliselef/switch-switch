@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
     const w = useDebouncedWidth();
     useEffect(() => {
         if (!isReady) return;
+        if (w <= breakpoints.laptop) return;
 
         const t = setTimeout(() => {
             if (window.locomotive && isReady) {

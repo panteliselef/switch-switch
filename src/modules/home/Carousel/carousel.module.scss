@@ -9,6 +9,8 @@
 }
 
 .grid {
+    display: grid;
+    height: var(--full-height);
     padding: 0 1rem;
     gap: 0;
     @include brk.tablet {

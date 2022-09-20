@@ -22,6 +22,12 @@ export function useDebouncedWidth() {
     return useDebounce(width, 100);
 }
 
+export function useDebouncedHeight() {
+    const { height } = useWindowDimensions();
+
+    return useDebounce(height, 100);
+}
+
 export default function useWindowDimensions(): { width: number; height: number } {
     const [windowDimensions, setWindowDimensions] = useState({
         width: 0,

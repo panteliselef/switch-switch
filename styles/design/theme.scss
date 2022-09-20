@@ -2,6 +2,8 @@
 @use 'base/breakpoints' as brk;
 
 :root {
+    --full-height: calc(var(--vh, 1vh) * 100);
+
     --bg-color: #{c.$dark1};
     --text-color: #{c.$light1};
 

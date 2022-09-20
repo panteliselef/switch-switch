@@ -21,7 +21,7 @@ const Carousel = () => {
                     trigger: `#made`,
                     scroller: w > breakpoints.laptop ? `.${LOCOMOTIVE_CONTAINER_CLASS}` : '',
                     start: w > breakpoints.laptop ? 'top top' : 'top 50%',
-                    end: '+=700vh',
+                    end: w > breakpoints.laptop ? '+=700vh' : '',
                     pin: w > breakpoints.laptop,
                     scrub: w > breakpoints.laptop,
                 },
@@ -44,8 +44,6 @@ const Carousel = () => {
                 className={styles.grid}
                 style={{
                     perspective: '2000px',
-                    height: '100vh',
-                    display: 'grid',
                     gridTemplateColumns: '25vw 1fr',
                     margin: 'auto',
                     justifyContent: 'center',
