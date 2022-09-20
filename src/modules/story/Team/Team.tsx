@@ -194,6 +194,7 @@ export default function Team() {
         const evenColumns = [...document.querySelectorAll(`.${styles.column}`)].filter((_, index) => index === 1);
 
         if (!isReady) return;
+        if (w < breakpoints.laptop) return;
         setTimeout(() => {
             gsap.timeline({
                 scrollTrigger: {
@@ -202,7 +203,7 @@ export default function Team() {
                     scrub: w > breakpoints.laptop,
                     pin: w > breakpoints.laptop,
                     start: w > breakpoints.laptop ? 'top 0%' : 'top 50%',
-                    end: '+=300vh',
+                    end: w > breakpoints.laptop ? '+=300vh' : '',
                 },
             })
                 .to(oddColumns, {
@@ -222,7 +223,7 @@ export default function Team() {
         <section
             id={'before-footer'}
             style={{
-                height: '100vh',
+                height: 'var(--full-height)',
                 background: 'var(--text-color)',
                 marginTop: '-2px',
                 overflow: 'hidden',

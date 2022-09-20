@@ -1,5 +1,12 @@
 @use 'styles/design/base/breakpoints' as brk;
 
+.contact_section {
+    height: auto;
+    @include brk.tablet {
+        height: var(--full-height);
+    }
+}
+
 .grid {
     position: relative;
     display: grid;
