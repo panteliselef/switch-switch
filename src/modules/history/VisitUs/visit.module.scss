@@ -21,13 +21,6 @@
         height: 100vh;
         grid-template-columns: 22vw 1fr;
     }
-
-    p {
-        font-size: 2.4rem;
-        @include brk.tablet {
-            font-size: var(--font-s-h3);
-        }
-    }
 }
 
 .cont {
@@ -41,4 +34,8 @@
 }
 
 .l {
+    font-size: 2.4rem;
+    @include brk.tablet {
+        font-size: 7vw;
+    }
 }
