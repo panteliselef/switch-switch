@@ -2,7 +2,8 @@ import { ContactShadows } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React from 'react';
 // import ScenePlugs2 from '@modules/home/Plugs/Scene2';
-import { BlenderScene } from '@modules/home/Plugs/BlenderScene';
+// import { BlenderScene } from '@modules/home/Plugs/BlenderScene';
+import { BlenderScene60 } from '@modules/home/Plugs/BlenderScene60';
 
 const PlugsCanvas: React.FC<{ shouldPlay: boolean }> = ({ shouldPlay }) => {
     return (
@@ -12,7 +13,8 @@ const PlugsCanvas: React.FC<{ shouldPlay: boolean }> = ({ shouldPlay }) => {
             {/* <Anim /> */}
             {/*<ScenePlugs shouldPlay={shouldPlay} />*/}
             {/*<ScenePlugs2 shouldPlay={shouldPlay} />*/}
-            <BlenderScene shouldPlay={shouldPlay} />
+            {/*<BlenderScene shouldPlay={shouldPlay} />*/}
+            <BlenderScene60 shouldPlay={shouldPlay} />
             {/* <Model scale={20} position={[-0.5, -0.6, 0]} /> */}
 
             {/* <Porsche position={[-0.5, -0.18, 0]} rotation={[0, Math.PI / 5, 0]} /> */}
