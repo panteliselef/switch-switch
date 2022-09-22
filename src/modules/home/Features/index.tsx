@@ -2,6 +2,7 @@ import Stack from '@layouts/Stack';
 import React from 'react';
 import styles from './features.module.scss';
 import useTranslation from 'next-translate/useTranslation';
+import classNames from 'classnames';
 
 const Feature: React.FC<{ speed?: number; number: string; title: string; text: string }> = ({
     speed,
@@ -29,7 +30,7 @@ function Features() {
             }}
         >
             <p
-                className={'p-text-2'}
+                className={classNames('p-text-2', styles.hidden_text)}
                 style={{
                     position: 'absolute',
                     color: 'black',
@@ -41,7 +42,7 @@ function Features() {
             </p>
 
             <p
-                className={'p-text-2'}
+                className={classNames('p-text-2', styles.hidden_text)}
                 style={{
                     position: 'absolute',
                     color: 'black',
@@ -53,7 +54,7 @@ function Features() {
             </p>
 
             <p
-                className={'p-text-2'}
+                className={classNames('p-text-2', styles.hidden_text)}
                 style={{
                     position: 'absolute',
                     color: 'black',
@@ -65,7 +66,7 @@ function Features() {
             </p>
 
             <p
-                className={'p-text-2'}
+                className={classNames('p-text-2', styles.hidden_text)}
                 style={{
                     position: 'absolute',
                     color: 'black',

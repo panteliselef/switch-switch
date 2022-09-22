@@ -74,7 +74,6 @@ What make us special is passion for high aesthetic values.`,
         url: 'https://www.instagram.com/tmrgr.interiors/?hl=en',
     },
 
-
     {
         logo: Revolution,
         name: 'Revolution Architekts',
@@ -169,7 +168,6 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
         url: 'https://studioloft.rs',
     },
 
-
     {
         logo: '',
         name: 'Parapet Studio',
@@ -204,12 +202,12 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
         url: 'https://www.instagram.com/studiog.rs/',
     },
 
-    {
-        logo: '',
-        name: 'Jelena Jakovljević',
-        text: ``,
-        url: 'https://www.instagram.com/jenajakovljevich/',
-    },
+    // {
+    //     logo: '',
+    //     name: 'Jelena Jakovljević',
+    //     text: ``,
+    //     url: 'https://www.instagram.com/jenajakovljevich/',
+    // },
 
     {
         logo: '',
