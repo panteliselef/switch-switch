@@ -100,7 +100,7 @@ function ProductCollection() {
                     videoFileName={'simon.mp4'}
                     title={`Simon`}
                 />
-                <Product videoFileName={'bticino.mp4'} title={`Pise Bticino`} />
+                <Product videoFileName={'bticino.mp4'} title={`Bticino`} />
             </div>
 
             <div className={styles.product_collection}>
@@ -115,13 +115,12 @@ function ProductCollection() {
             </div>
 
             <div className={styles.product_collection}>
-                <Product videoFileName={'lifesmart.mp4'} title={`lifesmart`} />
-                <Product url={'https://www.tem.si/'} speed={2} videoFileName={'modul.mp4'} title={`TEM`} />
                 <Product
-                    url={'https://www.simonelectric.com/intl/simon-100'}
-                    videoFileName={'simon.mp4'}
-                    title={`Simon`}
+                    url={`https://iot.ilifesmart.com/?gclid=Cj0KCQjwj7CZBhDHARIsAPPWv3dvVkG7q8m2k-nDzcM8YMTGVDZ-Eml0G_faHIfz62o_U0XyHjshgS0aAt7uEALw_wcB`}
+                    videoFileName={'lifesmart.mp4'}
+                    title={`lifesmart`}
                 />
+                <Product url={'https://www.tem.si/'} speed={2} videoFileName={'modul.mp4'} title={`TEM`} />
             </div>
         </div>
     );
@@ -146,7 +145,7 @@ function Lighting() {
             </div>
 
             <div className={styles.product_collection}>
-                <Product videoFileName={'pixo retro.mp4'} title={`Nova Luce`} />
+                <Product url={`https://novaluce.com/`} videoFileName={'pixo retro.mp4'} title={`Nova Luce`} />
             </div>
         </div>
     );
@@ -168,7 +167,7 @@ function Products() {
                 justifyContent={'center'}
             >
                 <div className={styles.single_product}>
-                    <Product videoFileName={'avolt.mp4'} title={`Avolt`} />
+                    <Product url={`https://avolt.com/`} videoFileName={'avolt.mp4'} title={`Avolt`} />
                 </div>
             </Stack>
             <Stack direction={'row'} justifyContent={'center'} alignItems={'center'}>
