@@ -11,7 +11,7 @@ const SingleSwitchCanvas = dynamic(() => import('@modules/home/SingleSwitch/Sing
 });
 
 const SingleSwitchInner: React.FC = () => {
-    const { ref, inView } = useInView({
+    const { ref } = useInView({
         /* Optional options */
 
         rootMargin: '-50% 0px 0px 0px',
@@ -26,7 +26,7 @@ const SingleSwitchInner: React.FC = () => {
                 position: 'relative',
             }}
         >
-            <SingleSwitchCanvas shouldPlay={inView} />
+            <SingleSwitchCanvas shouldPlay={true} />
         </section>
     );
 };
