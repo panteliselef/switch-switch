@@ -1,7 +1,8 @@
 import { ContactShadows } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React from 'react';
-import Switch from '@modules/home/SingleSwitch/Switch';
+// import Switch from '@modules/home/SingleSwitch/Switch';
+import Switch2 from "@modules/home/SingleSwitch/SingleSwitch2";
 
 const SingleSwitchCanvas: React.FC<{ shouldPlay: boolean }> = ({ shouldPlay }) => {
     return (
@@ -9,7 +10,8 @@ const SingleSwitchCanvas: React.FC<{ shouldPlay: boolean }> = ({ shouldPlay }) =
             {/* <OrbitControls /> */}
             {/* <Test2 /> */}
             {/* <Anim /> */}
-            <Switch shouldPlay={shouldPlay} />
+            {/*<Switch shouldPlay={shouldPlay} />*/}
+            <Switch2 shouldPlay={shouldPlay} />
             {/* <Model scale={20} position={[-0.5, -0.6, 0]} /> */}
 
             {/* <Porsche position={[-0.5, -0.18, 0]} rotation={[0, Math.PI / 5, 0]} /> */}
