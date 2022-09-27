@@ -41,13 +41,15 @@ const Quality: React.FC = () => {
                     style={{
                         width: '100%',
                         height: '120px',
+                        flex: '1 1 300px',
                     }}
                 >
                     <Image src={q2} layout={'fill'} objectFit={'cover'} />
                 </InnerScroll>
                 <h3
                     style={{
-                        flex: '0 0 auto',
+                        flex: '1 1 auto',
+                        wordBreak: 'break-all',
                     }}
                     className={'heading-3'}
                 >
