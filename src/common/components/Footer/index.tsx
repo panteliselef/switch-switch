@@ -125,6 +125,8 @@ const Footer: React.FC = () => {
                         <Stack direction={'column'}>
                             <ExternalLink to={'https://www.instagram.com/switchswitch.rs/'}>Instagram</ExternalLink>
                             <ExternalLink to={'https://www.facebook.com/switchswitch.rs'}>Facebook</ExternalLink>
+                            <ExternalLink to={'https://www.youtube.com/channel/UCJKZIe4xkmQoL2WnLiQoEfA'}>Youtube</ExternalLink>
+                            <ExternalLink to={'https://www.tiktok.com/@switchswitch.rs?_t=8W5EjOVLwAf&_r=1'}>Tiktok</ExternalLink>
                         </Stack>
                     </Stack>
 

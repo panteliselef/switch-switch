@@ -3,6 +3,10 @@
 .quality_cont {
     padding: 2rem 0.5rem;
 
+    h3 {
+        hyphens: manual;
+    }
+
     @include brk.tablet {
         padding: 10vw 5vw 0;
     }
