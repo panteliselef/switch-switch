@@ -100,7 +100,7 @@ function ProductCollection() {
                     videoFileName={'simon.mp4'}
                     title={`Simon`}
                 />
-                <Product videoFileName={'bticino.mp4'} title={`Bticino`} />
+                <Product url={'https://www.bticino.com/living-now/'} videoFileName={'bticino.mp4'} title={`Bticino`} />
             </div>
 
             <div className={styles.product_collection}>
@@ -116,7 +116,7 @@ function ProductCollection() {
 
             <div className={styles.product_collection}>
                 <Product
-                    url={`https://iot.ilifesmart.com/?gclid=Cj0KCQjwj7CZBhDHARIsAPPWv3dvVkG7q8m2k-nDzcM8YMTGVDZ-Eml0G_faHIfz62o_U0XyHjshgS0aAt7uEALw_wcB`}
+                    url={`http://www.smartsteel.rs/`}
                     videoFileName={'lifesmart.mp4'}
                     title={`lifesmart`}
                 />

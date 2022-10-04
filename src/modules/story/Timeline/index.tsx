@@ -134,7 +134,7 @@ const Timeline: React.FC = () => {
                             <Image placeholder={'blur'} src={img2018_1} layout={'fill'} objectFit={'cover'} />
                         </div>
                         <p className={classNames(styles.timeline_year)}>{t('timelinePage3Title')}</p>
-                        <p className={classNames('p-text-2', styles.info)}>{t('timelinePage3Info')}</p>
+                        {/*<p className={classNames('p-text-2', styles.info)}>{t('timelinePage3Info')}</p>*/}
                     </Stack>
 
                     <Stack direction={'column'} className={styles.timeline_page}>

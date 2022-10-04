@@ -16,6 +16,8 @@ import nk from '@assets/clients/NK arch.png';
 import izba from '@assets/clients/IZBA Logo Black.png';
 import mvs from '@assets/clients/MVS-logo.png';
 import TMRGR from '@assets/clients/TMRGR-logo.png';
+import gstudio from '@assets/clients/gstudio.png';
+import jelena from '@assets/clients/jelena.jpg';
 
 export const clients = [
     {
@@ -196,21 +198,14 @@ Iza nas su na stotine izvedenih projekata i isto toliko zadovoljnih klijenata.`,
     },
 
     {
-        logo: '',
-        name: 'G Studio',
+        logo: gstudio,
+        name: 'Studio G',
         text: ``,
         url: 'https://www.instagram.com/studiog.rs/',
     },
 
-    // {
-    //     logo: '',
-    //     name: 'Jelena Jakovljević',
-    //     text: ``,
-    //     url: 'https://www.instagram.com/jenajakovljevich/',
-    // },
-
     {
-        logo: '',
+        logo: jelena,
         name: 'Jelena Trimčević',
         text: ``,
         url: 'https://www.instagram.com/jelenatrimcevic/',
