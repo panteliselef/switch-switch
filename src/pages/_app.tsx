@@ -8,6 +8,7 @@ import { SmoothScrollContext } from '@contexts/SmoothScrollContext';
 import { Router, useRouter } from 'next/router';
 import { isBrowser, useDebouncedHeight } from '@hooks/useWindowDimensions';
 import CustomCursor from '@components/CustomCursor';
+import Script from 'next/script';
 
 /**
  * We first need to wait for framer motion to complete the page transition animation
@@ -50,6 +51,27 @@ function useMobileHackVh() {
     }, [height]);
 }
 
+const GoogleAnalytics = () => {
+    return (
+        <>
+            {/*Global site tag (gtag.js) - Google Analytics -->*/}
+            <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+                strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments);}
+                  gtag('js', new Date());
+        
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+                `}
+            </Script>
+        </>
+    );
+};
+
 function MyApp({ Component, pageProps }: AppProps) {
     useMobileHackVh();
     const { push, pathname } = useRouter();
@@ -71,6 +93,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }, [pathname, push]);
     return (
         <>
+            <GoogleAnalytics />
             <SmoothScrollContext.Provider value={{ isReady, setIsReady }}>
                 <CustomCursor />
                 <AppMenu />
